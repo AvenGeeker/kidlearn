@@ -1,0 +1,2061 @@
+{
+  "schema_version": 1,
+  "subject": "chinese",
+  "grade": 6,
+  "semester": "lower",
+  "textbook": "统编版",
+  "questions": [
+    {
+      "id": "zh6l-u1-001",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“suàn”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "人",
+        "蒜",
+        "天"
+      ],
+      "answer": 3,
+      "explain": "“蒜”读 suàn，可以组词“蒜”。"
+    },
+    {
+      "id": "zh6l-u1-002",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“cù”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "地",
+        "醋",
+        "天",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“醋”读 cù，可以组词“醋”。"
+    },
+    {
+      "id": "zh6l-u1-003",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jiǎo”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "天",
+        "地",
+        "饺",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“饺”读 jiǎo，可以组词“饺”。"
+    },
+    {
+      "id": "zh6l-u1-004",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“蒜”的正确读音是？",
+      "options": [
+        "biǎn",
+        "suàn",
+        "biàn",
+        "biān"
+      ],
+      "answer": 2,
+      "explain": "“蒜”读 suàn。"
+    },
+    {
+      "id": "zh6l-u1-005",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“醋”的正确读音是？",
+      "options": [
+        "biǎn",
+        "cù",
+        "biān",
+        "biàn"
+      ],
+      "answer": 2,
+      "explain": "“醋”读 cù。"
+    },
+    {
+      "id": "zh6l-u1-006",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“饺”的正确读音是？",
+      "options": [
+        "biān",
+        "jiǎo",
+        "biàn",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“饺”读 jiǎo。"
+    },
+    {
+      "id": "zh6l-u1-007",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "面对（ ）的考验，他始终保持冷静。",
+      "options": [
+        "严肃",
+        "严格",
+        "严峻",
+        "严厉"
+      ],
+      "answer": 3,
+      "explain": "“严峻”常与“考验、形势”搭配。"
+    },
+    {
+      "id": "zh6l-u1-008",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“蕴含”意思相近的词语是？",
+      "options": [
+        "包含",
+        "缺少",
+        "显露",
+        "排除"
+      ],
+      "answer": 1,
+      "explain": "“蕴含”和“包含”都表示里面含有。"
+    },
+    {
+      "id": "zh6l-u1-009",
+      "unit": "u1",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“渺小”的反义词是？",
+      "options": [
+        "细小",
+        "微小",
+        "伟大",
+        "微弱"
+      ],
+      "answer": 3,
+      "explain": "“渺小”和“伟大”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u1-010",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“弯弯的月亮像一只小船。”这句话用了什么修辞手法？",
+      "options": [
+        "夸张",
+        "排比",
+        "比喻",
+        "拟人"
+      ],
+      "answer": 3,
+      "explain": "把月亮比作小船，是比喻。"
+    },
+    {
+      "id": "zh6l-u1-011",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "这台仪器非常（ ）。",
+      "options": [
+        "细密",
+        "精密",
+        "精致",
+        "精确"
+      ],
+      "answer": 2,
+      "explain": "“精密”常形容仪器结构精细。"
+    },
+    {
+      "id": "zh6l-u1-012",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“严峻”意思相近的词语是？",
+      "options": [
+        "随便",
+        "轻松",
+        "温和",
+        "严厉"
+      ],
+      "answer": 4,
+      "explain": "“严峻”和“严厉”都表示不宽松。"
+    },
+    {
+      "id": "zh6l-u1-013",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“小鸟在枝头快乐地唱歌。”这句话用了什么修辞手法？",
+      "options": [
+        "排比",
+        "比喻",
+        "拟人",
+        "反问"
+      ],
+      "answer": 3,
+      "explain": "把小鸟当作人来写，是拟人。"
+    },
+    {
+      "id": "zh6l-u1-014",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "深夜的校园一片（ ）。",
+      "options": [
+        "安静",
+        "冷静",
+        "寂静",
+        "沉寂"
+      ],
+      "answer": 4,
+      "explain": "“沉寂”表示非常寂静，常写环境。"
+    },
+    {
+      "id": "zh6l-u1-015",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：会当凌绝顶，（ ）。",
+      "options": [
+        "一览众山小",
+        "更上一层楼",
+        "天涯若比邻",
+        "千里共婵娟"
+      ],
+      "answer": 1,
+      "explain": "出自杜甫《望岳》。"
+    },
+    {
+      "id": "zh6l-u1-016",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：海内存知己，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "天涯若比邻",
+        "一览众山小",
+        "柳暗花明又一村"
+      ],
+      "answer": 2,
+      "explain": "出自王勃《送杜少府之任蜀州》。"
+    },
+    {
+      "id": "zh6l-u1-017",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：春风又绿江南岸，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "明月何时照我还",
+        "柳暗花明又一村",
+        "一览众山小"
+      ],
+      "answer": 2,
+      "explain": "出自王安石《泊船瓜洲》。"
+    },
+    {
+      "id": "zh6l-u1-018",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：但愿人长久，（ ）。",
+      "options": [
+        "春风又绿江南岸",
+        "一览众山小",
+        "天涯若比邻",
+        "千里共婵娟"
+      ],
+      "answer": 4,
+      "explain": "出自苏轼《水调歌头》。"
+    },
+    {
+      "id": "zh6l-u1-019",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "旅游攻略",
+        "北京的春节",
+        "班级公约",
+        "科学实验"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《北京的春节》。",
+      "passage": "《北京的春节》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u1-020",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "华丽的词语",
+        "很长的篇幅",
+        "真实的体验和深入的思考",
+        "别人的夸奖"
+      ],
+      "answer": 3,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《北京的春节》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u2-001",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jù”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "天",
+        "人",
+        "惧",
+        "地"
+      ],
+      "answer": 3,
+      "explain": "“惧”读 jù，可以组词“惧”。"
+    },
+    {
+      "id": "zh6l-u2-002",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“qī”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "地",
+        "天",
+        "人",
+        "凄"
+      ],
+      "answer": 4,
+      "explain": "“凄”读 qī，可以组词“凄”。"
+    },
+    {
+      "id": "zh6l-u2-003",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“mò”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "人",
+        "地",
+        "寞",
+        "天"
+      ],
+      "answer": 3,
+      "explain": "“寞”读 mò，可以组词“寞”。"
+    },
+    {
+      "id": "zh6l-u2-004",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“惧”的正确读音是？",
+      "options": [
+        "biān",
+        "biàn",
+        "jù",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“惧”读 jù。"
+    },
+    {
+      "id": "zh6l-u2-005",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“凄”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "qī",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“凄”读 qī。"
+    },
+    {
+      "id": "zh6l-u2-006",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“寞”的正确读音是？",
+      "options": [
+        "mò",
+        "biān",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“寞”读 mò。"
+    },
+    {
+      "id": "zh6l-u2-007",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "深夜的校园一片（ ）。",
+      "options": [
+        "冷静",
+        "寂静",
+        "安静",
+        "沉寂"
+      ],
+      "answer": 4,
+      "explain": "“沉寂”表示非常寂静，常写环境。"
+    },
+    {
+      "id": "zh6l-u2-008",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“严峻”意思相近的词语是？",
+      "options": [
+        "轻松",
+        "温和",
+        "随便",
+        "严厉"
+      ],
+      "answer": 4,
+      "explain": "“严峻”和“严厉”都表示不宽松。"
+    },
+    {
+      "id": "zh6l-u2-009",
+      "unit": "u2",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“慷慨”的反义词是？",
+      "options": [
+        "热情",
+        "大方",
+        "豪爽",
+        "吝啬"
+      ],
+      "answer": 4,
+      "explain": "“慷慨”和“吝啬”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u2-010",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“小鸟在枝头快乐地唱歌。”这句话用了什么修辞手法？",
+      "options": [
+        "拟人",
+        "排比",
+        "反问",
+        "比喻"
+      ],
+      "answer": 1,
+      "explain": "把小鸟当作人来写，是拟人。"
+    },
+    {
+      "id": "zh6l-u2-011",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走出考场。",
+      "options": [
+        "连续",
+        "继续",
+        "持续",
+        "陆续"
+      ],
+      "answer": 4,
+      "explain": "“陆续”表示先先后后。"
+    },
+    {
+      "id": "zh6l-u2-012",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“憧憬”意思相近的词语是？",
+      "options": [
+        "向往",
+        "回忆",
+        "害怕",
+        "后悔"
+      ],
+      "answer": 1,
+      "explain": "“憧憬”和“向往”都表示对未来的期待。"
+    },
+    {
+      "id": "zh6l-u2-013",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“桂林的山真奇啊，真秀啊，真险啊！”这句话用了什么修辞手法？",
+      "options": [
+        "拟人",
+        "比喻",
+        "设问",
+        "排比"
+      ],
+      "answer": 4,
+      "explain": "三个结构相似的句子排列，是排比。"
+    },
+    {
+      "id": "zh6l-u2-014",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "他（ ）得到一本好书。",
+      "options": [
+        "希望",
+        "期望",
+        "渴望",
+        "盼望"
+      ],
+      "answer": 3,
+      "explain": "“渴望”表示迫切地希望。"
+    },
+    {
+      "id": "zh6l-u2-015",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：山重水复疑无路，（ ）。",
+      "options": [
+        "柳暗花明又一村",
+        "天涯若比邻",
+        "一览众山小",
+        "千里共婵娟"
+      ],
+      "answer": 1,
+      "explain": "出自陆游《游山西村》。"
+    },
+    {
+      "id": "zh6l-u2-016",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：纸上得来终觉浅，（ ）。",
+      "options": [
+        "绝知此事要躬行",
+        "为有源头活水来",
+        "明月何时照我还",
+        "化作春泥更护花"
+      ],
+      "answer": 1,
+      "explain": "出自陆游《冬夜读书示子聿》。"
+    },
+    {
+      "id": "zh6l-u2-017",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：问渠那得清如许？（ ）。",
+      "options": [
+        "绝知此事要躬行",
+        "为有源头活水来",
+        "化作春泥更护花",
+        "柳暗花明又一村"
+      ],
+      "answer": 2,
+      "explain": "出自朱熹《观书有感》。"
+    },
+    {
+      "id": "zh6l-u2-018",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：落红不是无情物，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "为有源头活水来",
+        "绝知此事要躬行",
+        "化作春泥更护花"
+      ],
+      "answer": 4,
+      "explain": "出自龚自珍《己亥杂诗》。"
+    },
+    {
+      "id": "zh6l-u2-019",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "旅游攻略",
+        "科学实验",
+        "班级公约",
+        "鲁滨逊漂流记"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《鲁滨逊漂流记》。",
+      "passage": "《鲁滨逊漂流记》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u2-020",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "真实的体验和深入的思考",
+        "很长的篇幅",
+        "别人的夸奖",
+        "华丽的词语"
+      ],
+      "answer": 1,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《鲁滨逊漂流记》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u3-001",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“nuó”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "挪",
+        "人",
+        "天"
+      ],
+      "answer": 2,
+      "explain": "“挪”读 nuó，可以组词“挪”。"
+    },
+    {
+      "id": "zh6l-u3-002",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“zhēng”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "蒸",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“蒸”读 zhēng，可以组词“蒸”。"
+    },
+    {
+      "id": "zh6l-u3-003",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“róng”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "地",
+        "人",
+        "天",
+        "融"
+      ],
+      "answer": 4,
+      "explain": "“融”读 róng，可以组词“融”。"
+    },
+    {
+      "id": "zh6l-u3-004",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“挪”的正确读音是？",
+      "options": [
+        "nuó",
+        "biàn",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 1,
+      "explain": "“挪”读 nuó。"
+    },
+    {
+      "id": "zh6l-u3-005",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“蒸”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "biàn",
+        "zhēng"
+      ],
+      "answer": 4,
+      "explain": "“蒸”读 zhēng。"
+    },
+    {
+      "id": "zh6l-u3-006",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“融”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "róng",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“融”读 róng。"
+    },
+    {
+      "id": "zh6l-u3-007",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "他（ ）得到一本好书。",
+      "options": [
+        "渴望",
+        "希望",
+        "盼望",
+        "期望"
+      ],
+      "answer": 1,
+      "explain": "“渴望”表示迫切地希望。"
+    },
+    {
+      "id": "zh6l-u3-008",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“憧憬”意思相近的词语是？",
+      "options": [
+        "向往",
+        "后悔",
+        "回忆",
+        "害怕"
+      ],
+      "answer": 1,
+      "explain": "“憧憬”和“向往”都表示对未来的期待。"
+    },
+    {
+      "id": "zh6l-u3-009",
+      "unit": "u3",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“脆弱”的反义词是？",
+      "options": [
+        "软弱",
+        "坚强",
+        "胆小",
+        "柔弱"
+      ],
+      "answer": 2,
+      "explain": "“脆弱”和“坚强”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u3-010",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“桂林的山真奇啊，真秀啊，真险啊！”这句话用了什么修辞手法？",
+      "options": [
+        "排比",
+        "设问",
+        "拟人",
+        "比喻"
+      ],
+      "answer": 1,
+      "explain": "三个结构相似的句子排列，是排比。"
+    },
+    {
+      "id": "zh6l-u3-011",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "（ ）天气原因，比赛推迟了。",
+      "options": [
+        "因此",
+        "因为",
+        "所以",
+        "由于"
+      ],
+      "answer": 4,
+      "explain": "“由于”后面接原因，句子通顺。"
+    },
+    {
+      "id": "zh6l-u3-012",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“崎岖”意思相近的词语是？",
+      "options": [
+        "笔直",
+        "宽阔",
+        "坎坷",
+        "平坦"
+      ],
+      "answer": 3,
+      "explain": "“崎岖”和“坎坷”都表示道路不平。"
+    },
+    {
+      "id": "zh6l-u3-013",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“飞流直下三千尺”用了什么修辞手法？",
+      "options": [
+        "反问",
+        "夸张",
+        "比喻",
+        "拟人"
+      ],
+      "answer": 2,
+      "explain": "“三千尺”夸大瀑布的高度，是夸张。"
+    },
+    {
+      "id": "zh6l-u3-014",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "这台仪器非常（ ）。",
+      "options": [
+        "精致",
+        "细密",
+        "精确",
+        "精密"
+      ],
+      "answer": 4,
+      "explain": "“精密”常形容仪器结构精细。"
+    },
+    {
+      "id": "zh6l-u3-015",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：会当凌绝顶，（ ）。",
+      "options": [
+        "天涯若比邻",
+        "一览众山小",
+        "更上一层楼",
+        "千里共婵娟"
+      ],
+      "answer": 2,
+      "explain": "出自杜甫《望岳》。"
+    },
+    {
+      "id": "zh6l-u3-016",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：海内存知己，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "一览众山小",
+        "柳暗花明又一村",
+        "天涯若比邻"
+      ],
+      "answer": 4,
+      "explain": "出自王勃《送杜少府之任蜀州》。"
+    },
+    {
+      "id": "zh6l-u3-017",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：春风又绿江南岸，（ ）。",
+      "options": [
+        "一览众山小",
+        "柳暗花明又一村",
+        "千里共婵娟",
+        "明月何时照我还"
+      ],
+      "answer": 4,
+      "explain": "出自王安石《泊船瓜洲》。"
+    },
+    {
+      "id": "zh6l-u3-018",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：但愿人长久，（ ）。",
+      "options": [
+        "天涯若比邻",
+        "春风又绿江南岸",
+        "一览众山小",
+        "千里共婵娟"
+      ],
+      "answer": 4,
+      "explain": "出自苏轼《水调歌头》。"
+    },
+    {
+      "id": "zh6l-u3-019",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "旅游攻略",
+        "匆匆",
+        "班级公约",
+        "科学实验"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《匆匆》。",
+      "passage": "《匆匆》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u3-020",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "很长的篇幅",
+        "真实的体验和深入的思考",
+        "别人的夸奖",
+        "华丽的词语"
+      ],
+      "answer": 2,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《匆匆》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u4-001",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“fá”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "天",
+        "人",
+        "阀"
+      ],
+      "answer": 4,
+      "explain": "“阀”读 fá，可以组词“阀”。"
+    },
+    {
+      "id": "zh6l-u4-002",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“bì”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "地",
+        "人",
+        "天",
+        "避"
+      ],
+      "answer": 4,
+      "explain": "“避”读 bì，可以组词“避”。"
+    },
+    {
+      "id": "zh6l-u4-003",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“pì”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "僻",
+        "人",
+        "天",
+        "地"
+      ],
+      "answer": 1,
+      "explain": "“僻”读 pì，可以组词“僻”。"
+    },
+    {
+      "id": "zh6l-u4-004",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“阀”的正确读音是？",
+      "options": [
+        "biān",
+        "fá",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 2,
+      "explain": "“阀”读 fá。"
+    },
+    {
+      "id": "zh6l-u4-005",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“避”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "bì",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“避”读 bì。"
+    },
+    {
+      "id": "zh6l-u4-006",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“僻”的正确读音是？",
+      "options": [
+        "biàn",
+        "pì",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“僻”读 pì。"
+    },
+    {
+      "id": "zh6l-u4-007",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "这台仪器非常（ ）。",
+      "options": [
+        "细密",
+        "精密",
+        "精确",
+        "精致"
+      ],
+      "answer": 2,
+      "explain": "“精密”常形容仪器结构精细。"
+    },
+    {
+      "id": "zh6l-u4-008",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“崎岖”意思相近的词语是？",
+      "options": [
+        "坎坷",
+        "平坦",
+        "笔直",
+        "宽阔"
+      ],
+      "answer": 1,
+      "explain": "“崎岖”和“坎坷”都表示道路不平。"
+    },
+    {
+      "id": "zh6l-u4-009",
+      "unit": "u4",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“虚伪”的反义词是？",
+      "options": [
+        "假装",
+        "真诚",
+        "虚假",
+        "狡猾"
+      ],
+      "answer": 2,
+      "explain": "“虚伪”和“真诚”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u4-010",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“飞流直下三千尺”用了什么修辞手法？",
+      "options": [
+        "反问",
+        "夸张",
+        "拟人",
+        "比喻"
+      ],
+      "answer": 2,
+      "explain": "“三千尺”夸大瀑布的高度，是夸张。"
+    },
+    {
+      "id": "zh6l-u4-011",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "（ ）遇到困难，我们也不应该放弃。",
+      "options": [
+        "即使",
+        "只要",
+        "因为",
+        "虽然"
+      ],
+      "answer": 1,
+      "explain": "“即使……也……”表示假设让步。"
+    },
+    {
+      "id": "zh6l-u4-012",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“抉择”意思相近的词语是？",
+      "options": [
+        "犹豫",
+        "选择",
+        "放弃",
+        "等待"
+      ],
+      "answer": 2,
+      "explain": "“抉择”和“选择”都表示挑选决定。"
+    },
+    {
+      "id": "zh6l-u4-013",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“难道我们不应该珍惜时间吗？”这句话用了什么修辞手法？",
+      "options": [
+        "排比",
+        "比喻",
+        "设问",
+        "反问"
+      ],
+      "answer": 4,
+      "explain": "用疑问的形式表达肯定的意思，是反问。"
+    },
+    {
+      "id": "zh6l-u4-014",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走出考场。",
+      "options": [
+        "陆续",
+        "连续",
+        "持续",
+        "继续"
+      ],
+      "answer": 1,
+      "explain": "“陆续”表示先先后后。"
+    },
+    {
+      "id": "zh6l-u4-015",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：山重水复疑无路，（ ）。",
+      "options": [
+        "一览众山小",
+        "柳暗花明又一村",
+        "千里共婵娟",
+        "天涯若比邻"
+      ],
+      "answer": 2,
+      "explain": "出自陆游《游山西村》。"
+    },
+    {
+      "id": "zh6l-u4-016",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：纸上得来终觉浅，（ ）。",
+      "options": [
+        "化作春泥更护花",
+        "明月何时照我还",
+        "绝知此事要躬行",
+        "为有源头活水来"
+      ],
+      "answer": 3,
+      "explain": "出自陆游《冬夜读书示子聿》。"
+    },
+    {
+      "id": "zh6l-u4-017",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：问渠那得清如许？（ ）。",
+      "options": [
+        "柳暗花明又一村",
+        "化作春泥更护花",
+        "绝知此事要躬行",
+        "为有源头活水来"
+      ],
+      "answer": 4,
+      "explain": "出自朱熹《观书有感》。"
+    },
+    {
+      "id": "zh6l-u4-018",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：落红不是无情物，（ ）。",
+      "options": [
+        "为有源头活水来",
+        "绝知此事要躬行",
+        "化作春泥更护花",
+        "千里共婵娟"
+      ],
+      "answer": 3,
+      "explain": "出自龚自珍《己亥杂诗》。"
+    },
+    {
+      "id": "zh6l-u4-019",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "科学实验",
+        "旅游攻略",
+        "古诗三首",
+        "班级公约"
+      ],
+      "answer": 3,
+      "explain": "短文开头提到了《古诗三首》。",
+      "passage": "《古诗三首》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u4-020",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "很长的篇幅",
+        "真实的体验和深入的思考",
+        "别人的夸奖",
+        "华丽的词语"
+      ],
+      "answer": 2,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《古诗三首》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u5-001",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“yuán”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "援",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“援”读 yuán，可以组词“援”。"
+    },
+    {
+      "id": "zh6l-u5-002",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jù”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "俱",
+        "天",
+        "人",
+        "地"
+      ],
+      "answer": 1,
+      "explain": "“俱”读 jù，可以组词“俱”。"
+    },
+    {
+      "id": "zh6l-u5-003",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“fú”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "地",
+        "人",
+        "天",
+        "弗"
+      ],
+      "answer": 4,
+      "explain": "“弗”读 fú，可以组词“弗”。"
+    },
+    {
+      "id": "zh6l-u5-004",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“援”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biàn",
+        "biān",
+        "yuán"
+      ],
+      "answer": 4,
+      "explain": "“援”读 yuán。"
+    },
+    {
+      "id": "zh6l-u5-005",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“俱”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "biàn",
+        "jù"
+      ],
+      "answer": 4,
+      "explain": "“俱”读 jù。"
+    },
+    {
+      "id": "zh6l-u5-006",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“弗”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biàn",
+        "fú",
+        "biān"
+      ],
+      "answer": 3,
+      "explain": "“弗”读 fú。"
+    },
+    {
+      "id": "zh6l-u5-007",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走出考场。",
+      "options": [
+        "持续",
+        "连续",
+        "继续",
+        "陆续"
+      ],
+      "answer": 4,
+      "explain": "“陆续”表示先先后后。"
+    },
+    {
+      "id": "zh6l-u5-008",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“抉择”意思相近的词语是？",
+      "options": [
+        "选择",
+        "放弃",
+        "犹豫",
+        "等待"
+      ],
+      "answer": 1,
+      "explain": "“抉择”和“选择”都表示挑选决定。"
+    },
+    {
+      "id": "zh6l-u5-009",
+      "unit": "u5",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“消极”的反义词是？",
+      "options": [
+        "失望",
+        "悲观",
+        "积极",
+        "冷淡"
+      ],
+      "answer": 3,
+      "explain": "“消极”和“积极”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u5-010",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“难道我们不应该珍惜时间吗？”这句话用了什么修辞手法？",
+      "options": [
+        "设问",
+        "比喻",
+        "排比",
+        "反问"
+      ],
+      "answer": 4,
+      "explain": "用疑问的形式表达肯定的意思，是反问。"
+    },
+    {
+      "id": "zh6l-u5-011",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "（ ）天气多么寒冷，他都坚持晨跑。",
+      "options": [
+        "虽然",
+        "尽管",
+        "即使",
+        "不管"
+      ],
+      "answer": 4,
+      "explain": "“不管……都……”表示无条件。"
+    },
+    {
+      "id": "zh6l-u5-012",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“眷恋”意思相近的词语是？",
+      "options": [
+        "忘记",
+        "离开",
+        "厌倦",
+        "留恋"
+      ],
+      "answer": 4,
+      "explain": "“眷恋”和“留恋”都表示舍不得离开。"
+    },
+    {
+      "id": "zh6l-u5-013",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“什么是幸福？幸福就是帮助别人。”这句话用了什么修辞手法？",
+      "options": [
+        "拟人",
+        "反问",
+        "设问",
+        "比喻"
+      ],
+      "answer": 3,
+      "explain": "先提出问题再回答，是设问。"
+    },
+    {
+      "id": "zh6l-u5-014",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）天气原因，比赛推迟了。",
+      "options": [
+        "所以",
+        "由于",
+        "因为",
+        "因此"
+      ],
+      "answer": 2,
+      "explain": "“由于”后面接原因，句子通顺。"
+    },
+    {
+      "id": "zh6l-u5-015",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：会当凌绝顶，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "天涯若比邻",
+        "一览众山小",
+        "更上一层楼"
+      ],
+      "answer": 3,
+      "explain": "出自杜甫《望岳》。"
+    },
+    {
+      "id": "zh6l-u5-016",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：海内存知己，（ ）。",
+      "options": [
+        "柳暗花明又一村",
+        "千里共婵娟",
+        "天涯若比邻",
+        "一览众山小"
+      ],
+      "answer": 3,
+      "explain": "出自王勃《送杜少府之任蜀州》。"
+    },
+    {
+      "id": "zh6l-u5-017",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：春风又绿江南岸，（ ）。",
+      "options": [
+        "柳暗花明又一村",
+        "千里共婵娟",
+        "明月何时照我还",
+        "一览众山小"
+      ],
+      "answer": 3,
+      "explain": "出自王安石《泊船瓜洲》。"
+    },
+    {
+      "id": "zh6l-u5-018",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：但愿人长久，（ ）。",
+      "options": [
+        "天涯若比邻",
+        "一览众山小",
+        "千里共婵娟",
+        "春风又绿江南岸"
+      ],
+      "answer": 3,
+      "explain": "出自苏轼《水调歌头》。"
+    },
+    {
+      "id": "zh6l-u5-019",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "旅游攻略",
+        "文言文二则",
+        "科学实验",
+        "班级公约"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《文言文二则》。",
+      "passage": "《文言文二则》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u5-020",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "很长的篇幅",
+        "真实的体验和深入的思考",
+        "别人的夸奖",
+        "华丽的词语"
+      ],
+      "answer": 2,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《文言文二则》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u6-001",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“xī”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "昔",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“昔”读 xī，可以组词“昔”。"
+    },
+    {
+      "id": "zh6l-u6-002",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“yǐ”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "天",
+        "地",
+        "人",
+        "矣"
+      ],
+      "answer": 4,
+      "explain": "“矣”读 yǐ，可以组词“矣”。"
+    },
+    {
+      "id": "zh6l-u6-003",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“juàn”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "隽",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“隽”读 juàn，可以组词“隽”。"
+    },
+    {
+      "id": "zh6l-u6-004",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“昔”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "xī",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“昔”读 xī。"
+    },
+    {
+      "id": "zh6l-u6-005",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“矣”的正确读音是？",
+      "options": [
+        "yǐ",
+        "biān",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“矣”读 yǐ。"
+    },
+    {
+      "id": "zh6l-u6-006",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“隽”的正确读音是？",
+      "options": [
+        "juàn",
+        "biàn",
+        "biǎn",
+        "biān"
+      ],
+      "answer": 1,
+      "explain": "“隽”读 juàn。"
+    },
+    {
+      "id": "zh6l-u6-007",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "（ ）天气原因，比赛推迟了。",
+      "options": [
+        "由于",
+        "所以",
+        "因此",
+        "因为"
+      ],
+      "answer": 1,
+      "explain": "“由于”后面接原因，句子通顺。"
+    },
+    {
+      "id": "zh6l-u6-008",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“眷恋”意思相近的词语是？",
+      "options": [
+        "离开",
+        "留恋",
+        "忘记",
+        "厌倦"
+      ],
+      "answer": 2,
+      "explain": "“眷恋”和“留恋”都表示舍不得离开。"
+    },
+    {
+      "id": "zh6l-u6-009",
+      "unit": "u6",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“粗糙”的反义词是？",
+      "options": [
+        "马虎",
+        "简陋",
+        "精细",
+        "粗心"
+      ],
+      "answer": 3,
+      "explain": "“粗糙”和“精细”是一对反义词。"
+    },
+    {
+      "id": "zh6l-u6-010",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“什么是幸福？幸福就是帮助别人。”这句话用了什么修辞手法？",
+      "options": [
+        "设问",
+        "反问",
+        "比喻",
+        "拟人"
+      ],
+      "answer": 1,
+      "explain": "先提出问题再回答，是设问。"
+    },
+    {
+      "id": "zh6l-u6-011",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "面对（ ）的考验，他始终保持冷静。",
+      "options": [
+        "严格",
+        "严峻",
+        "严厉",
+        "严肃"
+      ],
+      "answer": 2,
+      "explain": "“严峻”常与“考验、形势”搭配。"
+    },
+    {
+      "id": "zh6l-u6-012",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“沉着”意思相近的词语是？",
+      "options": [
+        "镇定",
+        "害怕",
+        "急躁",
+        "慌张"
+      ],
+      "answer": 1,
+      "explain": "“沉着”和“镇定”都表示遇事不慌。"
+    },
+    {
+      "id": "zh6l-u6-013",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "下列句子没有语病的一项是？",
+      "options": [
+        "通过这次活动，使我明白了道理。",
+        "我们要养成认真读书的好习惯。",
+        "我们要养成认真读书。",
+        "他大约十岁左右。"
+      ],
+      "answer": 2,
+      "explain": "第一句成分完整，搭配恰当。"
+    },
+    {
+      "id": "zh6l-u6-014",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）遇到困难，我们也不应该放弃。",
+      "options": [
+        "只要",
+        "因为",
+        "即使",
+        "虽然"
+      ],
+      "answer": 3,
+      "explain": "“即使……也……”表示假设让步。"
+    },
+    {
+      "id": "zh6l-u6-015",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：山重水复疑无路，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "柳暗花明又一村",
+        "一览众山小",
+        "天涯若比邻"
+      ],
+      "answer": 2,
+      "explain": "出自陆游《游山西村》。"
+    },
+    {
+      "id": "zh6l-u6-016",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：纸上得来终觉浅，（ ）。",
+      "options": [
+        "绝知此事要躬行",
+        "明月何时照我还",
+        "为有源头活水来",
+        "化作春泥更护花"
+      ],
+      "answer": 1,
+      "explain": "出自陆游《冬夜读书示子聿》。"
+    },
+    {
+      "id": "zh6l-u6-017",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "补全诗句：问渠那得清如许？（ ）。",
+      "options": [
+        "绝知此事要躬行",
+        "为有源头活水来",
+        "柳暗花明又一村",
+        "化作春泥更护花"
+      ],
+      "answer": 2,
+      "explain": "出自朱熹《观书有感》。"
+    },
+    {
+      "id": "zh6l-u6-018",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "补全诗句：落红不是无情物，（ ）。",
+      "options": [
+        "千里共婵娟",
+        "绝知此事要躬行",
+        "化作春泥更护花",
+        "为有源头活水来"
+      ],
+      "answer": 3,
+      "explain": "出自龚自珍《己亥杂诗》。"
+    },
+    {
+      "id": "zh6l-u6-019",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "科学实验",
+        "班级公约",
+        "旅游攻略",
+        "回忆往事"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《回忆往事》。",
+      "passage": "《回忆往事》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    },
+    {
+      "id": "zh6l-u6-020",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "好的文章往往来自什么？",
+      "options": [
+        "华丽的词语",
+        "真实的体验和深入的思考",
+        "别人的夸奖",
+        "很长的篇幅"
+      ],
+      "answer": 2,
+      "explain": "短文最后一句点明了这一点。",
+      "passage": "《回忆往事》让我们看到作者如何观察生活、表达感受。好的文章往往来自真实的体验和深入的思考。"
+    }
+  ]
+}

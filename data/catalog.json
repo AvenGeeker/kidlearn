@@ -1,0 +1,4446 @@
+{
+  "schema_version": 2,
+  "system": "6-3",
+  "grades": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "provinces": [
+    {
+      "id": "beijing",
+      "name": "北京",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "tianjin",
+      "name": "天津",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "hebei",
+      "name": "河北",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "shanxi",
+      "name": "山西",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "neimenggu",
+      "name": "内蒙古",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "liaoning",
+      "name": "辽宁",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "jilin",
+      "name": "吉林",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "heilongjiang",
+      "name": "黑龙江",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "default_math": "hujiao"
+    },
+    {
+      "id": "jiangsu",
+      "name": "江苏",
+      "default_math": "sujiao"
+    },
+    {
+      "id": "zhejiang",
+      "name": "浙江",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "anhui",
+      "name": "安徽",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "fujian",
+      "name": "福建",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "jiangxi",
+      "name": "江西",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "shandong",
+      "name": "山东",
+      "default_math": "qingdao"
+    },
+    {
+      "id": "henan",
+      "name": "河南",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "hubei",
+      "name": "湖北",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "hunan",
+      "name": "湖南",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "guangdong",
+      "name": "广东",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "guangxi",
+      "name": "广西",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "hainan",
+      "name": "海南",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "chongqing",
+      "name": "重庆",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "sichuan",
+      "name": "四川",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "guizhou",
+      "name": "贵州",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "yunnan",
+      "name": "云南",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "xizang",
+      "name": "西藏",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "shaanxi",
+      "name": "陕西",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "gansu",
+      "name": "甘肃",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "qinghai",
+      "name": "青海",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "ningxia",
+      "name": "宁夏",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "xinjiang",
+      "name": "新疆",
+      "default_math": "renjiao"
+    },
+    {
+      "id": "other",
+      "name": "其他/不指定",
+      "default_math": "renjiao"
+    }
+  ],
+  "subjects": {
+    "chinese": {
+      "editions": {
+        "tongbian": {
+          "name": "统编版",
+          "grades": {
+            "1": {
+              "upper": {
+                "file": "chinese/tongbian/g1_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "识字一：天地人",
+                    "topics": "天地人、金木水火土、口耳目"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "汉语拼音（一）",
+                    "topics": "aoe、iuü、bpmf、dtnl"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "汉语拼音（二）",
+                    "topics": "gkh、jqx、zcs、zhchshr"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "汉语拼音（三）",
+                    "topics": "ai ei ui、ao ou iu、ie üe er"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "课文（一）",
+                    "topics": "秋天、小小的船、江南、四季"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "识字二：日月明",
+                    "topics": "日月明、升国旗、小书包、日月水火"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "课文（二）",
+                    "topics": "画、大小多少、小书包、雨点儿"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "语文园地",
+                    "topics": "识字、写字、朗读、口语交际"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g1_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "识字一：春夏秋冬",
+                    "topics": "春夏秋冬、姓氏歌、小青蛙、猜字谜"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "课文（一）",
+                    "topics": "吃水不忘挖井人、我多想去看看、一个接一个"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "课文（二）",
+                    "topics": "小公鸡和小鸭子、树和喜鹊、怎么都快乐"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "课文（三）",
+                    "topics": "静夜思、夜色、端午粽、彩虹"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "识字二：动物儿歌",
+                    "topics": "动物儿歌、古对今、操场上、人之初"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "课文（四）",
+                    "topics": "古诗二首、荷叶圆圆、要下雨了"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "课文（五）",
+                    "topics": "文具的家、一分钟、动物王国开大会"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "语文园地",
+                    "topics": "识字、写字、朗读、口语交际"
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "file": "chinese/tongbian/g2_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "小蝌蚪找妈妈、我是什么、植物妈妈有办法"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "场景歌、树之歌、拍手歌、田家四季歌"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "曹冲称象、玲玲的画、一封信、妈妈睡了"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "古诗二首、黄山奇石、日月潭、葡萄沟"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "坐井观天、寒号鸟、我要的是葫芦"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "大禹治水、朱德的扁担、难忘的泼水节"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "古诗二首、雾在哪里、雪孩子"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "狐假虎威、狐狸分奶酪、纸船和风筝、风娃娃"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g2_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "古诗二首、找春天、开满鲜花的小路、邓小平爷爷植树"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "雷锋叔叔你在哪里、千人糕、一匹出色的马"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "神州谣、传统节日、贝的故事、中国美食"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "彩色的梦、枫树上的喜鹊、沙滩上的童话、我是一只小虫子"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "寓言二则、画杨桃、小马过河"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "古诗二首、雷雨、要是你在野外迷了路、太空生活趣事多"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "大象的耳朵、蜘蛛开店、青蛙卖泥塘、小毛虫"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "祖先的摇篮、当世界年纪还小的时候、羿射九日"
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "file": "chinese/tongbian/g3_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "大青树下的小学、花的学校、不懂就要问"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "古诗三首、铺满金色巴掌的水泥道、秋天的雨"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "卖火柴的小女孩、那一定会很好、在牛肚子里旅行"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "总也倒不了的老屋、胡萝卜先生的长胡子、小狗学叫"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "搭船的鸟、金色的草地"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "古诗三首、富饶的西沙群岛、海滨小城、美丽的小兴安岭"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "大自然的声音、父亲、树林和鸟、带刺的朋友"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "司马光、掌声、灰雀、手术台就是阵地"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g3_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "古诗三首、燕子、荷花、昆虫备忘录"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "守株待兔、陶罐和铁罐、鹿角和鹿腿、池子与河流"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "纸的发明、赵州桥、一幅名扬中外的画"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "花钟、蜜蜂、小虾"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "宇宙的另一边、我变成了一棵树"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "童年的水墨画、剃头大师、肥皂泡、我不能失信"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "我们奇妙的世界、海底世界、火烧云"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "慢性子裁缝和急性子顾客、方帽子店、漏、枣核"
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "file": "chinese/tongbian/g4_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "观潮、走月亮、现代诗二首、繁星"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "一个豆荚里的五粒豆、夜间飞行的秘密、呼风唤雨的世纪、蝴蝶的家"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "古诗三首、爬山虎的脚、蟋蟀的住宅"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "盘古开天地、精卫填海、普罗米修斯、女娲补天"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "麻雀、爬天都峰"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "牛和鹅、一只窝囊的大老虎、陀螺"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "古诗三首、为中华之崛起而读书、梅兰芳蓄须、延安，我把你追寻"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "王戎不取道旁李、西门豹治邺、故事二则"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g4_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "古诗词三首、乡下人家、天窗、三月桃花水"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "琥珀、飞向蓝天的恐龙、纳米技术就在我们身边、千年梦圆在今朝"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "短诗三首、绿、白桦、在天晴了的时候"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "猫、母鸡、白鹅"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "海上日出、记金华的双龙洞"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "小英雄雨来、我们家的男子汉、芦花鞋"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "古诗三首、文言文二则、黄继光、挑山工"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "宝葫芦的秘密、巨人的花园、海的女儿"
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "file": "chinese/tongbian/g5_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "白鹭、落花生、桂花雨、珍珠鸟"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "搭石、将相和、什么比猎豹的速度更快、冀中的地道战"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "猎人海力布、牛郎织女（一）、牛郎织女（二）"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "古诗三首、少年中国说、圆明园的毁灭、小岛"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "太阳、松鼠"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "慈母情深、父爱之舟、精彩极了和糟糕透了"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "古诗词三首、四季之美、鸟的天堂、月迹"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "古人谈读书、忆读书、我的长生果"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g5_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "古诗三首、祖父的园子、月是故乡明、梅花魂"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "草船借箭、景阳冈、猴王出世、红楼春趣"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "汉字真有趣、我爱你汉字"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "古诗三首、青山处处埋忠骨、军神、清贫"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "人物描写一组、刷子李"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "自相矛盾、田忌赛马、跳水"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "威尼斯的小艇、牧场之国、金字塔"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "杨氏之子、手指、童年的发现"
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "file": "chinese/tongbian/g6_upper.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "草原、丁香结、古诗词三首、花之歌"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "七律长征、狼牙山五壮士、开国大典、灯光"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "竹节人、宇宙生命之谜、故宫博物院"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "桥、穷人、在柏林"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "夏天里的成长、盼"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "古诗三首、只有一个地球、青山不老、三黑和土地"
+                  },
+                  {
+                    "id": "u7",
+                    "name": "第七单元",
+                    "topics": "文言文二则、月光曲、京剧趣谈"
+                  },
+                  {
+                    "id": "u8",
+                    "name": "第八单元",
+                    "topics": "少年闰土、好的故事、我的伯父鲁迅先生、有的人"
+                  }
+                ]
+              },
+              "lower": {
+                "file": "chinese/tongbian/g6_lower.json",
+                "units": [
+                  {
+                    "id": "u1",
+                    "name": "第一单元",
+                    "topics": "北京的春节、腊八粥、古诗三首、藏戏"
+                  },
+                  {
+                    "id": "u2",
+                    "name": "第二单元",
+                    "topics": "鲁滨逊漂流记、骑鹅旅行记、汤姆索亚历险记"
+                  },
+                  {
+                    "id": "u3",
+                    "name": "第三单元",
+                    "topics": "匆匆、那个星期天"
+                  },
+                  {
+                    "id": "u4",
+                    "name": "第四单元",
+                    "topics": "古诗三首、十六年前的回忆、为人民服务、董存瑞舍身炸暗堡"
+                  },
+                  {
+                    "id": "u5",
+                    "name": "第五单元",
+                    "topics": "文言文二则、真理诞生于一百个问号之后、表里的生物、他们那时候多有趣啊"
+                  },
+                  {
+                    "id": "u6",
+                    "name": "第六单元",
+                    "topics": "回忆往事、依依惜别"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "order": [
+        "tongbian"
+      ]
+    },
+    "math": {
+      "editions": {
+        "renjiao": {
+          "name": "人教版",
+          "grades": {
+            "1": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "准备课——数一数",
+                    "skills": [
+                      "count_10"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "1~5的认识和加减法",
+                    "skills": [
+                      "add_sub_5"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "认识图形（一）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "6~10的认识和加减法",
+                    "skills": [
+                      "add_sub_10"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "11~20各数的认识",
+                    "skills": [
+                      "numbers_20"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识钟表",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "20以内的进位加法",
+                    "skills": [
+                      "add_carry_20"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识图形（二）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "20以内的退位减法",
+                    "skills": [
+                      "sub_borrow_20"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分类与整理",
+                    "skills": [
+                      "classify"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "100以内数的认识",
+                    "skills": [
+                      "numbers_100"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "认识人民币",
+                    "skills": [
+                      "money"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "100以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_100_simple"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "找规律",
+                    "skills": [
+                      "pattern"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学好玩——摆一摆，想一想",
+                    "skills": [
+                      "pattern",
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "长度单位",
+                    "skills": [
+                      "length"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "100以内的加法和减法",
+                    "skills": [
+                      "add_sub_100"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的初步认识",
+                    "skills": [
+                      "angle"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内乘法（一）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "观察物体（一）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "表内乘法（二）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识时间",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数据收集整理",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "表内除法（一）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "图形的运动（一）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内除法（二）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "混合运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "有余数的除法",
+                    "skills": [
+                      "remainder"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "万以内数的认识",
+                    "skills": [
+                      "numbers_10k"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "克和千克",
+                    "skills": [
+                      "mass"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——推理",
+                    "skills": [
+                      "reasoning"
+                    ]
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "时分秒",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "万以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "万以内的加法和减法（二）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "测量",
+                    "skills": [
+                      "measure"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "倍的认识",
+                    "skills": [
+                      "times"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多位数乘一位数",
+                    "skills": [
+                      "multi_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "长方形和正方形",
+                    "skills": [
+                      "rectangle_square"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "分数的初步认识",
+                    "skills": [
+                      "fraction_intro"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "位置与方向（一）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除数是一位数的除法",
+                    "skills": [
+                      "div_multi_digit"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "复式统计表",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "两位数乘两位数",
+                    "skills": [
+                      "two_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "面积",
+                    "skills": [
+                      "area"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "年、月、日",
+                    "skills": [
+                      "calendar"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "小数的初步认识",
+                    "skills": [
+                      "decimal_intro"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配（二）",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "大数的认识",
+                    "skills": [
+                      "large_numbers"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "公顷和平方千米",
+                    "skills": [
+                      "area_units"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的度量",
+                    "skills": [
+                      "angle_measure"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "三位数乘两位数",
+                    "skills": [
+                      "three_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "平行四边形和梯形",
+                    "skills": [
+                      "parallelogram_trapezoid"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "除数是两位数的除法",
+                    "skills": [
+                      "div_two_digit"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "条形统计图",
+                    "skills": [
+                      "bar_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——优化",
+                    "skills": [
+                      "optimization"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "四则运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "观察物体（二）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "运算定律",
+                    "skills": [
+                      "operation_laws"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "小数的意义和性质",
+                    "skills": [
+                      "decimal_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "三角形",
+                    "skills": [
+                      "triangle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小数的加法和减法",
+                    "skills": [
+                      "decimal_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的运动（二）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "平均数与条形统计图",
+                    "skills": [
+                      "average_chart"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——鸡兔同笼",
+                    "skills": [
+                      "chicken_rabbit"
+                    ]
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "小数乘法",
+                    "skills": [
+                      "decimal_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "小数除法",
+                    "skills": [
+                      "decimal_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "可能性",
+                    "skills": [
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "简易方程",
+                    "skills": [
+                      "equation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多边形的面积",
+                    "skills": [
+                      "polygon_area"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "数学广角——植树问题",
+                    "skills": [
+                      "planting"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学与生活",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "观察物体（三）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "因数与倍数",
+                    "skills": [
+                      "factor_multiple"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "长方体和正方体",
+                    "skills": [
+                      "cuboid_cube"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "分数的意义和性质",
+                    "skills": [
+                      "fraction_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "图形的运动（三）",
+                    "skills": [
+                      "rotation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "分数的加法和减法",
+                    "skills": [
+                      "fraction_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "折线统计图",
+                    "skills": [
+                      "line_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——找次品",
+                    "skills": [
+                      "find_defective"
+                    ]
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "分数乘法",
+                    "skills": [
+                      "fraction_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与方向（二）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分数除法",
+                    "skills": [
+                      "fraction_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "比",
+                    "skills": [
+                      "ratio"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "圆",
+                    "skills": [
+                      "circle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "百分数（一）",
+                    "skills": [
+                      "percent"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "扇形统计图",
+                    "skills": [
+                      "pie_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——数与形",
+                    "skills": [
+                      "number_shape"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "负数",
+                    "skills": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "圆柱与圆锥",
+                    "skills": [
+                      "cylinder_cone"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "比例",
+                    "skills": [
+                      "proportion"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "统计与概率",
+                    "skills": [
+                      "statistics",
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "数学思考",
+                    "skills": [
+                      "math_thinking"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "综合与实践",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "beishida": {
+          "name": "北师大版",
+          "grades": {
+            "1": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "生活中的数",
+                    "skills": [
+                      "count_10"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与顺序",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "加与减（一）",
+                    "skills": [
+                      "add_sub_5"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "认识图形",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "加与减（二）",
+                    "skills": [
+                      "add_sub_10"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "20以内数的认识",
+                    "skills": [
+                      "numbers_20"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识钟表",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "20以内的进位加法",
+                    "skills": [
+                      "add_carry_20"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识图形（二）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "20以内的退位减法",
+                    "skills": [
+                      "sub_borrow_20"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分类与整理",
+                    "skills": [
+                      "classify"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "生活中的数（二）",
+                    "skills": [
+                      "numbers_100"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "认识人民币",
+                    "skills": [
+                      "money"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "加与减（三）",
+                    "skills": [
+                      "add_sub_100_simple"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "找规律",
+                    "skills": [
+                      "pattern"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学好玩——摆一摆，想一想",
+                    "skills": [
+                      "pattern",
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "测量",
+                    "skills": [
+                      "length"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "加与减",
+                    "skills": [
+                      "add_sub_100"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的初步认识",
+                    "skills": [
+                      "angle"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "乘法（一）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "观察物体（一）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "乘法（二）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识时间",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数据收集整理",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除法（一）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "图形的运动（一）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "除法（二）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "混合运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "有余数的除法",
+                    "skills": [
+                      "remainder"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "万以内数的认识",
+                    "skills": [
+                      "numbers_10k"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "克和千克",
+                    "skills": [
+                      "mass"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——推理",
+                    "skills": [
+                      "reasoning"
+                    ]
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "时、分、秒",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "万以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "万以内的加法和减法（二）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "测量",
+                    "skills": [
+                      "measure"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "倍的认识",
+                    "skills": [
+                      "times"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "乘法",
+                    "skills": [
+                      "multi_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识图形",
+                    "skills": [
+                      "rectangle_square"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "认识分数",
+                    "skills": [
+                      "fraction_intro"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "位置与方向（一）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除数是一位数的除法",
+                    "skills": [
+                      "div_multi_digit"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "复式统计表",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "两位数乘两位数",
+                    "skills": [
+                      "two_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "面积",
+                    "skills": [
+                      "area"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "年、月、日",
+                    "skills": [
+                      "calendar"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识小数",
+                    "skills": [
+                      "decimal_intro"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配（二）",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识更大的数",
+                    "skills": [
+                      "large_numbers"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "公顷和平方千米",
+                    "skills": [
+                      "area_units"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "线与角",
+                    "skills": [
+                      "angle_measure"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "乘法",
+                    "skills": [
+                      "three_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "平行四边形和梯形",
+                    "skills": [
+                      "parallelogram_trapezoid"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "除法",
+                    "skills": [
+                      "div_two_digit"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "条形统计图",
+                    "skills": [
+                      "bar_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——优化",
+                    "skills": [
+                      "optimization"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "四则运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "观察物体（二）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "运算定律",
+                    "skills": [
+                      "operation_laws"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "小数的意义和加减法",
+                    "skills": [
+                      "decimal_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "三角形",
+                    "skills": [
+                      "triangle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小数的加法和减法",
+                    "skills": [
+                      "decimal_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的运动（二）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "平均数与条形统计图",
+                    "skills": [
+                      "average_chart"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——鸡兔同笼",
+                    "skills": [
+                      "chicken_rabbit"
+                    ]
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "小数乘法",
+                    "skills": [
+                      "decimal_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与顺序",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "小数除法",
+                    "skills": [
+                      "decimal_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "可能性",
+                    "skills": [
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "简易方程",
+                    "skills": [
+                      "equation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多边形的面积",
+                    "skills": [
+                      "polygon_area"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "数学广角——植树问题",
+                    "skills": [
+                      "planting"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学与生活",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "观察物体（三）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "因数与倍数",
+                    "skills": [
+                      "factor_multiple"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "长方体和正方体",
+                    "skills": [
+                      "cuboid_cube"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "分数的意义",
+                    "skills": [
+                      "fraction_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "图形的运动（三）",
+                    "skills": [
+                      "rotation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "分数加减法",
+                    "skills": [
+                      "fraction_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "折线统计图",
+                    "skills": [
+                      "line_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——找次品",
+                    "skills": [
+                      "find_defective"
+                    ]
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "分数乘法",
+                    "skills": [
+                      "fraction_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与方向（二）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分数除法",
+                    "skills": [
+                      "fraction_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "比",
+                    "skills": [
+                      "ratio"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "圆",
+                    "skills": [
+                      "circle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "百分数",
+                    "skills": [
+                      "percent"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "扇形统计图",
+                    "skills": [
+                      "pie_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——数与形",
+                    "skills": [
+                      "number_shape"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "负数",
+                    "skills": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "圆柱与圆锥",
+                    "skills": [
+                      "cylinder_cone"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "比例",
+                    "skills": [
+                      "proportion"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "统计与概率",
+                    "skills": [
+                      "statistics",
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "数学思考",
+                    "skills": [
+                      "math_thinking"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "综合与实践",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "sujiao": {
+          "name": "苏教版",
+          "grades": {
+            "1": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数一数",
+                    "skills": [
+                      "count_10"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "认位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "认识10以内的数",
+                    "skills": [
+                      "add_sub_5"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "认识图形（一）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "10以内的加法和减法",
+                    "skills": [
+                      "add_sub_10"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "认识11~20各数",
+                    "skills": [
+                      "numbers_20"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识钟表",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "20以内的进位加法",
+                    "skills": [
+                      "add_carry_20"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识图形（二）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "20以内的退位减法",
+                    "skills": [
+                      "sub_borrow_20"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分类与整理",
+                    "skills": [
+                      "classify"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "100以内数的认识",
+                    "skills": [
+                      "numbers_100"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "认识人民币",
+                    "skills": [
+                      "money"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "100以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_100_simple"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "找规律",
+                    "skills": [
+                      "pattern"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学好玩——摆一摆，想一想",
+                    "skills": [
+                      "pattern",
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "厘米和米",
+                    "skills": [
+                      "length"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "100以内的加法和减法（三）",
+                    "skills": [
+                      "add_sub_100"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的初步认识",
+                    "skills": [
+                      "angle"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内乘法（一）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "观察物体（一）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "表内乘法（二）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识时间",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数据收集整理",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "表内除法（一）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "图形的运动（一）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内除法（二）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "混合运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "有余数的除法",
+                    "skills": [
+                      "remainder"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "万以内数的认识",
+                    "skills": [
+                      "numbers_10k"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "克和千克",
+                    "skills": [
+                      "mass"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——推理",
+                    "skills": [
+                      "reasoning"
+                    ]
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "时、分、秒",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "万以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "万以内的加法和减法（二）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "测量",
+                    "skills": [
+                      "measure"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "倍的认识",
+                    "skills": [
+                      "times"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "两、三位数乘一位数",
+                    "skills": [
+                      "multi_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "长方形和正方形",
+                    "skills": [
+                      "rectangle_square"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "分数的初步认识（一）",
+                    "skills": [
+                      "fraction_intro"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "位置与方向（一）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除数是一位数的除法",
+                    "skills": [
+                      "div_multi_digit"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "复式统计表",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "两位数乘两位数",
+                    "skills": [
+                      "two_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "面积",
+                    "skills": [
+                      "area"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "年、月、日",
+                    "skills": [
+                      "calendar"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "小数的初步认识",
+                    "skills": [
+                      "decimal_intro"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配（二）",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识多位数",
+                    "skills": [
+                      "large_numbers"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "公顷和平方千米",
+                    "skills": [
+                      "area_units"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的度量",
+                    "skills": [
+                      "angle_measure"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "三位数乘两位数",
+                    "skills": [
+                      "three_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "平行四边形和梯形",
+                    "skills": [
+                      "parallelogram_trapezoid"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "两、三位数除以两位数",
+                    "skills": [
+                      "div_two_digit"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "条形统计图",
+                    "skills": [
+                      "bar_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——优化",
+                    "skills": [
+                      "optimization"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "四则运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "观察物体（二）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "运算定律",
+                    "skills": [
+                      "operation_laws"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "小数的意义和性质",
+                    "skills": [
+                      "decimal_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "三角形",
+                    "skills": [
+                      "triangle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小数的加法和减法",
+                    "skills": [
+                      "decimal_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的运动（二）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "平均数与条形统计图",
+                    "skills": [
+                      "average_chart"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——鸡兔同笼",
+                    "skills": [
+                      "chicken_rabbit"
+                    ]
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "小数乘法和除法",
+                    "skills": [
+                      "decimal_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "认位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "小数乘法和除法",
+                    "skills": [
+                      "decimal_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "可能性",
+                    "skills": [
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "简易方程",
+                    "skills": [
+                      "equation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多边形的面积",
+                    "skills": [
+                      "polygon_area"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "数学广角——植树问题",
+                    "skills": [
+                      "planting"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学与生活",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "观察物体（三）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "因数与倍数",
+                    "skills": [
+                      "factor_multiple"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "长方体和正方体",
+                    "skills": [
+                      "cuboid_cube"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "分数的意义和性质",
+                    "skills": [
+                      "fraction_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "图形的运动（三）",
+                    "skills": [
+                      "rotation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "分数加法和减法",
+                    "skills": [
+                      "fraction_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "折线统计图",
+                    "skills": [
+                      "line_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——找次品",
+                    "skills": [
+                      "find_defective"
+                    ]
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "分数乘法",
+                    "skills": [
+                      "fraction_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与方向（二）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分数除法",
+                    "skills": [
+                      "fraction_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "比",
+                    "skills": [
+                      "ratio"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "圆",
+                    "skills": [
+                      "circle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "百分数",
+                    "skills": [
+                      "percent"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "扇形统计图",
+                    "skills": [
+                      "pie_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——数与形",
+                    "skills": [
+                      "number_shape"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "负数",
+                    "skills": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "圆柱与圆锥",
+                    "skills": [
+                      "cylinder_cone"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "比例",
+                    "skills": [
+                      "proportion"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "统计与概率",
+                    "skills": [
+                      "statistics",
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "数学思考",
+                    "skills": [
+                      "math_thinking"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "综合与实践",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "qingdao": {
+          "name": "青岛版",
+          "grades": {
+            "1": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "快乐的校园——10以内数的认识",
+                    "skills": [
+                      "count_10"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "有趣的游戏——认识位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "妈妈的小帮手——分类与比较",
+                    "skills": [
+                      "add_sub_5"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "认识图形",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "走进花果山——10以内的加减法",
+                    "skills": [
+                      "add_sub_10"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小小运动会——20以内的进位加法",
+                    "skills": [
+                      "numbers_20"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识钟表",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "20以内的进位加法",
+                    "skills": [
+                      "add_carry_20"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识图形（二）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "20以内的退位减法",
+                    "skills": [
+                      "sub_borrow_20"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分类与整理",
+                    "skills": [
+                      "classify"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "100以内数的认识",
+                    "skills": [
+                      "numbers_100"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "认识人民币",
+                    "skills": [
+                      "money"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "100以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_100_simple"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "找规律",
+                    "skills": [
+                      "pattern"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学好玩——摆一摆，想一想",
+                    "skills": [
+                      "pattern",
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "阿福的新衣——厘米、米的认识",
+                    "skills": [
+                      "length"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "100以内的加减法",
+                    "skills": [
+                      "add_sub_100"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的初步认识",
+                    "skills": [
+                      "angle"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内乘法（一）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "观察物体（一）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "表内乘法（二）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识时间",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数据收集整理",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "表内除法（一）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "图形的运动（一）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "表内除法（二）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "混合运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "有余数的除法",
+                    "skills": [
+                      "remainder"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "万以内数的认识",
+                    "skills": [
+                      "numbers_10k"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "克和千克",
+                    "skills": [
+                      "mass"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——推理",
+                    "skills": [
+                      "reasoning"
+                    ]
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "时、分、秒",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "万以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "万以内的加法和减法（二）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "测量",
+                    "skills": [
+                      "measure"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "倍的认识",
+                    "skills": [
+                      "times"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多位数乘一位数",
+                    "skills": [
+                      "multi_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的周长",
+                    "skills": [
+                      "rectangle_square"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "分数的初步认识",
+                    "skills": [
+                      "fraction_intro"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "位置与方向（一）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除数是一位数的除法",
+                    "skills": [
+                      "div_multi_digit"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "复式统计表",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "两位数乘两位数",
+                    "skills": [
+                      "two_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "面积",
+                    "skills": [
+                      "area"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "年、月、日",
+                    "skills": [
+                      "calendar"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "小数的初步认识",
+                    "skills": [
+                      "decimal_intro"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配（二）",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "大数的认识",
+                    "skills": [
+                      "large_numbers"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "公顷和平方千米",
+                    "skills": [
+                      "area_units"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的度量",
+                    "skills": [
+                      "angle_measure"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "三位数乘两位数",
+                    "skills": [
+                      "three_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "平行四边形和梯形",
+                    "skills": [
+                      "parallelogram_trapezoid"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "除数是两位数的除法",
+                    "skills": [
+                      "div_two_digit"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "条形统计图",
+                    "skills": [
+                      "bar_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——优化",
+                    "skills": [
+                      "optimization"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "四则运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "观察物体（二）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "运算定律",
+                    "skills": [
+                      "operation_laws"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "小数的意义和性质",
+                    "skills": [
+                      "decimal_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "三角形",
+                    "skills": [
+                      "triangle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小数的加法和减法",
+                    "skills": [
+                      "decimal_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的运动（二）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "平均数与条形统计图",
+                    "skills": [
+                      "average_chart"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——鸡兔同笼",
+                    "skills": [
+                      "chicken_rabbit"
+                    ]
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "小数乘法",
+                    "skills": [
+                      "decimal_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "有趣的游戏——认识位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "小数除法",
+                    "skills": [
+                      "decimal_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "可能性",
+                    "skills": [
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "简易方程",
+                    "skills": [
+                      "equation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多边形的面积",
+                    "skills": [
+                      "polygon_area"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "数学广角——植树问题",
+                    "skills": [
+                      "planting"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学与生活",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "观察物体（三）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "因数与倍数",
+                    "skills": [
+                      "factor_multiple"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "长方体和正方体",
+                    "skills": [
+                      "cuboid_cube"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "分数的意义和性质",
+                    "skills": [
+                      "fraction_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "图形的运动（三）",
+                    "skills": [
+                      "rotation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "分数的加法和减法",
+                    "skills": [
+                      "fraction_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "折线统计图",
+                    "skills": [
+                      "line_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——找次品",
+                    "skills": [
+                      "find_defective"
+                    ]
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "分数乘法",
+                    "skills": [
+                      "fraction_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与方向（二）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分数除法",
+                    "skills": [
+                      "fraction_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "比",
+                    "skills": [
+                      "ratio"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "圆",
+                    "skills": [
+                      "circle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "百分数",
+                    "skills": [
+                      "percent"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "扇形统计图",
+                    "skills": [
+                      "pie_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——数与形",
+                    "skills": [
+                      "number_shape"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "负数",
+                    "skills": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "圆柱与圆锥",
+                    "skills": [
+                      "cylinder_cone"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "比例",
+                    "skills": [
+                      "proportion"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "统计与概率",
+                    "skills": [
+                      "statistics",
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "数学思考",
+                    "skills": [
+                      "math_thinking"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "综合与实践",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "hujiao": {
+          "name": "沪教版",
+          "grades": {
+            "1": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "我们的教室——数一数",
+                    "skills": [
+                      "count_10"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "认识位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "10以内数的认识",
+                    "skills": [
+                      "add_sub_5"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "认识图形",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "10以内数的加减法",
+                    "skills": [
+                      "add_sub_10"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "20以内数的认识",
+                    "skills": [
+                      "numbers_20"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识钟表",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "20以内的加减法",
+                    "skills": [
+                      "add_carry_20"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "认识图形（二）",
+                    "skills": [
+                      "shape"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "20以内的退位减法",
+                    "skills": [
+                      "sub_borrow_20"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分类与整理",
+                    "skills": [
+                      "classify"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "100以内数的认识",
+                    "skills": [
+                      "numbers_100"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "认识人民币",
+                    "skills": [
+                      "money"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "100以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_100_simple"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "找规律",
+                    "skills": [
+                      "pattern"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学好玩——摆一摆，想一想",
+                    "skills": [
+                      "pattern",
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "2": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "度量",
+                    "skills": [
+                      "length"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "100以内的加减法",
+                    "skills": [
+                      "add_sub_100"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角的初步认识",
+                    "skills": [
+                      "angle"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "乘法（一）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "观察物体（一）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "乘法（二）",
+                    "skills": [
+                      "mul_table"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "认识时间",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "数据收集整理",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除法（一）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "图形的运动（一）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "除法（二）",
+                    "skills": [
+                      "div_table"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "混合运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "有余数的除法",
+                    "skills": [
+                      "remainder"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "万以内数的认识",
+                    "skills": [
+                      "numbers_10k"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "克和千克",
+                    "skills": [
+                      "mass"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——推理",
+                    "skills": [
+                      "reasoning"
+                    ]
+                  }
+                ]
+              }
+            },
+            "3": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "时分秒",
+                    "skills": [
+                      "time"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "万以内的加法和减法（一）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "万以内的加法和减法（二）",
+                    "skills": [
+                      "add_sub_10k"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "测量",
+                    "skills": [
+                      "measure"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "倍的认识",
+                    "skills": [
+                      "times"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "乘法",
+                    "skills": [
+                      "multi_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的认识",
+                    "skills": [
+                      "rectangle_square"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "分数",
+                    "skills": [
+                      "fraction_intro"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "位置与方向（一）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "除数是一位数的除法",
+                    "skills": [
+                      "div_multi_digit"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "复式统计表",
+                    "skills": [
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "两位数乘两位数",
+                    "skills": [
+                      "two_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "面积",
+                    "skills": [
+                      "area"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "年、月、日",
+                    "skills": [
+                      "calendar"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "小数",
+                    "skills": [
+                      "decimal_intro"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——搭配（二）",
+                    "skills": [
+                      "combination"
+                    ]
+                  }
+                ]
+              }
+            },
+            "4": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "大数的认识",
+                    "skills": [
+                      "large_numbers"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "公顷和平方千米",
+                    "skills": [
+                      "area_units"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "角",
+                    "skills": [
+                      "angle_measure"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "乘法",
+                    "skills": [
+                      "three_digit_mul"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "平行四边形和梯形",
+                    "skills": [
+                      "parallelogram_trapezoid"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "除法",
+                    "skills": [
+                      "div_two_digit"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "条形统计图",
+                    "skills": [
+                      "bar_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——优化",
+                    "skills": [
+                      "optimization"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "四则运算",
+                    "skills": [
+                      "mixed_ops"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "观察物体（二）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "运算定律",
+                    "skills": [
+                      "operation_laws"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "小数的意义",
+                    "skills": [
+                      "decimal_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "三角形",
+                    "skills": [
+                      "triangle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "小数的加法和减法",
+                    "skills": [
+                      "decimal_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "图形的运动（二）",
+                    "skills": [
+                      "symmetry"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "平均数与条形统计图",
+                    "skills": [
+                      "average_chart"
+                    ]
+                  },
+                  {
+                    "id": "m9",
+                    "name": "数学广角——鸡兔同笼",
+                    "skills": [
+                      "chicken_rabbit"
+                    ]
+                  }
+                ]
+              }
+            },
+            "5": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "小数乘法",
+                    "skills": [
+                      "decimal_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "认识位置",
+                    "skills": [
+                      "position"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "小数除法",
+                    "skills": [
+                      "decimal_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "可能性",
+                    "skills": [
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "简易方程",
+                    "skills": [
+                      "equation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "多边形的面积",
+                    "skills": [
+                      "polygon_area"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "数学广角——植树问题",
+                    "skills": [
+                      "planting"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学与生活",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "观察物体（三）",
+                    "skills": [
+                      "observe"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "因数与倍数",
+                    "skills": [
+                      "factor_multiple"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "长方体和正方体",
+                    "skills": [
+                      "cuboid_cube"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "分数的意义",
+                    "skills": [
+                      "fraction_meaning"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "图形的运动（三）",
+                    "skills": [
+                      "rotation"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "分数的加减法",
+                    "skills": [
+                      "fraction_add_sub"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "折线统计图",
+                    "skills": [
+                      "line_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——找次品",
+                    "skills": [
+                      "find_defective"
+                    ]
+                  }
+                ]
+              }
+            },
+            "6": {
+              "upper": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "分数乘法",
+                    "skills": [
+                      "fraction_mul"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "位置与方向（二）",
+                    "skills": [
+                      "direction"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "分数除法",
+                    "skills": [
+                      "fraction_div"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "比",
+                    "skills": [
+                      "ratio"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "圆",
+                    "skills": [
+                      "circle"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "百分数",
+                    "skills": [
+                      "percent"
+                    ]
+                  },
+                  {
+                    "id": "m7",
+                    "name": "扇形统计图",
+                    "skills": [
+                      "pie_chart"
+                    ]
+                  },
+                  {
+                    "id": "m8",
+                    "name": "数学广角——数与形",
+                    "skills": [
+                      "number_shape"
+                    ]
+                  }
+                ]
+              },
+              "lower": {
+                "units": [
+                  {
+                    "id": "m1",
+                    "name": "负数",
+                    "skills": [
+                      "negative"
+                    ]
+                  },
+                  {
+                    "id": "m2",
+                    "name": "圆柱与圆锥",
+                    "skills": [
+                      "cylinder_cone"
+                    ]
+                  },
+                  {
+                    "id": "m3",
+                    "name": "比例",
+                    "skills": [
+                      "proportion"
+                    ]
+                  },
+                  {
+                    "id": "m4",
+                    "name": "统计与概率",
+                    "skills": [
+                      "statistics",
+                      "probability"
+                    ]
+                  },
+                  {
+                    "id": "m5",
+                    "name": "数学思考",
+                    "skills": [
+                      "math_thinking"
+                    ]
+                  },
+                  {
+                    "id": "m6",
+                    "name": "综合与实践",
+                    "skills": [
+                      "mixed_ops",
+                      "word_problem"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "order": [
+        "renjiao",
+        "beishida",
+        "sujiao",
+        "qingdao",
+        "hujiao"
+      ]
+    }
+  }
+}

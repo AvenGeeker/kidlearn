@@ -1,0 +1,2745 @@
+{
+  "schema_version": 1,
+  "subject": "chinese",
+  "grade": 2,
+  "semester": "upper",
+  "textbook": "统编版",
+  "questions": [
+    {
+      "id": "zh2u-u1-001",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“kē”对应的汉字是？提示：可以组成“蝌蚪”。",
+      "options": [
+        "蝌",
+        "天",
+        "人",
+        "地"
+      ],
+      "answer": 1,
+      "explain": "“蝌”读 kē，可以组词“蝌蚪”。"
+    },
+    {
+      "id": "zh2u-u1-002",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“dǒu”对应的汉字是？提示：可以组成“蝌蚪”。",
+      "options": [
+        "蚪",
+        "天",
+        "地",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“蚪”读 dǒu，可以组词“蝌蚪”。"
+    },
+    {
+      "id": "zh2u-u1-003",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“chí”对应的汉字是？提示：可以组成“池塘”。",
+      "options": [
+        "池",
+        "人",
+        "天",
+        "地"
+      ],
+      "answer": 1,
+      "explain": "“池”读 chí，可以组词“池塘”。"
+    },
+    {
+      "id": "zh2u-u1-004",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“蝌蚪”中，“蝌”的正确读音是？",
+      "options": [
+        "biàn",
+        "kē",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“蝌”读 kē。"
+    },
+    {
+      "id": "zh2u-u1-005",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“蝌蚪”中，“蚪”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "biàn",
+        "dǒu"
+      ],
+      "answer": 4,
+      "explain": "“蚪”读 dǒu。"
+    },
+    {
+      "id": "zh2u-u1-006",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“池塘”中，“池”的正确读音是？",
+      "options": [
+        "biǎn",
+        "chí",
+        "biān",
+        "biàn"
+      ],
+      "answer": 2,
+      "explain": "“池”读 chí。"
+    },
+    {
+      "id": "zh2u-u1-007",
+      "unit": "u1",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）马",
+      "options": [
+        "匹",
+        "条",
+        "只",
+        "棵"
+      ],
+      "answer": 1,
+      "explain": "马用“匹”作量词。"
+    },
+    {
+      "id": "zh2u-u1-008",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“美丽”意思相近的词语是？",
+      "options": [
+        "漂亮",
+        "难看",
+        "丑陋",
+        "奇怪"
+      ],
+      "answer": 1,
+      "explain": "“美丽”和“漂亮”意思相近。"
+    },
+    {
+      "id": "zh2u-u1-009",
+      "unit": "u1",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“大”的反义词是？",
+      "options": [
+        "长",
+        "多",
+        "高",
+        "小"
+      ],
+      "answer": 4,
+      "explain": "“大”和“小”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u1-010",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "小鸟在树上（ ），歌声真好听。",
+      "options": [
+        "喝水",
+        "睡觉",
+        "跑步",
+        "唱歌"
+      ],
+      "answer": 4,
+      "explain": "小鸟在树上唱歌，歌声真好听。"
+    },
+    {
+      "id": "zh2u-u1-011",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "雨后的空气特别（ ）。",
+      "options": [
+        "清楚",
+        "清新",
+        "清早",
+        "清水"
+      ],
+      "answer": 2,
+      "explain": "雨后的空气清新，句子通顺。"
+    },
+    {
+      "id": "zh2u-u1-012",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“高兴”意思相近的词语是？",
+      "options": [
+        "难过",
+        "快乐",
+        "生气",
+        "着急"
+      ],
+      "answer": 2,
+      "explain": "“高兴”和“快乐”意思相近。"
+    },
+    {
+      "id": "zh2u-u1-013",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "太阳从东方（ ）。",
+      "options": [
+        "升起",
+        "落下",
+        "飞走",
+        "跑来"
+      ],
+      "answer": 1,
+      "explain": "太阳从东方升起，这是自然常识。"
+    },
+    {
+      "id": "zh2u-u1-014",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "我们要（ ）粮食，不能浪费。",
+      "options": [
+        "可爱",
+        "爱情",
+        "可惜",
+        "爱惜"
+      ],
+      "answer": 4,
+      "explain": "粮食要“爱惜”，不能浪费。"
+    },
+    {
+      "id": "zh2u-u1-015",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "白日依山尽，黄河入（ ）。",
+      "options": [
+        "明月",
+        "春风",
+        "白云",
+        "海流"
+      ],
+      "answer": 4,
+      "explain": "出自《登鹳雀楼》。"
+    },
+    {
+      "id": "zh2u-u1-016",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "欲穷千里目，更上一（ ）。",
+      "options": [
+        "春风",
+        "明月",
+        "层楼",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《登鹳雀楼》。"
+    },
+    {
+      "id": "zh2u-u1-017",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "日照香炉生紫烟，遥看瀑布挂（ ）。",
+      "options": [
+        "春风",
+        "明月",
+        "前川",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《望庐山瀑布》。"
+    },
+    {
+      "id": "zh2u-u1-018",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "飞流直下三千尺，疑是银河落（ ）。",
+      "options": [
+        "明月",
+        "白云",
+        "春风",
+        "九天"
+      ],
+      "answer": 4,
+      "explain": "出自《望庐山瀑布》。"
+    },
+    {
+      "id": "zh2u-u1-019",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "春天的雨",
+        "小蝌蚪找妈妈",
+        "海底世界",
+        "太空生活"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《小蝌蚪找妈妈》。",
+      "passage": "今天，我们学习《小蝌蚪找妈妈》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u1-020",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "大声喧哗",
+        "睡懒觉",
+        "认真观察、用心思考",
+        "乱扔垃圾"
+      ],
+      "answer": 3,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《小蝌蚪找妈妈》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u2-001",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“chǎng”对应的汉字是？提示：可以组成“场景”。",
+      "options": [
+        "场",
+        "人",
+        "地",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“场”读 chǎng，可以组词“场景”。"
+    },
+    {
+      "id": "zh2u-u2-002",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“shù”对应的汉字是？提示：可以组成“大树”。",
+      "options": [
+        "树",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“树”读 shù，可以组词“大树”。"
+    },
+    {
+      "id": "zh2u-u2-003",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“pāi”对应的汉字是？提示：可以组成“拍手”。",
+      "options": [
+        "人",
+        "拍",
+        "天",
+        "地"
+      ],
+      "answer": 2,
+      "explain": "“拍”读 pāi，可以组词“拍手”。"
+    },
+    {
+      "id": "zh2u-u2-004",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“场景”中，“场”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biān",
+        "chǎng",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“场”读 chǎng。"
+    },
+    {
+      "id": "zh2u-u2-005",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“大树”中，“树”的正确读音是？",
+      "options": [
+        "biān",
+        "shù",
+        "biàn",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“树”读 shù。"
+    },
+    {
+      "id": "zh2u-u2-006",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“拍手”中，“拍”的正确读音是？",
+      "options": [
+        "biān",
+        "pāi",
+        "biàn",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“拍”读 pāi。"
+    },
+    {
+      "id": "zh2u-u2-007",
+      "unit": "u2",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）鸟",
+      "options": [
+        "匹",
+        "只",
+        "条",
+        "朵"
+      ],
+      "answer": 2,
+      "explain": "鸟用“只”作量词。"
+    },
+    {
+      "id": "zh2u-u2-008",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“高兴”意思相近的词语是？",
+      "options": [
+        "着急",
+        "生气",
+        "快乐",
+        "难过"
+      ],
+      "answer": 3,
+      "explain": "“高兴”和“快乐”意思相近。"
+    },
+    {
+      "id": "zh2u-u2-009",
+      "unit": "u2",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“高”的反义词是？",
+      "options": [
+        "长",
+        "矮",
+        "大",
+        "快"
+      ],
+      "answer": 2,
+      "explain": "“高”和“矮”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u2-010",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "太阳从东方（ ）。",
+      "options": [
+        "跑来",
+        "飞走",
+        "落下",
+        "升起"
+      ],
+      "answer": 4,
+      "explain": "太阳从东方升起，这是自然常识。"
+    },
+    {
+      "id": "zh2u-u2-011",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "他（ ）地跑进教室，告诉大家好消息。",
+      "options": [
+        "安静",
+        "高兴地",
+        "伤心",
+        "兴奋"
+      ],
+      "answer": 4,
+      "explain": "“兴奋”表示非常高兴、激动。"
+    },
+    {
+      "id": "zh2u-u2-012",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“仔细”意思相近的词语是？",
+      "options": [
+        "认真",
+        "粗心",
+        "马虎",
+        "着急"
+      ],
+      "answer": 1,
+      "explain": "“仔细”和“认真”意思相近。"
+    },
+    {
+      "id": "zh2u-u2-013",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "春天到了，小草（ ）了。",
+      "options": [
+        "发芽",
+        "落叶",
+        "结冰",
+        "睡觉"
+      ],
+      "answer": 1,
+      "explain": "春天小草发芽，句子通顺。"
+    },
+    {
+      "id": "zh2u-u2-014",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "老师的话让我（ ）了很多。",
+      "options": [
+        "明天",
+        "明白人",
+        "明白",
+        "明亮"
+      ],
+      "answer": 3,
+      "explain": "“明白”表示懂得、清楚了。"
+    },
+    {
+      "id": "zh2u-u2-015",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "危楼高百尺，手可摘（ ）。",
+      "options": [
+        "明月",
+        "春风",
+        "星辰",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《夜宿山寺》。"
+    },
+    {
+      "id": "zh2u-u2-016",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "不敢高声语，恐惊天（ ）。",
+      "options": [
+        "春风",
+        "上人",
+        "白云",
+        "明月"
+      ],
+      "answer": 2,
+      "explain": "出自《夜宿山寺》。"
+    },
+    {
+      "id": "zh2u-u2-017",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "天苍苍，野茫茫，风吹草低见（ ）。",
+      "options": [
+        "牛羊",
+        "春风",
+        "白云",
+        "明月"
+      ],
+      "answer": 1,
+      "explain": "出自《敕勒歌》。"
+    },
+    {
+      "id": "zh2u-u2-018",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "天似穹庐，笼盖（ ）。",
+      "options": [
+        "白云",
+        "春风",
+        "明月",
+        "四野"
+      ],
+      "answer": 4,
+      "explain": "出自《敕勒歌》。"
+    },
+    {
+      "id": "zh2u-u2-019",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "场景歌",
+        "太空生活",
+        "春天的雨",
+        "海底世界"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《场景歌》。",
+      "passage": "今天，我们学习《场景歌》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u2-020",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "睡懒觉",
+        "大声喧哗",
+        "认真观察、用心思考",
+        "乱扔垃圾"
+      ],
+      "answer": 3,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《场景歌》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u3-001",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“chēng”对应的汉字是？提示：可以组成“称象”。",
+      "options": [
+        "人",
+        "天",
+        "地",
+        "称"
+      ],
+      "answer": 4,
+      "explain": "“称”读 chēng，可以组词“称象”。"
+    },
+    {
+      "id": "zh2u-u3-002",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“xiàng”对应的汉字是？提示：可以组成“大象”。",
+      "options": [
+        "人",
+        "象",
+        "天",
+        "地"
+      ],
+      "answer": 2,
+      "explain": "“象”读 xiàng，可以组词“大象”。"
+    },
+    {
+      "id": "zh2u-u3-003",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“huà”对应的汉字是？提示：可以组成“画画”。",
+      "options": [
+        "地",
+        "天",
+        "人",
+        "画"
+      ],
+      "answer": 4,
+      "explain": "“画”读 huà，可以组词“画画”。"
+    },
+    {
+      "id": "zh2u-u3-004",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“称象”中，“称”的正确读音是？",
+      "options": [
+        "chēng",
+        "biàn",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 1,
+      "explain": "“称”读 chēng。"
+    },
+    {
+      "id": "zh2u-u3-005",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“大象”中，“象”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "xiàng",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“象”读 xiàng。"
+    },
+    {
+      "id": "zh2u-u3-006",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“画画”中，“画”的正确读音是？",
+      "options": [
+        "biàn",
+        "huà",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“画”读 huà。"
+    },
+    {
+      "id": "zh2u-u3-007",
+      "unit": "u3",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）鱼",
+      "options": [
+        "座",
+        "条",
+        "只",
+        "匹"
+      ],
+      "answer": 2,
+      "explain": "鱼用“条”作量词。"
+    },
+    {
+      "id": "zh2u-u3-008",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“仔细”意思相近的词语是？",
+      "options": [
+        "认真",
+        "粗心",
+        "马虎",
+        "着急"
+      ],
+      "answer": 1,
+      "explain": "“仔细”和“认真”意思相近。"
+    },
+    {
+      "id": "zh2u-u3-009",
+      "unit": "u3",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“前”的反义词是？",
+      "options": [
+        "左",
+        "上",
+        "里",
+        "后"
+      ],
+      "answer": 4,
+      "explain": "“前”和“后”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u3-010",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "春天到了，小草（ ）了。",
+      "options": [
+        "落叶",
+        "发芽",
+        "结冰",
+        "睡觉"
+      ],
+      "answer": 2,
+      "explain": "春天小草发芽，句子通顺。"
+    },
+    {
+      "id": "zh2u-u3-011",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "遇到困难，我们要（ ）想办法。",
+      "options": [
+        "生气",
+        "积极",
+        "安静",
+        "消极"
+      ],
+      "answer": 2,
+      "explain": "遇到困难要积极想办法。"
+    },
+    {
+      "id": "zh2u-u3-012",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“寒冷”意思相近的词语是？",
+      "options": [
+        "炎热",
+        "严寒",
+        "温暖",
+        "凉爽"
+      ],
+      "answer": 2,
+      "explain": "“寒冷”和“严寒”意思相近。"
+    },
+    {
+      "id": "zh2u-u3-013",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "小明看见老师，主动（ ）问好。",
+      "options": [
+        "躲开",
+        "上前",
+        "离开",
+        "后退"
+      ],
+      "answer": 2,
+      "explain": "看见老师主动上前问好，才通顺。"
+    },
+    {
+      "id": "zh2u-u3-014",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "雨后的空气特别（ ）。",
+      "options": [
+        "清楚",
+        "清早",
+        "清新",
+        "清水"
+      ],
+      "answer": 3,
+      "explain": "雨后的空气清新，句子通顺。"
+    },
+    {
+      "id": "zh2u-u3-015",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "草长莺飞二月天，拂堤杨柳醉（ ）。",
+      "options": [
+        "明月",
+        "春烟",
+        "春风",
+        "白云"
+      ],
+      "answer": 2,
+      "explain": "出自《村居》。"
+    },
+    {
+      "id": "zh2u-u3-016",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "儿童散学归来早，忙趁东风放（ ）。",
+      "options": [
+        "春风",
+        "明月",
+        "白云",
+        "纸鸢"
+      ],
+      "answer": 4,
+      "explain": "出自《村居》。"
+    },
+    {
+      "id": "zh2u-u3-017",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "碧玉妆成一树高，万条垂下绿（ ）。",
+      "options": [
+        "春风",
+        "白云",
+        "明月",
+        "丝绦"
+      ],
+      "answer": 4,
+      "explain": "出自《咏柳》。"
+    },
+    {
+      "id": "zh2u-u3-018",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "不知细叶谁裁出，二月春风似（ ）。",
+      "options": [
+        "春风",
+        "白云",
+        "明月",
+        "剪刀"
+      ],
+      "answer": 4,
+      "explain": "出自《咏柳》。"
+    },
+    {
+      "id": "zh2u-u3-019",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "海底世界",
+        "曹冲称象",
+        "太空生活",
+        "春天的雨"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《曹冲称象》。",
+      "passage": "今天，我们学习《曹冲称象》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u3-020",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "乱扔垃圾",
+        "认真观察、用心思考",
+        "大声喧哗",
+        "睡懒觉"
+      ],
+      "answer": 2,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《曹冲称象》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u4-001",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“lóu”对应的汉字是？提示：可以组成“高楼”。",
+      "options": [
+        "地",
+        "人",
+        "天",
+        "楼"
+      ],
+      "answer": 4,
+      "explain": "“楼”读 lóu，可以组词“高楼”。"
+    },
+    {
+      "id": "zh2u-u4-002",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“pù”对应的汉字是？提示：可以组成“瀑布”。",
+      "options": [
+        "瀑",
+        "人",
+        "地",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“瀑”读 pù，可以组词“瀑布”。"
+    },
+    {
+      "id": "zh2u-u4-003",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“tán”对应的汉字是？提示：可以组成“水潭”。",
+      "options": [
+        "人",
+        "潭",
+        "天",
+        "地"
+      ],
+      "answer": 2,
+      "explain": "“潭”读 tán，可以组词“水潭”。"
+    },
+    {
+      "id": "zh2u-u4-004",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“高楼”中，“楼”的正确读音是？",
+      "options": [
+        "biǎn",
+        "lóu",
+        "biàn",
+        "biān"
+      ],
+      "answer": 2,
+      "explain": "“楼”读 lóu。"
+    },
+    {
+      "id": "zh2u-u4-005",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“瀑布”中，“瀑”的正确读音是？",
+      "options": [
+        "biàn",
+        "pù",
+        "biǎn",
+        "biān"
+      ],
+      "answer": 2,
+      "explain": "“瀑”读 pù。"
+    },
+    {
+      "id": "zh2u-u4-006",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“水潭”中，“潭”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "tán",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“潭”读 tán。"
+    },
+    {
+      "id": "zh2u-u4-007",
+      "unit": "u4",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）树",
+      "options": [
+        "把",
+        "棵",
+        "件",
+        "朵"
+      ],
+      "answer": 2,
+      "explain": "树用“棵”作量词。"
+    },
+    {
+      "id": "zh2u-u4-008",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“寒冷”意思相近的词语是？",
+      "options": [
+        "炎热",
+        "凉爽",
+        "温暖",
+        "严寒"
+      ],
+      "answer": 4,
+      "explain": "“寒冷”和“严寒”意思相近。"
+    },
+    {
+      "id": "zh2u-u4-009",
+      "unit": "u4",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“冷”的反义词是？",
+      "options": [
+        "热",
+        "暖",
+        "冰",
+        "凉"
+      ],
+      "answer": 1,
+      "explain": "“冷”和“热”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u4-010",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "小明看见老师，主动（ ）问好。",
+      "options": [
+        "上前",
+        "后退",
+        "离开",
+        "躲开"
+      ],
+      "answer": 1,
+      "explain": "看见老师主动上前问好，才通顺。"
+    },
+    {
+      "id": "zh2u-u4-011",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "教室被我们打扫得很（ ）。",
+      "options": [
+        "干杯",
+        "干净",
+        "干活",
+        "干燥"
+      ],
+      "answer": 2,
+      "explain": "“干净”表示没有灰尘和杂物。"
+    },
+    {
+      "id": "zh2u-u4-012",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“有名”意思相近的词语是？",
+      "options": [
+        "无名",
+        "普通",
+        "奇怪",
+        "著名"
+      ],
+      "answer": 4,
+      "explain": "“有名”和“著名”意思相近。"
+    },
+    {
+      "id": "zh2u-u4-013",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "妈妈把衣服（ ）得干干净净。",
+      "options": [
+        "吃",
+        "唱",
+        "画",
+        "洗"
+      ],
+      "answer": 4,
+      "explain": "衣服是洗干净的。"
+    },
+    {
+      "id": "zh2u-u4-014",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "他（ ）地跑进教室，告诉大家好消息。",
+      "options": [
+        "兴奋",
+        "伤心",
+        "安静",
+        "高兴地"
+      ],
+      "answer": 1,
+      "explain": "“兴奋”表示非常高兴、激动。"
+    },
+    {
+      "id": "zh2u-u4-015",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "接天莲叶无穷碧，映日荷花别（ ）。",
+      "options": [
+        "白云",
+        "春风",
+        "明月",
+        "样红"
+      ],
+      "answer": 4,
+      "explain": "出自《晓出净慈寺送林子方》。"
+    },
+    {
+      "id": "zh2u-u4-016",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "毕竟西湖六月中，风光不与四（ ）。",
+      "options": [
+        "时同",
+        "春风",
+        "明月",
+        "白云"
+      ],
+      "answer": 1,
+      "explain": "出自《晓出净慈寺送林子方》。"
+    },
+    {
+      "id": "zh2u-u4-017",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "两个黄鹂鸣翠柳，一行白鹭上（ ）。",
+      "options": [
+        "春风",
+        "白云",
+        "明月",
+        "青天"
+      ],
+      "answer": 4,
+      "explain": "出自《绝句》。"
+    },
+    {
+      "id": "zh2u-u4-018",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "窗含西岭千秋雪，门泊东吴万（ ）。",
+      "options": [
+        "明月",
+        "春风",
+        "里船",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《绝句》。"
+    },
+    {
+      "id": "zh2u-u4-019",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "春天的雨",
+        "古诗二首",
+        "太空生活",
+        "海底世界"
+      ],
+      "answer": 2,
+      "explain": "短文开头提到了《古诗二首》。",
+      "passage": "今天，我们学习《古诗二首》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u4-020",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "乱扔垃圾",
+        "认真观察、用心思考",
+        "大声喧哗",
+        "睡懒觉"
+      ],
+      "answer": 2,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《古诗二首》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u5-001",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jǐng”对应的汉字是？提示：可以组成“水井”。",
+      "options": [
+        "地",
+        "人",
+        "天",
+        "井"
+      ],
+      "answer": 4,
+      "explain": "“井”读 jǐng，可以组词“水井”。"
+    },
+    {
+      "id": "zh2u-u5-002",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“guān”对应的汉字是？提示：可以组成“观看”。",
+      "options": [
+        "观",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“观”读 guān，可以组词“观看”。"
+    },
+    {
+      "id": "zh2u-u5-003",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“hán”对应的汉字是？提示：可以组成“寒冷”。",
+      "options": [
+        "寒",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“寒”读 hán，可以组词“寒冷”。"
+    },
+    {
+      "id": "zh2u-u5-004",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“水井”中，“井”的正确读音是？",
+      "options": [
+        "biān",
+        "biàn",
+        "jǐng",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“井”读 jǐng。"
+    },
+    {
+      "id": "zh2u-u5-005",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“观看”中，“观”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biān",
+        "guān",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“观”读 guān。"
+    },
+    {
+      "id": "zh2u-u5-006",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“寒冷”中，“寒”的正确读音是？",
+      "options": [
+        "hán",
+        "biān",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“寒”读 hán。"
+    },
+    {
+      "id": "zh2u-u5-007",
+      "unit": "u5",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）花",
+      "options": [
+        "棵",
+        "朵",
+        "座",
+        "条"
+      ],
+      "answer": 2,
+      "explain": "花用“朵”作量词。"
+    },
+    {
+      "id": "zh2u-u5-008",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“有名”意思相近的词语是？",
+      "options": [
+        "奇怪",
+        "著名",
+        "普通",
+        "无名"
+      ],
+      "answer": 2,
+      "explain": "“有名”和“著名”意思相近。"
+    },
+    {
+      "id": "zh2u-u5-009",
+      "unit": "u5",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“快”的反义词是？",
+      "options": [
+        "远",
+        "多",
+        "早",
+        "慢"
+      ],
+      "answer": 4,
+      "explain": "“快”和“慢”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u5-010",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "妈妈把衣服（ ）得干干净净。",
+      "options": [
+        "吃",
+        "洗",
+        "唱",
+        "画"
+      ],
+      "answer": 2,
+      "explain": "衣服是洗干净的。"
+    },
+    {
+      "id": "zh2u-u5-011",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "我们要（ ）时间，不能浪费时间。",
+      "options": [
+        "珍重",
+        "珍惜",
+        "珍贵",
+        "可惜"
+      ],
+      "answer": 2,
+      "explain": "“珍惜时间”是常见搭配。"
+    },
+    {
+      "id": "zh2u-u5-012",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“立刻”意思相近的词语是？",
+      "options": [
+        "以后",
+        "从前",
+        "慢慢",
+        "马上"
+      ],
+      "answer": 4,
+      "explain": "“立刻”和“马上”意思相近。"
+    },
+    {
+      "id": "zh2u-u5-013",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "下雨了，我（ ）撑起雨伞。",
+      "options": [
+        "以后",
+        "从前",
+        "连忙",
+        "慢慢"
+      ],
+      "answer": 3,
+      "explain": "下雨了连忙撑伞，句子通顺。"
+    },
+    {
+      "id": "zh2u-u5-014",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "遇到困难，我们要（ ）想办法。",
+      "options": [
+        "消极",
+        "生气",
+        "安静",
+        "积极"
+      ],
+      "answer": 4,
+      "explain": "遇到困难要积极想办法。"
+    },
+    {
+      "id": "zh2u-u5-015",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "墙角数枝梅，凌寒独（ ）。",
+      "options": [
+        "白云",
+        "自开",
+        "春风",
+        "明月"
+      ],
+      "answer": 2,
+      "explain": "出自《梅花》。"
+    },
+    {
+      "id": "zh2u-u5-016",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "遥知不是雪，为有暗（ ）。",
+      "options": [
+        "春风",
+        "明月",
+        "香来",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《梅花》。"
+    },
+    {
+      "id": "zh2u-u5-017",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "千山鸟飞绝，万径人（ ）。",
+      "options": [
+        "明月",
+        "春风",
+        "白云",
+        "踪灭"
+      ],
+      "answer": 4,
+      "explain": "出自《江雪》。"
+    },
+    {
+      "id": "zh2u-u5-018",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "孤舟蓑笠翁，独钓寒（ ）。",
+      "options": [
+        "明月",
+        "白云",
+        "江雪",
+        "春风"
+      ],
+      "answer": 3,
+      "explain": "出自《江雪》。"
+    },
+    {
+      "id": "zh2u-u5-019",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "太空生活",
+        "春天的雨",
+        "海底世界",
+        "坐井观天"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《坐井观天》。",
+      "passage": "今天，我们学习《坐井观天》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u5-020",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "睡懒觉",
+        "大声喧哗",
+        "认真观察、用心思考",
+        "乱扔垃圾"
+      ],
+      "answer": 3,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《坐井观天》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u6-001",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“zhì”对应的汉字是？提示：可以组成“治水”。",
+      "options": [
+        "天",
+        "人",
+        "地",
+        "治"
+      ],
+      "answer": 4,
+      "explain": "“治”读 zhì，可以组词“治水”。"
+    },
+    {
+      "id": "zh2u-u6-002",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“biǎn”对应的汉字是？提示：可以组成“扁担”。",
+      "options": [
+        "天",
+        "人",
+        "扁",
+        "地"
+      ],
+      "answer": 3,
+      "explain": "“扁”读 biǎn，可以组词“扁担”。"
+    },
+    {
+      "id": "zh2u-u6-003",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“dàn”对应的汉字是？提示：可以组成“扁担”。",
+      "options": [
+        "担",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“担”读 dàn，可以组词“扁担”。"
+    },
+    {
+      "id": "zh2u-u6-004",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“治水”中，“治”的正确读音是？",
+      "options": [
+        "biān",
+        "zhì",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 2,
+      "explain": "“治”读 zhì。"
+    },
+    {
+      "id": "zh2u-u6-005",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“扁担”中，“扁”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biàn",
+        "biān",
+        "bàn"
+      ],
+      "answer": 1,
+      "explain": "“扁”读 biǎn。"
+    },
+    {
+      "id": "zh2u-u6-006",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“扁担”中，“担”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "biǎn",
+        "dàn"
+      ],
+      "answer": 4,
+      "explain": "“担”读 dàn。"
+    },
+    {
+      "id": "zh2u-u6-007",
+      "unit": "u6",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）山",
+      "options": [
+        "座",
+        "本",
+        "朵",
+        "匹"
+      ],
+      "answer": 1,
+      "explain": "山用“座”作量词。"
+    },
+    {
+      "id": "zh2u-u6-008",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“立刻”意思相近的词语是？",
+      "options": [
+        "马上",
+        "以后",
+        "慢慢",
+        "从前"
+      ],
+      "answer": 1,
+      "explain": "“立刻”和“马上”意思相近。"
+    },
+    {
+      "id": "zh2u-u6-009",
+      "unit": "u6",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“早”的反义词是？",
+      "options": [
+        "晚",
+        "远",
+        "慢",
+        "快"
+      ],
+      "answer": 1,
+      "explain": "“早”和“晚”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u6-010",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "下雨了，我（ ）撑起雨伞。",
+      "options": [
+        "从前",
+        "慢慢",
+        "连忙",
+        "以后"
+      ],
+      "answer": 3,
+      "explain": "下雨了连忙撑伞，句子通顺。"
+    },
+    {
+      "id": "zh2u-u6-011",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "小明做事很（ ），从不马虎。",
+      "options": [
+        "认为",
+        "认错",
+        "认出",
+        "认真"
+      ],
+      "answer": 4,
+      "explain": "“认真”表示做事仔细、不马虎。"
+    },
+    {
+      "id": "zh2u-u6-012",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“高兴”意思相近的词语是？",
+      "options": [
+        "开心",
+        "害怕",
+        "伤心",
+        "生气"
+      ],
+      "answer": 1,
+      "explain": "“高兴”和“开心”意思相近。"
+    },
+    {
+      "id": "zh2u-u6-013",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "操场上，同学们在（ ）跑步，笑得很开心。",
+      "options": [
+        "安静地",
+        "慢慢地",
+        "快乐地",
+        "伤心地"
+      ],
+      "answer": 3,
+      "explain": "同学们快乐地跑步，才符合“笑得很开心”。"
+    },
+    {
+      "id": "zh2u-u6-014",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "教室被我们打扫得很（ ）。",
+      "options": [
+        "干燥",
+        "干净",
+        "干杯",
+        "干活"
+      ],
+      "answer": 2,
+      "explain": "“干净”表示没有灰尘和杂物。"
+    },
+    {
+      "id": "zh2u-u6-015",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "床前明月光，疑是地（ ）。",
+      "options": [
+        "上霜",
+        "春风",
+        "明月",
+        "白云"
+      ],
+      "answer": 1,
+      "explain": "出自《静夜思》。"
+    },
+    {
+      "id": "zh2u-u6-016",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "举头望明月，低头思（ ）。",
+      "options": [
+        "白云",
+        "春风",
+        "明月",
+        "故乡"
+      ],
+      "answer": 4,
+      "explain": "出自《静夜思》。"
+    },
+    {
+      "id": "zh2u-u6-017",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "春眠不觉晓，处处闻（ ）。",
+      "options": [
+        "啼鸟",
+        "白云",
+        "春风",
+        "明月"
+      ],
+      "answer": 1,
+      "explain": "出自《春晓》。"
+    },
+    {
+      "id": "zh2u-u6-018",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "夜来风雨声，花落知（ ）。",
+      "options": [
+        "明月",
+        "春风",
+        "多少",
+        "白云"
+      ],
+      "answer": 3,
+      "explain": "出自《春晓》。"
+    },
+    {
+      "id": "zh2u-u6-019",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "大禹治水",
+        "春天的雨",
+        "太空生活",
+        "海底世界"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《大禹治水》。",
+      "passage": "今天，我们学习《大禹治水》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u6-020",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "认真观察、用心思考",
+        "睡懒觉",
+        "乱扔垃圾",
+        "大声喧哗"
+      ],
+      "answer": 1,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《大禹治水》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u7-001",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“sì”对应的汉字是？提示：可以组成“山寺”。",
+      "options": [
+        "寺",
+        "人",
+        "地",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“寺”读 sì，可以组词“山寺”。"
+    },
+    {
+      "id": "zh2u-u7-002",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“wù”对应的汉字是？提示：可以组成“大雾”。",
+      "options": [
+        "天",
+        "雾",
+        "人",
+        "地"
+      ],
+      "answer": 2,
+      "explain": "“雾”读 wù，可以组词“大雾”。"
+    },
+    {
+      "id": "zh2u-u7-003",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“xuě”对应的汉字是？提示：可以组成“雪花”。",
+      "options": [
+        "地",
+        "人",
+        "雪",
+        "天"
+      ],
+      "answer": 3,
+      "explain": "“雪”读 xuě，可以组词“雪花”。"
+    },
+    {
+      "id": "zh2u-u7-004",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“山寺”中，“寺”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "biǎn",
+        "sì"
+      ],
+      "answer": 4,
+      "explain": "“寺”读 sì。"
+    },
+    {
+      "id": "zh2u-u7-005",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“大雾”中，“雾”的正确读音是？",
+      "options": [
+        "wù",
+        "biān",
+        "biàn",
+        "biǎn"
+      ],
+      "answer": 1,
+      "explain": "“雾”读 wù。"
+    },
+    {
+      "id": "zh2u-u7-006",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“雪花”中，“雪”的正确读音是？",
+      "options": [
+        "biàn",
+        "biǎn",
+        "xuě",
+        "biān"
+      ],
+      "answer": 3,
+      "explain": "“雪”读 xuě。"
+    },
+    {
+      "id": "zh2u-u7-007",
+      "unit": "u7",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）书",
+      "options": [
+        "件",
+        "把",
+        "本",
+        "双"
+      ],
+      "answer": 3,
+      "explain": "书用“本”作量词。"
+    },
+    {
+      "id": "zh2u-u7-008",
+      "unit": "u7",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“高兴”意思相近的词语是？",
+      "options": [
+        "伤心",
+        "开心",
+        "生气",
+        "害怕"
+      ],
+      "answer": 2,
+      "explain": "“高兴”和“开心”意思相近。"
+    },
+    {
+      "id": "zh2u-u7-009",
+      "unit": "u7",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“黑”的反义词是？",
+      "options": [
+        "蓝",
+        "白",
+        "红",
+        "绿"
+      ],
+      "answer": 2,
+      "explain": "“黑”和“白”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u7-010",
+      "unit": "u7",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "操场上，同学们在（ ）跑步，笑得很开心。",
+      "options": [
+        "慢慢地",
+        "快乐地",
+        "安静地",
+        "伤心地"
+      ],
+      "answer": 2,
+      "explain": "同学们快乐地跑步，才符合“笑得很开心”。"
+    },
+    {
+      "id": "zh2u-u7-011",
+      "unit": "u7",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "我们要（ ）粮食，不能浪费。",
+      "options": [
+        "爱惜",
+        "可爱",
+        "爱情",
+        "可惜"
+      ],
+      "answer": 1,
+      "explain": "粮食要“爱惜”，不能浪费。"
+    },
+    {
+      "id": "zh2u-u7-012",
+      "unit": "u7",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“漂亮”意思相近的词语是？",
+      "options": [
+        "难看",
+        "可怕",
+        "奇怪",
+        "好看"
+      ],
+      "answer": 4,
+      "explain": "“漂亮”和“好看”意思相近。"
+    },
+    {
+      "id": "zh2u-u7-013",
+      "unit": "u7",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "想了很久，这道题我（ ）想出来了。",
+      "options": [
+        "从来",
+        "终于",
+        "以后",
+        "从前"
+      ],
+      "answer": 2,
+      "explain": "“终于”表示经过努力后想出来。"
+    },
+    {
+      "id": "zh2u-u7-014",
+      "unit": "u7",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "我们要（ ）时间，不能浪费时间。",
+      "options": [
+        "珍贵",
+        "珍重",
+        "可惜",
+        "珍惜"
+      ],
+      "answer": 4,
+      "explain": "“珍惜时间”是常见搭配。"
+    },
+    {
+      "id": "zh2u-u7-015",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：（ ）心一意",
+      "options": [
+        "七",
+        "三",
+        "五",
+        "一"
+      ],
+      "answer": 4,
+      "explain": "“一心一意”表示做事专心。"
+    },
+    {
+      "id": "zh2u-u7-016",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：五（ ）六色",
+      "options": [
+        "眼",
+        "严",
+        "言",
+        "颜"
+      ],
+      "answer": 4,
+      "explain": "“五颜六色”形容颜色多。"
+    },
+    {
+      "id": "zh2u-u7-017",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：四（ ）八方",
+      "options": [
+        "边",
+        "面",
+        "方",
+        "周"
+      ],
+      "answer": 2,
+      "explain": "“四面八方”指各个方向。"
+    },
+    {
+      "id": "zh2u-u7-018",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：七上（ ）下",
+      "options": [
+        "十",
+        "六",
+        "八",
+        "九"
+      ],
+      "answer": 3,
+      "explain": "“七上八下”形容心里不安。"
+    },
+    {
+      "id": "zh2u-u7-019",
+      "unit": "u7",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "春天的雨",
+        "海底世界",
+        "太空生活",
+        "古诗二首"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《古诗二首》。",
+      "passage": "今天，我们学习《古诗二首》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u7-020",
+      "unit": "u7",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "乱扔垃圾",
+        "认真观察、用心思考",
+        "大声喧哗",
+        "睡懒觉"
+      ],
+      "answer": 2,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《古诗二首》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u8-001",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“hú”对应的汉字是？提示：可以组成“狐狸”。",
+      "options": [
+        "狐",
+        "地",
+        "人",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“狐”读 hú，可以组词“狐狸”。"
+    },
+    {
+      "id": "zh2u-u8-002",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“lí”对应的汉字是？提示：可以组成“狐狸”。",
+      "options": [
+        "人",
+        "天",
+        "地",
+        "狸"
+      ],
+      "answer": 4,
+      "explain": "“狸”读 lí，可以组词“狐狸”。"
+    },
+    {
+      "id": "zh2u-u8-003",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jiǎ”对应的汉字是？提示：可以组成“假话”。",
+      "options": [
+        "天",
+        "地",
+        "人",
+        "假"
+      ],
+      "answer": 4,
+      "explain": "“假”读 jiǎ，可以组词“假话”。"
+    },
+    {
+      "id": "zh2u-u8-004",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“狐狸”中，“狐”的正确读音是？",
+      "options": [
+        "biàn",
+        "biǎn",
+        "biān",
+        "hú"
+      ],
+      "answer": 4,
+      "explain": "“狐”读 hú。"
+    },
+    {
+      "id": "zh2u-u8-005",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "在“狐狸”中，“狸”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biàn",
+        "biān",
+        "lí"
+      ],
+      "answer": 4,
+      "explain": "“狸”读 lí。"
+    },
+    {
+      "id": "zh2u-u8-006",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "在“假话”中，“假”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "jiǎ",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“假”读 jiǎ。"
+    },
+    {
+      "id": "zh2u-u8-007",
+      "unit": "u8",
+      "type": "measure_word",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "一（ ）伞",
+      "options": [
+        "匹",
+        "把",
+        "条",
+        "本"
+      ],
+      "answer": 2,
+      "explain": "伞用“把”作量词。"
+    },
+    {
+      "id": "zh2u-u8-008",
+      "unit": "u8",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“漂亮”意思相近的词语是？",
+      "options": [
+        "可怕",
+        "难看",
+        "好看",
+        "奇怪"
+      ],
+      "answer": 3,
+      "explain": "“漂亮”和“好看”意思相近。"
+    },
+    {
+      "id": "zh2u-u8-009",
+      "unit": "u8",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“进”的反义词是？",
+      "options": [
+        "去",
+        "出",
+        "来",
+        "走"
+      ],
+      "answer": 2,
+      "explain": "“进”和“出”是一对反义词。"
+    },
+    {
+      "id": "zh2u-u8-010",
+      "unit": "u8",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "想了很久，这道题我（ ）想出来了。",
+      "options": [
+        "终于",
+        "从来",
+        "从前",
+        "以后"
+      ],
+      "answer": 1,
+      "explain": "“终于”表示经过努力后想出来。"
+    },
+    {
+      "id": "zh2u-u8-011",
+      "unit": "u8",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "老师的话让我（ ）了很多。",
+      "options": [
+        "明白人",
+        "明天",
+        "明亮",
+        "明白"
+      ],
+      "answer": 4,
+      "explain": "“明白”表示懂得、清楚了。"
+    },
+    {
+      "id": "zh2u-u8-012",
+      "unit": "u8",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“美丽”意思相近的词语是？",
+      "options": [
+        "丑陋",
+        "漂亮",
+        "奇怪",
+        "难看"
+      ],
+      "answer": 2,
+      "explain": "“美丽”和“漂亮”意思相近。"
+    },
+    {
+      "id": "zh2u-u8-013",
+      "unit": "u8",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "小鸟在树上（ ），歌声真好听。",
+      "options": [
+        "睡觉",
+        "喝水",
+        "跑步",
+        "唱歌"
+      ],
+      "answer": 4,
+      "explain": "小鸟在树上唱歌，歌声真好听。"
+    },
+    {
+      "id": "zh2u-u8-014",
+      "unit": "u8",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "小明做事很（ ），从不马虎。",
+      "options": [
+        "认出",
+        "认真",
+        "认为",
+        "认错"
+      ],
+      "answer": 2,
+      "explain": "“认真”表示做事仔细、不马虎。"
+    },
+    {
+      "id": "zh2u-u8-015",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：十全十（ ）",
+      "options": [
+        "美",
+        "每",
+        "眉",
+        "妹"
+      ],
+      "answer": 1,
+      "explain": "“十全十美”表示非常完美。"
+    },
+    {
+      "id": "zh2u-u8-016",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：百发百（ ）",
+      "options": [
+        "中",
+        "钟",
+        "众",
+        "终"
+      ],
+      "answer": 1,
+      "explain": "“百发百中”形容射箭或射击很准。"
+    },
+    {
+      "id": "zh2u-u8-017",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：春（ ）花开",
+      "options": [
+        "凉",
+        "冷",
+        "暖",
+        "热"
+      ],
+      "answer": 3,
+      "explain": "“春暖花开”形容春天景色美好。"
+    },
+    {
+      "id": "zh2u-u8-018",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把词语补充完整：鸟（ ）花香",
+      "options": [
+        "雨",
+        "鱼",
+        "语",
+        "玉"
+      ],
+      "answer": 3,
+      "explain": "“鸟语花香”形容春天景色美丽。"
+    },
+    {
+      "id": "zh2u-u8-019",
+      "unit": "u8",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "狐假虎威",
+        "太空生活",
+        "海底世界",
+        "春天的雨"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《狐假虎威》。",
+      "passage": "今天，我们学习《狐假虎威》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    },
+    {
+      "id": "zh2u-u8-020",
+      "unit": "u8",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文告诉我们要怎样做？",
+      "options": [
+        "乱扔垃圾",
+        "认真观察、用心思考",
+        "睡懒觉",
+        "大声喧哗"
+      ],
+      "answer": 2,
+      "explain": "短文说只要认真观察、用心思考，就能发现小秘密。",
+      "passage": "今天，我们学习《狐假虎威》。只要认真观察、用心思考，就能发现生活中的小秘密。"
+    }
+  ]
+}

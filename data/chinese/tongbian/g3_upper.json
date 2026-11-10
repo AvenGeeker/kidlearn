@@ -1,0 +1,2745 @@
+{
+  "schema_version": 1,
+  "subject": "chinese",
+  "grade": 3,
+  "semester": "upper",
+  "textbook": "统编版",
+  "questions": [
+    {
+      "id": "zh3u-u1-001",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“chén”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "人",
+        "晨",
+        "天",
+        "地"
+      ],
+      "answer": 2,
+      "explain": "“晨”读 chén，可以组词“晨”。"
+    },
+    {
+      "id": "zh3u-u1-002",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“róng”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "天",
+        "人",
+        "绒",
+        "地"
+      ],
+      "answer": 3,
+      "explain": "“绒”读 róng，可以组词“绒”。"
+    },
+    {
+      "id": "zh3u-u1-003",
+      "unit": "u1",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“qiú”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "天",
+        "球",
+        "地",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“球”读 qiú，可以组词“球”。"
+    },
+    {
+      "id": "zh3u-u1-004",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“晨”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "biǎn",
+        "chén"
+      ],
+      "answer": 4,
+      "explain": "“晨”读 chén。"
+    },
+    {
+      "id": "zh3u-u1-005",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“绒”的正确读音是？",
+      "options": [
+        "róng",
+        "biān",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“绒”读 róng。"
+    },
+    {
+      "id": "zh3u-u1-006",
+      "unit": "u1",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“球”的正确读音是？",
+      "options": [
+        "biàn",
+        "qiú",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“球”读 qiú。"
+    },
+    {
+      "id": "zh3u-u1-007",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "我们去公园（ ）美丽的荷花。",
+      "options": [
+        "参观",
+        "观看",
+        "观察",
+        "观赏"
+      ],
+      "answer": 4,
+      "explain": "“观赏”侧重于欣赏美好的景物。"
+    },
+    {
+      "id": "zh3u-u1-008",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“壮观”意思相近的词语是？",
+      "options": [
+        "雄伟",
+        "普通",
+        "细小",
+        "安静"
+      ],
+      "answer": 1,
+      "explain": "“壮观”和“雄伟”都表示气势宏大。"
+    },
+    {
+      "id": "zh3u-u1-009",
+      "unit": "u1",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“复杂”的反义词是？",
+      "options": [
+        "困难",
+        "简单",
+        "麻烦",
+        "详细"
+      ],
+      "answer": 2,
+      "explain": "“复杂”和“简单”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u1-010",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）明天下雨，我们（ ）不去公园了。",
+      "options": [
+        "因为……所以……",
+        "虽然……但是……",
+        "不但……而且……",
+        "如果……就……"
+      ],
+      "answer": 4,
+      "explain": "前后是假设关系，用“如果……就……”。"
+    },
+    {
+      "id": "zh3u-u1-011",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "夜深了，校园里十分（ ）。",
+      "options": [
+        "冷静",
+        "平静",
+        "寂静",
+        "安静"
+      ],
+      "answer": 3,
+      "explain": "“寂静”表示非常安静，没有一点声音。"
+    },
+    {
+      "id": "zh3u-u1-012",
+      "unit": "u1",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“坚定”意思相近的词语是？",
+      "options": [
+        "坚决",
+        "软弱",
+        "犹豫",
+        "动摇"
+      ],
+      "answer": 1,
+      "explain": "“坚定”和“坚决”都表示不动摇。"
+    },
+    {
+      "id": "zh3u-u1-013",
+      "unit": "u1",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "他（ ）学习认真，（ ）乐于帮助同学。",
+      "options": [
+        "只有……才……",
+        "不但……而且……",
+        "因为……所以……",
+        "虽然……但是……"
+      ],
+      "answer": 2,
+      "explain": "前后是递进关系，用“不但……而且……”。"
+    },
+    {
+      "id": "zh3u-u1-014",
+      "unit": "u1",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "我（ ）明天能早点起床。",
+      "options": [
+        "失望",
+        "希望",
+        "盼望",
+        "看望"
+      ],
+      "answer": 2,
+      "explain": "“希望”表示心里想达到某种目的。"
+    },
+    {
+      "id": "zh3u-u1-015",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：画蛇添（ ）",
+      "options": [
+        "手",
+        "脚",
+        "足",
+        "尾"
+      ],
+      "answer": 3,
+      "explain": "“画蛇添足”比喻做多余的事。"
+    },
+    {
+      "id": "zh3u-u1-016",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：守株待（ ）",
+      "options": [
+        "兔",
+        "鸟",
+        "虎",
+        "鱼"
+      ],
+      "answer": 1,
+      "explain": "“守株待兔”比喻不主动努力。"
+    },
+    {
+      "id": "zh3u-u1-017",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：亡羊补（ ）",
+      "options": [
+        "洞",
+        "门",
+        "圈",
+        "牢"
+      ],
+      "answer": 4,
+      "explain": "“亡羊补牢”比喻出了问题及时补救。"
+    },
+    {
+      "id": "zh3u-u1-018",
+      "unit": "u1",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：井底之（ ）",
+      "options": [
+        "蛙",
+        "虫",
+        "鸟",
+        "鱼"
+      ],
+      "answer": 1,
+      "explain": "“井底之蛙”比喻见识狭窄。"
+    },
+    {
+      "id": "zh3u-u1-019",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "大青树下的小学",
+        "体育比赛",
+        "校园食谱",
+        "数学广角"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《大青树下的小学》。",
+      "passage": "在《大青树下的小学》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u1-020",
+      "unit": "u1",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "不看不想",
+        "照抄别人",
+        "随意想象",
+        "细致观察"
+      ],
+      "answer": 4,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《大青树下的小学》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u2-001",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“hán”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "人",
+        "地",
+        "寒",
+        "天"
+      ],
+      "answer": 3,
+      "explain": "“寒”读 hán，可以组词“寒”。"
+    },
+    {
+      "id": "zh3u-u2-002",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jìng”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "人",
+        "天",
+        "径",
+        "地"
+      ],
+      "answer": 3,
+      "explain": "“径”读 jìng，可以组词“径”。"
+    },
+    {
+      "id": "zh3u-u2-003",
+      "unit": "u2",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“xié”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "地",
+        "天",
+        "斜",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“斜”读 xié，可以组词“斜”。"
+    },
+    {
+      "id": "zh3u-u2-004",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“寒”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "hán",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“寒”读 hán。"
+    },
+    {
+      "id": "zh3u-u2-005",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“径”的正确读音是？",
+      "options": [
+        "jìng",
+        "biàn",
+        "biǎn",
+        "biān"
+      ],
+      "answer": 1,
+      "explain": "“径”读 jìng。"
+    },
+    {
+      "id": "zh3u-u2-006",
+      "unit": "u2",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“斜”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "biàn",
+        "xié"
+      ],
+      "answer": 4,
+      "explain": "“斜”读 xié。"
+    },
+    {
+      "id": "zh3u-u2-007",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "我（ ）明天能早点起床。",
+      "options": [
+        "看望",
+        "失望",
+        "希望",
+        "盼望"
+      ],
+      "answer": 3,
+      "explain": "“希望”表示心里想达到某种目的。"
+    },
+    {
+      "id": "zh3u-u2-008",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“坚定”意思相近的词语是？",
+      "options": [
+        "动摇",
+        "坚决",
+        "犹豫",
+        "软弱"
+      ],
+      "answer": 2,
+      "explain": "“坚定”和“坚决”都表示不动摇。"
+    },
+    {
+      "id": "zh3u-u2-009",
+      "unit": "u2",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“危险”的反义词是？",
+      "options": [
+        "小心",
+        "害怕",
+        "安全",
+        "紧张"
+      ],
+      "answer": 3,
+      "explain": "“危险”和“安全”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u2-010",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "他（ ）学习认真，（ ）乐于帮助同学。",
+      "options": [
+        "虽然……但是……",
+        "不但……而且……",
+        "只有……才……",
+        "因为……所以……"
+      ],
+      "answer": 2,
+      "explain": "前后是递进关系，用“不但……而且……”。"
+    },
+    {
+      "id": "zh3u-u2-011",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "这是一份十分（ ）的礼物。",
+      "options": [
+        "昂贵",
+        "珍贵",
+        "宝贵",
+        "贵重"
+      ],
+      "answer": 2,
+      "explain": "“珍贵”强调意义重大、值得珍惜。"
+    },
+    {
+      "id": "zh3u-u2-012",
+      "unit": "u2",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“辽阔”意思相近的词语是？",
+      "options": [
+        "短小",
+        "宽广",
+        "拥挤",
+        "狭窄"
+      ],
+      "answer": 2,
+      "explain": "“辽阔”和“宽广”都表示面积大。"
+    },
+    {
+      "id": "zh3u-u2-013",
+      "unit": "u2",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）多读多写，（ ）能提高作文水平。",
+      "options": [
+        "因为……所以……",
+        "如果……就……",
+        "虽然……但是……",
+        "只有……才……"
+      ],
+      "answer": 4,
+      "explain": "前后是必要条件，用“只有……才……”。"
+    },
+    {
+      "id": "zh3u-u2-014",
+      "unit": "u2",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走进教室。",
+      "options": [
+        "陆续",
+        "持续",
+        "继续",
+        "连续"
+      ],
+      "answer": 1,
+      "explain": "“陆续”表示先先后后，时断时续。"
+    },
+    {
+      "id": "zh3u-u2-015",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：掩耳盗（ ）",
+      "options": [
+        "铃",
+        "钟",
+        "鼓",
+        "锣"
+      ],
+      "answer": 1,
+      "explain": "“掩耳盗铃”比喻自己欺骗自己。"
+    },
+    {
+      "id": "zh3u-u2-016",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：刻舟求（ ）",
+      "options": [
+        "船",
+        "剑",
+        "鱼",
+        "刀"
+      ],
+      "answer": 2,
+      "explain": "“刻舟求剑”比喻不懂得事物变化。"
+    },
+    {
+      "id": "zh3u-u2-017",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：自相矛（ ）",
+      "options": [
+        "刀",
+        "剑",
+        "盾",
+        "弓"
+      ],
+      "answer": 3,
+      "explain": "“自相矛盾”比喻言行前后不一致。"
+    },
+    {
+      "id": "zh3u-u2-018",
+      "unit": "u2",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：滥竽充（ ）",
+      "options": [
+        "行",
+        "队",
+        "数",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“滥竽充数”比喻没有真才实学。"
+    },
+    {
+      "id": "zh3u-u2-019",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "数学广角",
+        "体育比赛",
+        "校园食谱",
+        "古诗三首"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《古诗三首》。",
+      "passage": "在《古诗三首》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u2-020",
+      "unit": "u2",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "不看不想",
+        "细致观察",
+        "随意想象",
+        "照抄别人"
+      ],
+      "answer": 2,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《古诗三首》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u3-001",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“chái”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "人",
+        "柴",
+        "天"
+      ],
+      "answer": 3,
+      "explain": "“柴”读 chái，可以组词“柴”。"
+    },
+    {
+      "id": "zh3u-u3-002",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“lěng”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "人",
+        "冷",
+        "地",
+        "天"
+      ],
+      "answer": 2,
+      "explain": "“冷”读 lěng，可以组词“冷”。"
+    },
+    {
+      "id": "zh3u-u3-003",
+      "unit": "u3",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“jiù”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "人",
+        "地",
+        "天",
+        "旧"
+      ],
+      "answer": 4,
+      "explain": "“旧”读 jiù，可以组词“旧”。"
+    },
+    {
+      "id": "zh3u-u3-004",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“柴”的正确读音是？",
+      "options": [
+        "chái",
+        "biàn",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 1,
+      "explain": "“柴”读 chái。"
+    },
+    {
+      "id": "zh3u-u3-005",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“冷”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "lěng",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“冷”读 lěng。"
+    },
+    {
+      "id": "zh3u-u3-006",
+      "unit": "u3",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“旧”的正确读音是？",
+      "options": [
+        "biàn",
+        "biǎn",
+        "jiù",
+        "biān"
+      ],
+      "answer": 3,
+      "explain": "“旧”读 jiù。"
+    },
+    {
+      "id": "zh3u-u3-007",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走进教室。",
+      "options": [
+        "持续",
+        "陆续",
+        "继续",
+        "连续"
+      ],
+      "answer": 2,
+      "explain": "“陆续”表示先先后后，时断时续。"
+    },
+    {
+      "id": "zh3u-u3-008",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“辽阔”意思相近的词语是？",
+      "options": [
+        "拥挤",
+        "短小",
+        "宽广",
+        "狭窄"
+      ],
+      "answer": 3,
+      "explain": "“辽阔”和“宽广”都表示面积大。"
+    },
+    {
+      "id": "zh3u-u3-009",
+      "unit": "u3",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“光明”的反义词是？",
+      "options": [
+        "明亮",
+        "阳光",
+        "闪亮",
+        "黑暗"
+      ],
+      "answer": 4,
+      "explain": "“光明”和“黑暗”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u3-010",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）多读多写，（ ）能提高作文水平。",
+      "options": [
+        "因为……所以……",
+        "虽然……但是……",
+        "只有……才……",
+        "如果……就……"
+      ],
+      "answer": 3,
+      "explain": "前后是必要条件，用“只有……才……”。"
+    },
+    {
+      "id": "zh3u-u3-011",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "老师（ ）我们不要放弃。",
+      "options": [
+        "激励",
+        "鼓励",
+        "鼓舞",
+        "奖励"
+      ],
+      "answer": 2,
+      "explain": "“鼓励”表示激发、勉励。"
+    },
+    {
+      "id": "zh3u-u3-012",
+      "unit": "u3",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“鲜艳”意思相近的词语是？",
+      "options": [
+        "陈旧",
+        "暗淡",
+        "艳丽",
+        "朴素"
+      ],
+      "answer": 3,
+      "explain": "“鲜艳”和“艳丽”都表示颜色鲜明。"
+    },
+    {
+      "id": "zh3u-u3-013",
+      "unit": "u3",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）天气很冷，（ ）同学们仍然坚持锻炼。",
+      "options": [
+        "虽然……但是……",
+        "不但……而且……",
+        "只要……就……",
+        "因为……所以……"
+      ],
+      "answer": 1,
+      "explain": "前后是转折关系，用“虽然……但是……”。"
+    },
+    {
+      "id": "zh3u-u3-014",
+      "unit": "u3",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "夜深了，校园里十分（ ）。",
+      "options": [
+        "冷静",
+        "安静",
+        "寂静",
+        "平静"
+      ],
+      "answer": 3,
+      "explain": "“寂静”表示非常安静，没有一点声音。"
+    },
+    {
+      "id": "zh3u-u3-015",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：画蛇添（ ）",
+      "options": [
+        "足",
+        "脚",
+        "尾",
+        "手"
+      ],
+      "answer": 1,
+      "explain": "“画蛇添足”比喻做多余的事。"
+    },
+    {
+      "id": "zh3u-u3-016",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：守株待（ ）",
+      "options": [
+        "虎",
+        "鸟",
+        "鱼",
+        "兔"
+      ],
+      "answer": 4,
+      "explain": "“守株待兔”比喻不主动努力。"
+    },
+    {
+      "id": "zh3u-u3-017",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：亡羊补（ ）",
+      "options": [
+        "牢",
+        "门",
+        "洞",
+        "圈"
+      ],
+      "answer": 1,
+      "explain": "“亡羊补牢”比喻出了问题及时补救。"
+    },
+    {
+      "id": "zh3u-u3-018",
+      "unit": "u3",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：井底之（ ）",
+      "options": [
+        "鸟",
+        "蛙",
+        "虫",
+        "鱼"
+      ],
+      "answer": 2,
+      "explain": "“井底之蛙”比喻见识狭窄。"
+    },
+    {
+      "id": "zh3u-u3-019",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "卖火柴的小女孩",
+        "数学广角",
+        "校园食谱",
+        "体育比赛"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《卖火柴的小女孩》。",
+      "passage": "在《卖火柴的小女孩》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u3-020",
+      "unit": "u3",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "不看不想",
+        "随意想象",
+        "照抄别人",
+        "细致观察"
+      ],
+      "answer": 4,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《卖火柴的小女孩》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u4-001",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“zhǔn”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "准",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“准”读 zhǔn，可以组词“准”。"
+    },
+    {
+      "id": "zh3u-u4-002",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“bèi”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "备",
+        "天",
+        "地",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“备”读 bèi，可以组词“备”。"
+    },
+    {
+      "id": "zh3u-u4-003",
+      "unit": "u4",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“bào”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "天",
+        "地",
+        "暴",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“暴”读 bào，可以组词“暴”。"
+    },
+    {
+      "id": "zh3u-u4-004",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“准”的正确读音是？",
+      "options": [
+        "biān",
+        "biàn",
+        "biǎn",
+        "zhǔn"
+      ],
+      "answer": 4,
+      "explain": "“准”读 zhǔn。"
+    },
+    {
+      "id": "zh3u-u4-005",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“备”的正确读音是？",
+      "options": [
+        "biàn",
+        "bèi",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“备”读 bèi。"
+    },
+    {
+      "id": "zh3u-u4-006",
+      "unit": "u4",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“暴”的正确读音是？",
+      "options": [
+        "biàn",
+        "bào",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“暴”读 bào。"
+    },
+    {
+      "id": "zh3u-u4-007",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "夜深了，校园里十分（ ）。",
+      "options": [
+        "平静",
+        "冷静",
+        "寂静",
+        "安静"
+      ],
+      "answer": 3,
+      "explain": "“寂静”表示非常安静，没有一点声音。"
+    },
+    {
+      "id": "zh3u-u4-008",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“鲜艳”意思相近的词语是？",
+      "options": [
+        "暗淡",
+        "艳丽",
+        "朴素",
+        "陈旧"
+      ],
+      "answer": 2,
+      "explain": "“鲜艳”和“艳丽”都表示颜色鲜明。"
+    },
+    {
+      "id": "zh3u-u4-009",
+      "unit": "u4",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“诚实”的反义词是？",
+      "options": [
+        "真诚",
+        "坦率",
+        "虚伪",
+        "老实"
+      ],
+      "answer": 3,
+      "explain": "“诚实”和“虚伪”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u4-010",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）天气很冷，（ ）同学们仍然坚持锻炼。",
+      "options": [
+        "只要……就……",
+        "不但……而且……",
+        "因为……所以……",
+        "虽然……但是……"
+      ],
+      "answer": 4,
+      "explain": "前后是转折关系，用“虽然……但是……”。"
+    },
+    {
+      "id": "zh3u-u4-011",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "天气预报说今天有雨，下午（ ）下起了大雨。",
+      "options": [
+        "果然",
+        "竟然",
+        "忽然",
+        "居然"
+      ],
+      "answer": 1,
+      "explain": "“果然”表示结果和预料的相同。"
+    },
+    {
+      "id": "zh3u-u4-012",
+      "unit": "u4",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“迅速”意思相近的词语是？",
+      "options": [
+        "停留",
+        "快速",
+        "缓慢",
+        "休息"
+      ],
+      "answer": 2,
+      "explain": "“迅速”和“快速”都表示速度快。"
+    },
+    {
+      "id": "zh3u-u4-013",
+      "unit": "u4",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）他平时努力练习，（ ）这次比赛取得了好成绩。",
+      "options": [
+        "虽然……但是……",
+        "不但……而且……",
+        "如果……就……",
+        "因为……所以……"
+      ],
+      "answer": 4,
+      "explain": "前后是因果关系，用“因为……所以……”。"
+    },
+    {
+      "id": "zh3u-u4-014",
+      "unit": "u4",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "这是一份十分（ ）的礼物。",
+      "options": [
+        "贵重",
+        "昂贵",
+        "珍贵",
+        "宝贵"
+      ],
+      "answer": 3,
+      "explain": "“珍贵”强调意义重大、值得珍惜。"
+    },
+    {
+      "id": "zh3u-u4-015",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：掩耳盗（ ）",
+      "options": [
+        "鼓",
+        "钟",
+        "锣",
+        "铃"
+      ],
+      "answer": 4,
+      "explain": "“掩耳盗铃”比喻自己欺骗自己。"
+    },
+    {
+      "id": "zh3u-u4-016",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：刻舟求（ ）",
+      "options": [
+        "刀",
+        "鱼",
+        "船",
+        "剑"
+      ],
+      "answer": 4,
+      "explain": "“刻舟求剑”比喻不懂得事物变化。"
+    },
+    {
+      "id": "zh3u-u4-017",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：自相矛（ ）",
+      "options": [
+        "剑",
+        "刀",
+        "弓",
+        "盾"
+      ],
+      "answer": 4,
+      "explain": "“自相矛盾”比喻言行前后不一致。"
+    },
+    {
+      "id": "zh3u-u4-018",
+      "unit": "u4",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：滥竽充（ ）",
+      "options": [
+        "行",
+        "队",
+        "数",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“滥竽充数”比喻没有真才实学。"
+    },
+    {
+      "id": "zh3u-u4-019",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "体育比赛",
+        "校园食谱",
+        "数学广角",
+        "总也倒不了的老屋"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《总也倒不了的老屋》。",
+      "passage": "在《总也倒不了的老屋》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u4-020",
+      "unit": "u4",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "照抄别人",
+        "随意想象",
+        "不看不想",
+        "细致观察"
+      ],
+      "answer": 4,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《总也倒不了的老屋》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u5-001",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“dā”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "搭",
+        "天",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“搭”读 dā，可以组词“搭”。"
+    },
+    {
+      "id": "zh3u-u5-002",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“fù”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "人",
+        "天",
+        "地",
+        "父"
+      ],
+      "answer": 4,
+      "explain": "“父”读 fù，可以组词“父”。"
+    },
+    {
+      "id": "zh3u-u5-003",
+      "unit": "u5",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“qīn”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "亲",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“亲”读 qīn，可以组词“亲”。"
+    },
+    {
+      "id": "zh3u-u5-004",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“搭”的正确读音是？",
+      "options": [
+        "dā",
+        "biān",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“搭”读 dā。"
+    },
+    {
+      "id": "zh3u-u5-005",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“父”的正确读音是？",
+      "options": [
+        "biàn",
+        "fù",
+        "biān",
+        "biǎn"
+      ],
+      "answer": 2,
+      "explain": "“父”读 fù。"
+    },
+    {
+      "id": "zh3u-u5-006",
+      "unit": "u5",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“亲”的正确读音是？",
+      "options": [
+        "qīn",
+        "biàn",
+        "biǎn",
+        "biān"
+      ],
+      "answer": 1,
+      "explain": "“亲”读 qīn。"
+    },
+    {
+      "id": "zh3u-u5-007",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "这是一份十分（ ）的礼物。",
+      "options": [
+        "宝贵",
+        "贵重",
+        "珍贵",
+        "昂贵"
+      ],
+      "answer": 3,
+      "explain": "“珍贵”强调意义重大、值得珍惜。"
+    },
+    {
+      "id": "zh3u-u5-008",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“迅速”意思相近的词语是？",
+      "options": [
+        "停留",
+        "休息",
+        "快速",
+        "缓慢"
+      ],
+      "answer": 3,
+      "explain": "“迅速”和“快速”都表示速度快。"
+    },
+    {
+      "id": "zh3u-u5-009",
+      "unit": "u5",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“承认”的反义词是？",
+      "options": [
+        "答应",
+        "同意",
+        "认可",
+        "否认"
+      ],
+      "answer": 4,
+      "explain": "“承认”和“否认”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u5-010",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）他平时努力练习，（ ）这次比赛取得了好成绩。",
+      "options": [
+        "因为……所以……",
+        "如果……就……",
+        "虽然……但是……",
+        "不但……而且……"
+      ],
+      "answer": 1,
+      "explain": "前后是因果关系，用“因为……所以……”。"
+    },
+    {
+      "id": "zh3u-u5-011",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "多年不见，他（ ）是那么热情。",
+      "options": [
+        "仍然",
+        "突然",
+        "依然",
+        "果然"
+      ],
+      "answer": 3,
+      "explain": "“依然”表示和从前一样。"
+    },
+    {
+      "id": "zh3u-u5-012",
+      "unit": "u5",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“安静”意思相近的词语是？",
+      "options": [
+        "吵闹",
+        "喧哗",
+        "热闹",
+        "宁静"
+      ],
+      "answer": 4,
+      "explain": "“安静”和“宁静”都表示没有声音。"
+    },
+    {
+      "id": "zh3u-u5-013",
+      "unit": "u5",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "妹妹（ ）唱歌，（ ）跳舞，十分开心。",
+      "options": [
+        "只有……才……",
+        "虽然……但是……",
+        "一边……一边……",
+        "因为……所以……"
+      ],
+      "answer": 3,
+      "explain": "两个动作同时进行，用“一边……一边……”。"
+    },
+    {
+      "id": "zh3u-u5-014",
+      "unit": "u5",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "老师（ ）我们不要放弃。",
+      "options": [
+        "鼓舞",
+        "鼓励",
+        "奖励",
+        "激励"
+      ],
+      "answer": 2,
+      "explain": "“鼓励”表示激发、勉励。"
+    },
+    {
+      "id": "zh3u-u5-015",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：画蛇添（ ）",
+      "options": [
+        "足",
+        "脚",
+        "手",
+        "尾"
+      ],
+      "answer": 1,
+      "explain": "“画蛇添足”比喻做多余的事。"
+    },
+    {
+      "id": "zh3u-u5-016",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：守株待（ ）",
+      "options": [
+        "虎",
+        "鸟",
+        "鱼",
+        "兔"
+      ],
+      "answer": 4,
+      "explain": "“守株待兔”比喻不主动努力。"
+    },
+    {
+      "id": "zh3u-u5-017",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：亡羊补（ ）",
+      "options": [
+        "牢",
+        "门",
+        "圈",
+        "洞"
+      ],
+      "answer": 1,
+      "explain": "“亡羊补牢”比喻出了问题及时补救。"
+    },
+    {
+      "id": "zh3u-u5-018",
+      "unit": "u5",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：井底之（ ）",
+      "options": [
+        "鸟",
+        "蛙",
+        "鱼",
+        "虫"
+      ],
+      "answer": 2,
+      "explain": "“井底之蛙”比喻见识狭窄。"
+    },
+    {
+      "id": "zh3u-u5-019",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "校园食谱",
+        "数学广角",
+        "体育比赛",
+        "搭船的鸟"
+      ],
+      "answer": 4,
+      "explain": "短文开头提到了《搭船的鸟》。",
+      "passage": "在《搭船的鸟》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u5-020",
+      "unit": "u5",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "不看不想",
+        "细致观察",
+        "随意想象",
+        "照抄别人"
+      ],
+      "answer": 2,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《搭船的鸟》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u6-001",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“ráo”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "人",
+        "地",
+        "天",
+        "饶"
+      ],
+      "answer": 4,
+      "explain": "“饶”读 ráo，可以组词“饶”。"
+    },
+    {
+      "id": "zh3u-u6-002",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“yōu”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "地",
+        "优",
+        "天",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“优”读 yōu，可以组词“优”。"
+    },
+    {
+      "id": "zh3u-u6-003",
+      "unit": "u6",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“guī”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "地",
+        "瑰",
+        "天",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“瑰”读 guī，可以组词“瑰”。"
+    },
+    {
+      "id": "zh3u-u6-004",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“饶”的正确读音是？",
+      "options": [
+        "biàn",
+        "biǎn",
+        "ráo",
+        "biān"
+      ],
+      "answer": 3,
+      "explain": "“饶”读 ráo。"
+    },
+    {
+      "id": "zh3u-u6-005",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“优”的正确读音是？",
+      "options": [
+        "biǎn",
+        "yōu",
+        "biàn",
+        "biān"
+      ],
+      "answer": 2,
+      "explain": "“优”读 yōu。"
+    },
+    {
+      "id": "zh3u-u6-006",
+      "unit": "u6",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“瑰”的正确读音是？",
+      "options": [
+        "guī",
+        "biǎn",
+        "biàn",
+        "biān"
+      ],
+      "answer": 1,
+      "explain": "“瑰”读 guī。"
+    },
+    {
+      "id": "zh3u-u6-007",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "老师（ ）我们不要放弃。",
+      "options": [
+        "激励",
+        "鼓舞",
+        "鼓励",
+        "奖励"
+      ],
+      "answer": 3,
+      "explain": "“鼓励”表示激发、勉励。"
+    },
+    {
+      "id": "zh3u-u6-008",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“安静”意思相近的词语是？",
+      "options": [
+        "热闹",
+        "宁静",
+        "吵闹",
+        "喧哗"
+      ],
+      "answer": 2,
+      "explain": "“安静”和“宁静”都表示没有声音。"
+    },
+    {
+      "id": "zh3u-u6-009",
+      "unit": "u6",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“集中”的反义词是？",
+      "options": [
+        "分散",
+        "聚集",
+        "集合",
+        "统一"
+      ],
+      "answer": 1,
+      "explain": "“集中”和“分散”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u6-010",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "妹妹（ ）唱歌，（ ）跳舞，十分开心。",
+      "options": [
+        "虽然……但是……",
+        "一边……一边……",
+        "因为……所以……",
+        "只有……才……"
+      ],
+      "answer": 2,
+      "explain": "两个动作同时进行，用“一边……一边……”。"
+    },
+    {
+      "id": "zh3u-u6-011",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "我们去公园（ ）美丽的荷花。",
+      "options": [
+        "观察",
+        "观赏",
+        "参观",
+        "观看"
+      ],
+      "answer": 2,
+      "explain": "“观赏”侧重于欣赏美好的景物。"
+    },
+    {
+      "id": "zh3u-u6-012",
+      "unit": "u6",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“温暖”意思相近的词语是？",
+      "options": [
+        "寒冷",
+        "暖和",
+        "冰凉",
+        "凉快"
+      ],
+      "answer": 2,
+      "explain": "“温暖”和“暖和”都表示不冷。"
+    },
+    {
+      "id": "zh3u-u6-013",
+      "unit": "u6",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "这本书（ ）我的，（ ）哥哥的。",
+      "options": [
+        "不是……而是……",
+        "只要……就……",
+        "不但……而且……",
+        "因为……所以……"
+      ],
+      "answer": 1,
+      "explain": "前后是并列否定关系，用“不是……而是……”。"
+    },
+    {
+      "id": "zh3u-u6-014",
+      "unit": "u6",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "天气预报说今天有雨，下午（ ）下起了大雨。",
+      "options": [
+        "忽然",
+        "竟然",
+        "居然",
+        "果然"
+      ],
+      "answer": 4,
+      "explain": "“果然”表示结果和预料的相同。"
+    },
+    {
+      "id": "zh3u-u6-015",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：掩耳盗（ ）",
+      "options": [
+        "铃",
+        "锣",
+        "钟",
+        "鼓"
+      ],
+      "answer": 1,
+      "explain": "“掩耳盗铃”比喻自己欺骗自己。"
+    },
+    {
+      "id": "zh3u-u6-016",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：刻舟求（ ）",
+      "options": [
+        "刀",
+        "剑",
+        "船",
+        "鱼"
+      ],
+      "answer": 2,
+      "explain": "“刻舟求剑”比喻不懂得事物变化。"
+    },
+    {
+      "id": "zh3u-u6-017",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：自相矛（ ）",
+      "options": [
+        "剑",
+        "刀",
+        "弓",
+        "盾"
+      ],
+      "answer": 4,
+      "explain": "“自相矛盾”比喻言行前后不一致。"
+    },
+    {
+      "id": "zh3u-u6-018",
+      "unit": "u6",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：滥竽充（ ）",
+      "options": [
+        "数",
+        "行",
+        "人",
+        "队"
+      ],
+      "answer": 1,
+      "explain": "“滥竽充数”比喻没有真才实学。"
+    },
+    {
+      "id": "zh3u-u6-019",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "古诗三首",
+        "体育比赛",
+        "校园食谱",
+        "数学广角"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《古诗三首》。",
+      "passage": "在《古诗三首》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u6-020",
+      "unit": "u6",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "不看不想",
+        "细致观察",
+        "照抄别人",
+        "随意想象"
+      ],
+      "answer": 2,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《古诗三首》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u7-001",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“zòu”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "地",
+        "天",
+        "奏",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“奏”读 zòu，可以组词“奏”。"
+    },
+    {
+      "id": "zh3u-u7-002",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“qín”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "人",
+        "天",
+        "琴",
+        "地"
+      ],
+      "answer": 3,
+      "explain": "“琴”读 qín，可以组词“琴”。"
+    },
+    {
+      "id": "zh3u-u7-003",
+      "unit": "u7",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“gǎn”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "地",
+        "感",
+        "天",
+        "人"
+      ],
+      "answer": 2,
+      "explain": "“感”读 gǎn，可以组词“感”。"
+    },
+    {
+      "id": "zh3u-u7-004",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“奏”的正确读音是？",
+      "options": [
+        "biàn",
+        "biān",
+        "zòu",
+        "biǎn"
+      ],
+      "answer": 3,
+      "explain": "“奏”读 zòu。"
+    },
+    {
+      "id": "zh3u-u7-005",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“琴”的正确读音是？",
+      "options": [
+        "biǎn",
+        "biān",
+        "qín",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“琴”读 qín。"
+    },
+    {
+      "id": "zh3u-u7-006",
+      "unit": "u7",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“感”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "biàn",
+        "gǎn"
+      ],
+      "answer": 4,
+      "explain": "“感”读 gǎn。"
+    },
+    {
+      "id": "zh3u-u7-007",
+      "unit": "u7",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "天气预报说今天有雨，下午（ ）下起了大雨。",
+      "options": [
+        "竟然",
+        "忽然",
+        "果然",
+        "居然"
+      ],
+      "answer": 3,
+      "explain": "“果然”表示结果和预料的相同。"
+    },
+    {
+      "id": "zh3u-u7-008",
+      "unit": "u7",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“温暖”意思相近的词语是？",
+      "options": [
+        "冰凉",
+        "凉快",
+        "暖和",
+        "寒冷"
+      ],
+      "answer": 3,
+      "explain": "“温暖”和“暖和”都表示不冷。"
+    },
+    {
+      "id": "zh3u-u7-009",
+      "unit": "u7",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“熟悉”的反义词是？",
+      "options": [
+        "清楚",
+        "常见",
+        "了解",
+        "陌生"
+      ],
+      "answer": 4,
+      "explain": "“熟悉”和“陌生”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u7-010",
+      "unit": "u7",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "这本书（ ）我的，（ ）哥哥的。",
+      "options": [
+        "因为……所以……",
+        "只要……就……",
+        "不是……而是……",
+        "不但……而且……"
+      ],
+      "answer": 3,
+      "explain": "前后是并列否定关系，用“不是……而是……”。"
+    },
+    {
+      "id": "zh3u-u7-011",
+      "unit": "u7",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "我（ ）明天能早点起床。",
+      "options": [
+        "盼望",
+        "失望",
+        "看望",
+        "希望"
+      ],
+      "answer": 4,
+      "explain": "“希望”表示心里想达到某种目的。"
+    },
+    {
+      "id": "zh3u-u7-012",
+      "unit": "u7",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“鼓励”意思相近的词语是？",
+      "options": [
+        "责怪",
+        "批评",
+        "鼓舞",
+        "嘲笑"
+      ],
+      "answer": 3,
+      "explain": "“鼓励”和“鼓舞”都表示给人力量。"
+    },
+    {
+      "id": "zh3u-u7-013",
+      "unit": "u7",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）认真学习，（ ）能取得进步。",
+      "options": [
+        "虽然……但是……",
+        "不是……而是……",
+        "因为……所以……",
+        "只要……就……"
+      ],
+      "answer": 4,
+      "explain": "前后是条件关系，用“只要……就……”。"
+    },
+    {
+      "id": "zh3u-u7-014",
+      "unit": "u7",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "多年不见，他（ ）是那么热情。",
+      "options": [
+        "突然",
+        "依然",
+        "果然",
+        "仍然"
+      ],
+      "answer": 2,
+      "explain": "“依然”表示和从前一样。"
+    },
+    {
+      "id": "zh3u-u7-015",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：画蛇添（ ）",
+      "options": [
+        "手",
+        "脚",
+        "足",
+        "尾"
+      ],
+      "answer": 3,
+      "explain": "“画蛇添足”比喻做多余的事。"
+    },
+    {
+      "id": "zh3u-u7-016",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：守株待（ ）",
+      "options": [
+        "兔",
+        "鸟",
+        "鱼",
+        "虎"
+      ],
+      "answer": 1,
+      "explain": "“守株待兔”比喻不主动努力。"
+    },
+    {
+      "id": "zh3u-u7-017",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：亡羊补（ ）",
+      "options": [
+        "牢",
+        "圈",
+        "门",
+        "洞"
+      ],
+      "answer": 1,
+      "explain": "“亡羊补牢”比喻出了问题及时补救。"
+    },
+    {
+      "id": "zh3u-u7-018",
+      "unit": "u7",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：井底之（ ）",
+      "options": [
+        "蛙",
+        "鱼",
+        "鸟",
+        "虫"
+      ],
+      "answer": 1,
+      "explain": "“井底之蛙”比喻见识狭窄。"
+    },
+    {
+      "id": "zh3u-u7-019",
+      "unit": "u7",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "大自然的声音",
+        "数学广角",
+        "校园食谱",
+        "体育比赛"
+      ],
+      "answer": 1,
+      "explain": "短文开头提到了《大自然的声音》。",
+      "passage": "在《大自然的声音》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u7-020",
+      "unit": "u7",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "照抄别人",
+        "不看不想",
+        "随意想象",
+        "细致观察"
+      ],
+      "answer": 4,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《大自然的声音》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u8-001",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“sī”对应的汉字是？提示：这是本单元第1个生字。",
+      "options": [
+        "天",
+        "地",
+        "司",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“司”读 sī，可以组词“司”。"
+    },
+    {
+      "id": "zh3u-u8-002",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“zhǎng”对应的汉字是？提示：这是本单元第2个生字。",
+      "options": [
+        "掌",
+        "地",
+        "天",
+        "人"
+      ],
+      "answer": 1,
+      "explain": "“掌”读 zhǎng，可以组词“掌”。"
+    },
+    {
+      "id": "zh3u-u8-003",
+      "unit": "u8",
+      "type": "pinyin_to_char",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“bān”对应的汉字是？提示：这是本单元第3个生字。",
+      "options": [
+        "班",
+        "人",
+        "地",
+        "天"
+      ],
+      "answer": 1,
+      "explain": "“班”读 bān，可以组词“班”。"
+    },
+    {
+      "id": "zh3u-u8-004",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“司”的正确读音是？",
+      "options": [
+        "sī",
+        "biǎn",
+        "biān",
+        "biàn"
+      ],
+      "answer": 1,
+      "explain": "“司”读 sī。"
+    },
+    {
+      "id": "zh3u-u8-005",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "“掌”的正确读音是？",
+      "options": [
+        "biān",
+        "zhǎng",
+        "biǎn",
+        "biàn"
+      ],
+      "answer": 2,
+      "explain": "“掌”读 zhǎng。"
+    },
+    {
+      "id": "zh3u-u8-006",
+      "unit": "u8",
+      "type": "char_to_pinyin",
+      "skill": "pinyin",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“班”的正确读音是？",
+      "options": [
+        "biān",
+        "biǎn",
+        "bān",
+        "biàn"
+      ],
+      "answer": 3,
+      "explain": "“班”读 bān。"
+    },
+    {
+      "id": "zh3u-u8-007",
+      "unit": "u8",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "多年不见，他（ ）是那么热情。",
+      "options": [
+        "突然",
+        "依然",
+        "仍然",
+        "果然"
+      ],
+      "answer": 2,
+      "explain": "“依然”表示和从前一样。"
+    },
+    {
+      "id": "zh3u-u8-008",
+      "unit": "u8",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“鼓励”意思相近的词语是？",
+      "options": [
+        "鼓舞",
+        "批评",
+        "嘲笑",
+        "责怪"
+      ],
+      "answer": 1,
+      "explain": "“鼓励”和“鼓舞”都表示给人力量。"
+    },
+    {
+      "id": "zh3u-u8-009",
+      "unit": "u8",
+      "type": "antonym",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "“进步”的反义词是？",
+      "options": [
+        "提高",
+        "落后",
+        "发展",
+        "前进"
+      ],
+      "answer": 2,
+      "explain": "“进步”和“落后”是一对反义词。"
+    },
+    {
+      "id": "zh3u-u8-010",
+      "unit": "u8",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）认真学习，（ ）能取得进步。",
+      "options": [
+        "虽然……但是……",
+        "不是……而是……",
+        "因为……所以……",
+        "只要……就……"
+      ],
+      "answer": 4,
+      "explain": "前后是条件关系，用“只要……就……”。"
+    },
+    {
+      "id": "zh3u-u8-011",
+      "unit": "u8",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "同学们（ ）走进教室。",
+      "options": [
+        "连续",
+        "持续",
+        "陆续",
+        "继续"
+      ],
+      "answer": 3,
+      "explain": "“陆续”表示先先后后，时断时续。"
+    },
+    {
+      "id": "zh3u-u8-012",
+      "unit": "u8",
+      "type": "synonym",
+      "skill": "word",
+      "difficulty": 1,
+      "answer_mode": "choice",
+      "stem": "和“壮观”意思相近的词语是？",
+      "options": [
+        "雄伟",
+        "细小",
+        "普通",
+        "安静"
+      ],
+      "answer": 1,
+      "explain": "“壮观”和“雄伟”都表示气势宏大。"
+    },
+    {
+      "id": "zh3u-u8-013",
+      "unit": "u8",
+      "type": "sentence_choice",
+      "skill": "sentence",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "（ ）明天下雨，我们（ ）不去公园了。",
+      "options": [
+        "因为……所以……",
+        "不但……而且……",
+        "如果……就……",
+        "虽然……但是……"
+      ],
+      "answer": 3,
+      "explain": "前后是假设关系，用“如果……就……”。"
+    },
+    {
+      "id": "zh3u-u8-014",
+      "unit": "u8",
+      "type": "word_choice",
+      "skill": "word",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "我们去公园（ ）美丽的荷花。",
+      "options": [
+        "观赏",
+        "观察",
+        "参观",
+        "观看"
+      ],
+      "answer": 1,
+      "explain": "“观赏”侧重于欣赏美好的景物。"
+    },
+    {
+      "id": "zh3u-u8-015",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：掩耳盗（ ）",
+      "options": [
+        "鼓",
+        "铃",
+        "钟",
+        "锣"
+      ],
+      "answer": 2,
+      "explain": "“掩耳盗铃”比喻自己欺骗自己。"
+    },
+    {
+      "id": "zh3u-u8-016",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：刻舟求（ ）",
+      "options": [
+        "剑",
+        "刀",
+        "鱼",
+        "船"
+      ],
+      "answer": 1,
+      "explain": "“刻舟求剑”比喻不懂得事物变化。"
+    },
+    {
+      "id": "zh3u-u8-017",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 2,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：自相矛（ ）",
+      "options": [
+        "盾",
+        "弓",
+        "刀",
+        "剑"
+      ],
+      "answer": 1,
+      "explain": "“自相矛盾”比喻言行前后不一致。"
+    },
+    {
+      "id": "zh3u-u8-018",
+      "unit": "u8",
+      "type": "accumulation",
+      "skill": "accumulation",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "把成语补充完整：滥竽充（ ）",
+      "options": [
+        "行",
+        "队",
+        "数",
+        "人"
+      ],
+      "answer": 3,
+      "explain": "“滥竽充数”比喻没有真才实学。"
+    },
+    {
+      "id": "zh3u-u8-019",
+      "unit": "u8",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "短文主要围绕哪篇课文或哪个主题？",
+      "options": [
+        "数学广角",
+        "体育比赛",
+        "司马光",
+        "校园食谱"
+      ],
+      "answer": 3,
+      "explain": "短文开头提到了《司马光》。",
+      "passage": "在《司马光》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    },
+    {
+      "id": "zh3u-u8-020",
+      "unit": "u8",
+      "type": "reading",
+      "skill": "reading",
+      "difficulty": 3,
+      "answer_mode": "choice",
+      "stem": "作者为什么能把事物写得具体又有趣？",
+      "options": [
+        "照抄别人",
+        "随意想象",
+        "细致观察",
+        "不看不想"
+      ],
+      "answer": 3,
+      "explain": "短文说作者用细致的观察，把事物写得具体又有趣。",
+      "passage": "在《司马光》的学习中，我们读到了生动的故事和美丽的景物。作者用细致的观察，把事物写得具体又有趣。"
+    }
+  ]
+}

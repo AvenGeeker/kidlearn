@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+*.swo
+*~
+*.orig
+*.log
+install/
+kidlearn_ai_config.json
+kidlearn_ai_bank.json
