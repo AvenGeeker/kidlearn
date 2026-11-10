@@ -4,6 +4,9 @@
 *~
 *.orig
 *.log
+__pycache__/
+*.pyc
+.venv/
 install/
 kidlearn_ai_config.json
 kidlearn_ai_bank.json

@@ -53,7 +53,7 @@
 | 数据 | 本地 `koreader/settings/kidlearn.lua`；可选 AI 配置 `kidlearn_ai_config.json`、AI 题库 `kidlearn_ai_bank.json` |
 | 许可 | 代码跟随 KOReader 的 AGPL；题目为原创或公版内容 |
 
-> 开发协作规范见同目录 [`AGENTS.md`](AGENTS.md)；构建 KOReader 本身见 [`doc/Building.md`](../../doc/Building.md)。
+> 开发协作规范见同目录 [`AGENTS.md`](AGENTS.md)；构建 KOReader 本身见 [KOReader Building](https://github.com/koreader/koreader/blob/master/doc/Building.md)。
 
 ---
 
@@ -97,6 +97,8 @@
 ## 安装
 
 ### Kindle
+
+> 本仓库根目录就是插件本体。克隆或下载后，把整个仓库目录重命名为 `kidlearn.koplugin` 再复制；也可以直接用打包脚本生成安装包。
 
 1. 用 USB 连接 Kindle。
 2. 把 **整个** `kidlearn.koplugin` 文件夹复制到：
@@ -292,7 +294,7 @@ Kindle 用 USB 连接后通常就是：
 
 `preset` 可用值：`openai`、`deepseek`、`qwen`、`kimi`、`zhipu`、`doubao`、`gemini`、`claude`、`siliconflow`、`openrouter`、`ollama`、`custom`。使用第三方中转或自定义 OpenAI 兼容地址时，写 `"preset": "custom"` 并填写 `base_url`。
 
-仓库里有一份模板：[`tools/kidlearn/kidlearn_ai_config.example.json`](../../tools/kidlearn/kidlearn_ai_config.example.json)。复制为 `kidlearn_ai_config.json`、改好三个值，再推到上面的路径即可。**不要把填好 Key 的文件提交到 Git。**
+仓库里有一份模板：[`tools/kidlearn/kidlearn_ai_config.example.json`](tools/kidlearn/kidlearn_ai_config.example.json)。复制为 `kidlearn_ai_config.json`、改好三个值，再推到上面的路径即可。**不要把填好 Key 的文件提交到 Git。**
 
 也可以用脚本生成并直接推送到 Kindle（Kindle 挂载点通常是 `/Volumes/Kindle`）：
 
@@ -374,8 +376,8 @@ Kindle 上通常对应 `/mnt/us/koreader/settings/`。`kidlearn.lua` 是 KOReade
 tools/kidlearn/build_catalog.py       # 省份 / 年级 / 教材 / 单元目录
 tools/kidlearn/build_bank.py          # 语文题目源数据 + 生成逻辑（唯一事实来源）
         │
-        ├──> plugins/kidlearn.koplugin/data/catalog.json            运行时目录
-        └──> plugins/kidlearn.koplugin/data/chinese/tongbian/
+        ├──> data/catalog.json                                  运行时目录
+        └──> data/chinese/tongbian/
              ├── g1_upper.json ... g6_upper.json                    12 册题库
              └── g1_lower.json ... g6_lower.json
 ```
@@ -487,47 +489,47 @@ python3 tools/kidlearn/export_review.py --per-unit 3   # 自定义抽样数量
 
 ### 前置条件
 
-- 能构建 KOReader 模拟器（见 [`doc/Building.md`](../../doc/Building.md)）。
-- 初始化子模块：
+- 准备一份 KOReader 源码检出，并能构建模拟器（见 [KOReader Building](https://github.com/koreader/koreader/blob/master/doc/Building.md)）。默认使用 `~/GitHub/koreader`，其他位置用 `KOREADER_DIR=/path/to/koreader` 指定。
+- 初始化 KOReader 子模块：
 
   ```bash
+  cd "${KOREADER_DIR:-$HOME/GitHub/koreader}"
   git submodule update --init --recursive
+  ./kodev build
   ```
 
-- macOS 建议用 Homebrew 安装 `bash`、`gnu-getopt`、`coreutils`、`make`、`findutils`；`run_emulator.command` 里已经预置了 Intel Homebrew（`/usr/local`）路径。
+- macOS 建议用 Homebrew 安装 `bash`、`gnu-getopt`、`coreutils`、`make`、`findutils`；脚本会查找 `/usr/local` 或 `/opt/homebrew` 下的 Homebrew `bash`。
 
 ### 运行模拟器
 
-```bash
-./kodev build
-./kodev run -b -W 600 -H 800 -D 167
-```
-
-或直接双击 / 执行：
+在仓库根目录执行：
 
 ```bash
 tools/kidlearn/run_emulator.command
 ```
 
-该脚本会设置 `KIDLEARN_AUTOSTART=1`，启动后约 1 秒自动打开插件。也可以手动设置这个环境变量：
+脚本会把本仓库链接到 `${KOREADER_DIR:-$HOME/GitHub/koreader}/plugins/kidlearn.koplugin`，设置 `KIDLEARN_AUTOSTART=1`，然后启动 KOReader。启动后约 1 秒会自动打开插件。
+
+也可以先手动完成链接，再从 KOReader 目录运行：
 
 ```bash
+cd "${KOREADER_DIR:-$HOME/GitHub/koreader}"
 KIDLEARN_AUTOSTART=1 ./kodev run -b -W 600 -H 800 -D 167
 ```
 
 ### 单元测试
 
-插件的测试放在 `spec/unit/kidlearn_*.lua`，运行时会被链接到模拟器的 `spec/front/unit/` 下，所以要用 `front` 套件：
+测试源码在本仓库 `spec/unit/kidlearn_*.lua`。`test_plugin.sh` 会临时把本仓库和测试链接进 KOReader，再通过 `front` 套件运行：
 
 ```bash
-# 只跑插件的 7 个测试
-./kodev test front kidlearn_bank kidlearn_catalog kidlearn_mathgen kidlearn_progress kidlearn_session kidlearn_ui kidlearn_ai
+# 跑全部 7 个插件测试
+tools/kidlearn/test_plugin.sh
 
 # 只跑一个
-./kodev test front kidlearn_session
+tools/kidlearn/test_plugin.sh kidlearn_session
 
 # 复用已有构建，跳过重新编译
-./kodev test -b front kidlearn_session
+KODEV_REUSE_BUILD=1 tools/kidlearn/test_plugin.sh kidlearn_session
 ```
 
 | 测试 | 覆盖内容 |
@@ -554,7 +556,7 @@ tools/kidlearn/package_plugin.sh
 ## 代码结构
 
 ```text
-plugins/kidlearn.koplugin/
+.
 ├── _meta.lua              # 插件名与描述（KOReader 插件元信息）
 ├── main.lua               # 入口：菜单注册、Dispatcher 动作、开发环境自动打开
 ├── core/
@@ -576,10 +578,10 @@ plugins/kidlearn.koplugin/
 ├── data/
 │   ├── catalog.json       # 省份/年级/教材/单元目录
 │   └── chinese/tongbian/  # 1-6 年级语文题库（生成产物）
+├── tools/kidlearn/        # 题库构建、校验、抽查导出、打包、测试、模拟器启动
+├── spec/unit/kidlearn_*.lua # 插件单元测试
+├── AGENTS.md              # 开发协作规范
 └── README.md
-
-tools/kidlearn/            # 题库构建、校验、抽查导出、打包、模拟器启动
-spec/unit/kidlearn_*.lua   # 插件单元测试
 ```
 
 一次答题的调用链：
@@ -627,10 +629,10 @@ main.lua → ui/mainview.lua（状态机）
 语文题需要人工把关（答案唯一、拼音声调、解析难度），所以走「源数据 → 生成 → 校验 → 抽查」流程；数学题才是程序生成的。公开生字表整理出的题库建议家长用 `export_review.py` 抽查一次。
 
 **模拟器脚本报找不到 `getopt` / `make`？**
-脚本里写死了 Intel Homebrew 路径（`/usr/local`）。Apple Silicon 请改成 `/opt/homebrew`，或手动把对应 `bin` 目录加进 `PATH`。
+脚本会同时查找 Apple Silicon（`/opt/homebrew`）和 Intel（`/usr/local`）Homebrew 路径。若仍失败，先安装依赖：`brew install bash gnu-getopt coreutils make findutils`。
 
-**为什么 `./kodev test unit ...` 跑不了？**
-模拟器只把 `spec` 链接到 `spec/front` 下，插件测试要按 `front` 套件运行，测试名是 `kidlearn_*`（不带 `_spec`）。
+**为什么不能直接跑 `./kodev test unit ...`？**
+本仓库是独立插件仓库；用 `tools/kidlearn/test_plugin.sh` 会自动链接插件、测试到 KOReader，并使用正确的 `front` 套件。测试名是 `kidlearn_*`（不带 `_spec`）。
 
 **改了 `data/*.json` 但界面没变化？**
 `core/bank.lua` 有内存缓存，重启 KOReader；另外确认改的是 `build_bank.py`，不是只改了生成结果。
@@ -644,7 +646,7 @@ main.lua → ui/mainview.lua（状态机）
 - 提交前至少运行插件单测：
 
   ```bash
-  ./kodev test front kidlearn_bank kidlearn_catalog kidlearn_mathgen kidlearn_progress kidlearn_session kidlearn_ui kidlearn_ai
+  tools/kidlearn/test_plugin.sh
   ```
 
 - 用户可见行为变化时同步更新本 README；新增内容应保持适龄、离线优先和墨水屏友好。
