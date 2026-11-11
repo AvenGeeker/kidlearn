@@ -79,6 +79,25 @@ local SKILL_LABEL = {
     word_compare = "应用题", word_two_step = "应用题", word_length = "应用题",
     word_mass = "应用题", word_time = "应用题", word_remainder = "应用题",
 }
+-- Title-bar back navigation: parent page for each state (default: home).
+-- Second-level pages go straight back to the home page; deeper pages step
+-- up one level (e.g. knowledge card -> knowledge list -> home).
+local BACK_PARENT = {
+    unit_select = "home",
+    kp_subject = "home",
+    kp_select = "home",
+    kp_learn = "kp_select",
+    wrongbook = "home",
+    wrong_detail = "wrongbook",
+    badges = "home",
+    settings = "home",
+    ai_settings = "settings",
+    ai_service_edit = "ai_settings",
+    ai_preview = "ai_bank",
+    summary = "home",
+    diagnose_result = "kp_select",
+}
+
 local KP_STATUS_MARK = { mastered = "★", learning = "●", weak = "▲" }
 local KP_STATUS_LABEL = { mastered = "已掌握", learning = "继续加油", weak = "需要加强" }
 
@@ -106,6 +125,8 @@ function MainView:init()
     self.plugin_path = self.plugin_path
     self.progress = Progress.open()
     self.state = "home"
+    self._back_shown = false
+    self._current_title = _("小小学习家")
     self.selected = nil
     self.number_input = ""
     self.feedback = nil
@@ -149,7 +170,84 @@ function MainView:paintTo(bb, x, y)
 end
 
 function MainView:set_title(text)
+    self._current_title = text
     self.title_bar:setTitle(text)
+    self:update_back_button()
+end
+
+--[[--
+Show a persistent back button in the title bar on every non-home page.
+TitleBar fixes its icon layout at init, so rebuild it when the back button
+appears or disappears (page transitions already repaint the whole screen).
+--]]--
+function MainView:update_back_button()
+    local want_back = self.state ~= "home"
+    if want_back == self._back_shown then return end
+    self._back_shown = want_back
+    self.title_bar = TitleBar:new{
+        fullscreen = true,
+        width = self.dimen.w,
+        align = "left",
+        title = self._current_title,
+        title_face = Font:getFace("smalltfont", 22),
+        title_h_padding = Size.padding.large,
+        left_icon = want_back and "chevron.left" or nil,
+        left_icon_tap_callback = function() self:onBack() end,
+        close_callback = function() self:onClose() end,
+        show_parent = self,
+    }
+    self.main[1] = self.title_bar
+    self.main._size = nil
+end
+
+--[[--
+Title-bar back: leave the current page without exiting the plugin.
+Active practice/diagnosis sessions ask for confirmation first; answers
+already given stay saved.
+--]]--
+function MainView:onBack()
+    local state = self.state
+    if state == "home" then return end
+    if state == "quiz" or state == "feedback"
+        or state == "diagnose_quiz" or state == "diagnose_feedback" then
+        UIManager:show(ConfirmBox:new{
+            text = _("本轮练习还没有完成，确定返回吗？\n\n已经答过的题目和星星会保存。"),
+            ok_text = _("返回"),
+            cancel_text = _("继续练习"),
+            ok_callback = function()
+                self.session = nil
+                self.diagnose = nil
+                self:render_home()
+            end,
+        })
+        return
+    end
+    if state == "ai_bank" then
+        local back = self.ai_bank_back
+        self.ai_bank_back = nil
+        if back then back() else self:render_home() end
+        return
+    end
+    if state == "choice_list" then
+        local back = self.choice_list_back
+        self.choice_list_back = nil
+        if back then back() else self:render_settings() end
+        return
+    end
+    local parent = BACK_PARENT[state] or "home"
+    if parent == "kp_select" then
+        self:render_kp_select(self.kp_subject or self.diagnose_subject or "math")
+    elseif parent == "wrongbook" then
+        self:render_wrongbook()
+    elseif parent == "settings" then
+        self:render_settings()
+    elseif parent == "ai_settings" then
+        self:render_ai_settings()
+    elseif parent == "ai_bank" then
+        self:render_ai_bank()
+    else
+        self:render_home()
+    end
 end
 
 function MainView:set_body(widget)
@@ -1627,6 +1725,7 @@ end
 
 function MainView:render_choice_list(title, items, on_select, back)
     self.state = "choice_list"
+    self.choice_list_back = back or function() self:render_settings() end
     self:set_title(title)
     local cw = Widgets.width()
     local content = VerticalGroup:new{ align = "center" }
@@ -1655,7 +1754,7 @@ function MainView:render_choice_list(title, items, on_select, back)
             width = cw,
             height = Screen:scaleBySize(48),
             size = 20,
-            callback = back or function() self:render_settings() end,
+            callback = self.choice_list_back,
         }),
     }
     self:set_body(body)
@@ -1917,6 +2016,7 @@ end
 
 function MainView:render_kp_select(subject)
     self.state = "kp_select"
+    self.kp_subject = subject
     self:set_title(self:subject_label(subject) .. "知识点")
     self.selected = nil
     self.number_input = ""
@@ -2002,6 +2102,7 @@ end
 
 function MainView:render_kp_learn(subject, topic_id)
     self.state = "kp_learn"
+    self.kp_subject = subject
     self.selected = nil
     self.number_input = ""
     self.feedback = nil

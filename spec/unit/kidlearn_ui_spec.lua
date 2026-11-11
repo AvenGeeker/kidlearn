@@ -339,3 +339,104 @@ describe("KidLearn knowledge UI smoke", function()
         settings.grade = old_grade
     end)
 end)
+
+describe("KidLearn title-bar back navigation", function()
+    local DataStorage
+    local Device
+    local MainView
+    local AIBank
+    local view
+    local ai_bank_path
+
+    setup(function()
+        require("commonrequire")
+        package.path = "plugins/kidlearn.koplugin/?.lua;" .. package.path
+        DataStorage = require("datastorage")
+        Device = require("device")
+        MainView = require("ui/mainview")
+        AIBank = require("core.ai_bank")
+    end)
+
+    before_each(function()
+        ai_bank_path = DataStorage:getDataDir() .. "/kidlearn_ui_back_spec_ai_bank.json"
+        os.remove(ai_bank_path)
+        view = MainView:new{
+            plugin_path = "./plugins/kidlearn.koplugin",
+            plugin = {},
+        }
+        view.ai_bank = AIBank.open(ai_bank_path)
+    end)
+
+    after_each(function()
+        os.remove(ai_bank_path)
+        os.remove(ai_bank_path .. ".bad")
+        os.remove(ai_bank_path .. ".tmp")
+    end)
+
+    it("shows the back button only outside the home page", function()
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.title_bar.left_icon)
+        view:render_kp_select("math")
+        assert.are.equal("chevron.left", view.title_bar.left_icon)
+        view:render_home()
+        assert.is_nil(view.title_bar.left_icon)
+    end)
+
+    it("returns second-level pages straight to home", function()
+        view:render_unit_select("math")
+        view:onBack()
+        assert.are.equal("home", view.state)
+        view:render_kp_select("chinese")
+        view:onBack()
+        assert.are.equal("home", view.state)
+        view:render_settings()
+        view:onBack()
+        assert.are.equal("home", view.state)
+        view:render_wrongbook()
+        view:onBack()
+        assert.are.equal("home", view.state)
+        view:render_badges()
+        view:onBack()
+        assert.are.equal("home", view.state)
+    end)
+
+    it("steps up from the knowledge card to the list, then home", function()
+        view:render_kp_learn("chinese", "cnc_p001")
+        assert.are.equal("kp_learn", view.state)
+        view:onBack()
+        assert.are.equal("kp_select", view.state)
+        assert.are.equal("chinese", view.kp_subject)
+        view:onBack()
+        assert.are.equal("home", view.state)
+    end)
+
+    it("keeps the session and asks for confirmation when backing out of a quiz", function()
+        view:start_session({ mode = "subject", subject = "math", unit = "m1" })
+        assert.are.equal("quiz", view.state)
+        assert.are.equal("chevron.left", view.title_bar.left_icon)
+        view:onBack()
+        assert.are.equal("quiz", view.state) -- ConfirmBox pending, not exited
+        assert.is_not_nil(view.session)
+    end)
+
+    it("honours custom back callbacks for choice lists and the AI bank", function()
+        view:render_province_select()
+        assert.are.equal("choice_list", view.state)
+        view:onBack()
+        assert.are.equal("settings", view.state)
+        view:render_ai_bank(nil, function() view:render_wrongbook() end)
+        assert.are.equal("ai_bank", view.state)
+        view:onBack()
+        assert.are.equal("wrongbook", view.state)
+    end)
+
+    it("paints correctly after the title bar is rebuilt", function()
+        view:render_kp_select("math")
+        view:paintTo(Device.screen.bb, 0, 0)
+        view:onBack()
+        assert.are.equal("home", view.state)
+        view:paintTo(Device.screen.bb, 0, 0)
+        view:render_kp_learn("math", "cnm_p001")
+        view:paintTo(Device.screen.bb, 0, 0)
+    end)
+end)
