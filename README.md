@@ -13,7 +13,7 @@
   <tr>
     <td align="center" width="220">
       <a href="docs/screenshots/home.png"><img src="docs/screenshots/home.png" width="180" alt="首页：星星、连续学习和今日进度"></a><br>
-      <sub>首页 · 今日挑战入口</sub>
+      <sub>首页 · 今日挑战与知识点学习入口</sub>
     </td>
     <td align="center" width="220">
       <a href="docs/screenshots/daily-quiz.png"><img src="docs/screenshots/daily-quiz.png" width="180" alt="今日挑战：语文拼音选择题"></a><br>
@@ -36,6 +36,34 @@
     <td align="center" width="220">
       <a href="docs/screenshots/ai-preview.png"><img src="docs/screenshots/ai-preview.png" width="180" alt="AI 变种题的家长预览"></a><br>
       <sub>AI 变种 · 家长预览后练习</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="220">
+      <a href="docs/screenshots/kp-select-math.png"><img src="docs/screenshots/kp-select-math.png" width="180" alt="数学知识点列表：按单元分组与掌握状态"></a><br>
+      <sub>知识点列表 · 单元分组与掌握度</sub>
+    </td>
+    <td align="center" width="220">
+      <a href="docs/screenshots/kp-learn.png"><img src="docs/screenshots/kp-learn.png" width="180" alt="学习卡片：描述、掌握标准、例题与先修知识点"></a><br>
+      <sub>学习卡片 · 先学后练</sub>
+    </td>
+    <td align="center" width="220">
+      <a href="docs/screenshots/kp-quiz-fraction.png"><img src="docs/screenshots/kp-quiz-fraction.png" width="180" alt="分数题数字键盘：支持小数与分数输入"></a><br>
+      <sub>分数键盘 · 小数/分数输入</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="220">
+      <a href="docs/screenshots/diagnose-result.png"><img src="docs/screenshots/diagnose-result.png" width="180" alt="自适应诊断结果：沿先修边回溯到薄弱根因的学习路径"></a><br>
+      <sub>自适应诊断 · 回溯薄弱根因</sub>
+    </td>
+    <td align="center" width="220">
+      <a href="docs/screenshots/kp-summary.png"><img src="docs/screenshots/kp-summary.png" width="180" alt="知识点练习结算：掌握度回写"></a><br>
+      <sub>练习结算 · 掌握度回写</sub>
+    </td>
+    <td align="center" width="220">
+      <a href="docs/screenshots/kp-select-chinese.png"><img src="docs/screenshots/kp-select-chinese.png" width="180" alt="语文知识点列表：统编逐课知识点"></a><br>
+      <sub>语文知识点 · 统编逐课</sub>
     </td>
   </tr>
 </table>
@@ -64,6 +92,7 @@
 - [安装](#安装)
 - [使用](#使用)
 - [出题与练习规则](#出题与练习规则)
+- [知识点学习（课标知识图谱）](#知识点学习课标知识图谱)
 - [积分、连续学习与奖章](#积分连续学习与奖章)
 - [AI 错题变种](#ai-错题变种可选联网)
 - [数据存储](#数据存储)
@@ -84,6 +113,8 @@
 - **数学练习**：按当前年级/教材的单元或综合练习；口算、乘法口诀、除法、混合运算、单位、时间、搭配、推理等。
 - **多年级 / 多教材**：设置里选择省份、年级、学期、语文教材、数学教材；省份会自动推荐常用数学版本，家长仍可手动覆盖。
 - **拓展挑战**：每轮从 17 类拓展题中随机抽 10 类（同一轮不重复），覆盖数感、量感、推理意识、几何直观、数据意识、应用意识、创新意识；包含鸡兔同笼、排队、周期、植树、移多补少等经典题型。
+- **知识点学习（课标图谱）**：同步 cn-math-taxonomy 小学数学 284 个知识点 / 1123 题、小学语文 494 个知识点 / 1976 题；按单元浏览、学习卡片先学后练、知识点练习与全册综合。
+- **自适应诊断**：选一个知识点，答错沿先修边回溯找薄弱根因，生成学习路径；知识点掌握度持久保存。
 - **即时反馈**：答对给星星，答错可再试一次，也可以直接看答案和解析。
 - **激励系统**：星星积分、连对奖励、连续学习天数、10 枚奖章、错题本与错题复习。
 - **自适应难度**：每个学科独立记录水平，按最近 10 次首次作答的正确率自动升降。
@@ -142,6 +173,7 @@
 | 今日挑战 | 语文 5 题 + 数学 5 题 |
 | 语文练习 | 综合练习或具体单元 |
 | 数学练习 | 综合练习、具体单元、拓展挑战 |
+| 知识点学习 | 语文/数学知识点浏览、学习卡片、知识点练习、全册综合、自适应诊断 |
 | 错题本 | 查看错题、重做单题、复习全部错题、AI 强化、AI 题库 |
 | AI 题库 | 查看、预览、练习、删除已生成的 AI 变种题 |
 | 奖章墙 | 已获得 / 未解锁奖章及进度 |
@@ -154,7 +186,7 @@
 
 ## 出题与练习规则
 
-一轮固定 10 题，不同入口的组成不同：
+原有练习模式一轮固定 10 题；知识点练习按知识点出题（1–4 题）。各入口组成：
 
 | 模式 | 题量 | 组成 |
 | --- | --- | --- |
@@ -164,6 +196,9 @@
 | 拓展挑战 | 10 | 从 17 类中随机抽 10 类，同一轮不重复（可限定单元） |
 | 错题复习 | ≤10 | 按最久未复习优先，最多 10 题 |
 | AI 强化 | ≤10 | 取最久未复习的 5 道错题，每题 AI 生成 2 道变种；每次重新生成 |
+| 知识点练习 | 1–4 | 单个知识点的全部题目，按难度升序 |
+| 全册综合 | 10 | 当前年级/册按单元轮换抽知识点题，难度随自适应等级 |
+| 知识点诊断 | ≤12 | 目标知识点 + 先修回溯；连对 2 题判掌握，答错补基础确认题 |
 
 ### 难度
 
@@ -181,6 +216,44 @@
 ### 去重
 
 最近答过的 30 道题会记录在 `recent_ids`，抽题时优先避开；题库不够时才允许重复。
+
+---
+
+## 知识点学习（课标知识图谱）
+
+从开源项目 [cn-math-taxonomy](https://github.com/xiaoyang111222/cn-math-taxonomy) 同步的小学知识图谱与题库（**CC BY-NC 4.0**：署名、非商业使用；数据文件头记录了来源 commit）：
+
+| 学科 | 知识点 | 题目 | 先修边 |
+| --- | --- | --- | --- |
+| 数学（人教 1–6 年级） | 284 | 1123 | 459（397 hard / 62 soft） |
+| 语文（统编 1–6 年级） | 494 | 1976 | 656（268 hard / 388 soft） |
+
+首页「知识点学习」→ 选学科 → 按当前年级/学期浏览：
+
+- **知识点列表**：按教材单元分组，显示掌握状态（★已掌握 ●学习中 ▲薄弱，无标记 = 未学）；顶部「全册综合（10 题）」按单元轮换抽题，难度随自适应等级。
+- **学习卡片（先学后练）**：知识点描述、掌握标准、例题与参考答案；列出直接先修知识点（hard 在前），可点击跳转先学基础；「开始练习（N 题）」按难度升序练该点全部题目（1–4 题）。
+- **自适应诊断**：选一个目标知识点，引擎先出提高题；连对 2 题判「掌握」（并推断其先修已掌握）；答错补一道基础确认题——确认对判「不稳」，确认错判「薄弱」并沿先修边回溯（hard 优先，深度 ≤3，总题量 ≤12）。结果页给出掌握/不稳/薄弱清单和「学习路径」（薄弱根因在前），可一键去学第一个薄弱点。
+- **掌握度存档**：练习与诊断结果写入 `kidlearn.lua` 的 `knowledge` 字段。单点练习首答全对 → 已掌握、全错 → 薄弱、其余 → 学习中；全册综合里每个知识点至少 2 题才升级掌握。诊断是测评：不给星星、不进错题本、不影响自适应等级与连续天数。
+
+细节约定：
+
+- 知识点模式**不受教材版本设置限制**：数学标注「课标知识点 · 人教参考」，语文标注「课标知识点 · 统编参考」；年级/学期沿用设置页。
+- 数学数值题支持整数、小数、分数答案：小数/分数题的数字键盘会增加「.」「/」键，分数判分接受等价小数（如 1/2 = 0.5）。
+- 同步时排除了 13 道不适合墨水屏纯文本界面的数学题：5 道依赖 SVG 图形、7 道多答案、1 道负数答案；排除后每个知识点仍至少 1 题。
+- 知识点练习的计分、错题本、奖章规则与普通练习完全一致；原有模式（今日挑战/单元练习/拓展挑战）不受影响。
+
+### 同步与维护
+
+```bash
+# 从本地 cn-math-taxonomy 检出重新生成 data/knowledge/（默认 ~/GitHub/cn-math-taxonomy）
+python3 tools/kidlearn/sync_taxonomy.py --source ~/GitHub/cn-math-taxonomy
+# 校验生成物
+python3 tools/kidlearn/validate_knowledge.py
+# 检查生成物是否与源一致（提交前）
+python3 tools/kidlearn/sync_taxonomy.py --check
+```
+
+`data/knowledge/` 全部是生成产物，**不要手改**；源仓库更新后重跑同步脚本覆盖。
 
 ---
 
@@ -350,7 +423,7 @@ Kindle 上通常对应 `/mnt/us/koreader/settings/`。`kidlearn.lua` 是 KOReade
 
 | 字段 | 内容 |
 | --- | --- |
-| `schema_version` | 存档版本，当前为 3 |
+| `schema_version` | 存档版本，当前为 4 |
 | `total` | 总星星、答题数、正确数、轮数、满分轮数、最高连对、掌握错题数 |
 | `by_subject` | 语文 / 数学各自的答题数与正确数 |
 | `streak` | 当前连续天数、历史最长、最后学习日 |
@@ -361,9 +434,10 @@ Kindle 上通常对应 `/mnt/us/koreader/settings/`。`kidlearn.lua` 是 KOReade
 | `adaptive_by_grade` | 各“学科 + 年级”的难度等级与最近 10 次统计 |
 | `settings` | 省份、年级、学期、语文教材、数学教材、每日目标、重试开关、AI 服务配置 |
 | `recent_ids` | 最近 30 道题 ID |
+| `knowledge` | 各学科知识点掌握度（learning/mastered/weak）、首答计数、最近学习时间 |
 
 - **备份 / 换机**：复制 `kidlearn.lua`；如需保留 AI 变种题，再复制 `kidlearn_ai_bank.json`；用配置文件部署 AI 时，再带上 `kidlearn_ai_config.json`。
-- **重置进度**：设置 → 重置学习进度。只清空星星、打卡、奖章和错题，保留省份、年级、学期、教材、每日目标、重试开关、AI 服务配置和 AI 题库。AI 题库可在题库页单独清空。
+- **重置进度**：设置 → 重置学习进度。只清空星星、打卡、奖章、错题和知识点掌握度，保留省份、年级、学期、教材、每日目标、重试开关、AI 服务配置和 AI 题库。AI 题库可在题库页单独清空。
 - 存档结构变化时必须在 `core/progress.lua` 的 `normalize()` 里做兼容处理，见 [`AGENTS.md`](AGENTS.md)。
 
 ---
@@ -541,6 +615,8 @@ KODEV_REUSE_BUILD=1 tools/kidlearn/test_plugin.sh kidlearn_session
 | `kidlearn_session` | 满分一轮、每日挑战、跨年级/教材、错题复习、重试与奖励 |
 | `kidlearn_ui` | 首页 / 单元选择 / 省份/年级/教材选择 / 设置 / 奖章 / 错题本 / AI 设置与预览页面 |
 | `kidlearn_ai` | 厂商协议、请求构建、响应解析、变种校验、AI 题库、AI 会话与存档兼容 |
+| `kidlearn_knowledge` | 知识点分册/图谱加载、3–4 选项与分数判分、排除规则、缓存 |
+| `kidlearn_diagnose` | 掌握/不稳/薄弱判定、先修回溯顺序、祖先推断、题量与深度上限、可复现性 |
 
 ### 打包
 
@@ -550,6 +626,15 @@ tools/kidlearn/package_plugin.sh
 ```
 
 `install/` 被 `.gitignore` 忽略，打包产物和导出的抽查清单都不会进入仓库。
+
+### 截图
+
+```bash
+tools/kidlearn/take_screenshots.sh
+# 在 KOReader 模拟器运行时里走查全部页面，重新生成 docs/screenshots/*.png（600×800）
+```
+
+走查脚本 `tools/kidlearn/screenshot_walkthrough.lua` 会用一份演示存档跑通「今日挑战 → 知识点列表 → 学习卡片 → 分数键盘练习 → 结算 → 诊断」并逐页截图。
 
 ---
 
@@ -562,6 +647,8 @@ tools/kidlearn/package_plugin.sh
 ├── core/
 │   ├── catalog.lua        # 省份/年级/教材/单元目录读取
 │   ├── bank.lua           # 语文题库：加载、校验、缓存、按单元/难度/最近题抽题
+│   ├── knowledge.lua      # 课标知识点分册/先修图谱加载、分数/小数判分
+│   ├── diagnose.lua       # 自适应诊断引擎（先修回溯、掌握/不稳/薄弱、学习路径）
 │   ├── session.lua        # 会话构建（学科/今日/拓展/错题）、判题、连对、结算
 │   ├── progress.lua       # 本地存档、每日统计、连续天数、分年级自适应、错题本
 │   ├── badges.lua         # 10 枚奖章的定义与解锁判断
@@ -577,7 +664,8 @@ tools/kidlearn/package_plugin.sh
 ├── docs/screenshots/      # README 预览截图（600×800）
 ├── data/
 │   ├── catalog.json       # 省份/年级/教材/单元目录
-│   └── chinese/tongbian/  # 1-6 年级语文题库（生成产物）
+│   ├── chinese/tongbian/  # 1-6 年级语文题库（生成产物）
+│   └── knowledge/         # 课标知识点分册题库 + 先修图谱（sync_taxonomy.py 生成）
 ├── tools/kidlearn/        # 题库构建、校验、抽查导出、打包、测试、模拟器启动
 ├── spec/unit/kidlearn_*.lua # 插件单元测试
 ├── AGENTS.md              # 开发协作规范
@@ -591,6 +679,8 @@ main.lua → ui/mainview.lua（状态机）
               ├── core/catalog.lua  读取省份/年级/教材/单元
               ├── core/session.lua  构建题目、判题、连对
               ├── core/bank.lua     语文题读取与抽取
+              ├── core/knowledge.lua 知识点题读取与判分
+              ├── core/diagnose.lua 知识点诊断
               ├── core/mathgen.lua  数学题生成
               ├── core/progress.lua 记分、存档、错题、自适应
               ├── core/ai_*.lua     可选 AI 配置、请求、变种校验与题库
@@ -657,3 +747,4 @@ main.lua → ui/mainview.lua（状态机）
 
 插件代码跟随 KOReader 仓库的 **AGPL** 许可。
 题目内容为原创或使用公版古诗/名句，不复制教材长课文。
+`data/knowledge/` 下的知识图谱与题目改编自 [cn-math-taxonomy](https://github.com/xiaoyang111222/cn-math-taxonomy)，采用 **CC BY-NC 4.0**（署名、非商业使用）；商业使用需另行取得源项目授权。

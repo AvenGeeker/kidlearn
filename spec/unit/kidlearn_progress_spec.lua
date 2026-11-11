@@ -179,8 +179,154 @@ describe("KidLearn progress", function()
         assert.are.equal(false, p.data.settings.retry)
         assert.are.equal("table", type(p.data.settings.ai))
         assert.are.equal("table", type(p.data.settings.ai.profiles))
-        assert.are.equal(3, p.data.schema_version)
+        assert.are.equal(4, p.data.schema_version)
         assert.are.equal(3, p.data.adaptive_by_grade.chinese["2"].level)
         assert.are.equal(1, p.data.adaptive_by_grade.math["2"].level)
+    end)
+end)
+
+describe("KidLearn knowledge mastery", function()
+    local DataStorage
+    local Progress
+    local path
+
+    setup(function()
+        require("commonrequire")
+        package.path = "plugins/kidlearn.koplugin/?.lua;" .. package.path
+        DataStorage = require("datastorage")
+        Progress = require("core.progress")
+    end)
+
+    before_each(function()
+        path = DataStorage:getDataDir() .. "/kidlearn_kp_progress_spec.lua"
+        os.remove(path)
+        os.remove(path .. ".old")
+    end)
+
+    local function kp_question(id, topic)
+        return {
+            id = id,
+            subject = "math",
+            grade = 1,
+            semester = "upper",
+            unit = "u1",
+            unit_name = "1到5各数的认识",
+            type = "knowledge",
+            skill = "数与代数",
+            topic = topic,
+            difficulty = 1,
+            answer_mode = "number",
+            answer_format = "integer",
+            stem = "3 的后面一个数是几？",
+            answer = 4,
+            explain = "从 1 往后数，3 的后面是 4。",
+        }
+    end
+
+    it("migrates a schema-3 save without knowledge data", function()
+        local p = Progress.open(path)
+        p.data.schema_version = 3
+        p.data.knowledge = nil
+        p:flush()
+        local reopened = Progress.open(path)
+        assert.are.equal(4, reopened.data.schema_version)
+        assert.is_table(reopened.data.knowledge)
+        assert.is_table(reopened.data.knowledge.math)
+        assert.is_table(reopened.data.knowledge.chinese)
+    end)
+
+    it("normalizes malformed knowledge entries", function()
+        local p = Progress.open(path)
+        p.data.knowledge = {
+            math = {
+                bad = "not-a-table",
+                cnm_p001 = { status = "bogus", attempts = "x", correct = 2 },
+            },
+        }
+        p:flush()
+        local reopened = Progress.open(path)
+        assert.is_nil(reopened.data.knowledge.math.bad)
+        local entry = reopened.data.knowledge.math.cnm_p001
+        assert.are.equal("learning", entry.status)
+        assert.are.equal(0, entry.attempts)
+        assert.are.equal(2, entry.correct)
+    end)
+
+    it("counts first-try knowledge answers through record_answer", function()
+        local p = Progress.open(path)
+        p:record_answer(kp_question("cnm_p001_q1", "cnm_p001"), { attempt = 1, correct = true, now = os.time() })
+        p:record_answer(kp_question("cnm_p001_q1", "cnm_p001"), { attempt = 2, correct = true, now = os.time() })
+        local entry = p.data.knowledge.math.cnm_p001
+        assert.are.equal(1, entry.attempts)
+        assert.are.equal(1, entry.correct)
+        assert.are.equal("learning", entry.status)
+        assert.are.equal("learning", p:kp_status("math", "cnm_p001"))
+        assert.is_nil(p:kp_status("math", "cnm_p999"))
+    end)
+
+    it("summarizes mastery across a topic list", function()
+        local p = Progress.open(path)
+        p:mark_kp_status("math", "a", "mastered")
+        p:mark_kp_status("math", "b", "weak")
+        p:mark_kp_status("math", "c", "learning")
+        local counts = p:kp_summary("math", { "a", "b", "c", "d" })
+        assert.are.equal(4, counts.total)
+        assert.are.equal(1, counts.mastered)
+        assert.are.equal(1, counts.weak)
+        assert.are.equal(1, counts.learning)
+        assert.are.equal(1, counts.unlearned)
+    end)
+
+    it("writes back single-topic practice results", function()
+        local p = Progress.open(path)
+        local statuses = p:finalize_kp_session("math", {
+            { topic = "a", correct = true },
+            { topic = "a", correct = true },
+        }, true)
+        assert.are.equal("mastered", statuses.a)
+        statuses = p:finalize_kp_session("math", {
+            { topic = "b", correct = false },
+        }, true)
+        assert.are.equal("weak", statuses.b)
+        statuses = p:finalize_kp_session("math", {
+            { topic = "c", correct = true },
+            { topic = "c", correct = false },
+        }, true)
+        assert.are.equal("learning", statuses.c)
+    end)
+
+    it("needs two questions per topic in mixed sessions", function()
+        local p = Progress.open(path)
+        local statuses = p:finalize_kp_session("math", {
+            { topic = "a", correct = true },
+            { topic = "b", correct = false },
+            { topic = "c", correct = true },
+            { topic = "c", correct = true },
+        }, false)
+        assert.are.equal("learning", statuses.a) -- single correct does not promote
+        assert.are.equal("weak", statuses.b)     -- single wrong is still weak
+        assert.are.equal("mastered", statuses.c)
+    end)
+
+    it("snapshots topic and answer_format into the wrong book", function()
+        local p = Progress.open(path)
+        local q = kp_question("cnm_p079_q2", "cnm_p079")
+        q.answer_mode = "number"
+        q.answer_format = "fraction"
+        q.answer = "1/4"
+        p:record_wrong(q, os.time())
+        local item = p.data.wrong["cnm_p079_q2"]
+        assert.are.equal("cnm_p079", item.topic)
+        assert.are.equal("fraction", item.answer_format)
+        assert.are.equal("1/4", item.answer)
+    end)
+
+    it("clears knowledge on reset but keeps settings", function()
+        local p = Progress.open(path)
+        p.data.settings.grade = 5
+        p:mark_kp_status("math", "cnm_p001", "mastered")
+        p:reset_progress()
+        assert.is_nil(p:kp_status("math", "cnm_p001"))
+        assert.are.equal(5, p.data.settings.grade)
     end)
 end)

@@ -30,6 +30,8 @@ local AIVariant = require("core.ai_variant")
 local Badges = require("core.badges")
 local Bank = require("core.bank")
 local Catalog = require("core.catalog")
+local Diagnose = require("core.diagnose")
+local Knowledge = require("core.knowledge")
 local MathGen = require("core.mathgen")
 local Progress = require("core.progress")
 local Session = require("core.session")
@@ -77,6 +79,9 @@ local SKILL_LABEL = {
     word_compare = "应用题", word_two_step = "应用题", word_length = "应用题",
     word_mass = "应用题", word_time = "应用题", word_remainder = "应用题",
 }
+local KP_STATUS_MARK = { mastered = "★", learning = "●", weak = "▲" }
+local KP_STATUS_LABEL = { mastered = "已掌握", learning = "继续加油", weak = "需要加强" }
+
 local function truncate(text, max_chars)
     if not text then return "" end
     local max_bytes = max_chars * 3
@@ -162,7 +167,8 @@ function MainView:close_view()
 end
 
 function MainView:onClose()
-    if self.state == "quiz" or self.state == "feedback" then
+    if self.state == "quiz" or self.state == "feedback"
+        or self.state == "diagnose_quiz" or self.state == "diagnose_feedback" then
         UIManager:show(ConfirmBox:new{
             text = _("本轮练习还没有完成，确定退出吗？\n\n已经答过的题目和星星会保存。"),
             ok_text = _("退出"),
@@ -491,6 +497,13 @@ function MainView:render_home()
         Widgets.vspace(Size.span.vertical_default),
         subject_row,
         Widgets.vspace(Size.span.vertical_default),
+        Widgets.button("知识点学习", {
+            width = cw,
+            height = Screen:scaleBySize(60),
+            size = 22,
+            callback = function() self:render_kp_subject() end,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
         tool_row_1,
         Widgets.vspace(Size.span.vertical_default),
         tool_row_2,
@@ -586,6 +599,8 @@ function MainView:start_session(opts)
         wrong_items = opts.wrong_items,
         ai_questions = opts.ai_questions,
         ai_group_id = opts.ai_group_id,
+        kp_questions = opts.kp_questions,
+        kp_topic = opts.kp_topic,
         semester = settings.semester,
         plugin_path = self.plugin_path,
         progress = self.progress,
@@ -599,6 +614,9 @@ function MainView:start_session(opts)
     end
     self.session = session
     self.last_session_opts = opts
+    self.last_kp_topic = opts.kp_topic
+    self.last_kp_subject = opts.subject
+    self.diagnose = nil
     self.state = "quiz"
     self.selected = nil
     self.number_input = ""
@@ -611,6 +629,7 @@ function MainView:quiz_title()
     if self.session.mode == "wrong" then return "错题复习" end
     if self.session.mode == "ai" then return "AI 强化" end
     if self.session.mode == "challenge" then return "数学拓展" end
+    if self.session.mode == "kp" then return "知识点练习" end
     return self:subject_label(self.session.subject) .. "练习"
 end
 
@@ -665,6 +684,14 @@ function MainView:render_question_card(question)
     return Widgets.card(parts, { width = cw, padding = Size.padding.large })
 end
 
+function MainView:rerender_input()
+    if self.diagnose and self.state == "diagnose_quiz" then
+        self:render_diagnose_quiz()
+    else
+        self:render_quiz()
+    end
+end
+
 function MainView:render_choice_area(question)
     local cw = Widgets.width()
     local area = VerticalGroup:new{ align = "center" }
@@ -672,7 +699,7 @@ function MainView:render_choice_area(question)
     for i, option in ipairs(question.options or {}) do
         table.insert(area, Widgets.choice_button(prefixes[i] .. option, cw, self.selected == i, function()
             self.selected = i
-            self:render_quiz()
+            self:rerender_input()
         end))
         if i < #question.options then
             table.insert(area, Widgets.vspace(Size.span.vertical_default))
@@ -695,6 +722,11 @@ function MainView:render_keypad(question)
     local cw = Widgets.width()
     local gap = Size.span.horizontal_default
     local key_width = math.floor((cw - 2 * gap) / 3)
+    local format = question.answer_format
+    local extended = format == "decimal" or format == "fraction"
+    -- Knowledge questions may need up to 8 chars (e.g. 1000000 or 11/12);
+    -- legacy generated questions keep the original 5-char integer limit.
+    local max_len = format and 8 or 5
     local input_text = self.number_input ~= "" and self.number_input or "?"
     local display_card = Widgets.card(VerticalGroup:new{
         align = "center",
@@ -706,9 +738,9 @@ function MainView:render_keypad(question)
 
     local function digit(d)
         return function()
-            if #self.number_input < 5 then
+            if #self.number_input < max_len then
                 self.number_input = self.number_input .. d
-                self:render_quiz()
+                self:rerender_input()
             end
         end
     end
@@ -726,6 +758,39 @@ function MainView:render_keypad(question)
         end
         return group
     end
+    local function backspace()
+        if #self.number_input > 0 then
+            self.number_input = self.number_input:sub(1, -2)
+            self:rerender_input()
+        end
+    end
+    local function confirm()
+        if self.number_input == "" then return end
+        if extended then
+            local input = self.number_input
+            local valid
+            if format == "fraction" then
+                local num, den = input:match("^(%d+)/(%d+)$")
+                if num then
+                    valid = tonumber(den) ~= 0
+                else
+                    valid = tonumber(input) ~= nil
+                end
+            else
+                valid = tonumber(input) ~= nil
+            end
+            if not valid then
+                UIManager:show(InfoMessage:new{
+                    text = format == "fraction" and "请输入分数（如 1/2）或小数" or "请输入小数（如 0.5）",
+                    timeout = 3,
+                })
+                return
+            end
+            self:submit_answer(input)
+        else
+            self:submit_answer(tonumber(self.number_input))
+        end
+    end
 
     local area = VerticalGroup:new{
         align = "center",
@@ -737,19 +802,31 @@ function MainView:render_keypad(question)
         Widgets.vspace(Size.span.vertical_default),
         row({ { label = "7", callback = digit("7") }, { label = "8", callback = digit("8") }, { label = "9", callback = digit("9") } }),
         Widgets.vspace(Size.span.vertical_default),
-        row({
-            { label = "←", callback = function()
-                if #self.number_input > 0 then
-                    self.number_input = self.number_input:sub(1, -2)
-                    self:render_quiz()
-                end
-            end },
-            { label = "0", callback = digit("0") },
-            { label = "确认", enabled = self.number_input ~= "", callback = function()
-                if self.number_input ~= "" then self:submit_answer(tonumber(self.number_input)) end
-            end },
-        }),
     }
+    if extended then
+        local has_dot = self.number_input:find(".", 1, true) ~= nil
+        local has_slash = self.number_input:find("/", 1, true) ~= nil
+        table.insert(area, row({
+            { label = ".", enabled = not has_dot and not has_slash, callback = digit(".") },
+            { label = "/", enabled = format == "fraction" and not has_slash and not has_dot and self.number_input ~= "", callback = digit("/") },
+            { label = "←", callback = backspace },
+        }))
+        table.insert(area, Widgets.vspace(Size.span.vertical_default))
+        table.insert(area, row({
+            { label = "0", callback = digit("0") },
+            { label = "清空", callback = function()
+                self.number_input = ""
+                self:rerender_input()
+            end },
+            { label = "确认", enabled = self.number_input ~= "", callback = confirm },
+        }))
+    else
+        table.insert(area, row({
+            { label = "←", callback = backspace },
+            { label = "0", callback = digit("0") },
+            { label = "确认", enabled = self.number_input ~= "", callback = confirm },
+        }))
+    end
     return area
 end
 
@@ -776,6 +853,10 @@ function MainView:render_quiz()
 end
 
 function MainView:submit_answer(value)
+    if self.diagnose and self.state == "diagnose_quiz" then
+        self:diagnose_submit(value)
+        return
+    end
     if not self.session then return end
     self.feedback = self.session:submit(value)
     if self.feedback then
@@ -923,6 +1004,26 @@ function MainView:render_summary()
         Widgets.textbox(badge_text, cw, { size = 19, alignment = "center" }),
         Widgets.vspace(Size.span.vertical_large),
     }
+    if s.mode == "kp" and s.kp_statuses then
+        local kp_line
+        if self.last_kp_topic and s.kp_statuses[self.last_kp_topic] then
+            local graph = Knowledge.graph(self.plugin_path, self.last_kp_subject or "math")
+            local node = graph and graph.nodes[self.last_kp_topic]
+            local name = node and node.name or self.last_kp_topic
+            kp_line = string.format("知识点「%s」：%s", name,
+                KP_STATUS_LABEL[s.kp_statuses[self.last_kp_topic]] or "")
+        else
+            local mastered, learning, weak = 0, 0, 0
+            for _, status in pairs(s.kp_statuses) do
+                if status == "mastered" then mastered = mastered + 1
+                elseif status == "weak" then weak = weak + 1
+                else learning = learning + 1 end
+            end
+            kp_line = string.format("本轮知识点：已掌握 %d · 学习中 %d · 薄弱 %d", mastered, learning, weak)
+        end
+        table.insert(content, Widgets.textbox(kp_line, cw, { size = 19, alignment = "center" }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    end
     local half = math.floor((cw - Size.span.horizontal_default) / 2)
     table.insert(content, HorizontalGroup:new{
         align = "center",
@@ -940,6 +1041,20 @@ function MainView:render_summary()
             callback = function() self:render_home() end,
         }),
     })
+    if s.mode == "kp" and self.last_kp_subject then
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        table.insert(content, Widgets.button("返回知识点", {
+            width = cw,
+            size = 20,
+            callback = function()
+                if self.last_kp_topic then
+                    self:render_kp_learn(self.last_kp_subject, self.last_kp_topic)
+                else
+                    self:render_kp_select(self.last_kp_subject)
+                end
+            end,
+        }))
+    end
     if #self.progress:wrong_items() > 0 then
         table.insert(content, Widgets.vspace(Size.span.vertical_default))
         table.insert(content, Widgets.button(string.format("查看错题本（%d）", #self.progress:wrong_items()), {
@@ -1728,5 +1843,562 @@ function MainView:render_settings()
     }
     self:set_body(scroll)
 end
+
+-- ---------------------------------------------------------------------------
+-- Knowledge-point learning (synced from cn-math-taxonomy, CC BY-NC 4.0)
+-- ---------------------------------------------------------------------------
+
+local function kp_volume_label(grade, semester)
+    grade = tonumber(grade) or 1
+    return string.format("%s%s", GRADE_LABEL[grade] or (grade .. "年级"),
+        semester == "lower" and "下册" or "上册")
+end
+
+local function kp_status_mark(status)
+    return KP_STATUS_MARK[status]
+end
+
+local function kp_topic_button_text(name, status)
+    local mark = kp_status_mark(status)
+    if mark then return mark .. " " .. name end
+    return name
+end
+
+-- Same difficulty curve as core/session.lua, kept local to avoid coupling.
+local function kp_choose_difficulty(rng, level)
+    local roll = rng(100)
+    if level <= 1 then
+        return roll <= 70 and 1 or 2
+    elseif level >= 3 then
+        if roll <= 10 then return 1 elseif roll <= 50 then return 2 else return 3 end
+    end
+    if roll <= 30 then return 1 elseif roll <= 80 then return 2 else return 3 end
+end
+
+function MainView:render_kp_subject()
+    self.state = "kp_subject"
+    self:set_title("知识点学习")
+    self.selected = nil
+    self.number_input = ""
+    self.feedback = nil
+    local cw = Widgets.width()
+    local half = math.floor((cw - Size.span.horizontal_default) / 2)
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.textbox("按课标知识点先学后练；诊断会沿先修关系找到薄弱的基础知识。", cw, {
+            size = 18, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_large),
+        HorizontalGroup:new{
+            align = "center",
+            Widgets.button("语文知识点", {
+                width = half,
+                height = Screen:scaleBySize(72),
+                size = 24,
+                callback = function() self:render_kp_select("chinese") end,
+            }),
+            Widgets.hspace(Size.span.horizontal_default),
+            Widgets.button("数学知识点", {
+                width = half,
+                height = Screen:scaleBySize(72),
+                size = 24,
+                callback = function() self:render_kp_select("math") end,
+            }),
+        },
+        Widgets.vspace(Size.span.vertical_large),
+        Widgets.button("返回首页", {
+            width = cw,
+            size = 20,
+            callback = function() self:render_home() end,
+        }),
+    }
+    self:set_body(content)
+end
+
+function MainView:render_kp_select(subject)
+    self.state = "kp_select"
+    self:set_title(self:subject_label(subject) .. "知识点")
+    self.selected = nil
+    self.number_input = ""
+    self.feedback = nil
+    local cw = Widgets.width()
+    local settings = self.progress.data.settings
+    local grade = tonumber(settings.grade) or 2
+    local semester = settings.semester
+    local volume, err = Knowledge.load(self.plugin_path, subject, grade, semester)
+    if not volume then
+        UIManager:show(InfoMessage:new{ text = "知识点题库加载失败：" .. tostring(err), timeout = 4 })
+        self:render_home()
+        return
+    end
+    local topic_ids = {}
+    for _, topic in ipairs(volume.topics) do table.insert(topic_ids, topic.id) end
+    local counts = self.progress:kp_summary(subject, topic_ids)
+    local reference = subject == "math" and "课标知识点 · 人教参考" or "课标知识点 · 统编参考"
+
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.label(string.format("%s · %s", kp_volume_label(grade, semester), reference), {
+            size = 17, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.label(string.format("已掌握 %d/%d　★已掌握 ●学习中 ▲薄弱", counts.mastered, counts.total), {
+            size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.button("全册综合（10 题）", {
+            width = cw,
+            height = Screen:scaleBySize(56),
+            size = 21,
+            callback = function() self:start_kp_mixed(subject) end,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+    }
+
+    local half = math.floor((cw - Size.span.horizontal_default) / 2)
+    for _, unit in ipairs(volume.units) do
+        local unit_topics = {}
+        for _, topic in ipairs(volume.topics) do
+            if topic.unit == unit.id then table.insert(unit_topics, topic) end
+        end
+        if #unit_topics > 0 then
+            table.insert(content, Widgets.label(unit.name, {
+                size = 18, bold = true, max_width = cw,
+            }))
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+            local row
+            for i, topic in ipairs(unit_topics) do
+                local status = self.progress:kp_status(subject, topic.id)
+                local button = Widgets.button(kp_topic_button_text(topic.name, status), {
+                    width = half,
+                    height = Screen:scaleBySize(52),
+                    size = 18,
+                    callback = function() self:render_kp_learn(subject, topic.id) end,
+                })
+                if i % 2 == 1 then
+                    row = HorizontalGroup:new{ align = "center", button }
+                    table.insert(content, row)
+                    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+                else
+                    table.insert(row, Widgets.hspace(Size.span.horizontal_default))
+                    table.insert(row, button)
+                end
+            end
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        end
+    end
+    table.insert(content, Widgets.button("返回首页", {
+        width = cw,
+        size = 20,
+        callback = function() self:render_home() end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+function MainView:render_kp_learn(subject, topic_id)
+    self.state = "kp_learn"
+    self.selected = nil
+    self.number_input = ""
+    self.feedback = nil
+    local topic = Knowledge.topic(self.plugin_path, subject, topic_id)
+    if not topic then
+        UIManager:show(InfoMessage:new{ text = "没有找到这个知识点", timeout = 3 })
+        self:render_kp_select(subject)
+        return
+    end
+    self:set_title(topic.name)
+    local cw = Widgets.width()
+    local inner_width = cw - 2 * Size.padding.large
+    local graph = Knowledge.graph(self.plugin_path, subject)
+    local node = graph and graph.nodes[topic_id] or {}
+    local questions = Knowledge.questions_for(self.plugin_path, subject, topic_id)
+    local status = self.progress:kp_status(subject, topic_id)
+    local status_text = status and KP_STATUS_LABEL[status] or "未学"
+
+    local example_explain
+    for _, q in ipairs(questions) do
+        if q.id == topic_id .. "_q1" then example_explain = q.explain break end
+    end
+
+    local learn_parts = VerticalGroup:new{
+        align = "left",
+        Widgets.label(string.format("%s · %s · %s", topic.domain or "",
+            kp_volume_label(node.grade, node.semester), status_text), {
+            size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.textbox(topic.description or "", inner_width, { size = 20 }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.label("掌握标准", { size = 18, bold = true }),
+    }
+    for _, criterion in ipairs(topic.mastery_criteria or {}) do
+        table.insert(learn_parts, Widgets.textbox("· " .. criterion, inner_width, { size = 18 }))
+    end
+    local example = topic.example or {}
+    if example.question and example.question ~= "" then
+        table.insert(learn_parts, Widgets.vspace(Size.span.vertical_default))
+        table.insert(learn_parts, Widgets.label("例题", { size = 18, bold = true }))
+        table.insert(learn_parts, Widgets.textbox(example.question, inner_width, { size = 19 }))
+        table.insert(learn_parts, Widgets.label("参考答案：" .. tostring(example.answer or ""), { size = 18, bold = true }))
+        if example_explain then
+            table.insert(learn_parts, Widgets.textbox(example_explain, inner_width, { size = 17, color = Blitbuffer.COLOR_DARK_GRAY }))
+        end
+    end
+
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.card(learn_parts, { width = cw, padding = Size.padding.large }),
+        Widgets.vspace(Size.span.vertical_default),
+    }
+
+    local prereqs = Knowledge.prereqs(self.plugin_path, subject, topic_id)
+    if #prereqs > 0 then
+        table.insert(content, Widgets.label("先修知识点（先学这些更容易）", {
+            size = 17, color = Blitbuffer.COLOR_DARK_GRAY,
+        }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        for _, p in ipairs(prereqs) do
+            local pnode = graph and graph.nodes[p.id]
+            local pstatus = self.progress:kp_status(subject, p.id)
+            local label = kp_topic_button_text(pnode and pnode.name or p.id, pstatus)
+            if p.strength == "soft" then label = label .. "（建议）" end
+            table.insert(content, Widgets.button(label, {
+                width = cw,
+                height = Screen:scaleBySize(48),
+                size = 18,
+                callback = function() self:render_kp_learn(subject, p.id) end,
+            }))
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        end
+    end
+
+    table.insert(content, Widgets.button(string.format("开始练习（%d 题）", #questions), {
+        width = cw,
+        height = Screen:scaleBySize(60),
+        size = 22,
+        enabled = #questions > 0,
+        callback = function() self:start_kp_practice(subject, topic_id) end,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("诊断这个知识点", {
+        width = cw,
+        height = Screen:scaleBySize(56),
+        size = 21,
+        callback = function() self:start_diagnose(subject, topic_id) end,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("返回知识点列表", {
+        width = cw,
+        size = 20,
+        callback = function() self:render_kp_select(subject) end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+function MainView:start_kp_practice(subject, topic_id)
+    local questions = Knowledge.questions_for(self.plugin_path, subject, topic_id)
+    if #questions == 0 then
+        UIManager:show(InfoMessage:new{ text = "这个知识点暂时没有可用题目", timeout = 3 })
+        return
+    end
+    -- Easy questions first; keep source order within the same difficulty.
+    local ordered = {}
+    for i, q in ipairs(questions) do ordered[i] = { q = q, i = i } end
+    table.sort(ordered, function(a, b)
+        if a.q.difficulty ~= b.q.difficulty then return a.q.difficulty < b.q.difficulty end
+        return a.i < b.i
+    end)
+    local list = {}
+    for _, item in ipairs(ordered) do table.insert(list, item.q) end
+    self:start_session({
+        mode = "kp",
+        subject = subject,
+        kp_topic = topic_id,
+        kp_questions = list,
+    })
+end
+
+function MainView:start_kp_mixed(subject)
+    local settings = self.progress.data.settings
+    local grade = tonumber(settings.grade) or 2
+    local volume, err = Knowledge.load(self.plugin_path, subject, grade, settings.semester)
+    if not volume or #volume.units == 0 then
+        UIManager:show(InfoMessage:new{ text = "知识点题库加载失败：" .. tostring(err), timeout = 4 })
+        return
+    end
+    local rng = math.random
+    local level = self.progress:adaptive_level(subject, grade)
+    local recent = {}
+    for _, id in ipairs(self.progress.data.recent_ids) do recent[id] = true end
+    local questions = {}
+    for i = 1, 10 do
+        local unit = volume.units[((i - 1) % #volume.units) + 1]
+        local unit_topics = {}
+        for _, topic in ipairs(volume.topics) do
+            if topic.unit == unit.id then table.insert(unit_topics, topic) end
+        end
+        if #unit_topics > 0 then
+            local topic = unit_topics[rng(#unit_topics)]
+            local pool = volume.by_topic[topic.id] or {}
+            local difficulty = kp_choose_difficulty(rng, level)
+            local candidates = {}
+            for _, q in ipairs(pool) do
+                if q.difficulty == difficulty and not recent[q.id] then table.insert(candidates, q) end
+            end
+            if #candidates == 0 then
+                for _, q in ipairs(pool) do
+                    if not recent[q.id] then table.insert(candidates, q) end
+                end
+            end
+            if #candidates == 0 then candidates = pool end
+            if #candidates > 0 then
+                local q = candidates[rng(#candidates)]
+                table.insert(questions, q)
+                recent[q.id] = true
+            end
+        end
+    end
+    if #questions == 0 then
+        UIManager:show(InfoMessage:new{ text = "没有可用题目", timeout = 3 })
+        return
+    end
+    self:start_session({ mode = "kp", subject = subject, kp_questions = questions })
+end
+
+function MainView:start_diagnose(subject, topic_id)
+    local graph, err = Knowledge.graph(self.plugin_path, subject)
+    if not graph then
+        UIManager:show(InfoMessage:new{ text = "知识图谱加载失败：" .. tostring(err), timeout = 4 })
+        return
+    end
+    if #Knowledge.questions_for(self.plugin_path, subject, topic_id) == 0 then
+        UIManager:show(InfoMessage:new{ text = "这个知识点暂时没有可用题目", timeout = 3 })
+        return
+    end
+    local engine, derr = Diagnose.new{
+        subject = subject,
+        target = topic_id,
+        graph = graph,
+        questions_fn = function(id)
+            return Knowledge.questions_for(self.plugin_path, subject, id)
+        end,
+        judge_fn = Knowledge.judge,
+        rng = math.random,
+    }
+    if not engine then
+        UIManager:show(InfoMessage:new{ text = "无法开始诊断：" .. tostring(derr), timeout = 4 })
+        return
+    end
+    self.diagnose = engine
+    self.diagnose_subject = subject
+    self.diagnose_feedback = nil
+    self.diagnose_summary = nil
+    self:diagnose_next()
+end
+
+function MainView:diagnose_next()
+    local item = self.diagnose:next()
+    if not item then
+        self:finish_diagnose()
+        return
+    end
+    self.diagnose_item = item
+    self.selected = nil
+    self.number_input = ""
+    self:render_diagnose_quiz()
+end
+
+function MainView:diagnose_submit(value)
+    if not self.diagnose or not self.diagnose_item then return end
+    local result = self.diagnose:submit(value)
+    if not result then return end
+    self.diagnose_feedback = {
+        question = self.diagnose_item.question,
+        correct = result.correct,
+        hint = result.hint,
+        status = result.status,
+    }
+    self:render_diagnose_feedback()
+end
+
+function MainView:finish_diagnose()
+    local summary = self.diagnose:summary()
+    -- Diagnosis is assessment: persist mastery only, no stars / wrong book.
+    for _, entry in ipairs(summary.mastered) do
+        self.progress:mark_kp_status(self.diagnose_subject, entry.id, "mastered")
+    end
+    for _, entry in ipairs(summary.shaky) do
+        self.progress:mark_kp_status(self.diagnose_subject, entry.id, "learning")
+    end
+    for _, entry in ipairs(summary.weak) do
+        self.progress:mark_kp_status(self.diagnose_subject, entry.id, "weak")
+    end
+    self.progress:flush()
+    self.diagnose_summary = summary
+    self:render_diagnose_result()
+end
+
+function MainView:render_diagnose_quiz()
+    self.state = "diagnose_quiz"
+    self:set_title("知识点诊断")
+    local engine = self.diagnose
+    local question = self.diagnose_item.question
+    local cw = Widgets.width()
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.label(string.format("已答 %d/%d 题 · 答错会自动检查先修知识", #engine.answers, engine.limit), {
+            size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.progress(#engine.answers / engine.limit, cw),
+        Widgets.vspace(Size.span.vertical_default),
+        self:render_question_card(question),
+        Widgets.vspace(Size.span.vertical_default),
+    }
+    if question.answer_mode == "number" then
+        table.insert(content, self:render_keypad(question))
+    else
+        table.insert(content, self:render_choice_area(question))
+    end
+    self:set_body(content)
+end
+
+function MainView:render_diagnose_feedback()
+    self.state = "diagnose_feedback"
+    self:set_title("知识点诊断")
+    local fb = self.diagnose_feedback
+    local q = fb.question
+    local cw = Widgets.width()
+    local parts = VerticalGroup:new{ align = "left" }
+    if fb.correct then
+        table.insert(parts, Widgets.label("✓ 答对了！", { size = 24, bold = true }))
+    else
+        table.insert(parts, Widgets.label("✗ 答错了", { size = 24, bold = true }))
+        table.insert(parts, Widgets.label("正确答案：" .. answer_text(q), { size = 20, bold = true }))
+    end
+    table.insert(parts, Widgets.vspace(Size.span.vertical_default))
+    table.insert(parts, Widgets.label(fb.hint or "", { size = 18, bold = true }))
+    table.insert(parts, Widgets.vspace(Size.span.vertical_default))
+    table.insert(parts, Widgets.textbox(q.explain or "", cw - 4 * Size.padding.default, { size = 18 }))
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.label(string.format("已答 %d/%d 题", #self.diagnose.answers, self.diagnose.limit), {
+            size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        self:render_question_card(q),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.card(parts, { width = cw, padding = Size.padding.large }),
+        Widgets.vspace(Size.span.vertical_large),
+        Widgets.button("继续", {
+            width = cw,
+            height = Screen:scaleBySize(58),
+            size = 22,
+            callback = function() self:diagnose_next() end,
+        }),
+    }
+    self:set_body(content)
+end
+
+function MainView:render_diagnose_result()
+    self.state = "diagnose_result"
+    self:set_title("诊断结果")
+    local cw = Widgets.width()
+    local summary = self.diagnose_summary
+    local graph = self.diagnose.graph
+    local target_node = graph.nodes[summary.target] or {}
+    local content = VerticalGroup:new{
+        align = "center",
+        Widgets.card(VerticalGroup:new{
+            align = "center",
+            Widgets.label("诊断完成", { size = 28, bold = true }),
+            Widgets.vspace(Size.span.vertical_default),
+            Widgets.label(string.format("目标：%s", target_node.name or summary.target), { size = 19 }),
+            Widgets.vspace(Size.span.vertical_default),
+            Widgets.label(string.format("共答 %d 题 · 掌握 %d · 不稳 %d · 薄弱 %d",
+                summary.asked, #summary.mastered, #summary.shaky, #summary.weak), { size = 18 }),
+            summary.limit_reached and Widgets.label("题量用完，还有知识点没测到。", {
+                size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+            }) or Widgets.vspace(0),
+        }, { width = cw, padding = Size.padding.large }),
+        Widgets.vspace(Size.span.vertical_default),
+    }
+
+    if #summary.path > 0 then
+        table.insert(content, Widgets.label("学习路径（从基础补起）", { size = 19, bold = true }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        for i, entry in ipairs(summary.path) do
+            local status_text = entry.status == "weak" and "薄弱" or "不稳"
+            local tag = entry.is_root and "根因 · " or ""
+            table.insert(content, Widgets.label(string.format("%d. %s%s（%s · %s）",
+                i, tag, entry.name, kp_volume_label(entry.grade, entry.semester), status_text), {
+                size = 18, max_width = cw,
+            }))
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        end
+        table.insert(content, Widgets.button("去学第一个薄弱点", {
+            width = cw,
+            height = Screen:scaleBySize(58),
+            size = 21,
+            callback = function()
+                self:render_kp_learn(self.diagnose_subject, summary.path[1].id)
+            end,
+        }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    else
+        table.insert(content, Widgets.textbox("没有发现薄弱点，继续保持！", cw, {
+            size = 20, alignment = "center",
+        }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    end
+
+    if #summary.mastered > 0 then
+        local names = {}
+        for i, entry in ipairs(summary.mastered) do
+            if i <= 8 then table.insert(names, entry.name) end
+        end
+        local text = "已掌握：" .. table.concat(names, "、")
+        if #summary.mastered > 8 then
+            text = text .. string.format(" 等 %d 个", #summary.mastered)
+        end
+        table.insert(content, Widgets.textbox(text, cw, { size = 16, color = Blitbuffer.COLOR_DARK_GRAY }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    end
+
+    table.insert(content, Widgets.button("再诊断一次", {
+        width = cw,
+        size = 20,
+        callback = function() self:start_diagnose(self.diagnose_subject, summary.target) end,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("返回知识点列表", {
+        width = cw,
+        size = 20,
+        callback = function() self:render_kp_select(self.diagnose_subject) end,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("回首页", {
+        width = cw,
+        size = 20,
+        callback = function() self:render_home() end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
 
 return MainView

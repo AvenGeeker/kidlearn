@@ -183,3 +183,159 @@ describe("KidLearn UI smoke", function()
         assert.is_truthy(view:course_label():find("苏教版", 1, true))
     end)
 end)
+
+describe("KidLearn knowledge UI smoke", function()
+    local DataStorage
+    local MainView
+    local AIBank
+    local view
+    local ai_bank_path
+
+    setup(function()
+        require("commonrequire")
+        package.path = "plugins/kidlearn.koplugin/?.lua;" .. package.path
+        DataStorage = require("datastorage")
+        MainView = require("ui/mainview")
+        AIBank = require("core.ai_bank")
+    end)
+
+    before_each(function()
+        ai_bank_path = DataStorage:getDataDir() .. "/kidlearn_ui_kp_spec_ai_bank.json"
+        os.remove(ai_bank_path)
+        view = MainView:new{
+            plugin_path = "./plugins/kidlearn.koplugin",
+            plugin = {},
+        }
+        view.ai_bank = AIBank.open(ai_bank_path)
+    end)
+
+    after_each(function()
+        os.remove(ai_bank_path)
+        os.remove(ai_bank_path .. ".bad")
+        os.remove(ai_bank_path .. ".tmp")
+    end)
+
+    it("builds the knowledge pages", function()
+        view:render_kp_subject()
+        assert.are.equal("kp_subject", view.state)
+        view:render_kp_select("math")
+        assert.are.equal("kp_select", view.state)
+        view:render_kp_select("chinese")
+        assert.are.equal("kp_select", view.state)
+        view:render_kp_learn("math", "cnm_p001")
+        assert.are.equal("kp_learn", view.state)
+    end)
+
+    it("runs a knowledge practice session to the summary", function()
+        view:start_kp_practice("math", "cnm_p001")
+        assert.are.equal("quiz", view.state)
+        assert.are.equal("kp", view.session.mode)
+        assert.are.equal(4, view.session:total())
+        for i = 1, 4 do
+            local q = view.session:current()
+            view:submit_answer(q.answer)
+            assert.are.equal("feedback", view.state)
+            view:next_question()
+        end
+        assert.are.equal("summary", view.state)
+        assert.is_not_nil(view.summary.kp_statuses)
+    end)
+
+    it("builds a mixed knowledge session for Chinese", function()
+        view:start_kp_mixed("chinese")
+        assert.are.equal("quiz", view.state)
+        assert.are.equal(10, view.session:total())
+        for _, q in ipairs(view.session.questions) do
+            assert.are.equal("chinese", q.subject)
+            assert.is_string(q.topic)
+        end
+    end)
+
+    it("runs a diagnosis to the result page and persists mastery", function()
+        view:start_diagnose("math", "cnm_p001")
+        assert.are.equal("diagnose_quiz", view.state)
+        local guard = 0
+        while view.state ~= "diagnose_result" and guard < 20 do
+            guard = guard + 1
+            if view.state == "diagnose_quiz" then
+                local q = view.diagnose_item.question
+                view:submit_answer(q.answer)
+                assert.are.equal("diagnose_feedback", view.state)
+            elseif view.state == "diagnose_feedback" then
+                view:diagnose_next()
+            else
+                break
+            end
+        end
+        assert.are.equal("diagnose_result", view.state)
+        assert.are.equal("mastered", view.progress:kp_status("math", "cnm_p001"))
+    end)
+
+    it("builds the extended keypad for a fraction question", function()
+        view:start_session({
+            mode = "kp",
+            subject = "math",
+            kp_topic = "cnm_p079",
+            kp_questions = {
+                {
+                    id = "cnm_p079_q2", topic = "cnm_p079", subject = "math",
+                    grade = 3, semester = "upper", unit = "u1",
+                    unit_name = "分数的初步认识", type = "knowledge", skill = "数与代数",
+                    difficulty = 1, answer_mode = "number", answer_format = "fraction",
+                    stem = "每份是多少？", answer = "1/4", explain = "平均分成 4 份。",
+                },
+            },
+        })
+        assert.are.equal("quiz", view.state)
+        assert.are.equal("fraction", view.session:current().answer_format)
+        view:submit_answer("0.25")
+        assert.are.equal("feedback", view.state)
+        assert.is_true(view.feedback.correct)
+    end)
+    it("paints the knowledge pages full-screen", function()
+        local Device = require("device")
+        view:render_kp_select("math")
+        view:paintTo(Device.screen.bb, 0, 0)
+        view:render_kp_learn("math", "cnm_p001")
+        view:paintTo(Device.screen.bb, 0, 0)
+        view:start_diagnose("math", "cnm_p001")
+        view:paintTo(Device.screen.bb, 0, 0)
+        assert.are.equal("diagnose_quiz", view.state)
+        local q = view.diagnose_item.question
+        view:submit_answer(q.answer)
+        view:paintTo(Device.screen.bb, 0, 0)
+        assert.are.equal("diagnose_feedback", view.state)
+        view:diagnose_next()
+        view:paintTo(Device.screen.bb, 0, 0)
+    end)
+    it("backtracks across volumes on real data when answers are wrong", function()
+        local settings = view.progress.data.settings
+        local old_grade = settings.grade
+        settings.grade = 3
+        settings.semester = "upper"
+        view:start_diagnose("math", "cnm_p079") -- 认识几分之一, hard prereq cnm_p278, soft cnm_p043 (grade 2)
+        assert.are.equal("diagnose_quiz", view.state)
+        local guard = 0
+        while view.state ~= "diagnose_result" and guard < 30 do
+            guard = guard + 1
+            if view.state == "diagnose_quiz" then
+                local q = view.diagnose_item.question
+                local wrong = q.answer_mode == "number" and "999999"
+                    or ((q.answer % #q.options) + 1)
+                view:submit_answer(wrong)
+            elseif view.state == "diagnose_feedback" then
+                view:diagnose_next()
+            else
+                break
+            end
+        end
+        assert.are.equal("diagnose_result", view.state)
+        assert.are.equal("weak", view.progress:kp_status("math", "cnm_p079"))
+        -- Hard prerequisite must be tested before the soft one.
+        assert.are.equal("cnm_p079", view.diagnose.answers[1].topic)
+        assert.are.equal("cnm_p079", view.diagnose.answers[2].topic)
+        assert.are.equal("cnm_p278", view.diagnose.answers[3].topic)
+        assert.is_true(#view.diagnose_summary.path > 0)
+        settings.grade = old_grade
+    end)
+end)

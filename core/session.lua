@@ -3,6 +3,7 @@ Session construction and answer bookkeeping for KidLearn.
 --]]--
 
 local Bank = require("core.bank")
+local Knowledge = require("core.knowledge")
 local MathGen = require("core.mathgen")
 
 local Session = {}
@@ -11,6 +12,11 @@ Session.__index = Session
 local SUBJECTS = { "chinese", "math" }
 
 local function is_correct(question, value)
+    if question.topic then
+        -- Knowledge-point questions (and their wrong-book snapshots) may carry
+        -- fraction/decimal answers; route them through the knowledge judge.
+        return Knowledge.judge(question, value)
+    end
     if question.answer_mode == "number" then
         local n = tonumber(value)
         return n ~= nil and n == question.answer
@@ -256,6 +262,9 @@ function Session.new(opts)
     elseif mode == "ai" then
         questions = opts.ai_questions or {}
         if #questions == 0 then questions = nil; err = "没有 AI 变种题" end
+    elseif mode == "kp" then
+        questions = opts.kp_questions or {}
+        if #questions == 0 then questions = nil; err = "没有可用的知识点题目" end
     else
         questions, err = build_subject(opts)
     end
@@ -266,6 +275,8 @@ function Session.new(opts)
         mode = mode,
         subject = opts.subject or (mode == "challenge" and "math" or nil),
         unit = opts.unit,
+        kp_topic = opts.kp_topic,
+        kp_subject = opts.subject,
         grade = resolved.grade,
         semester = resolved.semester,
         questions = questions,
@@ -274,6 +285,7 @@ function Session.new(opts)
         combo = 0,
         max_combo = 0,
         first_try_correct = 0,
+        first_try_results = {},
         answered = 0,
         points = 0,
         progress = opts.progress,
@@ -304,6 +316,11 @@ function Session:submit(value)
 
     if self.attempt == 1 then
         self.answered = self.answered + 1
+        table.insert(self.first_try_results, {
+            topic = q.topic,
+            subject = q.subject,
+            correct = correct,
+        })
         if correct then
             self.first_try_correct = self.first_try_correct + 1
             if self.mode ~= "review" then
@@ -374,6 +391,14 @@ function Session:finish()
         correct = self.first_try_correct,
     }, self.now_fn())
     self.points = self.points + (breakdown and breakdown.total or 0)
+    local kp_statuses
+    if self.mode == "kp" then
+        kp_statuses = self.progress:finalize_kp_session(
+            self.kp_subject or (self.questions[1] and self.questions[1].subject) or "math",
+            self.first_try_results,
+            self.kp_topic ~= nil,
+            self.now_fn())
+    end
     return {
         mode = self.mode,
         total = #self.questions,
@@ -383,6 +408,7 @@ function Session:finish()
         max_combo = self.max_combo,
         perfect = perfect,
         breakdown = breakdown or {},
+        kp_statuses = kp_statuses,
     }
 end
 

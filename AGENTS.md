@@ -38,7 +38,7 @@
 | 入口 | `main.lua` → 主菜单「更多工具 → 小小学习家」；Dispatcher 动作 `kidlearn_open` / 事件 `KidLearnOpen` |
 | 核心依赖 | 仅 KOReader 自带模块（`ui/widget/*`、`luasettings`、`datastorage`、`dispatcher`、`json`、`logger`、`gettext`；AI 另用 `socket.http`/`ssl.https`/`turbo`） |
 | 存档 | `koreader/settings/kidlearn.lua`（`LuaSettings`） |
-| 题目 | 语文读 12 册 JSON；数学按 5 个教材版本、1–6 年级由 `core/mathgen.lua` 实时生成 |
+| 题目 | 语文读 12 册 JSON；数学按 5 个教材版本、1–6 年级由 `core/mathgen.lua` 实时生成；知识点模式读 `data/knowledge/`（cn-math-taxonomy 同步，CC BY-NC 4.0） |
 | 测试 | busted，`spec/unit/kidlearn_*.lua`；用 `tools/kidlearn/test_plugin.sh` 链接到 KOReader 后运行 |
 | 打包 | `tools/kidlearn/package_plugin.sh` → `install/kidlearn/`（该目录被 gitignore） |
 
@@ -88,6 +88,8 @@ ui/widgets.lua           墨水屏小组件（label / textbox / button / card / 
 core/session.lua         组题、判题、连对、重试、轮次结算
 core/catalog.lua         省份/年级/教材/单元目录读取与缓存
 core/bank.lua            语文 JSON 的加载、规范化、缓存、抽题
+core/knowledge.lua       课标知识点分册/先修图谱加载、缓存、分数/小数判分
+core/diagnose.lua        自适应诊断引擎（先修回溯、掌握/不稳/薄弱、学习路径）
 core/mathgen.lua         数学题与拓展题生成器（保留二年级人教老生成器 + 通用知识点引擎）
 core/progress.lua        存档、每日统计、连续天数、分年级自适应等级、错题本
 core/badges.lua          奖章定义与解锁判断
@@ -98,6 +100,7 @@ core/ai_variant.lua      变种提示词、严格 JSON 校验、题目标准化
 core/ai_bank.lua         独立 AI 变种题库（kidlearn_ai_bank.json）
 data/catalog.json        省份/年级/教材/单元目录（生成产物，勿手改）
 data/chinese/tongbian/   1–6 年级语文题库（生成产物，勿手改）
+data/knowledge/          课标知识点分册题库 + 先修图谱（sync_taxonomy.py 生成，勿手改）
 ```
 
 ### 启动与答题链路
@@ -128,7 +131,7 @@ submit_answer(value)
 
 ### 状态机
 
-`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`。
+`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`、`kp_subject`、`kp_select`、`kp_learn`、`diagnose_quiz`、`diagnose_feedback`、`diagnose_result`。
 新增页面时：设置 `state` → 改标题 → 用 `set_body(widget)` 换内容，不要新开 `UIManager:show` 的全屏窗口。
 
 ---
@@ -150,6 +153,10 @@ submit_answer(value)
 | 改存档字段 | `core/progress.lua`（`SCHEMA_VERSION` + `normalize`） | 迁移逻辑、README 字段表、`kidlearn_progress_spec` |
 | 改错题规则 | `core/progress.lua`（`record_wrong` / `record_mastery` / `trim_wrong`） | README 错题本说明、测试 |
 | 改 AI 出题 | `core/ai_config.lua` / `ai_client.lua` / `ai_variant.lua` / `ai_bank.lua`、`ui/mainview.lua` | `kidlearn_ai_spec`、`kidlearn_ui_spec`、README AI 说明 |
+| 同步知识点题库/图谱 | `tools/kidlearn/sync_taxonomy.py` → `data/knowledge/` | `validate_knowledge.py`、`sync_taxonomy.py --check`、`kidlearn_knowledge_spec`、README 统计 |
+| 改知识点加载/判分 | `core/knowledge.lua` | `kidlearn_knowledge_spec`、`kidlearn_session_spec` |
+| 改诊断规则 | `core/diagnose.lua` | `kidlearn_diagnose_spec`、README 诊断说明 |
+| 改知识点掌握度 | `core/progress.lua`（`knowledge` 字段 + `finalize_kp_session`） | `kidlearn_progress_spec`、README 存档字段表 |
 | 改打包 / 发布流程 | `tools/kidlearn/package_plugin.sh` | README 打包说明 |
 
 ---
@@ -212,7 +219,7 @@ submit_answer(value)
 
 ## 7. 测试要求
 
-改动以下任一文件后，**必须**跑完整插件测试（7 个 spec 全绿）：
+改动以下任一文件后，**必须**跑完整插件测试（9 个 spec 全绿）：
 
 ```bash
 tools/kidlearn/test_plugin.sh
@@ -225,6 +232,8 @@ tools/kidlearn/test_plugin.sh
 | `core/bank.lua` / 题库格式 | `kidlearn_bank_spec.lua` |
 | `core/mathgen.lua` | `kidlearn_mathgen_spec.lua` |
 | `core/ai_*.lua` | `kidlearn_ai_spec.lua` |
+| `core/knowledge.lua` / `data/knowledge/` | `kidlearn_knowledge_spec.lua` |
+| `core/diagnose.lua` | `kidlearn_diagnose_spec.lua` |
 | `ui/mainview.lua` | `kidlearn_ui_spec.lua` |
 
 测试规则：
@@ -238,9 +247,9 @@ tools/kidlearn/test_plugin.sh
 
 ## 8. 存档与兼容性
 
-- 存档结构版本在 `core/progress.lua` 的 `SCHEMA_VERSION`。
+- 存档结构版本在 `core/progress.lua` 的 `SCHEMA_VERSION`（当前 4；v4 新增 `knowledge` 知识点掌握度）。
 - 任何字段变更都必须在 `Progress:normalize()` 里补齐默认值，保证旧存档可读；破坏性变更要写迁移。
-- `Progress:reset_progress()` 只清空学习数据，**保留 `settings`**（省份、年级、学期、教材、目标、重试开关）。
+- `Progress:reset_progress()` 只清空学习数据（含知识点掌握度），**保留 `settings`**（省份、年级、学期、教材、目标、重试开关）。
 - `recent_ids` 最多 30 条；`daily` 保留 90 天；`wrong` 最多 200 条 —— 改这些上限要同步 README。
 - 错题存的是整题快照，改题库不会影响已有错题；这是有意设计，不要“顺手”改成只存 ID。
 
@@ -300,7 +309,11 @@ tools/kidlearn/test_plugin.sh
 13. **AI 题库是独立文件**：`kidlearn_ai_bank.json`，不要塞回 `kidlearn.lua`，否则普通答题每次 flush 都会重写大文件。
 14. **AI 配置文件是可选导入源**：`koreader/settings/kidlearn_ai_config.json` 由 `AIConfig.import_file()` 解析，`Progress.open()` 只在默认存档路径下自动导入；单测传临时存档路径时不会读真实设置目录。导入用内容哈希去重，文件内容变化才覆盖插件内配置。
 15. **AI 失败不自动重试**：结构校验失败由用户点「重试」；不要在后台悄悄重复消耗 token。
-16. **`MainView` 必须整屏绘制**：它是全屏页面而不是对话框；`paintTo` 先铺满白色背景，否则底层 ReaderUI 会透出来，看起来像浮层。
+16. **知识点数据是生成产物**：`data/knowledge/` 由 `tools/kidlearn/sync_taxonomy.py` 从 `~/GitHub/cn-math-taxonomy`（CC BY-NC 4.0）生成，禁止手改；源更新后重跑同步并跑 `validate_knowledge.py` 与 `--check`。
+17. **知识点题库也有内存缓存**：`core/knowledge.lua` 按 `plugin_path|subject|grade|semester` 缓存分册、按 `plugin_path|subject` 缓存图谱；改 JSON 后需重启或 `Knowledge.clear_cache()`。
+18. **诊断是测评不是练习**：`core/diagnose.lua` 不给星星、不进错题本、不影响自适应与连续天数，只回写知识点掌握度；参数 confirm=2、题量上限 12、回溯深度 ≤3，改这些要同步 README 与 `kidlearn_diagnose_spec`。
+19. **kp 会话判题走 `Knowledge.judge`**：带 `topic` 的题（含错题快照）支持分数/小数答案；`MainView:start_session` 是白名单传参，新增会话字段记得同时加到 `Session.new` 调用里。
+20. **`MainView` 必须整屏绘制**：它是全屏页面而不是对话框；`paintTo` 先铺满白色背景，否则底层 ReaderUI 会透出来，看起来像浮层。
 
 ---
 
@@ -325,3 +338,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-10 | 支持 1–6 年级、31 省预设、5 个数学教材版本、12 册语文题库 | 家长需要按地区/年级/教材出题 |
 | 2026-11-10 | 增加可选 AI 错题变种、多厂商服务配置与独立 AI 题库 | 用变种题强化错题学习 |
 | 2026-11-10 | 支持 `kidlearn_ai_config.json` 自动导入 API 地址/Key/模型 | 家长可把配置推到 Kindle，免手填 |
+| 2026-11-11 | 同步 cn-math-taxonomy 小学数学/语文知识图谱与题库；新增知识点学习、练习、自适应诊断；存档 v4 增加知识点掌握度 | 按课标知识点先学后练，答错沿先修边找薄弱根因 |

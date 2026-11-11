@@ -12,7 +12,7 @@ local LuaSettings = require("luasettings")
 local Progress = {}
 Progress.__index = Progress
 
-local SCHEMA_VERSION = 3
+local SCHEMA_VERSION = 4
 local DAILY_KEEP_DAYS = 90
 local MAX_WRONG = 200
 local MAX_RECENT_IDS = 30
@@ -143,6 +143,23 @@ function Progress:normalize()
         if a.level < 1 then a.level = 1 elseif a.level > 3 then a.level = 3 end
         ensure_counter(a, "attempts")
         ensure_counter(a, "correct")
+    end
+
+    local knowledge = ensure_table(d, "knowledge")
+    for _, subject in ipairs(SUBJECTS) do
+        local by_topic = ensure_table(knowledge, subject)
+        for topic_id, entry in pairs(by_topic) do
+            if type(entry) ~= "table" then
+                by_topic[topic_id] = nil
+            else
+                if entry.status ~= "learning" and entry.status ~= "mastered" and entry.status ~= "weak" then
+                    entry.status = "learning"
+                end
+                ensure_counter(entry, "attempts")
+                ensure_counter(entry, "correct")
+                entry.last_seen = number_or(entry.last_seen, 0)
+            end
+        end
     end
 
     local recent = d.recent_ids
@@ -293,6 +310,8 @@ function Progress:record_wrong(question, now)
             unit = question.unit,
             type = question.type,
             skill = question.skill,
+            topic = question.topic,
+            answer_format = question.answer_format,
             competency = question.competency,
             challenge = question.challenge,
             difficulty = question.difficulty,
@@ -333,6 +352,100 @@ function Progress:record_mastery(question)
 end
 
 --[[--
+Knowledge-point mastery bookkeeping.
+
+data.knowledge[subject][topic_id] = {status, attempts, correct, last_seen}.
+status is "learning", "mastered" or "weak"; an absent entry means not studied.
+--]]--
+function Progress:kp_entry(subject, topic_id)
+    local knowledge = ensure_table(self.data, "knowledge")
+    local by_topic = ensure_table(knowledge, subject or "math")
+    local entry = by_topic[topic_id]
+    if type(entry) ~= "table" then
+        entry = { status = "learning", attempts = 0, correct = 0, last_seen = 0 }
+        by_topic[topic_id] = entry
+    end
+    return entry
+end
+
+function Progress:record_kp_answer(subject, topic_id, correct, now)
+    if not topic_id then return end
+    local entry = self:kp_entry(subject, topic_id)
+    entry.attempts = (entry.attempts or 0) + 1
+    if correct then entry.correct = (entry.correct or 0) + 1 end
+    entry.last_seen = now or os.time()
+end
+
+function Progress:mark_kp_status(subject, topic_id, status, now)
+    if not topic_id then return end
+    if status ~= "learning" and status ~= "mastered" and status ~= "weak" then return end
+    local entry = self:kp_entry(subject, topic_id)
+    entry.status = status
+    entry.last_seen = now or os.time()
+end
+
+function Progress:kp_status(subject, topic_id)
+    local knowledge = self.data.knowledge
+    local by_topic = knowledge and knowledge[subject or "math"]
+    local entry = by_topic and by_topic[topic_id]
+    return entry and entry.status or nil
+end
+
+function Progress:kp_summary(subject, topic_ids)
+    local counts = { mastered = 0, learning = 0, weak = 0, unlearned = 0, total = 0 }
+    for _, topic_id in ipairs(topic_ids or {}) do
+        counts.total = counts.total + 1
+        local status = self:kp_status(subject, topic_id)
+        if status and counts[status] ~= nil then
+            counts[status] = counts[status] + 1
+        else
+            counts.unlearned = counts.unlearned + 1
+        end
+    end
+    return counts
+end
+
+--[[--
+Write back per-topic mastery after a knowledge-point practice session.
+
+@tparam string subject
+@tparam table results list of {topic, correct} first-try outcomes
+@tparam boolean single_topic dedicated one-topic practice: any question count
+  can promote to mastered; mixed sessions need >=2 questions per topic.
+@treturn table topic_id -> status
+--]]--
+function Progress:finalize_kp_session(subject, results, single_topic, now)
+    local by_topic = {}
+    local order = {}
+    for _, r in ipairs(results or {}) do
+        if r.topic then
+            if not by_topic[r.topic] then
+                by_topic[r.topic] = { total = 0, correct = 0 }
+                table.insert(order, r.topic)
+            end
+            by_topic[r.topic].total = by_topic[r.topic].total + 1
+            if r.correct then by_topic[r.topic].correct = by_topic[r.topic].correct + 1 end
+        end
+    end
+    local statuses = {}
+    for _, topic_id in ipairs(order) do
+        local agg = by_topic[topic_id]
+        local status
+        if single_topic or agg.total >= 2 then
+            if agg.correct == agg.total then status = "mastered"
+            elseif agg.correct == 0 then status = "weak"
+            else status = "learning" end
+        else
+            status = agg.correct == 0 and "weak" or "learning"
+        end
+        self:mark_kp_status(subject, topic_id, status, now)
+        statuses[topic_id] = status
+    end
+    self:flush()
+    return statuses
+end
+
+--[[--
 Record one answer attempt.
 
 @tparam table question Normalized question object.
@@ -367,6 +480,9 @@ function Progress:record_answer(question, opts)
             daily.correct = daily.correct + 1
         end
         self:record_adaptive(subject, correct, question.grade)
+        if question.topic then
+            self:record_kp_answer(subject, question.topic, correct, now)
+        end
         if correct then
             removed_from_wrong = self:record_mastery(question)
         else

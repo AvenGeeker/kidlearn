@@ -1,0 +1,4629 @@
+{
+  "schema_version": 1,
+  "generated_by": "tools/kidlearn/sync_taxonomy.py",
+  "source": {
+    "repo": "cn-math-taxonomy",
+    "commit": "07b9f74"
+  },
+  "license": "CC BY-NC 4.0",
+  "attribution": "Data adapted from cn-math-taxonomy (https://github.com/xiaoyang111222/cn-math-taxonomy), licensed CC BY-NC 4.0.",
+  "subject": "chinese",
+  "grade": 4,
+  "semester": "lower",
+  "units": [
+    {
+      "id": "u1",
+      "name": "第1单元 古诗·四时田园杂兴"
+    },
+    {
+      "id": "u2",
+      "name": "第2单元 课文·琥珀"
+    },
+    {
+      "id": "u3",
+      "name": "第3单元 课文·绿"
+    },
+    {
+      "id": "u4",
+      "name": "第4单元 课文·猫"
+    },
+    {
+      "id": "u5",
+      "name": "第5单元 习作·游_____"
+    },
+    {
+      "id": "u6",
+      "name": "第6单元 文言文·囊萤夜读"
+    },
+    {
+      "id": "u7",
+      "name": "第7单元 古诗·芙蓉楼送辛渐"
+    },
+    {
+      "id": "u8",
+      "name": "第8单元 童话·巨人的花园"
+    }
+  ],
+  "topics": [
+    {
+      "id": "cnc_p281",
+      "name": "古诗《四时田园杂兴》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "背诵范成大《四时田园杂兴》（昼出耘田），分清耘田和绩麻的时间。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「昼出耘田夜绩麻」的下一句是哪一句？",
+        "answer": "村庄儿女各当家"
+      }
+    },
+    {
+      "id": "cnc_p282",
+      "name": "古诗《宿新市徐公店》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "背诵杨万里《宿新市徐公店》，分清追黄蝶和学种瓜不是同一首。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「篱落疏疏一径深」的下一句是哪一句？",
+        "answer": "树头新绿未成阴"
+      }
+    },
+    {
+      "id": "cnc_p283",
+      "name": "词《清平乐·村居》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "背诵辛弃疾《清平乐·村居》，知道「亡赖」在词里是顽皮的意思。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「最喜小儿亡赖」的下一句是哪一句？",
+        "answer": "溪头卧剥莲蓬"
+      }
+    },
+    {
+      "id": "cnc_p284",
+      "name": "阅读《乡下人家》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "能说出乡下人家屋前屋后、白天晚上各有怎样的景色。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "屋前的瓜藤是怎样的？",
+        "answer": "攀上屋檐，花和藤构成一幅图画"
+      }
+    },
+    {
+      "id": "cnc_p285",
+      "name": "阅读《天窗》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "读懂茅盾写的天窗：下雨关窗以后，小小的天窗是孩子们的慰藉，他们能从一点雨、一粒星想象开去。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《天窗》的作者是谁？",
+        "answer": "茅盾"
+      }
+    },
+    {
+      "id": "cnc_p286",
+      "name": "阅读《三月桃花水》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "读懂刘湛秋把三月的桃花水写成春天的竖琴和明镜，表达对春水的喜爱。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《三月桃花水》的作者是谁？",
+        "answer": "刘湛秋"
+      }
+    },
+    {
+      "id": "cnc_p287",
+      "name": "语文园地一·形声字：清、晴、情、请",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·四时田园杂兴",
+      "description": "能按偏旁分辨清、晴、情、请。声旁都是青，意思看形旁。口语交际「转述」要把听到的话说明白，不漏要点，也不把自己的话塞进去。习作「我的乐园」要写出那个地方的样子和在那里做的事。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "和水有关的是哪一个字？",
+        "answer": "清"
+      }
+    },
+    {
+      "id": "cnc_p288",
+      "name": "阅读《琥珀》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "读懂课文怎样根据琥珀里的蜘蛛和苍蝇，推测很久以前发生的事。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "琥珀里面包住了什么？",
+        "answer": "一只苍蝇和一只蜘蛛"
+      }
+    },
+    {
+      "id": "cnc_p289",
+      "name": "阅读《飞向蓝天的恐龙》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "读懂这篇说明文：恐龙的一支经过漫长演化变成了鸟类，证据来自化石，不是神话。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "这篇要说明的主要意思是什么？",
+        "answer": "恐龙的一支经过漫长演化，变成了鸟类"
+      }
+    },
+    {
+      "id": "cnc_p290",
+      "name": "阅读《纳米技术就在我们身边》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "知道纳米极小，纳米技术已经用在冰箱、衣物这些日常事物上，也有还没实现的展望。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "1纳米有多长？",
+        "answer": "十亿分之一米，非常非常小"
+      }
+    },
+    {
+      "id": "cnc_p291",
+      "name": "阅读《千年梦圆在今朝》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "读懂中华民族的飞天梦：从古代的万户，到东方红一号，再到杨利伟进入太空。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "课文里，古人尝试飞天的例子是哪一个？",
+        "answer": "明朝的万户把火箭绑在椅子上，想飞向天空"
+      }
+    },
+    {
+      "id": "cnc_p292",
+      "name": "语文园地二·多音字：假、散、便、发",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "能按词选定假、散、便、发的读音。口语交际「说新闻」要把时间、地点和事情说清楚。习作「我的奇思妙想」要大胆想，也要让人听得懂想的是什么。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "「放假」的「假」读哪一个？",
+        "answer": "jià"
+      }
+    },
+    {
+      "id": "cnc_p293",
+      "name": "语文园地二·形近字：幕、慕、暮、墓",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "能按偏旁选出幕、慕、暮、墓。和多音字一起放在语文园地二。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "「夜____降临」横线处该写哪一个？",
+        "answer": "幕"
+      }
+    },
+    {
+      "id": "cnc_p294",
+      "name": "快乐读书吧：十万个为什么",
+      "domain": "阅读理解",
+      "kp_type": "conceptual",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·琥珀",
+      "description": "这次读书吧读科普书，去找「为什么」的科学解释，不是把神话当成答案。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "「十万个为什么」主要读哪一类书？",
+        "answer": "回答各种「为什么」的科普书"
+      }
+    },
+    {
+      "id": "cnc_p295",
+      "name": "短诗三首·繁星",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u3",
+      "unit_name": "第3单元 课文·绿",
+      "description": "读冰心《繁星》三首：七一写母亲膝上的回忆，一三一写大海，一五九写心中的风雨只躲进母亲怀里。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "这三首短诗都出自谁的《繁星》？",
+        "answer": "冰心"
+      }
+    },
+    {
+      "id": "cnc_p296",
+      "name": "阅读《绿》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u3",
+      "unit_name": "第3单元 课文·绿",
+      "description": "读懂艾青把雨中的绿写得又多又亮，所有的绿挤在一起。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《绿》的作者是谁？",
+        "answer": "艾青"
+      }
+    },
+    {
+      "id": "cnc_p297",
+      "name": "阅读《白桦》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u3",
+      "unit_name": "第3单元 课文·绿",
+      "description": "读懂叶赛宁写窗前的白桦：仿佛涂上银霜，披着一身雪花，字里行间是喜爱。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《白桦》的作者是谁？",
+        "answer": "叶赛宁"
+      }
+    },
+    {
+      "id": "cnc_p298",
+      "name": "阅读《在天晴了的时候》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u3",
+      "unit_name": "第3单元 课文·绿",
+      "description": "读懂戴望舒邀人在雨后到小径走走，看不再胆怯的小白菊和抖去水珠的凤蝶。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《在天晴了的时候》的作者是谁？",
+        "answer": "戴望舒"
+      }
+    },
+    {
+      "id": "cnc_p299",
+      "name": "语文园地三·词语搭配：严格、严厉、严密",
+      "domain": "词语",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 课文·绿",
+      "description": "能按后面的说法选用严格、严厉、严密，不互相替换。综合性学习「轻叩诗歌大门」要去收集诗、读诗，还可以筹备朗诵。",
+      "mastery_criteria": [
+        "能理解词语在句子里的意思",
+        "能选出搭配恰当的词语"
+      ],
+      "example": {
+        "question": "「老师对作业要求很____。」横线处该填哪一个？",
+        "answer": "严格"
+      }
+    },
+    {
+      "id": "cnc_p300",
+      "name": "阅读《猫》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·猫",
+      "description": "读懂老舍笔下的猫又古怪又可爱，满月的小猫更淘气。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《猫》的作者是谁？",
+        "answer": "老舍"
+      }
+    },
+    {
+      "id": "cnc_p301",
+      "name": "阅读《母鸡》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·猫",
+      "description": "读懂老舍笔下的母鸡：开头讨厌它叫、欺软怕硬，后来因为它护小鸡而不敢再讨厌。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《母鸡》的作者是谁？",
+        "answer": "老舍"
+      }
+    },
+    {
+      "id": "cnc_p302",
+      "name": "阅读《白鹅》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·猫",
+      "description": "读懂丰子恺抓住白鹅的高傲，从叫声、步态和吃相来写。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《白鹅》的作者是谁？",
+        "answer": "丰子恺"
+      }
+    },
+    {
+      "id": "cnc_p303",
+      "name": "语文园地四·词语的感情色彩",
+      "domain": "词语",
+      "kp_type": "conceptual",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·猫",
+      "description": "能分清夸奖和批评的词语，如团结和勾结、果断和武断。习作「我的动物朋友」要抓住动物的特点来写，用词的感情不要用反。",
+      "mastery_criteria": [
+        "能理解词语在句子里的意思",
+        "能选出搭配恰当的词语"
+      ],
+      "example": {
+        "question": "哪一个词含有夸奖的意思？",
+        "answer": "团结"
+      }
+    },
+    {
+      "id": "cnc_p304",
+      "name": "阅读《海上日出》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 习作·游_____",
+      "description": "读懂巴金在船上按时间看日出：太阳慢慢升起，有云时阳光给黑云镶上金边。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《海上日出》的作者是谁？",
+        "answer": "巴金"
+      }
+    },
+    {
+      "id": "cnc_p305",
+      "name": "阅读《记金华的双龙洞》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 习作·游_____",
+      "description": "按路上、外洞、孔隙、内洞的顺序读叶圣陶的游记，知道孔隙要仰卧乘船才能过。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《记金华的双龙洞》的作者是谁？",
+        "answer": "叶圣陶"
+      }
+    },
+    {
+      "id": "cnc_p306",
+      "name": "习作：游_____ ·把游览中的见闻写具体",
+      "domain": "习作基础",
+      "kp_type": "application",
+      "unit": "u5",
+      "unit_name": "第5单元 习作·游_____",
+      "description": "按游览顺序写出看到的景物和当时的动作。例文《颐和园》写长廊、万寿山、昆明湖，《七月的天山》写雪峰、溪流和野花。两篇都是例子，不单独立成课文。",
+      "mastery_criteria": [
+        "能按要求把话写完整",
+        "能判断哪一句更符合题目"
+      ],
+      "example": {
+        "question": "哪一句把游览时看到的样子写具体了？",
+        "answer": "长廊一边是花木，一边是昆明湖，彩画一幅接着一幅"
+      }
+    },
+    {
+      "id": "cnc_p307",
+      "name": "文言文二则",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 文言文·囊萤夜读",
+      "description": "读懂《囊萤夜读》和《铁杵成针》：车胤用练囊装萤火虫照书，老婆婆把铁杵磨成针，都是在说坚持。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "车胤家里穷，晚上用什么照着读书？",
+        "answer": "用练囊装萤火虫"
+      }
+    },
+    {
+      "id": "cnc_p308",
+      "name": "阅读《小英雄雨来》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 文言文·囊萤夜读",
+      "description": "把握雨来故事的主要内容：他水性好，保护课本，和敌人周旋。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "雨来最擅长什么？",
+        "answer": "游泳"
+      }
+    },
+    {
+      "id": "cnc_p309",
+      "name": "阅读《我们家的男子汉》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 文言文·囊萤夜读",
+      "description": "读懂王安忆写的是妹妹的儿子：一个小男孩对食物的兴趣、自己做事的要求和面对挑战时的沉着。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《我们家的男子汉》的作者是谁？",
+        "answer": "王安忆"
+      }
+    },
+    {
+      "id": "cnc_p310",
+      "name": "阅读《芦花鞋》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 文言文·囊萤夜读",
+      "description": "读懂曹文轩写的青铜：用芦花编鞋，雪天拿到镇上去卖，最后把脚上那双也脱给了别人。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《芦花鞋》的作者是谁？写的是谁？",
+        "answer": "曹文轩。写的是青铜"
+      }
+    },
+    {
+      "id": "cnc_p311",
+      "name": "语文园地六·对话和双引号",
+      "domain": "句子",
+      "kp_type": "procedural",
+      "unit": "u6",
+      "unit_name": "第6单元 文言文·囊萤夜读",
+      "description": "能分清提示语在前、在后时，双引号和标点该怎样放。口语交际「朋友相处的秘诀」要说出自己怎样和朋友相处。习作「我学会了_____」要把学会的过程写清楚。",
+      "mastery_criteria": [
+        "能把句子写通顺",
+        "能按要求选用或修改句子"
+      ],
+      "example": {
+        "question": "哪一句的引号用对了？",
+        "answer": "妈妈说：「该写作业了。」"
+      }
+    },
+    {
+      "id": "cnc_p312",
+      "name": "古诗《芙蓉楼送辛渐》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "背诵王昌龄《芙蓉楼送辛渐》，不要和同一位诗人的《出塞》串句。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「寒雨连江夜入吴」的下一句是哪一句？",
+        "answer": "平明送客楚山孤"
+      }
+    },
+    {
+      "id": "cnc_p313",
+      "name": "古诗《塞下曲》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "背诵卢纶《塞下曲》（月黑雁飞高），不要和王昌龄的送别诗串句。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「月黑雁飞高」的下一句是哪一句？",
+        "answer": "单于夜遁逃"
+      }
+    },
+    {
+      "id": "cnc_p314",
+      "name": "古诗《墨梅》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "背诵王冕《墨梅》，知道「不要人夸好颜色」是不图外表，只留清气。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「我家洗砚池头树」的下一句是哪一句？",
+        "answer": "朵朵花开淡墨痕"
+      }
+    },
+    {
+      "id": "cnc_p315",
+      "name": "阅读《黄继光》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "读懂黄继光在上甘岭战役中用胸膛堵住敌人的枪口。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "黄继光参加的是哪一次战役？",
+        "answer": "上甘岭战役"
+      }
+    },
+    {
+      "id": "cnc_p316",
+      "name": "阅读《“诺曼底号”遇难记》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "读懂雨果写的哈尔威船长：船被撞伤后命令妇女先走，自己留在舰桥，与船同沉。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《“诺曼底号”遇难记》的作者是谁？",
+        "answer": "雨果"
+      }
+    },
+    {
+      "id": "cnc_p317",
+      "name": "阅读《挑山工》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "读懂冯骥才写的泰山挑山工：走折尺形的路，脚步不停，反而比游人先到。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《挑山工》的作者是谁？",
+        "answer": "冯骥才"
+      }
+    },
+    {
+      "id": "cnc_p318",
+      "name": "语文园地七·自我介绍和自画像",
+      "domain": "习作基础",
+      "kp_type": "procedural",
+      "unit": "u7",
+      "unit_name": "第7单元 古诗·芙蓉楼送辛渐",
+      "description": "自我介绍要让没见过你的人记住你是谁、有什么特点。习作「我的自画像」要把外貌、性格或一件能看出特点的事写出来。",
+      "mastery_criteria": [
+        "能按要求把话写完整",
+        "能判断哪一句更符合题目"
+      ],
+      "example": {
+        "question": "自我介绍时，哪一种说清楚了？",
+        "answer": "我叫小林，说话快，爱画画，课间常把同学画进速写本"
+      }
+    },
+    {
+      "id": "cnc_p319",
+      "name": "阅读《宝葫芦的秘密》（节选）",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 童话·巨人的花园",
+      "description": "读四下节选：王葆自己讲，奶奶用故事换他做事，张三、李四得到宝葫芦以后要什么有什么。他一碰到难题就盼着也有一个。三上那一节写到他得到葫芦，这一课细写的是听故事和盼望。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "四下这篇节选是谁写的？谁在讲？",
+        "answer": "张天翼写的。王葆用「我」来讲自己的事"
+      }
+    },
+    {
+      "id": "cnc_p320",
+      "name": "阅读《巨人的花园》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 童话·巨人的花园",
+      "description": "读懂巨人砌墙赶走孩子以后园里只有冬天，孩子回来春天才来。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "巨人出门回来，看见花园里有什么？",
+        "answer": "孩子们在里面玩"
+      }
+    },
+    {
+      "id": "cnc_p321",
+      "name": "阅读《海的女儿》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 童话·巨人的花园",
+      "description": "读懂安徒生的小人鱼：救了王子，用声音向巫婆换了双腿，最后没有伤害王子，自己变成了泡沫。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "《海的女儿》的作者是谁？",
+        "answer": "安徒生"
+      }
+    },
+    {
+      "id": "cnc_p322",
+      "name": "语文园地八·故事新编",
+      "domain": "习作基础",
+      "kp_type": "procedural",
+      "unit": "u8",
+      "unit_name": "第8单元 童话·巨人的花园",
+      "description": "故事新编要借用读过的人物，写出新的情节，不能把原来的道理写反，也不能一字不改地抄课文。",
+      "mastery_criteria": [
+        "能按要求把话写完整",
+        "能判断哪一句更符合题目"
+      ],
+      "example": {
+        "question": "哪一种是故事新编？",
+        "answer": "巨人拆掉围墙以后，又来了一个不敢进门的孩子，巨人亲自把他领进花园"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "cnc_p281_q1",
+      "topic": "cnc_p281",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《四时田园杂兴》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「昼出耘田夜绩麻」的下一句是哪一句？",
+      "explain": "白天耕田、夜里绩麻之后，写村里的孩子各做各的事。",
+      "answer_mode": "choice",
+      "options": [
+        "童孙未解供耕织",
+        "也傍桑阴学种瓜",
+        "村庄儿女各当家",
+        "村庄儿女各回家"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p281_q2",
+      "topic": "cnc_p281",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《四时田园杂兴》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「童孙未解供耕织」的下一句是哪一句？",
+      "explain": "小孩还不懂耕织，也在桑树荫下学着种瓜。诗中是种瓜，不是摘瓜。",
+      "answer_mode": "choice",
+      "options": [
+        "村庄儿女各当家",
+        "也傍桑荫学种瓜",
+        "也傍桑阴学摘瓜",
+        "也傍桑阴学种瓜"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p281_q3",
+      "topic": "cnc_p281",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《四时田园杂兴》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《四时田园杂兴》（昼出耘田）的作者是谁？",
+      "explain": "这首田园诗是范成大写的。杨万里写的是《宿新市徐公店》，不要记混。",
+      "answer_mode": "choice",
+      "options": [
+        "范成大",
+        "杨万里",
+        "辛弃疾",
+        "白居易"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p281_q4",
+      "topic": "cnc_p281",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《四时田园杂兴》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「昼出耘田夜绩麻」写的是怎样劳动？",
+      "explain": "昼是白天，夜是夜里。耘田和绩麻的顺序不能对调。",
+      "answer_mode": "choice",
+      "options": [
+        "白天绩麻，夜里耕田",
+        "白天耕田，夜里绩麻",
+        "白天睡觉，夜里种瓜",
+        "只在桑树下看别人干活"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p282_q1",
+      "topic": "cnc_p282",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《宿新市徐公店》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「篱落疏疏一径深」的下一句是哪一句？",
+      "explain": "篱笆稀疏，小路深远，树头的新叶还没有成荫。儿童急走是第三句。",
+      "answer_mode": "choice",
+      "options": [
+        "儿童急走追黄蝶",
+        "树头新绿未成荫",
+        "飞入菜花无处寻",
+        "树头新绿未成阴"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p282_q2",
+      "topic": "cnc_p282",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《宿新市徐公店》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「儿童急走追黄蝶」的下一句是哪一句？",
+      "explain": "蝴蝶飞进黄菜花里，就找不到了。学种瓜是范成大那首诗。",
+      "answer_mode": "choice",
+      "options": [
+        "飞入菜花无处寻",
+        "树头新绿未成阴",
+        "飞入菜花无处找",
+        "也傍桑阴学种瓜"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p282_q3",
+      "topic": "cnc_p282",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《宿新市徐公店》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《宿新市徐公店》的作者是谁？",
+      "explain": "追黄蝶这首是杨万里的。《四时田园杂兴》才是范成大的。",
+      "answer_mode": "choice",
+      "options": [
+        "范成大",
+        "杨万里",
+        "辛弃疾",
+        "杜甫"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p282_q4",
+      "topic": "cnc_p282",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《宿新市徐公店》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "黄蝶为什么难找了？",
+      "explain": "菜花和黄蝶颜色一样，所以无处寻。",
+      "answer_mode": "choice",
+      "options": [
+        "它飞出了这首诗",
+        "儿童没有去追",
+        "它飞进同样是黄色的菜花里",
+        "菜花是红色的，蝴蝶是白的"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p283_q1",
+      "topic": "cnc_p283",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "词《清平乐·村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「最喜小儿亡赖」的下一句是哪一句？",
+      "explain": "最小的孩子躺在溪边剥莲蓬。不是莲花。",
+      "answer_mode": "choice",
+      "options": [
+        "溪头卧剥莲蓬",
+        "溪头卧剥莲花",
+        "大儿锄豆溪东",
+        "中儿正织鸡笼"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p283_q2",
+      "topic": "cnc_p283",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "词《清平乐·村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "词里的「亡赖」是什么意思？",
+      "explain": "这里的亡赖就是顽皮、淘气，不是说他品德不好。",
+      "answer_mode": "choice",
+      "options": [
+        "不诚实",
+        "顽皮",
+        "没有朋友",
+        "很可怜"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p283_q3",
+      "topic": "cnc_p283",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "词《清平乐·村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "大儿和中儿分别在做什么？",
+      "explain": "大儿在溪东锄豆，中儿在编鸡笼。",
+      "answer_mode": "choice",
+      "options": [
+        "大儿织鸡笼，中儿锄豆",
+        "两个都在剥莲蓬",
+        "大儿锄豆，中儿织鸡笼",
+        "两个都在睡觉"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p283_q4",
+      "topic": "cnc_p283",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "词《清平乐·村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "这首词写的是什么地方的生活？",
+      "explain": "茅檐、锄豆、鸡笼和莲蓬，都是农家生活。作者是辛弃疾。",
+      "answer_mode": "choice",
+      "options": [
+        "皇宫",
+        "战场",
+        "学校课堂",
+        "农家"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p284_q1",
+      "topic": "cnc_p284",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《乡下人家》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "屋前的瓜藤是怎样的？",
+      "explain": "青、红的瓜，碧绿的藤和叶子，把屋子装饰起来。",
+      "answer_mode": "choice",
+      "options": [
+        "全部枯萎了",
+        "攀上屋檐，花和藤构成一幅图画",
+        "长在河里",
+        "开在皇宫的墙上"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p284_q2",
+      "topic": "cnc_p284",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《乡下人家》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "花是怎样开的？",
+      "explain": "课文写花依着时令，春天、夏天各有各的花。",
+      "answer_mode": "choice",
+      "options": [
+        "一年只在同一天一起开",
+        "只开在夜里的潮水上",
+        "依着时令，顺序开放",
+        "开完就再也不开了"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p284_q3",
+      "topic": "cnc_p284",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《乡下人家》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "傍晚，人们常常在哪里？",
+      "explain": "纺织娘叫起来的时候，人们在门前的场地上吃饭、闲话。",
+      "answer_mode": "choice",
+      "options": [
+        "在潮水里游泳",
+        "在煤矿里",
+        "在桅杆上",
+        "在门前吃饭、聊天"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p284_q4",
+      "topic": "cnc_p284",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《乡下人家》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "作者觉得乡下人家怎样？",
+      "explain": "无论白天晚上，屋前屋后都有自己的景象，所以说独特、迷人。",
+      "answer_mode": "choice",
+      "options": [
+        "有独特、迷人的风景",
+        "和城里的楼完全一样",
+        "没有一点生气",
+        "只适合写成说明文里的数字"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p285_q1",
+      "topic": "cnc_p285",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《天窗》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《天窗》的作者是谁？",
+      "explain": "这篇是茅盾写的。《乡下人家》是陈醉云的，《三月桃花水》是刘湛秋的。",
+      "answer_mode": "choice",
+      "options": [
+        "陈醉云",
+        "刘湛秋",
+        "茅盾",
+        "巴金"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p285_q2",
+      "topic": "cnc_p285",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《天窗》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "夏天阵雨来了，孩子们被关在屋里，唯一的慰藉是什么？",
+      "explain": "木板窗关上以后，屋子像地洞。他们只能从天窗看出去。瓜藤是《乡下人家》里的。",
+      "answer_mode": "choice",
+      "options": [
+        "门前攀上屋檐的瓜藤",
+        "三月的桃花水",
+        "钱塘江的大潮",
+        "那扇小小的天窗"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p285_q3",
+      "topic": "cnc_p285",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《天窗》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "透过天窗，孩子们会怎样？",
+      "explain": "看雨、看闪电、看星星，都会想得很远。想象比实际看见的更广阔。",
+      "answer_mode": "choice",
+      "options": [
+        "由一点雨、一粒星，想象出更广大的世界",
+        "只数有几块玻璃，不再想别的",
+        "把天窗看成琥珀里的蜘蛛",
+        "天窗外什么也没有，所以不能想"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p285_q4",
+      "topic": "cnc_p285",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《天窗》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "课文为什么说发明天窗的人应得感谢？",
+      "explain": "看见的也许很少，想出来的却又真切又广大。这是课文要说的。",
+      "answer_mode": "choice",
+      "options": [
+        "天窗可以代替所有的灯",
+        "孩子们能从「无」中看出「有」，从「虚」中看出「实」",
+        "有了天窗就不用再读书",
+        "天窗是用来堆瓜的"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p286_q1",
+      "topic": "cnc_p286",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《三月桃花水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《三月桃花水》的作者是谁？",
+      "explain": "这篇散文诗是刘湛秋的。《天窗》才是茅盾的。",
+      "answer_mode": "choice",
+      "options": [
+        "茅盾",
+        "陈醉云",
+        "艾青",
+        "刘湛秋"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p286_q2",
+      "topic": "cnc_p286",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《三月桃花水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文把三月的桃花水比作什么？",
+      "explain": "水声像琴，水面像镜子。琥珀和天窗是另外两篇。",
+      "answer_mode": "choice",
+      "options": [
+        "春天的竖琴，也是春天的明镜",
+        "一块包着苍蝇的琥珀",
+        "一扇只能看见雨点的天窗",
+        "一堵把孩子挡在外面的墙"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p286_q3",
+      "topic": "cnc_p286",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《三月桃花水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「竖琴」主要在写什么？",
+      "explain": "水声有时大有时小，应和着村里的声音，所以说它是竖琴。",
+      "answer_mode": "choice",
+      "options": [
+        "河底真的放着一张琴",
+        "流水发出的声音",
+        "孩子们在河边上课",
+        "雨点打在天窗上"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p286_q4",
+      "topic": "cnc_p286",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《三月桃花水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「明镜」主要在写什么？",
+      "explain": "明镜写的是水里的倒影。整篇都在赞美这河水，不是在嫌它吵。",
+      "answer_mode": "choice",
+      "options": [
+        "河水黑得什么也照不见",
+        "作者在批评春天的河水太吵",
+        "河水映出燕子、柳枝和来到河边的人",
+        "水面结了冰，人不能靠近"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p287_q1",
+      "topic": "cnc_p287",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·形声字：清、晴、情、请",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "和水有关的是哪一个字？",
+      "explain": "清是三点水，和水有关。晴是日字旁，情是竖心旁，请是言字旁。",
+      "answer_mode": "choice",
+      "options": [
+        "清",
+        "晴",
+        "情",
+        "请"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p287_q2",
+      "topic": "cnc_p287",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·形声字：清、晴、情、请",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「今天是____天」横线处该写哪一个？",
+      "explain": "晴天和太阳有关，用日字旁的晴。",
+      "answer_mode": "choice",
+      "options": [
+        "清",
+        "晴",
+        "情",
+        "请"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p287_q3",
+      "topic": "cnc_p287",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·形声字：清、晴、情、请",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「事____」横线处该写哪一个？",
+      "explain": "事情和心情有关，用竖心旁的情。",
+      "answer_mode": "choice",
+      "options": [
+        "清",
+        "晴",
+        "情",
+        "请"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p287_q4",
+      "topic": "cnc_p287",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·形声字：清、晴、情、请",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「____客」横线处该写哪一个？",
+      "explain": "请客要用语言邀请，是言字旁的请。",
+      "answer_mode": "choice",
+      "options": [
+        "清",
+        "晴",
+        "情",
+        "请"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p288_q1",
+      "topic": "cnc_p288",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《琥珀》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "琥珀里面包住了什么？",
+      "explain": "蜘蛛正扑向苍蝇，松脂滴下来，把它们一起包住了。",
+      "answer_mode": "choice",
+      "options": [
+        "一条鱼和一只鸟",
+        "一只苍蝇和一只蜘蛛",
+        "两块五色石",
+        "一颗李子"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p288_q2",
+      "topic": "cnc_p288",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《琥珀》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "松脂是从哪里滴下来的？",
+      "explain": "太阳很热，松树渗出松脂，正好滴在那只苍蝇和蜘蛛上。",
+      "answer_mode": "choice",
+      "options": [
+        "海里",
+        "蜘蛛嘴里",
+        "松树上",
+        "渔夫的船上"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p288_q3",
+      "topic": "cnc_p288",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《琥珀》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这块琥珀是谁发现的？",
+      "explain": "很久以后，孩子在海滩上踩到了它，渔夫认出那是琥珀。",
+      "answer_mode": "choice",
+      "options": [
+        "女娲",
+        "西门豹",
+        "王戎",
+        "渔夫和他的儿子"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p288_q4",
+      "topic": "cnc_p288",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《琥珀》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这个故事主要是怎样得来的？",
+      "explain": "谁也没有看见当时的场面。课文是凭琥珀里的两只小虫推想出来的。",
+      "answer_mode": "choice",
+      "options": [
+        "根据琥珀里的样子来推测",
+        "作者亲眼看见一万年前的那一幕",
+        "苍蝇自己写下来的",
+        "和科学没有关系，只是神话"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p289_q1",
+      "topic": "cnc_p289",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《飞向蓝天的恐龙》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "这篇要说明的主要意思是什么？",
+      "explain": "不是每一种恐龙都会飞。是其中一支慢慢变成了鸟。",
+      "answer_mode": "choice",
+      "options": [
+        "所有恐龙都在同一天飞上了天",
+        "鸟和恐龙毫无关系",
+        "恐龙的一支经过漫长演化，变成了鸟类",
+        "鸟是女娲用五色石捏出来的"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p289_q2",
+      "topic": "cnc_p289",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《飞向蓝天的恐龙》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "科学家找到的重要证据是什么？",
+      "explain": "羽毛的印痕说明有的恐龙长着羽毛。琥珀里的是蜘蛛和苍蝇。",
+      "answer_mode": "choice",
+      "options": [
+        "一块裹着苍蝇和蜘蛛的琥珀",
+        "神舟五号带回的月亮石头",
+        "道旁没人摘的李子",
+        "辽宁西部发现了保存着羽毛印痕的恐龙化石"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p289_q3",
+      "topic": "cnc_p289",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《飞向蓝天的恐龙》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "课文说的演化，哪一句理解对？",
+      "explain": "变成鸟是一个很长的过程。课文用化石来说明，不是在讲神话。",
+      "answer_mode": "choice",
+      "options": [
+        "身体变轻、前肢慢慢变成翅膀，经历了很长时间",
+        "霸王龙第二天就长出了翅膀",
+        "只有故事里才有恐龙变鸟，科学上没有这回事",
+        "化石证明恐龙从来没有羽毛"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p289_q4",
+      "topic": "cnc_p289",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《飞向蓝天的恐龙》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "它和《琥珀》的相同之处是什么？",
+      "explain": "一个看琥珀里的小虫，一个看恐龙化石。都是根据留下的东西来推测。",
+      "answer_mode": "choice",
+      "options": [
+        "两篇都在写一只苍蝇",
+        "都是从留下的实物去推想很久以前的事",
+        "两篇都是范成大的诗",
+        "两篇都要求把原文背下来"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p290_q1",
+      "topic": "cnc_p290",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《纳米技术就在我们身边》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "1纳米有多长？",
+      "explain": "课文说1纳米等于十亿分之一米。肉眼看不见，普通显微镜也看不清。",
+      "answer_mode": "choice",
+      "options": [
+        "和一根筷子一样长",
+        "和一条河一样长",
+        "和地球的直径一样长",
+        "十亿分之一米，非常非常小"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p290_q2",
+      "topic": "cnc_p290",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《纳米技术就在我们身边》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文用乒乓球和地球作比，是为了说明什么？",
+      "explain": "把1纳米的小球放在乒乓球上，相当于把乒乓球放在地球上。比的是小，不是大。",
+      "answer_mode": "choice",
+      "options": [
+        "纳米小到难以想象",
+        "纳米比地球还大",
+        "乒乓球是用纳米做的",
+        "地球是一台冰箱"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p290_q3",
+      "topic": "cnc_p290",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《纳米技术就在我们身边》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "哪一项是课文里已经用在生活中的例子？",
+      "explain": "杀菌涂层是身边已有的例子。碳纳米管天梯是课文里的展望，不是已经建成的。",
+      "answer_mode": "choice",
+      "options": [
+        "人们已经坐着碳纳米管天梯去了太空",
+        "冰箱里的纳米涂层能杀菌、除臭，让食物和蔬菜保鲜更久",
+        "纳米就是恐龙身上的羽毛",
+        "纳米技术只写在神话里"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p290_q4",
+      "topic": "cnc_p290",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《纳米技术就在我们身边》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「纳米技术就在我们身边」是什么意思？",
+      "explain": "课文举身边的例子，是要说科学技术离我们不远。",
+      "answer_mode": "choice",
+      "options": [
+        "纳米大得一眼就能看见",
+        "只有实验室里才可能有，家里一件也没有",
+        "这种技术已经进入衣服、冰箱这些日常事物，不是离生活很远",
+        "它是宝葫芦变出来的"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p291_q1",
+      "topic": "cnc_p291",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千年梦圆在今朝》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文里，古人尝试飞天的例子是哪一个？",
+      "explain": "万户是课文里讲的古代尝试。杨利伟是今天的航天员，不是古人。",
+      "answer_mode": "choice",
+      "options": [
+        "明朝的万户把火箭绑在椅子上，想飞向天空",
+        "杨利伟乘坐神舟五号",
+        "恐龙演化成鸟",
+        "车胤用萤火虫照书"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p291_q2",
+      "topic": "cnc_p291",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千年梦圆在今朝》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "我国第一颗人造地球卫星叫什么？",
+      "explain": "东方红一号是卫星。神舟五号是后来的载人飞船。诺曼底号是另一篇课文里的船。",
+      "answer_mode": "choice",
+      "options": [
+        "神舟五号",
+        "东方红一号",
+        "诺曼底号",
+        "玛丽号"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p291_q3",
+      "topic": "cnc_p291",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千年梦圆在今朝》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "谁是第一位进入太空的中国航天员？",
+      "explain": "杨利伟乘坐神舟五号进入太空。万户是传说中的古代尝试，没有成功。",
+      "answer_mode": "choice",
+      "options": [
+        "万户",
+        "黄继光",
+        "杨利伟",
+        "哈尔威"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p291_q4",
+      "topic": "cnc_p291",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千年梦圆在今朝》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「千年梦圆在今朝」是什么意思？",
+      "explain": "从古人的盼望到载人航天，课文说这个梦想在当代实现了。恐龙变鸟是上一篇的内容。",
+      "answer_mode": "choice",
+      "options": [
+        "这个梦只做了一夜",
+        "飞天到今天还完全没有实现",
+        "圆的是恐龙飞上蓝天的那个梦",
+        "中华民族长久的飞天梦想，在今天实现了"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p292_q1",
+      "topic": "cnc_p292",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·多音字：假、散、便、发",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「放假」的「假」读哪一个？",
+      "explain": "放假、假期读 jià。真假、假话才读 jiǎ。",
+      "answer_mode": "choice",
+      "options": [
+        "jiǎ",
+        "jià",
+        "jiā",
+        "xià"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p292_q2",
+      "topic": "cnc_p292",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·多音字：假、散、便、发",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「散步」的「散」读哪一个？",
+      "explain": "散步、分散读 sàn。散文、松散才读 sǎn。",
+      "answer_mode": "choice",
+      "options": [
+        "sǎn",
+        "sān",
+        "sàn",
+        "shàn"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p292_q3",
+      "topic": "cnc_p292",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·多音字：假、散、便、发",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「便宜」的「便」读哪一个？",
+      "explain": "便宜读 pián。方便、便利才读 biàn。",
+      "answer_mode": "choice",
+      "options": [
+        "biàn",
+        "piàn",
+        "bián",
+        "pián"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p292_q4",
+      "topic": "cnc_p292",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·多音字：假、散、便、发",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「头发」的「发」读哪一个？",
+      "explain": "头发、理发读 fà。发现、出发才读 fā。",
+      "answer_mode": "choice",
+      "options": [
+        "fà",
+        "fā",
+        "fǎ",
+        "bà"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p293_q1",
+      "topic": "cnc_p293",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·形近字：幕、慕、暮、墓",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「夜____降临」横线处该写哪一个？",
+      "explain": "夜幕像一块布拉下来，下面是巾。羡慕是心字底。",
+      "answer_mode": "choice",
+      "options": [
+        "慕",
+        "暮",
+        "幕",
+        "墓"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p293_q2",
+      "topic": "cnc_p293",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·形近字：幕、慕、暮、墓",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「羡____」横线处该写哪一个？",
+      "explain": "羡慕是心里向往，下面是心字底，不是日。",
+      "answer_mode": "choice",
+      "options": [
+        "幕",
+        "暮",
+        "墓",
+        "慕"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p293_q3",
+      "topic": "cnc_p293",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·形近字：幕、慕、暮、墓",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「日____」横线处该写哪一个？",
+      "explain": "日暮是太阳落下去，下面是日。墓地下面是土。",
+      "answer_mode": "choice",
+      "options": [
+        "暮",
+        "幕",
+        "慕",
+        "墓"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p293_q4",
+      "topic": "cnc_p293",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·形近字：幕、慕、暮、墓",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「坟____」横线处该写哪一个？",
+      "explain": "坟墓和土有关，下面是土。日暮不能写成墓。",
+      "answer_mode": "choice",
+      "options": [
+        "暮",
+        "墓",
+        "慕",
+        "幕"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p294_q1",
+      "topic": "cnc_p294",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "快乐读书吧：十万个为什么",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "「十万个为什么」主要读哪一类书？",
+      "explain": "书里用科学知识解释问题。空白本和口诀表不是这次要读的。",
+      "answer_mode": "choice",
+      "options": [
+        "只抄当天的课程表",
+        "一本空白笔记本",
+        "只印着乘法口诀的表",
+        "回答各种「为什么」的科普书"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p294_q2",
+      "topic": "cnc_p294",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "快乐读书吧：十万个为什么",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "它和童话最大的不同是什么？",
+      "explain": "宝葫芦会答应愿望，是想象。太阳、恐龙、身体这类问题，要到科普书里找解释。",
+      "answer_mode": "choice",
+      "options": [
+        "这里要找事实和科学上的原因，不是看宝葫芦怎样实现愿望",
+        "两个都只背古诗",
+        "科普书里不能出现「为什么」",
+        "童话必须写成实验报告"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p294_q3",
+      "topic": "cnc_p294",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "快乐读书吧：十万个为什么",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "想知道「鸟为什么会飞」，比较合适的读法是哪一种？",
+      "explain": "带着问题去找解释，才读得进这套书。把原因改成神话，就不是这本书的答案。",
+      "answer_mode": "choice",
+      "options": [
+        "只看封面颜色就合上",
+        "先看目录或问题，再读说明原因的那一部分",
+        "把答案改成精卫衔来的木石",
+        "不读文字，只数有多少页"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p294_q4",
+      "topic": "cnc_p294",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "快乐读书吧：十万个为什么",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "哪一种做法不符合这次读书吧？",
+      "explain": "可以有自己的问题，但不能把书里的说明改掉，还说作者就是这个意思。",
+      "answer_mode": "choice",
+      "options": [
+        "读完能说出一个问题和书里的解释",
+        "不懂的地方再查一查",
+        "把书里的科学解释全部换成自己编的神话，还说书就是这个意思",
+        "把感兴趣的问题记下来"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p295_q1",
+      "topic": "cnc_p295",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "短诗三首·繁星",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "这三首短诗都出自谁的《繁星》？",
+      "explain": "《绿》是艾青的，《白桦》是叶赛宁的，《在天晴了的时候》是戴望舒的。这三首是冰心的。",
+      "answer_mode": "choice",
+      "options": [
+        "冰心",
+        "艾青",
+        "戴望舒",
+        "叶赛宁"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p295_q2",
+      "topic": "cnc_p295",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "短诗三首·繁星",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《繁星》（七一）里，永不漫灭的回忆是哪三处？",
+      "explain": "七一写的是和母亲在一起的画面。大海是一三一，躲进怀里是一五九。",
+      "answer_mode": "choice",
+      "options": [
+        "大海的波涛，星星的光，花的香",
+        "月明的园中，藤萝的叶下，母亲的膝上",
+        "天上的风雨，鸟的巢，母亲的怀",
+        "雪中的白桦，雨后的小径，绿色的风"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p295_q3",
+      "topic": "cnc_p295",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "短诗三首·繁星",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "《繁星》（一五九）里，心中的风雨来了，「我」躲到哪里？",
+      "explain": "天上的风雨来时，鸟儿躲进巢。心中的风雨来时，诗人躲进母亲怀里。两处不能对调。",
+      "answer_mode": "choice",
+      "options": [
+        "鸟的巢里",
+        "大海的波涛里",
+        "母亲的怀里",
+        "藤萝叶下，再也不出来"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p295_q4",
+      "topic": "cnc_p295",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "短诗三首·繁星",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "《繁星》（一三一）对着谁反复发问？",
+      "explain": "哪一颗星没有光，哪一朵花没有香，问的都是大海。",
+      "answer_mode": "choice",
+      "options": [
+        "母亲。问的是膝上的那三处回忆",
+        "白桦。问的是窗前的雪",
+        "一个不肯分享花园的巨人",
+        "大海。星有光，花有香，诗人的思潮里也有海的声音"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p296_q1",
+      "topic": "cnc_p296",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《绿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《绿》的作者是谁？",
+      "explain": "这首诗是艾青写的。老舍写《猫》，不要记成同一个人。",
+      "answer_mode": "choice",
+      "options": [
+        "老舍",
+        "艾青",
+        "丰子恺",
+        "苏轼"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p296_q2",
+      "topic": "cnc_p296",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《绿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "诗人觉得绿是怎样来的？",
+      "explain": "诗里说好像绿墨水瓶倒翻，到处都是绿。",
+      "answer_mode": "choice",
+      "options": [
+        "是谁用刷子把天涂黑的",
+        "只有一片叶子是绿的",
+        "好像绿色的墨水瓶倒翻了",
+        "绿被雪完全盖住了"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p296_q3",
+      "topic": "cnc_p296",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《绿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「所有的绿集中起来」是什么意思？",
+      "explain": "挤、重叠、交叉，都是在写绿的浓和多。",
+      "answer_mode": "choice",
+      "options": [
+        "绿只剩下一滴",
+        "绿和红换了位置",
+        "绿被风全部刮走了",
+        "绿很多，挤在一起，重叠在一起"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p296_q4",
+      "topic": "cnc_p296",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《绿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "诗里的风和雨也被写成什么颜色？",
+      "explain": "风是绿的，雨也是绿的。整首诗就扣住一个绿字。",
+      "answer_mode": "choice",
+      "options": [
+        "绿",
+        "只有黑",
+        "只有白",
+        "没有颜色"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p297_q1",
+      "topic": "cnc_p297",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《白桦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《白桦》的作者是谁？",
+      "explain": "这首诗是叶赛宁的。《绿》才是艾青的，不要把满世界的绿安到白桦上。",
+      "answer_mode": "choice",
+      "options": [
+        "艾青",
+        "冰心",
+        "叶赛宁",
+        "戴望舒"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p297_q2",
+      "topic": "cnc_p297",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《白桦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "窗前的白桦看上去怎样？",
+      "explain": "毛茸茸的枝头、雪绣的花边，都在写它的白。绿墨水瓶是《绿》里的比方。",
+      "answer_mode": "choice",
+      "options": [
+        "像倒翻的绿墨水瓶",
+        "像三月的桃花水",
+        "像一扇小小的天窗",
+        "仿佛涂上银霜，披着一身雪花"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p297_q3",
+      "topic": "cnc_p297",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《白桦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这首诗集中写的是什么？",
+      "explain": "题目就是白桦。绿、小白菊和母亲的膝，分别是另外几首诗。",
+      "answer_mode": "choice",
+      "options": [
+        "一棵披着雪的白桦",
+        "满世界挤在一起的绿",
+        "雨后小径上的小白菊",
+        "母亲膝上的回忆"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p297_q4",
+      "topic": "cnc_p297",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《白桦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "诗人对这棵树是怎样的感情？",
+      "explain": "银霜、花边、流苏，都是赞美。讨厌不会写得这样亮。",
+      "answer_mode": "choice",
+      "options": [
+        "讨厌它挡住了窗子",
+        "喜爱，把它写得很美",
+        "催人把它砍掉当柴",
+        "只是在介绍一种可以卖钱的木材"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p298_q1",
+      "topic": "cnc_p298",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《在天晴了的时候》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《在天晴了的时候》的作者是谁？",
+      "explain": "这首诗是戴望舒的。叶赛宁写《白桦》，冰心写《繁星》。",
+      "answer_mode": "choice",
+      "options": [
+        "叶赛宁",
+        "冰心",
+        "艾青",
+        "戴望舒"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p298_q2",
+      "topic": "cnc_p298",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《在天晴了的时候》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "诗人请人去哪里？",
+      "explain": "天晴了，他请人赤着脚，到小路上看看雨后的世界。",
+      "answer_mode": "choice",
+      "options": [
+        "到小径中去走走",
+        "仰卧在小船上钻进孔隙",
+        "留在关紧的屋子里只看天窗",
+        "到战场上去堵枪口"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p298_q3",
+      "topic": "cnc_p298",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《在天晴了的时候》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "诗里的小白菊是怎样的？",
+      "explain": "不再胆怯的小白菊，是雨后才有的样子。银霜是《白桦》里的。",
+      "answer_mode": "choice",
+      "options": [
+        "被雪盖住，像涂了银霜",
+        "雨停以后不再胆怯，慢慢抬起头",
+        "枯萎了，再也不开",
+        "长在巨人砌起的墙外面"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p298_q4",
+      "topic": "cnc_p298",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "阅读《在天晴了的时候》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这首诗和《白桦》最不同的地方是什么？",
+      "explain": "一个是雨后的欢快，一个是雪中的洁白。作者也不是同一个人。",
+      "answer_mode": "choice",
+      "options": [
+        "两首写的是同一棵树",
+        "两首都是冰心的《繁星》",
+        "一首邀人去看雨后的小路，一首写雪中的白桦",
+        "两首都必须用文言文来读"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p299_q1",
+      "topic": "cnc_p299",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·词语搭配：严格、严厉、严密",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "「老师对作业要求很____。」横线处该填哪一个？",
+      "explain": "要求、规定常用严格。严厉多写态度，严密多写组织或防守。",
+      "answer_mode": "choice",
+      "options": [
+        "严格",
+        "严厉",
+        "严密",
+        "严肃的天气"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p299_q2",
+      "topic": "cnc_p299",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·词语搭配：严格、严厉、严密",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "「父亲的脸色很____。」横线处该填哪一个？",
+      "explain": "脸色、态度用严厉。严密不能用来写脸色。",
+      "answer_mode": "choice",
+      "options": [
+        "严密",
+        "严厉",
+        "严格的脸色",
+        "严格要求的脸"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p299_q3",
+      "topic": "cnc_p299",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·词语搭配：严格、严厉、严密",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "「球场的防守很____。」横线处该填哪一个？",
+      "explain": "防守、组织用严密，是说没有漏洞。",
+      "answer_mode": "choice",
+      "options": [
+        "严厉",
+        "严格要求",
+        "严密",
+        "严重"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p299_q4",
+      "topic": "cnc_p299",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·词语搭配：严格、严厉、严密",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "哪一句的词语搭配是对的？",
+      "explain": "态度配严厉，防守配严密，要求配严格。交叉着用就搭配错了。",
+      "answer_mode": "choice",
+      "options": [
+        "他的态度很严密。",
+        "防守很严厉。",
+        "老师严密地要求我们。",
+        "他说话的态度很严厉。"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p300_q1",
+      "topic": "cnc_p300",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《猫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《猫》的作者是谁？",
+      "explain": "这篇是老舍写的。丰子恺写的是《白鹅》。",
+      "answer_mode": "choice",
+      "options": [
+        "丰子恺",
+        "老舍",
+        "艾青",
+        "鲁迅"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p300_q2",
+      "topic": "cnc_p300",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《猫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "说猫「古怪」，是因为什么？",
+      "explain": "课文用几对看起来相反的表现，写出猫的古怪。",
+      "answer_mode": "choice",
+      "options": [
+        "它天天同一种表情",
+        "它不会抓老鼠",
+        "它老实，可又贪玩；高兴时温柔，不高兴时一声也不出",
+        "它比鹅还要高傲"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p300_q3",
+      "topic": "cnc_p300",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《猫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "满月的小猫喜欢玩什么？",
+      "explain": "小猫腿脚还站不稳，却已经把院子里的东西都当成玩具。",
+      "answer_mode": "choice",
+      "options": [
+        "只玩一条鱼，别的都不碰",
+        "和白鹅一起吃饭",
+        "趴着一动不动",
+        "鸡毛、线团，什么都玩"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p300_q4",
+      "topic": "cnc_p300",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《猫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "作者写猫的淘气，表达的是什么？",
+      "explain": "越写它淘气，越能看出作者喜欢它。讨厌不会写得这样细。",
+      "answer_mode": "choice",
+      "options": [
+        "对猫的喜爱",
+        "要把猫送走",
+        "猫给家里添了麻烦所以讨厌它",
+        "猫应该改掉所有习惯"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p301_q1",
+      "topic": "cnc_p301",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《母鸡》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《母鸡》的作者是谁？",
+      "explain": "《猫》也是老舍写的。《白鹅》才是丰子恺的，不要把两篇的作者记混。",
+      "answer_mode": "choice",
+      "options": [
+        "丰子恺",
+        "艾青",
+        "老舍",
+        "叶圣陶"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p301_q2",
+      "topic": "cnc_p301",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《母鸡》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文开头，作者对母鸡是什么态度？",
+      "explain": "他先写母鸡的叫声和欺软怕硬，说自己一向讨厌母鸡。",
+      "answer_mode": "choice",
+      "options": [
+        "从第一句起就非常尊敬",
+        "完全没注意过它",
+        "把它当成一只高傲的白鹅",
+        "讨厌"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p301_q3",
+      "topic": "cnc_p301",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《母鸡》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "后来他为什么不敢再讨厌母鸡了？",
+      "explain": "警戒、觅食、保护小鸡，这些地方让他改了看法。结尾是不敢再讨厌。",
+      "answer_mode": "choice",
+      "options": [
+        "它成了鸡母亲，负责、慈爱、勇敢，又很辛苦",
+        "它学会了像猫一样闭着眼睡觉",
+        "它再也不叫了，所以不可怕",
+        "它把小鸡全都赶走了"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p301_q4",
+      "topic": "cnc_p301",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《母鸡》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "哪一项是他原先讨厌母鸡的原因，不是后来的表现？",
+      "explain": "欺软怕硬写在前面，是讨厌的理由。护着小鸡，是后来让他尊敬的地方。",
+      "answer_mode": "choice",
+      "options": [
+        "警戒着，不让别的动物靠近小鸡",
+        "叫声没完没了，还会欺软怕硬",
+        "教小鸡觅食、躲避危险",
+        "自己吃苦，也要保护孩子"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p302_q1",
+      "topic": "cnc_p302",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《白鹅》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《白鹅》的作者是谁？",
+      "explain": "这篇是丰子恺写的。老舍写的是《猫》。",
+      "answer_mode": "choice",
+      "options": [
+        "老舍",
+        "叶圣陶",
+        "郭沫若",
+        "丰子恺"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p302_q2",
+      "topic": "cnc_p302",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《白鹅》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "白鹅最突出的特点是什么？",
+      "explain": "作者说左看右看，鹅的高傲都从姿态上来。",
+      "answer_mode": "choice",
+      "options": [
+        "高傲",
+        "胆小",
+        "沉默，从不叫",
+        "走路像猫一样轻"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p302_q3",
+      "topic": "cnc_p302",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《白鹅》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "白鹅吃饭有什么特别？",
+      "explain": "它吃饭时架子很大，还必须有人站在旁边侍候。",
+      "answer_mode": "choice",
+      "options": [
+        "自己到厨房把饭端来",
+        "非有一个人侍候不可，吃法三眼一板",
+        "只吃一口就走",
+        "和狗抢同一只碗，从不叫"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p302_q4",
+      "topic": "cnc_p302",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《白鹅》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "作者写它的高傲，其实是怎样的感情？",
+      "explain": "三眼一板、伸长脖子，读起来可笑，字里行间是喜爱。",
+      "answer_mode": "choice",
+      "options": [
+        "准备把它卖掉",
+        "害怕它，再也不敢看",
+        "觉得它可笑，又很喜欢它",
+        "只是在写一道菜"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p303_q1",
+      "topic": "cnc_p303",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·词语的感情色彩",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "哪一个词含有夸奖的意思？",
+      "explain": "团结是一起做好事。勾结、阴谋、狡猾都带有批评的意思。",
+      "answer_mode": "choice",
+      "options": [
+        "团结",
+        "勾结",
+        "阴谋",
+        "狡猾"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p303_q2",
+      "topic": "cnc_p303",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·词语的感情色彩",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "哪一个词含有批评的意思？",
+      "explain": "武断是不听别人、主观地做决定。果断是优点。",
+      "answer_mode": "choice",
+      "options": [
+        "果断",
+        "武断",
+        "坚强",
+        "诚实"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p303_q3",
+      "topic": "cnc_p303",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·词语的感情色彩",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "「他做事很____，同事都信任他。」该填哪一个？",
+      "explain": "得到信任，要填含夸奖意味的果断。",
+      "answer_mode": "choice",
+      "options": [
+        "武断",
+        "狡猾",
+        "果断",
+        "勾结"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p303_q4",
+      "topic": "cnc_p303",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·词语的感情色彩",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "哪一句的词语和感情配得上？",
+      "explain": "打扫校园是好事，用团结。勾结不能用在这里。",
+      "answer_mode": "choice",
+      "options": [
+        "同学们勾结起来打扫校园。",
+        "他坚强地骗过了所有人。",
+        "他诚实地把错误藏了起来。",
+        "同学们团结起来打扫校园。"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p304_q1",
+      "topic": "cnc_p304",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《海上日出》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《海上日出》的作者是谁？",
+      "explain": "这篇是巴金写的。《记金华的双龙洞》才是叶圣陶的。",
+      "answer_mode": "choice",
+      "options": [
+        "叶圣陶",
+        "巴金",
+        "老舍",
+        "冯骥才"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p304_q2",
+      "topic": "cnc_p304",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《海上日出》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "作者在哪里看日出？",
+      "explain": "他早起，在海船上等太阳出来。不是在山洞里。",
+      "answer_mode": "choice",
+      "options": [
+        "双龙洞的内洞里",
+        "芙蓉楼上",
+        "船上",
+        "巨人的花园里"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p304_q3",
+      "topic": "cnc_p304",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《海上日出》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "太阳出来的时候是怎样的？",
+      "explain": "课文写它一点儿一点儿努力上升，颜色红得可爱。",
+      "answer_mode": "choice",
+      "options": [
+        "一下子跳到天顶，一点过程也没有",
+        "只躲在云后面，始终不露面",
+        "从山洞的孔隙里钻出来",
+        "慢慢从海面升起，红得很，像背着很重的东西"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p304_q4",
+      "topic": "cnc_p304",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《海上日出》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "有云的时候，作者看到什么？",
+      "explain": "有云的日出同样壮观。双龙在另一篇游记里。",
+      "answer_mode": "choice",
+      "options": [
+        "阳光给黑云镶上金边，他把这称作伟大的奇观",
+        "云把太阳永远挡住了，所以没有日出",
+        "云是绿色的，和艾青写的风一样",
+        "他看见的是洞顶上的双龙"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p305_q1",
+      "topic": "cnc_p305",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《记金华的双龙洞》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《记金华的双龙洞》的作者是谁？",
+      "explain": "这篇游记是叶圣陶写的。《海上日出》是巴金的。",
+      "answer_mode": "choice",
+      "options": [
+        "巴金",
+        "老舍",
+        "叶圣陶",
+        "茅盾"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p305_q2",
+      "topic": "cnc_p305",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《记金华的双龙洞》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "哪一种顺序和课文一致？",
+      "explain": "移步换景：路、洞口、外洞、孔隙、内洞。长廊和昆明湖是习作例文《颐和园》。",
+      "answer_mode": "choice",
+      "options": [
+        "先到内洞，再回到海上看日出",
+        "只在洞口站一会儿就写完",
+        "先写昆明湖，再写长廊",
+        "先看路上的映山红和油桐，再进外洞，过孔隙，到内洞"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p305_q3",
+      "topic": "cnc_p305",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《记金华的双龙洞》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "过孔隙时，人要怎样？",
+      "explain": "孔隙只容一只小船。人仰卧着，才感觉洞顶就在鼻子前面。",
+      "answer_mode": "choice",
+      "options": [
+        "仰卧在小船上，船才挤得进去",
+        "站在大船上欣赏日出",
+        "从天窗爬到屋顶",
+        "挑着担子走折尺形的山路"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p305_q4",
+      "topic": "cnc_p305",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《记金华的双龙洞》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "内洞里能看到什么？",
+      "explain": "内洞一团漆黑，工人提着灯，才能看见钟乳和石笋。名字里的双龙，指的是洞顶的样子。",
+      "answer_mode": "choice",
+      "options": [
+        "钱塘江排起的一条白线",
+        "石钟乳和石笋，洞顶的样子像龙",
+        "一片红日跳出海面",
+        "母鸡带着一群小鸡"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p306_q1",
+      "topic": "cnc_p306",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "习作：游_____ ·把游览中的见闻写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "哪一句把游览时看到的样子写具体了？",
+      "explain": "例文《颐和园》按看见的顺序写。只写「去玩了」，别人看不见那里什么样。",
+      "answer_mode": "choice",
+      "options": [
+        "我去玩了。",
+        "颐和园。",
+        "那里很好。",
+        "长廊一边是花木，一边是昆明湖，彩画一幅接着一幅"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p306_q2",
+      "topic": "cnc_p306",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "习作：游_____ ·把游览中的见闻写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "写挤过狭窄的地方，哪一句把动作写具体了？",
+      "explain": "仰卧、抵着、一点点进去，是连续的动作。只写「进了」或空说勇敢，过程还没写出来。",
+      "answer_mode": "choice",
+      "options": [
+        "我仰卧在小船上，肩膀抵着船帮，船才一点点进去",
+        "我进了洞。",
+        "洞很窄。",
+        "我很勇敢。"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p306_q3",
+      "topic": "cnc_p306",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "习作：游_____ ·把游览中的见闻写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "按游览顺序写，哪一种合适？",
+      "explain": "读者要跟着路线走。没写看见什么，游记就还停在题目上。",
+      "answer_mode": "choice",
+      "options": [
+        "第一句就写回到家吃饭，路上和洞里都没写",
+        "先写路上的花，再写洞口，再写洞里看到的",
+        "先写一句感想，看到的景物一句不写",
+        "把三个地方并成同一句「都很好」"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p306_q4",
+      "topic": "cnc_p306",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "习作：游_____ ·把游览中的见闻写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "《颐和园》和《七月的天山》在这次习作里是什么？",
+      "explain": "七月的天山写雪峰、溪流和野花，也是按看到的顺序。它们教写法，不单独立成课文。",
+      "answer_mode": "choice",
+      "options": [
+        "两篇必须当成古诗来默写",
+        "两篇只写数字，和景色无关",
+        "例文，学怎样按顺序把景物和见闻写具体，不是另外要单独背的课文",
+        "两篇和游记没有关系"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p307_q1",
+      "topic": "cnc_p307",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "文言文二则",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "车胤家里穷，晚上用什么照着读书？",
+      "explain": "家贫不常得油，夏天把萤火虫装进薄纱袋。",
+      "answer_mode": "choice",
+      "options": [
+        "用练囊装萤火虫",
+        "买来一盏油灯",
+        "点着一堆木柴",
+        "只在月亮最亮时才读"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p307_q2",
+      "topic": "cnc_p307",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "文言文二则",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "「练囊」是什么？",
+      "explain": "练囊是薄而透光的袋子，萤火装在里面能照见字。",
+      "answer_mode": "choice",
+      "options": [
+        "铁做的灯",
+        "白色的薄口袋",
+        "一本很厚的书",
+        "邻居的窗户"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p307_q3",
+      "topic": "cnc_p307",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "文言文二则",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "铁杵成针的故事里，老婆婆在做什么？",
+      "explain": "她说只要功夫深，铁杵也能磨成针。",
+      "answer_mode": "choice",
+      "options": [
+        "把针做成铁棒",
+        "把针送给路过的人",
+        "把铁棒磨成针",
+        "劝人不要磨了"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p307_q4",
+      "topic": "cnc_p307",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "文言文二则",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这两个故事共同说明什么？",
+      "explain": "一个想办法照书，一个把铁棒磨成针，都是在坚持。",
+      "answer_mode": "choice",
+      "options": [
+        "没有灯就不要读书",
+        "铁棒本来就是针",
+        "读书一定要买很贵的灯",
+        "条件不好也要坚持"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p308_q1",
+      "topic": "cnc_p308",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《小英雄雨来》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "雨来最擅长什么？",
+      "explain": "雨来在还乡河里长大，游泳很好。",
+      "answer_mode": "choice",
+      "options": [
+        "爬山",
+        "游泳",
+        "骑马",
+        "画画"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p308_q2",
+      "topic": "cnc_p308",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《小英雄雨来》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "夜校里，雨来他们读的是哪一句话？",
+      "explain": "这句写在黑板或课本上，是雨来记住的话。另外三句来自别的课文。",
+      "answer_mode": "choice",
+      "options": [
+        "三碗不过冈",
+        "河伯还要娶媳妇",
+        "我们是中国人，我们爱自己的祖国",
+        "只要功夫深"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p308_q3",
+      "topic": "cnc_p308",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《小英雄雨来》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "敌人来搜课本时，雨来把课本怎样了？",
+      "explain": "他把课本藏好，没有交给敌人。",
+      "answer_mode": "choice",
+      "options": [
+        "交给敌人",
+        "把课本读给敌人听",
+        "把课本扔进灶火里烧了",
+        "保护起来，不让敌人找到"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p308_q4",
+      "topic": "cnc_p308",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《小英雄雨来》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "乡亲们听见枪声以后，后来发现什么？",
+      "explain": "人们以为他牺牲了，后来才看见他还乡河里露出的小脑袋。",
+      "answer_mode": "choice",
+      "options": [
+        "雨来从水里露出头，还活着",
+        "雨来把课本交给了敌人",
+        "雨来从来不会游泳",
+        "敌人被课本吓跑了"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p309_q1",
+      "topic": "cnc_p309",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《我们家的男子汉》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《我们家的男子汉》的作者是谁？",
+      "explain": "这篇是王安忆写的。《芦花鞋》是曹文轩的，《小英雄雨来》是管桦的。",
+      "answer_mode": "choice",
+      "options": [
+        "老舍",
+        "曹文轩",
+        "王安忆",
+        "管桦"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p309_q2",
+      "topic": "cnc_p309",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《我们家的男子汉》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "题目里的「男子汉」是谁？",
+      "explain": "男子汉在这里不是大人。作者写自己看着这个孩子一点点像个男子汉。",
+      "answer_mode": "choice",
+      "options": [
+        "黄继光",
+        "哈尔威船长",
+        "雨来夜校里的老师",
+        "妹妹的儿子，一个还小的男孩"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p309_q3",
+      "topic": "cnc_p309",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《我们家的男子汉》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "哪一件事写出他想自己做事？",
+      "explain": "买东西、自己付钱，是课文里写他要求独立的地方。",
+      "answer_mode": "choice",
+      "options": [
+        "自己去买东西、付钱，不要人陪着",
+        "让大人一直把他抱在怀里",
+        "把要做的事全部交给宝葫芦",
+        "躲起来，谁叫也不出声"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p309_q4",
+      "topic": "cnc_p309",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《我们家的男子汉》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "课文主要从哪些方面写他？",
+      "explain": "食物、独立、沉着，是这篇的几个方面。游泳是雨来，卖鞋是青铜。",
+      "answer_mode": "choice",
+      "options": [
+        "只写他的考试分数",
+        "对食物的兴趣、要求独立、面对挑战时的沉着",
+        "只写他怎样游过还乡河",
+        "只写他在雪地里编芦花鞋"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p310_q1",
+      "topic": "cnc_p310",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《芦花鞋》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《芦花鞋》的作者是谁？写的是谁？",
+      "explain": "这篇选自曹文轩的《青铜葵花》。不要和雨来、那个小男孩记成同一个人。",
+      "answer_mode": "choice",
+      "options": [
+        "王安忆。写的是妹妹的儿子",
+        "管桦。写的是雨来",
+        "老舍。写的是一只母鸡",
+        "曹文轩。写的是青铜"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p310_q2",
+      "topic": "cnc_p310",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《芦花鞋》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "鞋是用什么编的？",
+      "explain": "芦花又轻又软，编成的鞋穿着暖和。这是题目里的芦花。",
+      "answer_mode": "choice",
+      "options": [
+        "芦花",
+        "丝绸",
+        "钢铁",
+        "荷叶"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p310_q3",
+      "topic": "cnc_p310",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《芦花鞋》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "他为什么要在雪天把鞋拿到镇上去？",
+      "explain": "家里需要钱。他懂事，才顶着雪去卖。",
+      "answer_mode": "choice",
+      "options": [
+        "鞋太热，自己不想穿",
+        "卖了钱，好贴补家里",
+        "老师规定必须交一件手工",
+        "他要把鞋送给搜查的敌人"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p310_q4",
+      "topic": "cnc_p310",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《芦花鞋》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "最后那一双穿在脚上的鞋怎样了？",
+      "explain": "买的人要他脚上那双。他脱下来，自己光脚回去。",
+      "answer_mode": "choice",
+      "options": [
+        "他留着自己过冬，一双也不卖",
+        "鞋被雨来藏进了还乡河",
+        "也脱下来卖给了别人，他光着脚走在雪地里",
+        "鞋变成了船上的救生艇"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p311_q1",
+      "topic": "cnc_p311",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·对话和双引号",
+      "type": "knowledge",
+      "skill": "句子",
+      "difficulty": 1,
+      "stem": "哪一句的引号用对了？",
+      "explain": "提示语在前，说的话放进引号里，句号也在引号里面。",
+      "answer_mode": "choice",
+      "options": [
+        "妈妈说：「该写作业了。」",
+        "妈妈说：该写作业了。",
+        "「妈妈说：该写作业了。」",
+        "妈妈说：「该写作业了」。"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p311_q2",
+      "topic": "cnc_p311",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·对话和双引号",
+      "type": "knowledge",
+      "skill": "句子",
+      "difficulty": 1,
+      "stem": "提示语在后面时，哪一句是对的？",
+      "explain": "话在前，句号放在引号里，再说是谁说的。提示语不能和话裹在同一对引号里。",
+      "answer_mode": "choice",
+      "options": [
+        "「我来帮你」。小明说。",
+        "「我来帮你。」小明说。",
+        "我来帮你。「小明说。」",
+        "「我来帮你。小明说。」"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p311_q3",
+      "topic": "cnc_p311",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·对话和双引号",
+      "type": "knowledge",
+      "skill": "句子",
+      "difficulty": 2,
+      "stem": "双引号在这里的作用是什么？",
+      "explain": "这里的双引号用来标出说出来的话。",
+      "answer_mode": "choice",
+      "options": [
+        "代替所有的句号",
+        "只用来写诗的题目",
+        "标出人物说的话",
+        "表示声音很大"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p311_q4",
+      "topic": "cnc_p311",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·对话和双引号",
+      "type": "knowledge",
+      "skill": "句子",
+      "difficulty": 2,
+      "stem": "哪一句把两个人的话分清了？",
+      "explain": "每个人的话各自用一对引号，读的人就不会混。",
+      "answer_mode": "choice",
+      "options": [
+        "爸爸问作业写完了吗我回答写完了。",
+        "「爸爸问我回答。」",
+        "作业写完了吗写完了。",
+        "爸爸问：「作业写完了吗？」我回答：「写完了。」"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p312_q1",
+      "topic": "cnc_p312",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《芙蓉楼送辛渐》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「寒雨连江夜入吴」的下一句是哪一句？",
+      "explain": "一夜寒雨之后，清晨送客，只见楚山孤零零的。秦时明月是《出塞》。",
+      "answer_mode": "choice",
+      "options": [
+        "洛阳亲友如相问",
+        "平明送客楚山孤",
+        "一片冰心在玉壶",
+        "秦时明月汉时关"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p312_q2",
+      "topic": "cnc_p312",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《芙蓉楼送辛渐》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「洛阳亲友如相问」的下一句是哪一句？",
+      "explain": "请朋友捎话：自己的心像玉壶里的冰一样清明。不教胡马也是《出塞》。",
+      "answer_mode": "choice",
+      "options": [
+        "一片冰心在玉湖",
+        "平明送客楚山孤",
+        "一片冰心在玉壶",
+        "不教胡马度阴山"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p312_q3",
+      "topic": "cnc_p312",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《芙蓉楼送辛渐》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《芙蓉楼送辛渐》的作者是谁？",
+      "explain": "送辛渐和《出塞》都是王昌龄的诗，但不是同一首。王翰写的是《凉州词》。",
+      "answer_mode": "choice",
+      "options": [
+        "王翰",
+        "李白",
+        "范成大",
+        "王昌龄"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p312_q4",
+      "topic": "cnc_p312",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《芙蓉楼送辛渐》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「一片冰心在玉壶」是在表明什么？",
+      "explain": "冰心、玉壶都是比方清白，不是在写天气。",
+      "answer_mode": "choice",
+      "options": [
+        "自己的心地依然清白",
+        "玉壶里真的结了冰，所以不能送客",
+        "他要留在洛阳不走",
+        "他希望朋友带一壶酒回去"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p313_q1",
+      "topic": "cnc_p313",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《塞下曲》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「月黑雁飞高」的下一句是哪一句？",
+      "explain": "夜色里大雁飞得高，是因为单于连夜逃走了。大雪满弓刀是第四句。",
+      "answer_mode": "choice",
+      "options": [
+        "大雪满弓刀",
+        "平明送客楚山孤",
+        "单于夜遁逃",
+        "只留清气满乾坤"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p313_q2",
+      "topic": "cnc_p313",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《塞下曲》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「欲将轻骑逐」的下一句是哪一句？",
+      "explain": "将军要率领轻骑去追，雪已经落满了弓和刀。冰心玉壶是送别诗。",
+      "answer_mode": "choice",
+      "options": [
+        "单于夜遁逃",
+        "一片冰心在玉壶",
+        "朵朵花开淡墨痕",
+        "大雪满弓刀"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p313_q3",
+      "topic": "cnc_p313",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《塞下曲》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《塞下曲》（月黑雁飞高）的作者是谁？",
+      "explain": "这首是卢纶的。王昌龄写《芙蓉楼送辛渐》和《出塞》，王冕写《墨梅》。",
+      "answer_mode": "choice",
+      "options": [
+        "卢纶",
+        "王昌龄",
+        "王冕",
+        "范成大"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p313_q4",
+      "topic": "cnc_p313",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《塞下曲》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "这首诗写的是什么情景？",
+      "explain": "月黑、遁逃、轻骑、弓刀，都是边塞夜追。送朋友和画梅是另外两首。",
+      "answer_mode": "choice",
+      "options": [
+        "清晨在芙蓉楼送朋友回洛阳",
+        "雪夜追赶连夜逃跑的敌军",
+        "借墨梅说自己的品格",
+        "儿童追着黄蝶跑进菜花"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p314_q1",
+      "topic": "cnc_p314",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《墨梅》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「我家洗砚池头树」的下一句是哪一句？",
+      "explain": "洗砚池边的梅，花色浅得像淡淡的墨痕。只留清气是第四句。",
+      "answer_mode": "choice",
+      "options": [
+        "只留清气满乾坤",
+        "一片冰心在玉壶",
+        "也傍桑阴学种瓜",
+        "朵朵花开淡墨痕"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p314_q2",
+      "topic": "cnc_p314",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《墨梅》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「不要人夸好颜色」的下一句是哪一句？",
+      "explain": "不需要别人夸颜色好看，只愿清雅的气息留在天地间。",
+      "answer_mode": "choice",
+      "options": [
+        "只留清气满乾坤",
+        "朵朵花开淡墨痕",
+        "平明送客楚山孤",
+        "大雪满弓刀"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p314_q3",
+      "topic": "cnc_p314",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《墨梅》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《墨梅》的作者是谁？",
+      "explain": "这首咏梅诗是王冕的。王昌龄写送辛渐，卢纶写塞下曲。",
+      "answer_mode": "choice",
+      "options": [
+        "王昌龄",
+        "王冕",
+        "卢纶",
+        "辛弃疾"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p314_q4",
+      "topic": "cnc_p314",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "古诗《墨梅》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「只留清气满乾坤」是在说什么？",
+      "explain": "墨梅颜色淡，诗人借它写人的志气。不是在写酒，也不是在抱怨花不好看。",
+      "answer_mode": "choice",
+      "options": [
+        "墨水真的很香，所以要夸一夸",
+        "梅花开得太淡，作者很不满意",
+        "不追求外表的艳丽，只愿留下清雅的品格",
+        "他要朋友带一壶酒回洛阳"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p315_q1",
+      "topic": "cnc_p315",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《黄继光》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "黄继光参加的是哪一次战役？",
+      "explain": "课文写的是抗美援朝中的上甘岭。狼牙山是另一篇课文。",
+      "answer_mode": "choice",
+      "options": [
+        "上甘岭战役",
+        "狼牙山战斗",
+        "赤壁之战",
+        "渑池之会"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p315_q2",
+      "topic": "cnc_p315",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《黄继光》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "前进受阻时，他向指导员请求什么？",
+      "explain": "敌人的机枪压得战士们抬不起头，他请求把任务交给自己。",
+      "answer_mode": "choice",
+      "options": [
+        "让他先撤下去",
+        "把任务交给他，去拔掉火力点",
+        "让他回去取课本",
+        "让他去给河伯送信"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p315_q3",
+      "topic": "cnc_p315",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《黄继光》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "他最后是怎样完成任务的？",
+      "explain": "子弹打光、身受重伤以后，他扑上去堵住了枪口。",
+      "answer_mode": "choice",
+      "options": [
+        "用石头把枪口砸弯",
+        "叫飞机把火力点炸了",
+        "用自己的胸膛堵住敌人的枪口",
+        "和敌人谈判"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p315_q4",
+      "topic": "cnc_p315",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《黄继光》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "课文主要表现黄继光怎样？",
+      "explain": "请求任务、坚持爬行、堵住枪口，都是这一特点。",
+      "answer_mode": "choice",
+      "options": [
+        "只会喊口号，没有行动",
+        "中途退出了战斗",
+        "把任务让给了别人",
+        "为了战斗的胜利，不顾自己的生命"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p316_q1",
+      "topic": "cnc_p316",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《“诺曼底号”遇难记》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《“诺曼底号”遇难记》的作者是谁？",
+      "explain": "这篇是雨果的小说。管桦写雨来，冯骥才写挑山工。",
+      "answer_mode": "choice",
+      "options": [
+        "管桦",
+        "雨果",
+        "冯骥才",
+        "巴金"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p316_q2",
+      "topic": "cnc_p316",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《“诺曼底号”遇难记》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "遇难时负责指挥的船长是谁？",
+      "explain": "哈尔威是诺曼底号的船长。黄继光在上甘岭，不是在这条船上。",
+      "answer_mode": "choice",
+      "options": [
+        "黄继光",
+        "杨利伟",
+        "哈尔威",
+        "王葆"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p316_q3",
+      "topic": "cnc_p316",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《“诺曼底号”遇难记》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "船被撞伤以后，他怎样安排？",
+      "explain": "他维持秩序，先救乘客。自己不跟他们一起走。",
+      "answer_mode": "choice",
+      "options": [
+        "让船员先离开，乘客留在船上",
+        "命令所有人立刻跳海，船不用管",
+        "自己先登上救生艇",
+        "让大家安静，妇女先上救生艇，船员断后"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p316_q4",
+      "topic": "cnc_p316",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《“诺曼底号”遇难记》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "轮船下沉时，哈尔威怎样了？",
+      "explain": "他一个手势也没有做，履行了自己的职责。堵枪口是黄继光，变成泡沫是小人鱼。",
+      "answer_mode": "choice",
+      "options": [
+        "站在舰桥上，和轮船一起沉入大海",
+        "跳上最后一艘救生艇离开了",
+        "用胸口堵住了敌人的机枪",
+        "变成海上的泡沫去找王子"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p317_q1",
+      "topic": "cnc_p317",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《挑山工》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《挑山工》的作者是谁？",
+      "explain": "这篇是冯骥才写的。叶圣陶写双龙洞，巴金写海上日出。",
+      "answer_mode": "choice",
+      "options": [
+        "叶圣陶",
+        "巴金",
+        "冯骥才",
+        "雨果"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p317_q2",
+      "topic": "cnc_p317",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《挑山工》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "挑山工上山为什么走折尺形？",
+      "explain": "路线像折尺，路程大约比游人多一倍，却挑得动沉甸甸的东西。",
+      "answer_mode": "choice",
+      "options": [
+        "因为他们迷路了",
+        "因为直上直下比较省力，所以他们不这么走",
+        "因为洞里的孔隙只容小船",
+        "这样走得动重担。路更长，可是能把货物挑上去"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p317_q3",
+      "topic": "cnc_p317",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《挑山工》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "和游人相比，结果常常怎样？",
+      "explain": "游人轻装，可是走走停停。挑山工不停，所以并不更慢。",
+      "answer_mode": "choice",
+      "options": [
+        "他们一个劲儿往前走，反而先到达",
+        "他们总是落在最后",
+        "他们把担子扔了才走得动",
+        "他们从来不登山"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p317_q4",
+      "topic": "cnc_p317",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《挑山工》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "作者后来做了什么？",
+      "explain": "那幅画挂在眼前，是要记住挑山工说的道理。",
+      "answer_mode": "choice",
+      "options": [
+        "把画扔进了双龙洞",
+        "画了一幅挑山工的画，挂在书桌前，提醒自己不停地向前",
+        "改去写白鹅怎样吃饭",
+        "宣布爬山没有用处"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p318_q1",
+      "topic": "cnc_p318",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·自我介绍和自画像",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "自我介绍时，哪一种说清楚了？",
+      "explain": "名字加上别人能记住的特点，介绍才有用。只说自己是学生，谁都一样。",
+      "answer_mode": "choice",
+      "options": [
+        "我是一个学生。",
+        "大家好。",
+        "我很好，没什么好说的",
+        "我叫小林，说话快，爱画画，课间常把同学画进速写本"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p318_q2",
+      "topic": "cnc_p318",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·自我介绍和自画像",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "哪一句更像「我的自画像」？",
+      "explain": "自画像要写出自己身上看得见的特点。空话和只写题目都不算。",
+      "answer_mode": "choice",
+      "options": [
+        "我额前有一撮总也压不服的头发，一着急就用手去按",
+        "我是人。",
+        "自画像三个字。",
+        "他很优秀，可是没写是谁"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p318_q3",
+      "topic": "cnc_p318",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·自我介绍和自画像",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "自画像和当场的自我介绍，差别在哪里？",
+      "explain": "一个用嘴说，一个写下来。写的时候更要把样子和事情写具体。",
+      "answer_mode": "choice",
+      "options": [
+        "两个都只许写名字",
+        "自我介绍是说给别人听；自画像要把特点写成一段话",
+        "自画像不能写自己",
+        "自我介绍必须写成古诗"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p318_q4",
+      "topic": "cnc_p318",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·自我介绍和自画像",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "哪一种不像这篇习作？",
+      "explain": "自画像的中心是自己。只写别人，就跑成另一篇写人的作文了。",
+      "answer_mode": "choice",
+      "options": [
+        "写出自己跑步时咬着牙的样子",
+        "写出自己一笑就眯起来的眼睛",
+        "通篇写同学小明有多勇敢，自己一次也没出现",
+        "用一件小事写出自己的急性子"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p319_q1",
+      "topic": "cnc_p319",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《宝葫芦的秘密》（节选）",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "四下这篇节选是谁写的？谁在讲？",
+      "explain": "作者是张天翼。王葆声明自己是少先队员，不是神仙。",
+      "answer_mode": "choice",
+      "options": [
+        "张天翼写的。王葆用「我」来讲自己的事",
+        "安徒生写的。小人鱼在讲",
+        "王尔德写的。巨人在讲",
+        "曹文轩写的。青铜在讲"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p319_q2",
+      "topic": "cnc_p319",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《宝葫芦的秘密》（节选）",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "奶奶和他之间的规矩是什么？",
+      "explain": "洗脚、换衣服，都要先听一段。奶奶每次讲的还不一样。",
+      "answer_mode": "choice",
+      "options": [
+        "讲完故事就不许吃饭",
+        "奶奶要他做事，就得先给他讲个宝葫芦的故事",
+        "故事只能讲铁杵成针",
+        "他讲完故事才许去卖芦花鞋"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p319_q3",
+      "topic": "cnc_p319",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《宝葫芦的秘密》（节选）",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "奶奶故事里的宝葫芦有什么特别？",
+      "explain": "张三撞见神仙，李四游到龙宫，得到的人都过上了要什么有什么的日子。",
+      "answer_mode": "choice",
+      "options": [
+        "它能把塌了的天补好",
+        "它能让母鸡不再叫",
+        "谁得到它，想要什么就会有什么",
+        "它是一双可以卖钱的芦花鞋"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p319_q4",
+      "topic": "cnc_p319",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《宝葫芦的秘密》（节选）",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "节选里，他为什么老想起宝葫芦？",
+      "explain": "这一课写的是盼望。得到以后闹出的麻烦在整本书后面，课文请读者自己去读。",
+      "answer_mode": "choice",
+      "options": [
+        "他已经在考场上换到了别人的试卷",
+        "他用宝葫芦堵住了敌人的枪口",
+        "他把宝葫芦磨成了一根针",
+        "做算术发愣、向日葵长不好、和同学闹了别扭，都盼着难事能一下子解决"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p320_q1",
+      "topic": "cnc_p320",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《巨人的花园》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "巨人出门回来，看见花园里有什么？",
+      "explain": "孩子们原先喜欢到这座花园里玩。巨人看见以后很生气。",
+      "answer_mode": "choice",
+      "options": [
+        "一片洪水",
+        "孩子们在里面玩",
+        "只有一只白鹅",
+        "西门豹在修渠"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p320_q2",
+      "topic": "cnc_p320",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《巨人的花园》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "巨人怎样对待孩子们？",
+      "explain": "他不许孩子进来。墙砌好以后，花园里的春天也走了。",
+      "answer_mode": "choice",
+      "options": [
+        "请他们每天都来",
+        "和他们一起种树",
+        "把他们赶走，砌起围墙，还挂上不许入内的告示",
+        "把花园送给他们"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p320_q3",
+      "topic": "cnc_p320",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《巨人的花园》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "花园里为什么一直是冬天？",
+      "explain": "桃树不肯开花，雪霜留在园里。一个小孩钻进来以后，树才开了花。",
+      "answer_mode": "choice",
+      "options": [
+        "巨人把太阳关进了屋子",
+        "北风把日历撕了",
+        "花本来就不会开",
+        "孩子被赶走了，春天才不肯来"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p320_q4",
+      "topic": "cnc_p320",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《巨人的花园》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这个故事要说的是什么？",
+      "explain": "巨人后来拆掉围墙，花园才又成了孩子们的乐园。",
+      "answer_mode": "choice",
+      "options": [
+        "自私会留下寒冷，和别人分享才有春天",
+        "砌墙是最好的园艺",
+        "冬天比春天更适合种花",
+        "孩子不应该看花"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p321_q1",
+      "topic": "cnc_p321",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《海的女儿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "《海的女儿》的作者是谁？",
+      "explain": "这篇是安徒生的童话。《巨人的花园》是王尔德的，《宝葫芦的秘密》是张天翼的。",
+      "answer_mode": "choice",
+      "options": [
+        "王尔德",
+        "张天翼",
+        "安徒生",
+        "雨果"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p321_q2",
+      "topic": "cnc_p321",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《海的女儿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小人鱼救起的是谁？",
+      "explain": "王子掉进海里，小人鱼把他托出水面。船长和挑山工是另外两篇。",
+      "answer_mode": "choice",
+      "options": [
+        "一个被巨人赶走的孩子",
+        "哈尔威船长",
+        "挑山工",
+        "落水的王子"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p321_q3",
+      "topic": "cnc_p321",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《海的女儿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "她向巫婆换一双腿，付出的是什么？",
+      "explain": "声音没有了，走路又非常疼。她仍然想成为人，留在王子身边。",
+      "answer_mode": "choice",
+      "options": [
+        "自己美妙的声音。从此每走一步都像踩在刀上",
+        "一双芦花鞋",
+        "用胸口堵住枪口",
+        "一块包着蜘蛛的琥珀"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p321_q4",
+      "topic": "cnc_p321",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《海的女儿》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "王子和别人在一起以后，她怎样做？",
+      "explain": "姐姐们给了她刀子。她没有刺下去，选择成全王子。",
+      "answer_mode": "choice",
+      "options": [
+        "把王子变成了巨人",
+        "没有伤害王子，自己变成了海上的泡沫",
+        "砌起围墙，不让王子进来",
+        "坐着宝葫芦离开了大海"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p322_q1",
+      "topic": "cnc_p322",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·故事新编",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "哪一种是故事新编？",
+      "explain": "人物还是那个巨人，情节是课文里没有的新事情。抄原文或换成不相干的事，都不是新编。",
+      "answer_mode": "choice",
+      "options": [
+        "把《巨人的花园》从头到尾抄一遍",
+        "新写一张和巨人、孩子都无关的购物清单",
+        "只写题目「故事新编」四个字",
+        "巨人拆掉围墙以后，又来了一个不敢进门的孩子，巨人亲自把他领进花园"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p322_q2",
+      "topic": "cnc_p322",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·故事新编",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "新编《囊萤夜读》，哪一种把人物写反了？",
+      "explain": "新编可以加新的困难，但不能把他写成放弃读书。放弃了，就不是这一则里的车胤。",
+      "answer_mode": "choice",
+      "options": [
+        "车胤觉得读书太累，把萤火虫放了，再也不读",
+        "有一夜口袋破了，他又想了别的办法继续读",
+        "他把装萤火虫的办法告诉了同样买不起灯油的邻居",
+        "条件不好，他仍然不肯把书放下"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p322_q3",
+      "topic": "cnc_p322",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·故事新编",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "新编和摘抄的差别，哪一句说得对？",
+      "explain": "借来的是读者已经认识的人。情节要新，人不能突然变成另一个人。",
+      "answer_mode": "choice",
+      "options": [
+        "新编必须把人物换成从没出现过的陌生人",
+        "新编是借原有的人物另编情节；摘抄是照着课文抄",
+        "摘抄可以随便改结局，还说作者就是这个意思",
+        "新编不许出现原来故事里的名字"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p322_q4",
+      "topic": "cnc_p322",
+      "subject": "chinese",
+      "grade": 4,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·故事新编",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "检查故事新编，可以问自己什么？",
+      "explain": "既要认得是谁，也要看得出新编了哪一段。只剩原句，就还是摘抄。",
+      "answer_mode": "choice",
+      "options": [
+        "只数有几个逗号",
+        "把新情节全部删掉，只留课文原句",
+        "不看名字，能不能看出这是哪个人物，又能看出新发生了什么",
+        "人物做什么都无所谓，只要字数够"
+      ],
+      "answer": 3
+    }
+  ]
+}

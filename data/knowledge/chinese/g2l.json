@@ -1,0 +1,4411 @@
+{
+  "schema_version": 1,
+  "generated_by": "tools/kidlearn/sync_taxonomy.py",
+  "source": {
+    "repo": "cn-math-taxonomy",
+    "commit": "07b9f74"
+  },
+  "license": "CC BY-NC 4.0",
+  "attribution": "Data adapted from cn-math-taxonomy (https://github.com/xiaoyang111222/cn-math-taxonomy), licensed CC BY-NC 4.0.",
+  "subject": "chinese",
+  "grade": 2,
+  "semester": "lower",
+  "units": [
+    {
+      "id": "u1",
+      "name": "第1单元 古诗·咏柳"
+    },
+    {
+      "id": "u2",
+      "name": "第2单元 课文·雷锋叔叔，你在哪里"
+    },
+    {
+      "id": "u3",
+      "name": "第3单元 识字·神州谣"
+    },
+    {
+      "id": "u4",
+      "name": "第4单元 课文·彩色的梦"
+    },
+    {
+      "id": "u5",
+      "name": "第5单元 寓言·亡羊补牢"
+    },
+    {
+      "id": "u6",
+      "name": "第6单元 古诗·绝句"
+    },
+    {
+      "id": "u7",
+      "name": "第7单元 课文·大象的耳朵"
+    },
+    {
+      "id": "u8",
+      "name": "第8单元 传说·羿射九日"
+    }
+  ],
+  "topics": [
+    {
+      "id": "cnc_p119",
+      "name": "古诗《咏柳》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "背诵贺知章《咏柳》，知道「二月春风似剪刀」是在写风。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「碧玉妆成一树高」的下一句是哪一句？",
+        "answer": "万条垂下绿丝绦"
+      }
+    },
+    {
+      "id": "cnc_p120",
+      "name": "古诗《村居》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "背诵高鼎《村居》，不把它和贺知章《咏柳》记成同一首。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「草长莺飞二月天」的下一句是哪一句？",
+        "answer": "拂堤杨柳醉春烟"
+      }
+    },
+    {
+      "id": "cnc_p121",
+      "name": "阅读《找春天》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "读《找春天》，分清小草、野花、嫩芽、小溪分别是春天的眉毛、眼睛、音符和琴声。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "小朋友到哪里去找春天？",
+        "answer": "脱掉棉袄，奔向田野"
+      }
+    },
+    {
+      "id": "cnc_p122",
+      "name": "阅读《开满鲜花的小路》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "读懂长颈鹿大叔寄来的花籽漏在路上，第二年春天开成一条鲜花小路。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "包裹是谁寄给鼹鼠先生的？",
+        "answer": "长颈鹿大叔"
+      }
+    },
+    {
+      "id": "cnc_p123",
+      "name": "阅读《邓小平爷爷植树》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "读懂 1987 年 4 月 5 日，邓小平爷爷在天坛公园认真栽下一棵柏树苗。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "课文写的植树是哪一天？",
+        "answer": "1987 年 4 月 5 日"
+      }
+    },
+    {
+      "id": "cnc_p124",
+      "name": "语文园地一·注意说话的语气",
+      "domain": "习作基础",
+      "kp_type": "procedural",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "说话要看场合选用语气。请求用商量的口气，道歉要诚恳，提醒要让对方听得进去。",
+      "mastery_criteria": [
+        "能按要求把话写完整",
+        "能判断哪一句更符合题目"
+      ],
+      "example": {
+        "question": "请别人帮忙时，语气怎样更合适？",
+        "answer": "用商量的口气，把话说清楚"
+      }
+    },
+    {
+      "id": "cnc_p494",
+      "name": "语文园地一·日积月累《赋得古原草送别》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u1",
+      "unit_name": "第1单元 古诗·咏柳",
+      "description": "背白居易《赋得古原草送别》前四句：离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。这是语文园地一的日积月累，和口语交际「注意说话的语气」不是同一个教学点。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "《赋得古原草送别》里，「离离原上草」后面接哪一句？",
+        "answer": "一岁一枯荣"
+      }
+    },
+    {
+      "id": "cnc_p125",
+      "name": "阅读《雷锋叔叔，你在哪里》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·雷锋叔叔，你在哪里",
+      "description": "读懂诗里沿着小溪、顺着小路，找到的是雷锋做过的好事。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "小朋友们在寻找谁？",
+        "answer": "雷锋叔叔"
+      }
+    },
+    {
+      "id": "cnc_p126",
+      "name": "阅读《千人糕》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·雷锋叔叔，你在哪里",
+      "description": "读懂一块平平常常的米糕，经过了许多人的劳动。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "爸爸说的「千人糕」实际上是什么？",
+        "answer": "一块米糕"
+      }
+    },
+    {
+      "id": "cnc_p127",
+      "name": "阅读《我不是最弱小的》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·雷锋叔叔，你在哪里",
+      "description": "读懂萨沙把雨衣盖在野蔷薇上，因为他要保护比自己更弱小的。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "一家人在郊外时遇到了什么？",
+        "answer": "突然下起雨来"
+      }
+    },
+    {
+      "id": "cnc_p128",
+      "name": "语文园地二·职业和名言",
+      "domain": "词语",
+      "kp_type": "conceptual",
+      "unit": "u2",
+      "unit_name": "第2单元 课文·雷锋叔叔，你在哪里",
+      "description": "认识教师、建筑师、饲养员这类职业，读懂「予人玫瑰，手有余香」「与其锦上添花，不如雪中送炭」。",
+      "mastery_criteria": [
+        "能理解词语在句子里的意思",
+        "能选出搭配恰当的词语"
+      ],
+      "example": {
+        "question": "「予人玫瑰，手有余香」是在说什么？",
+        "answer": "把好处给别人，自己也会感到快乐"
+      }
+    },
+    {
+      "id": "cnc_p129",
+      "name": "识字：《神州谣》",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 识字·神州谣",
+      "description": "背诵《神州谣》，知道神州就是华夏，台湾岛和大陆是一家。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "「我神州，称华夏」的下一句是哪一句？",
+        "answer": "山川美，可入画"
+      }
+    },
+    {
+      "id": "cnc_p130",
+      "name": "识字：《传统节日》",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 识字·神州谣",
+      "description": "把春节、元宵、清明、端午、七夕、中秋、重阳和习俗对上。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "端午节有哪些习俗？",
+        "answer": "吃粽子、赛龙舟"
+      }
+    },
+    {
+      "id": "cnc_p131",
+      "name": "识字：《「贝」的故事》",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 识字·神州谣",
+      "description": "知道古代用贝壳当钱币，所以财、购、贫、货这些字带贝字旁。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "古代人们曾经把什么当成钱币？",
+        "answer": "贝壳"
+      }
+    },
+    {
+      "id": "cnc_p132",
+      "name": "识字：《中国美食》",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 识字·神州谣",
+      "description": "借助菜名认识凉拌、煎、烧、烤、煮、爆、炖、蒸、炸、炒，并分清「炸」的两个读音。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "哪一组菜名都在这篇课文里？",
+        "answer": "凉拌菠菜、香煎豆腐、红烧茄子"
+      }
+    },
+    {
+      "id": "cnc_p133",
+      "name": "语文园地三·形旁和十二生肖",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u3",
+      "unit_name": "第3单元 识字·神州谣",
+      "description": "借助火、心、刀这些形旁猜意思，会读甜津津、香喷喷，并背十二生肖。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "「香喷喷」是怎样的词？它在写什么？",
+        "answer": "ABB 式，在写香味"
+      }
+    },
+    {
+      "id": "cnc_p134",
+      "name": "阅读《彩色的梦》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·彩色的梦",
+      "description": "读《彩色的梦》，知道「我」用彩色铅笔在梦里画下了草地、花朵和小朋友。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "「我」的彩色梦靠什么画出来？",
+        "answer": "一大把彩色铅笔"
+      }
+    },
+    {
+      "id": "cnc_p135",
+      "name": "阅读《一匹出色的马》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·彩色的梦",
+      "description": "读懂妹妹走不动时，妈妈给她一根柳条当马，她自己跑回了家。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "散步时，妹妹怎样了？",
+        "answer": "走不动，想让人抱"
+      }
+    },
+    {
+      "id": "cnc_p136",
+      "name": "阅读《枫树上的喜鹊》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·彩色的梦",
+      "description": "读懂「我」喜欢渡口旁枫树上的喜鹊，觉得自己能听懂喜鹊阿姨和喜鹊弟弟的话。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "枫树长在哪里？它像什么？",
+        "answer": "渡口旁，像一把绿色的太阳伞"
+      }
+    },
+    {
+      "id": "cnc_p137",
+      "name": "语文园地四·玩具和诚信",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u4",
+      "unit_name": "第4单元 课文·彩色的梦",
+      "description": "认识拨浪鼓、不倒翁这些玩具，按词读准「倒」；积累「失信不立」「诚信者，天下之结也」。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "「不倒翁」的「倒」读哪一个？",
+        "answer": "dǎo（倒下的倒）"
+      }
+    },
+    {
+      "id": "cnc_p138",
+      "name": "阅读《亡羊补牢》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 寓言·亡羊补牢",
+      "description": "读懂羊丢了以后把羊圈修好，还不算晚。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "养羊人第一次丢羊，是因为什么？",
+        "answer": "羊圈破了个窟窿，夜里狼钻进去了"
+      }
+    },
+    {
+      "id": "cnc_p139",
+      "name": "阅读《揠苗助长》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 寓言·亡羊补牢",
+      "description": "读懂宋人把禾苗拔高，禾苗反而枯死了。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "那个人为什么去拔苗？",
+        "answer": "他觉得苗长得太慢，想帮它们快些长高"
+      }
+    },
+    {
+      "id": "cnc_p140",
+      "name": "阅读《画杨桃》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 寓言·亡羊补牢",
+      "description": "读懂「我」从座位侧面把杨桃画成五角星，是因为看到的角度不同。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "「我」把杨桃画成了什么？",
+        "answer": "五角星"
+      }
+    },
+    {
+      "id": "cnc_p141",
+      "name": "阅读《小马过河》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 寓言·亡羊补牢",
+      "description": "读懂老牛说水浅、松鼠说水深，小马后来自己试了试。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "小马为什么要过河？",
+        "answer": "要把半口袋麦子驮回家"
+      }
+    },
+    {
+      "id": "cnc_p142",
+      "name": "语文园地五·说说自己的想法",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u5",
+      "unit_name": "第5单元 寓言·亡羊补牢",
+      "description": "读完寓言和《画杨桃》，能先说出课文里的做法，再说自己怎么看。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "说出自己的想法时，最好先说什么？",
+        "answer": "课文里谁做了什么，再说自己怎么看"
+      }
+    },
+    {
+      "id": "cnc_p143",
+      "name": "古诗《绝句》：两个黄鹂",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "背诵杜甫七言《绝句》，不和五言「迟日江山丽」记成同一首。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「两个黄鹂鸣翠柳」的下一句是哪一句？",
+        "answer": "一行白鹭上青天"
+      }
+    },
+    {
+      "id": "cnc_p144",
+      "name": "古诗《晓出净慈寺送林子方》",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "背诵杨万里这首写西湖六月荷花的诗，不把它记成苏轼的诗。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「毕竟西湖六月中」的下一句是哪一句？",
+        "answer": "风光不与四时同"
+      }
+    },
+    {
+      "id": "cnc_p145",
+      "name": "阅读《雷雨》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "按乌云、大风、雷雨、雨停的顺序说出雷雨前后的变化。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "雨下来之前，天色和风有什么变化？",
+        "answer": "乌云压下来，风越来越大"
+      }
+    },
+    {
+      "id": "cnc_p146",
+      "name": "阅读《要是你在野外迷了路》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "读懂太阳、北极星、大树和沟渠积雪怎样帮助辨别方向。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "中午的时候，太阳在哪一边？",
+        "answer": "南边"
+      }
+    },
+    {
+      "id": "cnc_p147",
+      "name": "阅读《太空生活趣事多》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "读懂在太空睡觉要固定身体，喝水要用吸管，走路的鞋子带钩子。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "在太空里睡觉，身体要怎样？",
+        "answer": "钻进睡袋，把身体固定好"
+      }
+    },
+    {
+      "id": "cnc_p148",
+      "name": "语文园地六·节气和问号",
+      "domain": "古诗文积累",
+      "kp_type": "conceptual",
+      "unit": "u6",
+      "unit_name": "第6单元 古诗·绝句",
+      "description": "背二十四节气歌，读准「处暑」的处；写话时对大自然写下「为什么……」。",
+      "mastery_criteria": [
+        "能背出本册要求积累的诗句",
+        "能分清作者和诗句，不把字句记错"
+      ],
+      "example": {
+        "question": "「春雨惊春清谷天」的下一句是哪一句？",
+        "answer": "夏满芒夏暑相连"
+      }
+    },
+    {
+      "id": "cnc_p149",
+      "name": "阅读《大象的耳朵》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 课文·大象的耳朵",
+      "description": "读懂大象耳朵像扇子，竖起来以后反而不舒服。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "大象的耳朵本来是什么样的？",
+        "answer": "像扇子似的耷拉着"
+      }
+    },
+    {
+      "id": "cnc_p150",
+      "name": "阅读《蜘蛛开店》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 课文·大象的耳朵",
+      "description": "读懂蜘蛛先后卖口罩、围巾、袜子，顾客分别是河马、长颈鹿和蜈蚣。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "蜘蛛为什么想开店？",
+        "answer": "蹲在网上等飞虫，觉得寂寞、无聊"
+      }
+    },
+    {
+      "id": "cnc_p151",
+      "name": "阅读《青蛙卖泥塘》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 课文·大象的耳朵",
+      "description": "读懂青蛙按别人的意见改泥塘，最后觉得太好了，自己留下不卖。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "青蛙一开始想怎样处理泥塘？",
+        "answer": "把它卖掉"
+      }
+    },
+    {
+      "id": "cnc_p152",
+      "name": "阅读《小毛虫》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u7",
+      "unit_name": "第7单元 课文·大象的耳朵",
+      "description": "读懂小毛虫不着急，认真做自己的事，最后变成蝴蝶。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "别的昆虫怎样看小毛虫？",
+        "answer": "觉得它又慢又什么也不会"
+      }
+    },
+    {
+      "id": "cnc_p153",
+      "name": "语文园地七·大扫除",
+      "domain": "识字写字",
+      "kp_type": "conceptual",
+      "unit": "u7",
+      "unit_name": "第7单元 课文·大象的耳朵",
+      "description": "认识扫帚、抹布、拖把、簸箕、水桶，会说扫地、擦玻璃、倒垃圾、摆桌椅。",
+      "mastery_criteria": [
+        "能分辨形近字和同音字",
+        "能按偏旁和结构识记生字"
+      ],
+      "example": {
+        "question": "扫地最常用哪一种工具？",
+        "answer": "扫帚"
+      }
+    },
+    {
+      "id": "cnc_p154",
+      "name": "阅读《羿射九日》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 传说·羿射九日",
+      "description": "读懂十个太阳一起出来时，羿射下九个，留下一个。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "故事开头，天上同时出现了几个太阳？",
+        "answer": "十个"
+      }
+    },
+    {
+      "id": "cnc_p155",
+      "name": "阅读《黄帝的传说》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 传说·羿射九日",
+      "description": "读懂黄帝从草帽滚动想到造车，从漂在水上的树叶想到造船。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "课文里的黄帝又被称作什么？",
+        "answer": "轩辕"
+      }
+    },
+    {
+      "id": "cnc_p156",
+      "name": "阅读《大禹治水》",
+      "domain": "阅读理解",
+      "kp_type": "reasoning",
+      "unit": "u8",
+      "unit_name": "第8单元 传说·羿射九日",
+      "description": "读懂洪水泛滥时，禹用疏导的办法挖通河道，让洪水流入大海。",
+      "mastery_criteria": [
+        "能根据短文选出和文字一致的信息",
+        "能说出故事或短文的主要意思"
+      ],
+      "example": {
+        "question": "洪水泛滥时，人们的生活怎样？",
+        "answer": "田地被淹，房屋被冲毁"
+      }
+    },
+    {
+      "id": "cnc_p157",
+      "name": "语文园地八·把句子写具体",
+      "domain": "习作基础",
+      "kp_type": "procedural",
+      "unit": "u8",
+      "unit_name": "第8单元 传说·羿射九日",
+      "description": "用动作把心情写具体，并按顺序写一件小事。日积月累背范仲淹《江上渔者》。推荐动画片时要把话说慢，让人听清。",
+      "mastery_criteria": [
+        "能按要求把话写完整",
+        "能判断哪一句更符合题目"
+      ],
+      "example": {
+        "question": "「江上往来人」的下一句是哪一句？",
+        "answer": "但爱鲈鱼美"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "cnc_p119_q1",
+      "topic": "cnc_p119",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《咏柳》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「碧玉妆成一树高」的下一句是哪一句？",
+      "explain": "柳条像绿丝绦垂下来。绦是丝带，不能写成「条」。",
+      "answer_mode": "choice",
+      "options": [
+        "万条垂下绿丝绦",
+        "不知细叶谁裁出",
+        "二月春风似剪刀",
+        "万条垂下绿丝条"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p119_q2",
+      "topic": "cnc_p119",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《咏柳》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「不知细叶谁裁出」的下一句是哪一句？",
+      "explain": "细叶像被剪刀裁出来，诗人说那剪刀就是二月的春风。",
+      "answer_mode": "choice",
+      "options": [
+        "万条垂下绿丝绦",
+        "二月春风似剪刀",
+        "碧玉妆成一树高",
+        "春风又绿江南岸"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p119_q3",
+      "topic": "cnc_p119",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《咏柳》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《咏柳》的作者是谁？",
+      "explain": "《咏柳》是贺知章的诗。《村居》才是高鼎写的。",
+      "answer_mode": "choice",
+      "options": [
+        "李白",
+        "杜甫",
+        "贺知章",
+        "高鼎"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p119_q4",
+      "topic": "cnc_p119",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《咏柳》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「二月春风似剪刀」把春风比作什么？",
+      "explain": "春风像剪刀，裁出了细细的柳叶。碧玉是用来写整棵柳树的。",
+      "answer_mode": "choice",
+      "options": [
+        "碧玉",
+        "丝带",
+        "细叶",
+        "剪刀"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p120_q1",
+      "topic": "cnc_p120",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「草长莺飞二月天」的下一句是哪一句？",
+      "explain": "先写杨柳在春烟里拂着堤岸，后面才写儿童放风筝。",
+      "answer_mode": "choice",
+      "options": [
+        "儿童散学归来早",
+        "拂堤杨柳醉春烟",
+        "忙趁东风放纸鸢",
+        "二月春风似剪刀"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p120_q2",
+      "topic": "cnc_p120",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「儿童散学归来早」的下一句是哪一句？",
+      "explain": "孩子们放学早，趁着东风放纸鸢。纸鸢就是风筝，不是纸鹞。",
+      "answer_mode": "choice",
+      "options": [
+        "拂堤杨柳醉春烟",
+        "忙趁东风放纸鹞",
+        "忙趁东风放纸鸢",
+        "草长莺飞二月天"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p120_q3",
+      "topic": "cnc_p120",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《村居》的作者是谁？",
+      "explain": "《村居》是高鼎的诗。《咏柳》才是贺知章的。",
+      "answer_mode": "choice",
+      "options": [
+        "贺知章",
+        "李白",
+        "白居易",
+        "高鼎"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p120_q4",
+      "topic": "cnc_p120",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "古诗《村居》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "儿童放学以后忙着做什么？",
+      "explain": "忙趁东风放纸鸢。裁柳叶是《咏柳》里的想象。",
+      "answer_mode": "choice",
+      "options": [
+        "放风筝",
+        "裁柳叶",
+        "采白莲",
+        "登楼看黄河"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p121_q1",
+      "topic": "cnc_p121",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《找春天》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小朋友到哪里去找春天？",
+      "explain": "他们脱掉棉袄，冲出家门，奔向田野寻找春天。",
+      "answer_mode": "choice",
+      "options": [
+        "到雪地里堆雪人",
+        "待在被窝里不出来",
+        "脱掉棉袄，奔向田野",
+        "到夏天的荷塘"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p121_q2",
+      "topic": "cnc_p121",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《找春天》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小草从地下探出头，课文把它当成什么？",
+      "explain": "小草是眉毛。野花是眼睛，嫩芽是音符，解冻的小溪是琴声。",
+      "answer_mode": "choice",
+      "options": [
+        "春天的眼睛",
+        "春天的音符",
+        "春天的琴声",
+        "春天的眉毛"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p121_q3",
+      "topic": "cnc_p121",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《找春天》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "哪一组都是课文里春天的迹象？",
+      "explain": "小草探头，野花开放，树木吐出嫩芽，小溪叮咚作响。",
+      "answer_mode": "choice",
+      "options": [
+        "小草、野花、嫩芽、小溪",
+        "霜、雪、冰、北风",
+        "荷花、知了、绿太阳",
+        "落叶、大雁、黄叶"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p121_q4",
+      "topic": "cnc_p121",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《找春天》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「春天像个害羞的小姑娘」是在说春天怎样？",
+      "explain": "春天躲躲藏藏，所以要仔细找她。",
+      "answer_mode": "choice",
+      "options": [
+        "春天已经走了",
+        "遮遮掩掩，要人仔细找",
+        "春天很大声",
+        "春天只在夜里出现"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p122_q1",
+      "topic": "cnc_p122",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《开满鲜花的小路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "包裹是谁寄给鼹鼠先生的？",
+      "explain": "长颈鹿大叔寄来包裹。松鼠太太、刺猬太太和狐狸太太是后来看见花的人。",
+      "answer_mode": "choice",
+      "options": [
+        "松鼠太太",
+        "刺猬太太",
+        "狐狸太太",
+        "长颈鹿大叔"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p122_q2",
+      "topic": "cnc_p122",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《开满鲜花的小路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "包裹拿到松鼠太太家时，为什么是空的？",
+      "explain": "鼹鼠先生很懊丧，因为花籽都漏在路上了。",
+      "answer_mode": "choice",
+      "options": [
+        "包裹破了，东西漏在来时的路上",
+        "松鼠太太把东西吃掉了",
+        "邮局没有这个包裹",
+        "里面本来就是一张空白纸"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p122_q3",
+      "topic": "cnc_p122",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《开满鲜花的小路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "第二年春天，通往松鼠太太家的路为什么开满鲜花？",
+      "explain": "松鼠太太说：去年长颈鹿大叔寄来的是花籽。",
+      "answer_mode": "choice",
+      "options": [
+        "刺猬太太连夜种上的",
+        "漏掉的是花籽，春天发芽开花了",
+        "狐狸太太从城里买来的",
+        "雪花落在路上变成了花"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p122_q4",
+      "topic": "cnc_p122",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《开满鲜花的小路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "松鼠太太把这些花籽称作什么？",
+      "explain": "花开在大家门前，她说这是多么美好的礼物。",
+      "answer_mode": "choice",
+      "options": [
+        "一件没用的废物",
+        "一封催债的信",
+        "美好的礼物",
+        "一把剪柳枝的剪刀"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p123_q1",
+      "topic": "cnc_p123",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《邓小平爷爷植树》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文写的植树是哪一天？",
+      "explain": "课文开头就写：1987 年 4 月 5 日，是个令人难忘的日子。",
+      "answer_mode": "choice",
+      "options": [
+        "1987 年 4 月 5 日",
+        "1985 年 1 月 1 日",
+        "1978 年 10 月 1 日",
+        "2000 年 6 月 1 日"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p123_q2",
+      "topic": "cnc_p123",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《邓小平爷爷植树》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "邓小平爷爷是在哪里植树？",
+      "explain": "这一天，他在北京天坛公园和大家一起植树。",
+      "answer_mode": "choice",
+      "options": [
+        "井冈山",
+        "北京天坛公园",
+        "沙洲坝",
+        "西湖边"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p123_q3",
+      "topic": "cnc_p123",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《邓小平爷爷植树》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "他精心地挑选并栽下的是什么？",
+      "explain": "他挑选柏树苗，移入树坑，再挥锹填土。",
+      "answer_mode": "choice",
+      "options": [
+        "一根柳条",
+        "一棵被风刮倒的老树",
+        "一棵茁壮的柏树苗",
+        "一盆已经开花的牡丹"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p123_q4",
+      "topic": "cnc_p123",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "阅读《邓小平爷爷植树》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "树苗看起来不直，他怎样做？",
+      "explain": "他站到几步之外看了看，连声说不行，又把树苗扶正。",
+      "answer_mode": "choice",
+      "options": [
+        "说一声不行就离开了",
+        "把树苗拔出来扔掉",
+        "叫别人随便填上土就行",
+        "走上前把树苗扶正"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p124_q1",
+      "topic": "cnc_p124",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·注意说话的语气",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "请别人帮忙时，语气怎样更合适？",
+      "explain": "园地里的口语交际是注意说话的语气。请求别人，要用商量的口气。",
+      "answer_mode": "choice",
+      "options": [
+        "用命令的口气催别人快点",
+        "用商量的口气，把话说清楚",
+        "背过身去不说话",
+        "故意把声音压得谁也听不见"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p124_q2",
+      "topic": "cnc_p124",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·注意说话的语气",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "请求、道歉和提醒，说话时要注意什么？",
+      "explain": "表扬、请求、道歉，说出来的轻重和态度不同，对方的感受也不同。",
+      "answer_mode": "choice",
+      "options": [
+        "语气永远只能有一种",
+        "换了语气意思就一定相反",
+        "语气不一样，要让对方听着明白",
+        "语气只在唱歌时才有用"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p124_q3",
+      "topic": "cnc_p124",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·注意说话的语气",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "同学把水洒在你身上，你要提醒他，怎样说更合适？",
+      "explain": "提醒别人时，语气要让对方听得进去，不要当众责怪。",
+      "answer_mode": "choice",
+      "options": [
+        "大声喊「你真笨」",
+        "什么都不说，下次再报复",
+        "用命令的口气说「赶紧给我擦掉」",
+        "小声说「请你小心一点」"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p124_q4",
+      "topic": "cnc_p124",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·注意说话的语气",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "做错了事向别人道歉，下面哪一句语气更合适？",
+      "explain": "道歉要把话说清楚，态度诚恳。",
+      "answer_mode": "choice",
+      "options": [
+        "看着对方说「对不起，我下次注意」",
+        "背过身小声嘀咕就算了",
+        "先怪别人没有躲开",
+        "用很大的声音说「我又不是故意的」"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p494_q1",
+      "topic": "cnc_p494",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·日积月累《赋得古原草送别》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "《赋得古原草送别》里，「离离原上草」后面接哪一句？",
+      "explain": "原上的草每年都会枯一次、再荣一次。春风吹又生在更后面。",
+      "answer_mode": "choice",
+      "options": [
+        "春风吹又生",
+        "野火烧不尽",
+        "二月春风似剪刀",
+        "一岁一枯荣"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p494_q2",
+      "topic": "cnc_p494",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·日积月累《赋得古原草送别》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「野火烧不尽」的下一句是哪一句？",
+      "explain": "野火烧不尽，春风吹又生。放纸鸢是《村居》里的句子。",
+      "answer_mode": "choice",
+      "options": [
+        "春风吹又生",
+        "一岁一枯荣",
+        "忙趁东风放纸鸢",
+        "二月春风似剪刀"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p494_q3",
+      "topic": "cnc_p494",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·日积月累《赋得古原草送别》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "《赋得古原草送别》的作者是谁？",
+      "explain": "这首诗是白居易的。高鼎写的是《村居》，贺知章写的是《咏柳》。",
+      "answer_mode": "choice",
+      "options": [
+        "高鼎",
+        "白居易",
+        "贺知章",
+        "李白"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p494_q4",
+      "topic": "cnc_p494",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u1",
+      "unit_name": "语文园地一·日积月累《赋得古原草送别》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "哪一组句子都出自白居易《赋得古原草送别》？",
+      "explain": "离离原上草，一岁一枯荣是这首诗的开头。另外三组分别是《村居》《咏柳》和杜甫的《绝句》。",
+      "answer_mode": "choice",
+      "options": [
+        "草长莺飞二月天，拂堤杨柳醉春烟",
+        "不知细叶谁裁出，二月春风似剪刀",
+        "离离原上草，一岁一枯荣",
+        "两个黄鹂鸣翠柳，一行白鹭上青天"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p125_q1",
+      "topic": "cnc_p125",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《雷锋叔叔，你在哪里》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小朋友们在寻找谁？",
+      "explain": "题目就是「雷锋叔叔，你在哪里」。他们沿着小溪和小路去找。",
+      "answer_mode": "choice",
+      "options": [
+        "曹冲",
+        "朱德",
+        "雷锋叔叔",
+        "周总理"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p125_q2",
+      "topic": "cnc_p125",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《雷锋叔叔，你在哪里》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小溪为什么说自己见过雷锋？",
+      "explain": "小溪说：昨天他曾路过这里，抱着迷路的孩子，冒着蒙蒙的细雨。",
+      "answer_mode": "choice",
+      "options": [
+        "他在小溪里游泳",
+        "他把小溪填平了",
+        "小溪只是听别人说过",
+        "他冒着细雨，抱着迷路的孩子走过"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p125_q3",
+      "topic": "cnc_p125",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《雷锋叔叔，你在哪里》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "弯弯的小路记得雷锋做过什么？",
+      "explain": "小路说：昨天他曾路过这里，背着年迈的大娘，踏着路上的荆棘。",
+      "answer_mode": "choice",
+      "options": [
+        "背着年迈的大娘走过",
+        "砍光了路边的树",
+        "躲在树上不下来",
+        "只顾自己赶路"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p125_q4",
+      "topic": "cnc_p125",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《雷锋叔叔，你在哪里》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "「哪里需要献出爱心，雷锋叔叔就出现在哪里」是在说什么？",
+      "explain": "诗的结尾说，只要有人献出爱心，雷锋就还在我们身边。",
+      "answer_mode": "choice",
+      "options": [
+        "雷锋只住在小溪边",
+        "学习雷锋，就要在需要的地方帮助别人",
+        "现在已经找不到做好事的人",
+        "帮助别人必须等到下雨"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p126_q1",
+      "topic": "cnc_p126",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千人糕》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "爸爸说的「千人糕」实际上是什么？",
+      "explain": "爸爸端上来的就是平常的米糕，却叫它千人糕。",
+      "answer_mode": "choice",
+      "options": [
+        "一千个人才吃的蛋糕",
+        "一块石头",
+        "一碗白糖",
+        "一块米糕"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p126_q2",
+      "topic": "cnc_p126",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千人糕》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "米糕的米是从哪里来的？",
+      "explain": "米经过农民播种、收割，才能变成做糕的粉。",
+      "answer_mode": "choice",
+      "options": [
+        "农民种出来的",
+        "商店里自己长出来的",
+        "糖做的",
+        "孩子画出来的"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p126_q3",
+      "topic": "cnc_p126",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千人糕》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "为什么叫「千人糕」？",
+      "explain": "种稻、磨粉、做糖、印包装、运到店里，少了谁都不行。",
+      "answer_mode": "choice",
+      "options": [
+        "因为要切成一千块",
+        "因为有很多人的劳动才做成",
+        "因为只有一千人可以吃",
+        "因为糕上写了一千个字"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p126_q4",
+      "topic": "cnc_p126",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《千人糕》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这个故事主要想说什么？",
+      "explain": "看起来普通的一块糕，背后有许许多多人的辛苦。",
+      "answer_mode": "choice",
+      "options": [
+        "米糕是一个人五分钟做成的",
+        "劳动不重要",
+        "平常的东西也包含着许多人的劳动",
+        "爸爸在开玩笑，糕不用人做"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p127_q1",
+      "topic": "cnc_p127",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《我不是最弱小的》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "一家人在郊外时遇到了什么？",
+      "explain": "他们在郊外，雨忽然下来了，妈妈拿出了雨衣。",
+      "answer_mode": "choice",
+      "options": [
+        "突然下起雨来",
+        "太阳晒得更厉害",
+        "河水一下子干了",
+        "野蔷薇自己把雨衣送来"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p127_q2",
+      "topic": "cnc_p127",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《我不是最弱小的》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "雨衣是按什么顺序传下去的？",
+      "explain": "妈妈把雨衣给了托利亚，托利亚又让给了萨沙。",
+      "answer_mode": "choice",
+      "options": [
+        "萨沙先给妈妈，妈妈再给蔷薇",
+        "妈妈给托利亚，托利亚再给萨沙",
+        "野蔷薇先给托利亚",
+        "谁也没有把雨衣递出去"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p127_q3",
+      "topic": "cnc_p127",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《我不是最弱小的》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "萨沙最后把雨衣怎样处理？",
+      "explain": "萨沙没有把雨衣留给自己，而是遮在野蔷薇上面。",
+      "answer_mode": "choice",
+      "options": [
+        "扔进小溪里",
+        "只盖在自己头上就跑了",
+        "盖在淋雨的野蔷薇上",
+        "还给商店"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p127_q4",
+      "topic": "cnc_p127",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "阅读《我不是最弱小的》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "萨沙为什么说自己不是最弱小的？",
+      "explain": "能保护更弱小的，就不是最弱小的。这是课文要说的道理。",
+      "answer_mode": "choice",
+      "options": [
+        "他比妈妈年纪大",
+        "他根本不怕下雨",
+        "他没有弟弟",
+        "他能保护比自己更弱小的野蔷薇"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p128_q1",
+      "topic": "cnc_p128",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·职业和名言",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "「予人玫瑰，手有余香」是在说什么？",
+      "explain": "送给别人玫瑰，手上还留着香气。名言说的是帮助别人。",
+      "answer_mode": "choice",
+      "options": [
+        "玫瑰只能自己留着",
+        "把好处给别人，自己也会感到快乐",
+        "帮助别人以后一定吃亏",
+        "手上有香味就不用洗手"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p128_q2",
+      "topic": "cnc_p128",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·职业和名言",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 1,
+      "stem": "「与其锦上添花，不如雪中送炭」更看重哪一种做法？",
+      "explain": "锦上添花是好上加好。雪中送炭是在别人寒冷、困难时伸手。",
+      "answer_mode": "choice",
+      "options": [
+        "别人已经很好时再添一件礼物",
+        "谁也不帮助",
+        "别人正困难的时候送去帮助",
+        "只在过年时说好话"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p128_q3",
+      "topic": "cnc_p128",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·职业和名言",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "下面哪一个是职业名称？",
+      "explain": "建筑师、教师、饲养员都是职业。气呼呼、兴高采烈是在写心情。",
+      "answer_mode": "choice",
+      "options": [
+        "气呼呼",
+        "兴高采烈",
+        "手有余香",
+        "建筑师"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p128_q4",
+      "topic": "cnc_p128",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u2",
+      "unit_name": "语文园地二·职业和名言",
+      "type": "knowledge",
+      "skill": "词语",
+      "difficulty": 2,
+      "stem": "「平时肯帮人，急时有人帮」搭配的是哪一种意思？",
+      "explain": "这句话和「予人玫瑰，手有余香」一样，都在说互相帮助。",
+      "answer_mode": "choice",
+      "options": [
+        "平时帮助别人，紧急时也会得到帮助",
+        "平时不肯帮人，紧急时反而有人帮",
+        "只在紧急时才需要帮助别人",
+        "帮助别人和自己没有关系"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p129_q1",
+      "topic": "cnc_p129",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《神州谣》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「我神州，称华夏」的下一句是哪一句？",
+      "explain": "先说山川美得可以画下来，后面才写黄河、长江。",
+      "answer_mode": "choice",
+      "options": [
+        "黄河奔，长江涌",
+        "长城长，珠峰耸",
+        "山川美，可入画",
+        "台湾岛，隔海峡"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p129_q2",
+      "topic": "cnc_p129",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《神州谣》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「黄河奔，长江涌」的下一句是哪一句？",
+      "explain": "奔涌的大河后面，是长城和珠穆朗玛峰。",
+      "answer_mode": "choice",
+      "options": [
+        "与大陆，是一家",
+        "各民族，情谊浓",
+        "山川美，可入画",
+        "长城长，珠峰耸"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p129_q3",
+      "topic": "cnc_p129",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《神州谣》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「台湾岛，隔海峡」后面说它和谁是一家？",
+      "explain": "台湾岛隔着海峡，与大陆是一家。",
+      "answer_mode": "choice",
+      "options": [
+        "与大陆是一家",
+        "与黄河是一家",
+        "与珠峰隔海相望、互不相关",
+        "只和长城是一家"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p129_q4",
+      "topic": "cnc_p129",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《神州谣》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "课文怎样写各民族？",
+      "explain": "各民族情谊浓，齐奋发，共荣光。",
+      "answer_mode": "choice",
+      "options": [
+        "各自生活，互不往来",
+        "情谊浓，齐奋发",
+        "只住在台湾岛上",
+        "都住在长城下面"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p130_q1",
+      "topic": "cnc_p130",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《传统节日》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "端午节有哪些习俗？",
+      "explain": "过端午，赛龙舟，粽子飘香。赏月吃月饼是中秋。",
+      "answer_mode": "choice",
+      "options": [
+        "赏月、吃月饼",
+        "登高、赏菊",
+        "看花灯",
+        "吃粽子、赛龙舟"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p130_q2",
+      "topic": "cnc_p130",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《传统节日》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "中秋节人们常常做什么？",
+      "explain": "过中秋，吃月饼，十五的圆月当空照。",
+      "answer_mode": "choice",
+      "options": [
+        "赏月、吃月饼",
+        "赛龙舟",
+        "扫墓踏青",
+        "贴窗花放鞭炮"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p130_q3",
+      "topic": "cnc_p130",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《传统节日》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "清明节常常做什么？",
+      "explain": "清明节雨纷纷，人们到先人墓前祭扫，也出门踏青。乞巧是七夕。",
+      "answer_mode": "choice",
+      "options": [
+        "乞巧",
+        "扫墓、踏青",
+        "看花灯",
+        "登高插茱萸"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p130_q4",
+      "topic": "cnc_p130",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《传统节日》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "重阳节的习俗是哪一个？",
+      "explain": "重阳节要敬老，人们踏秋赏菊、登高。贴春联是春节。",
+      "answer_mode": "choice",
+      "options": [
+        "赛龙舟",
+        "贴春联",
+        "登高、敬老",
+        "吃元宵"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p131_q1",
+      "topic": "cnc_p131",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《「贝」的故事》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "古代人们曾经把什么当成钱币？",
+      "explain": "海边的贝壳好看又难得，古时候曾经拿它当货币。",
+      "answer_mode": "choice",
+      "options": [
+        "贝壳",
+        "树叶",
+        "石头子",
+        "雪花"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p131_q2",
+      "topic": "cnc_p131",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《「贝」的故事》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「财、购、贫」为什么都有贝字旁？",
+      "explain": "和钱财有关的字，很多带贝字旁。",
+      "answer_mode": "choice",
+      "options": [
+        "这些字都和水有关",
+        "这些字的意思都和钱财有关",
+        "这些字都是木字旁",
+        "贝字旁表示颜色"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p131_q3",
+      "topic": "cnc_p131",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《「贝」的故事》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "下面哪个字和钱财有关，带贝字旁？",
+      "explain": "货是货物，有贝字旁。明是日和月，林是木，跑是足字旁。",
+      "answer_mode": "choice",
+      "options": [
+        "明",
+        "林",
+        "货",
+        "跑"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p131_q4",
+      "topic": "cnc_p131",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《「贝」的故事》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「贫」的贝字旁告诉我们什么？",
+      "explain": "贫是缺少财物。看到贝字旁，可以想到和钱财有关。",
+      "answer_mode": "choice",
+      "options": [
+        "它的意思和太阳有关",
+        "它要读成贝",
+        "它是一个树名",
+        "它的意思和财物有关"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p132_q1",
+      "topic": "cnc_p132",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《中国美食》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "哪一组菜名都在这篇课文里？",
+      "explain": "课文写了凉拌菠菜、香煎豆腐、红烧茄子，还有烤鸭、水煮鱼等。",
+      "answer_mode": "choice",
+      "options": [
+        "火锅、酸辣粉、汤圆",
+        "凉拌菠菜、香煎豆腐、红烧茄子",
+        "汉堡、薯条、三明治",
+        "年糕、月饼、粽子"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p132_q2",
+      "topic": "cnc_p132",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《中国美食》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "哪一种是课文里的主食？",
+      "explain": "蒸饺、炸酱面、小米粥、蛋炒饭是主食。葱爆羊肉、水煮鱼、小鸡炖蘑菇是菜。",
+      "answer_mode": "choice",
+      "options": [
+        "葱爆羊肉",
+        "水煮鱼",
+        "炸酱面",
+        "小鸡炖蘑菇"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p132_q3",
+      "topic": "cnc_p132",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《中国美食》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「红烧茄子」里的「红烧」是什么？",
+      "explain": "拌、煎、烧、烤、煮、爆、炖、蒸、炸、炒，都是做菜的方法。",
+      "answer_mode": "choice",
+      "options": [
+        "一种蔬菜的名字",
+        "一种餐具",
+        "一种节日",
+        "一种烹调方法"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p132_q4",
+      "topic": "cnc_p132",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "识字：《中国美食》",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「炸酱面」的「炸」读哪一个？",
+      "explain": "炸鱼、炸酱的炸读 zhá。爆炸、炸弹的炸才读 zhà。",
+      "answer_mode": "choice",
+      "options": [
+        "zhá（油炸的炸）",
+        "zhà（爆炸的炸）",
+        "zhā（没有这个常用读音）",
+        "zà（没有这个读音）"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p133_q1",
+      "topic": "cnc_p133",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·形旁和十二生肖",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「香喷喷」是怎样的词？它在写什么？",
+      "explain": "甜津津、酸溜溜、辣乎乎、香喷喷都是 ABB，用来写味道或感觉。",
+      "answer_mode": "choice",
+      "options": [
+        "AABB 式，在写职业",
+        "一个生肖的名字",
+        "ABB 式，在写香味",
+        "一种烹调方法"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p133_q2",
+      "topic": "cnc_p133",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·形旁和十二生肖",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "带竖心旁或心字底的字，意思常常和什么有关？",
+      "explain": "情、想、怕这一类字带心。和刀有关的常常是立刀旁。",
+      "answer_mode": "choice",
+      "options": [
+        "刀剪",
+        "火和热",
+        "钱币",
+        "心情"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p133_q3",
+      "topic": "cnc_p133",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·形旁和十二生肖",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "带「火」或四点底的字，意思常常和什么有关？",
+      "explain": "烧、热、煮这一类字和水无关，和火有关。四点底是火的变形。",
+      "answer_mode": "choice",
+      "options": [
+        "火、热",
+        "心情",
+        "刀剪",
+        "河流"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p133_q4",
+      "topic": "cnc_p133",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u3",
+      "unit_name": "语文园地三·形旁和十二生肖",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "十二生肖里，紧接在「鼠」后面的是哪一个？",
+      "explain": "子鼠、丑牛、寅虎、卯兔。鼠后面是牛，不是虎。",
+      "answer_mode": "choice",
+      "options": [
+        "虎",
+        "牛",
+        "兔",
+        "龙"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p134_q1",
+      "topic": "cnc_p134",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《彩色的梦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "「我」的彩色梦靠什么画出来？",
+      "explain": "课文里那一大把彩色的梦，就是躺在铅笔盒里的彩色铅笔。",
+      "answer_mode": "choice",
+      "options": [
+        "一块黑炭",
+        "没有颜色的水",
+        "夜里的月亮",
+        "一大把彩色铅笔"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p134_q2",
+      "topic": "cnc_p134",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《彩色的梦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "在这个梦里，草坪、野花是什么颜色的？",
+      "explain": "彩色铅笔能画出绿草坪、各色的花和蓝天。",
+      "answer_mode": "choice",
+      "options": [
+        "绿的、各色都有的",
+        "全是黑色的",
+        "只有白色",
+        "颜色被风吹掉了"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p134_q3",
+      "topic": "cnc_p134",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《彩色的梦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "梦里的小朋友在做什么？",
+      "explain": "彩色的梦里有葱郁的森林，小朋友在那里快乐地玩。",
+      "answer_mode": "choice",
+      "options": [
+        "在冬天堆雪人",
+        "在树林里唱歌、做游戏",
+        "把铅笔全部折断",
+        "躲起来不让人看见颜色"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p134_q4",
+      "topic": "cnc_p134",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《彩色的梦》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这首儿童诗主要写什么？",
+      "explain": "题目就是彩色的梦。颜色和想象是这首诗的重点。",
+      "answer_mode": "choice",
+      "options": [
+        "一个没有颜色的夜晚",
+        "怎样削铅笔",
+        "彩色铅笔带来的美丽想象",
+        "梦里什么也看不见"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p135_q1",
+      "topic": "cnc_p135",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《一匹出色的马》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "散步时，妹妹怎样了？",
+      "explain": "妹妹走累了，不愿意再往前走。",
+      "answer_mode": "choice",
+      "options": [
+        "走不动，想让人抱",
+        "一个人先跑回了家",
+        "在河边洗柳条",
+        "帮妈妈砍了一棵树"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p135_q2",
+      "topic": "cnc_p135",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《一匹出色的马》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "妈妈从路边拿来什么给妹妹？",
+      "explain": "妈妈没有抱她，而是给了她一根柳条。",
+      "answer_mode": "choice",
+      "options": [
+        "一匹真的马",
+        "一根柳条",
+        "一辆自行车",
+        "一把铁锹"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p135_q3",
+      "topic": "cnc_p135",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《一匹出色的马》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这根柳条在游戏里被当成什么？",
+      "explain": "妹妹把柳条夹在腿间，把它当成自己的马。",
+      "answer_mode": "choice",
+      "options": [
+        "一条小溪",
+        "一把剪刀",
+        "一匹马",
+        "一顶草帽"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p135_q4",
+      "topic": "cnc_p135",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《一匹出色的马》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "妹妹后来怎样回到家？",
+      "explain": "有了这匹出色的马，走不动的妹妹反而跑起来了。",
+      "answer_mode": "choice",
+      "options": [
+        "一直坐在路边等爸爸背",
+        "柳条自己走回了家",
+        "她更走不动了",
+        "骑着这匹「马」自己跑回去"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p136_q1",
+      "topic": "cnc_p136",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《枫树上的喜鹊》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "枫树长在哪里？它像什么？",
+      "explain": "渡口旁的枫树绿荫打开着，像一把一直撑开的太阳伞。",
+      "answer_mode": "choice",
+      "options": [
+        "长在沙漠里，像一把剪刀",
+        "渡口旁，像一把绿色的太阳伞",
+        "长在天坛，像柏树苗",
+        "长在雪地里，像一座城堡"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p136_q2",
+      "topic": "cnc_p136",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《枫树上的喜鹊》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "「我」在心中怎样称呼窝边那只大喜鹊？",
+      "explain": "「我」像童话书里那样，称呼她是喜鹊阿姨。",
+      "answer_mode": "choice",
+      "options": [
+        "喜鹊爷爷",
+        "长颈鹿大叔",
+        "喜鹊阿姨",
+        "鼹鼠先生"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p136_q3",
+      "topic": "cnc_p136",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《枫树上的喜鹊》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "窝里的小喜鹊被「我」称作什么？",
+      "explain": "「我」称呼那几只小喜鹊为喜鹊弟弟。",
+      "answer_mode": "choice",
+      "options": [
+        "喜鹊老师",
+        "喜鹊顾客",
+        "喜鹊邮递员",
+        "喜鹊弟弟"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p136_q4",
+      "topic": "cnc_p136",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "阅读《枫树上的喜鹊》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "喜鹊阿姨站在窝边教弟弟做什么？",
+      "explain": "她一会儿教唱歌，一会儿教做游戏。「我」觉得自己听得懂。",
+      "answer_mode": "choice",
+      "options": [
+        "唱歌、做游戏",
+        "卖泥塘",
+        "植树",
+        "赛龙舟"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p137_q1",
+      "topic": "cnc_p137",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·玩具和诚信",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「不倒翁」的「倒」读哪一个？",
+      "explain": "不倒翁是倒下去还会起来，这里的倒读 dǎo。",
+      "answer_mode": "choice",
+      "options": [
+        "dào（倒水的倒）",
+        "diào（没有这个读音）",
+        "dǎo（倒下的倒）",
+        "dōu（都的读音）"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p137_q2",
+      "topic": "cnc_p137",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·玩具和诚信",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "「把水倒进杯子」的「倒」读哪一个？",
+      "explain": "倒水、倒车的倒读 dào。同一个字，要按词语选定读音。",
+      "answer_mode": "choice",
+      "options": [
+        "dǎo（不倒翁的倒）",
+        "táo（桃的读音）",
+        "dù（渡的读音）",
+        "dào（倒水的倒）"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p137_q3",
+      "topic": "cnc_p137",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·玩具和诚信",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「失信不立」是什么意思？",
+      "explain": "这句话出自《左传》。失信，事情就立不起来。",
+      "answer_mode": "choice",
+      "options": [
+        "不守信用，就站不住",
+        "守信用的人会跌倒",
+        "说话可以不算数",
+        "信用只在玩具店里有用"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p137_q4",
+      "topic": "cnc_p137",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u4",
+      "unit_name": "语文园地四·玩具和诚信",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "「诚信者，天下之结也」强调什么？",
+      "explain": "这句话出自《管子》。诚信是把人们连在一起的结。",
+      "answer_mode": "choice",
+      "options": [
+        "诚信只是一个人的私事",
+        "诚信能把天下人联结在一起",
+        "天下人不必讲信用",
+        "结是一种玩具的名字"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p138_q1",
+      "topic": "cnc_p138",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《亡羊补牢》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "养羊人第一次丢羊，是因为什么？",
+      "explain": "羊圈破了，他没有修，狼从窟窿里钻进去，叼走了一只羊。",
+      "answer_mode": "choice",
+      "options": [
+        "羊自己走丢了，圈是好的",
+        "他把羊送给了邻居",
+        "白天羊在圈里热坏了",
+        "羊圈破了个窟窿，夜里狼钻进去了"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p138_q2",
+      "topic": "cnc_p138",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《亡羊补牢》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "邻居劝他做什么？",
+      "explain": "街坊劝他：还是把羊圈修一修吧。",
+      "answer_mode": "choice",
+      "options": [
+        "赶快把羊圈修一修",
+        "再也不要养羊",
+        "把窟窿留着",
+        "等到羊全丢光再修"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p138_q3",
+      "topic": "cnc_p138",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《亡羊补牢》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "他一开始怎样想？",
+      "explain": "他觉得羊已经丢了，修不修都一样，所以没有修。",
+      "answer_mode": "choice",
+      "options": [
+        "马上就把圈修好了",
+        "羊已经丢了，修圈也没用",
+        "连夜去追狼",
+        "听了劝告立刻去修"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p138_q4",
+      "topic": "cnc_p138",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《亡羊补牢》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "第二天又丢了羊，他才明白什么？",
+      "explain": "他又丢了一只羊，这才动手把窟窿堵上。从此羊不再丢。",
+      "answer_mode": "choice",
+      "options": [
+        "羊丢了就不用管了",
+        "窟窿留着更好",
+        "现在修还不晚，要赶快补上窟窿",
+        "邻居的话一直是错的"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p139_q1",
+      "topic": "cnc_p139",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《揠苗助长》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "那个人为什么去拔苗？",
+      "explain": "他巴望自己的禾苗长得快些，天天去看，还是觉得慢。",
+      "answer_mode": "choice",
+      "options": [
+        "他觉得苗长得太慢，想帮它们快些长高",
+        "苗已经比他高了",
+        "邻居请他把苗拔掉",
+        "天要下雨，苗会淹死"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p139_q2",
+      "topic": "cnc_p139",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《揠苗助长》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "他用了什么办法？",
+      "explain": "他跑到田里，把苗拔高了一大截，累得筋疲力尽。",
+      "answer_mode": "choice",
+      "options": [
+        "给禾苗浇水、施肥",
+        "把禾苗一棵一棵往上拔",
+        "把禾苗移到屋里",
+        "请别人一起等着"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p139_q3",
+      "topic": "cnc_p139",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《揠苗助长》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "回到家他怎样说？",
+      "explain": "他并不知道这样做有害，还高兴地告诉家里人。",
+      "answer_mode": "choice",
+      "options": [
+        "今天我把苗弄死了",
+        "禾苗自己长得很快",
+        "今天我帮禾苗长高了",
+        "我不该拔苗"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p139_q4",
+      "topic": "cnc_p139",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《揠苗助长》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "结果怎样？",
+      "explain": "儿子跑去一看，苗都枯死了。违反生长规律，反而帮了倒忙。",
+      "answer_mode": "choice",
+      "options": [
+        "禾苗一夜之间长成了大树",
+        "禾苗比别的田更好",
+        "只枯了一棵",
+        "禾苗都枯死了"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p140_q1",
+      "topic": "cnc_p140",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《画杨桃》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "「我」把杨桃画成了什么？",
+      "explain": "坐在前排靠边，看到的杨桃一端像五角星。",
+      "answer_mode": "choice",
+      "options": [
+        "一个圆圆的苹果",
+        "五角星",
+        "一只小鸟",
+        "一把雨伞"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p140_q2",
+      "topic": "cnc_p140",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《画杨桃》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "为什么「我」画出来的和同学不一样？",
+      "explain": "同一个杨桃，正面看和侧面看，形状不一样。",
+      "answer_mode": "choice",
+      "options": [
+        "杨桃本来就会变颜色",
+        "「我」没有看见杨桃",
+        "看的角度不同，样子就不同",
+        "老师不许照着画"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p140_q3",
+      "topic": "cnc_p140",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《画杨桃》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "老师让大家怎样检查？",
+      "explain": "坐到那个位置，他们也看见杨桃像五角星。",
+      "answer_mode": "choice",
+      "options": [
+        "把画都撕掉重画同一个圆",
+        "不许再看杨桃",
+        "只听讲台正面的同学说",
+        "轮流坐到「我」的座位上看"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p140_q4",
+      "topic": "cnc_p140",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《画杨桃》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "父亲和老师都要「我」记住什么？",
+      "explain": "要实事求是。看到的是五角星，就不要改成别人眼里的样子。",
+      "answer_mode": "choice",
+      "options": [
+        "是什么样，就画成什么样",
+        "别人画圆，自己也要画圆",
+        "画得越不像越好",
+        "看见的可以不画"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p141_q1",
+      "topic": "cnc_p141",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《小马过河》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小马为什么要过河？",
+      "explain": "磨坊师傅让小马把麦子驮回家，一条河挡住了路。",
+      "answer_mode": "choice",
+      "options": [
+        "要去找松鼠玩",
+        "老牛叫它过河",
+        "要把半口袋麦子驮回家",
+        "它想测量河有多深"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p141_q2",
+      "topic": "cnc_p141",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《小马过河》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "老牛和松鼠对河水的说法为什么不一样？",
+      "explain": "老牛高大，水刚没小腿；松鼠矮小，同伴还被水冲走过。",
+      "answer_mode": "choice",
+      "options": [
+        "他们说的不是同一条河",
+        "松鼠没看过河",
+        "老牛想骗小马",
+        "老牛个子高觉得浅，松鼠个子小觉得深"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p141_q3",
+      "topic": "cnc_p141",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《小马过河》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "妈妈让小马怎样做？",
+      "explain": "妈妈说：河水是深是浅，你去试一试就知道了。",
+      "answer_mode": "choice",
+      "options": [
+        "自己动脑筋，去试一试",
+        "听老牛的，不要听松鼠的",
+        "听松鼠的，把麦子放下",
+        "永远不要过河"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p141_q4",
+      "topic": "cnc_p141",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "阅读《小马过河》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "小马自己试过以后，河水到底怎样？",
+      "explain": "水不深不浅，刚刚没到小马的膝盖。别人的经验还要自己试。",
+      "answer_mode": "choice",
+      "options": [
+        "深得完全不能过",
+        "既不像老牛说的那么浅，也不像松鼠说的那么深",
+        "浅得没有湿到蹄子",
+        "第二天就干了"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p142_q1",
+      "topic": "cnc_p142",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "语文园地五·说说自己的想法",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "说出自己的想法时，最好先说什么？",
+      "explain": "想法要扣住课文。先说做法和结果，别人听得懂你在说哪一篇。",
+      "answer_mode": "choice",
+      "options": [
+        "先说一个和课文无关的故事",
+        "只说「我不知道」",
+        "把课文题目改掉",
+        "课文里谁做了什么，再说自己怎么看"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p142_q2",
+      "topic": "cnc_p142",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "语文园地五·说说自己的想法",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "只把道理缩成四个字，有什么不好？",
+      "explain": "亡羊补牢、揠苗助长都是四个字。还要用自己的话讲出为什么。",
+      "answer_mode": "choice",
+      "options": [
+        "别人听不出你自己的想法",
+        "四个字一定比课文更准确",
+        "这样才算读完了",
+        "道理不能用自己的话说"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p142_q3",
+      "topic": "cnc_p142",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "语文园地五·说说自己的想法",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "结合《画杨桃》，说看法时要注意什么？",
+      "explain": "角度不同，看到的样子不同。说的时候要实事求是。",
+      "answer_mode": "choice",
+      "options": [
+        "别人说圆，就跟着说圆",
+        "先看清楚，是什么样就说什么样",
+        "没有看见也可以随便说",
+        "想法越奇越好，不必看课文"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p142_q4",
+      "topic": "cnc_p142",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u5",
+      "unit_name": "语文园地五·说说自己的想法",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "同学的看法和自己不同，应该怎样？",
+      "explain": "听完再讲，想法才能越说越清楚。",
+      "answer_mode": "choice",
+      "options": [
+        "立刻打断",
+        "假装同意，心里不说",
+        "先听完，再讲自己的理由",
+        "不许别人再说下去"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p143_q1",
+      "topic": "cnc_p143",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《绝句》：两个黄鹂",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「两个黄鹂鸣翠柳」的下一句是哪一句？",
+      "explain": "先写一行白鹭飞上青天，后面才是窗含西岭、门泊东吴。迟日江山丽是另一首《绝句》。",
+      "answer_mode": "choice",
+      "options": [
+        "一行白鹭上青天",
+        "窗含西岭千秋雪",
+        "门泊东吴万里船",
+        "迟日江山丽"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p143_q2",
+      "topic": "cnc_p143",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《绝句》：两个黄鹂",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「窗含西岭千秋雪」的下一句是哪一句？",
+      "explain": "窗口对着西岭的雪，门前停着开往东吴的船。最后一句是万里船，不是万里帆。",
+      "answer_mode": "choice",
+      "options": [
+        "一行白鹭上青天",
+        "门泊东吴万里船",
+        "两个黄鹂鸣翠柳",
+        "门泊东吴万里帆"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p143_q3",
+      "topic": "cnc_p143",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《绝句》：两个黄鹂",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「两个黄鹂鸣翠柳」这首《绝句》的作者是谁？",
+      "explain": "这首七言《绝句》是杜甫写的。杜牧写的是《山行》《清明》，不要看姓就记混。",
+      "answer_mode": "choice",
+      "options": [
+        "李白",
+        "贺知章",
+        "杜甫",
+        "杜牧"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p143_q4",
+      "topic": "cnc_p143",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《绝句》：两个黄鹂",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「窗含西岭千秋雪」是从哪里看见雪的？",
+      "explain": "窗像画框，含着远山的千秋积雪。黄鹂在翠柳上，白鹭在青天里。",
+      "answer_mode": "choice",
+      "options": [
+        "从船上看见江水",
+        "从柳树上看见黄鹂",
+        "从青天上看见白鹭",
+        "从窗口望见西岭上的积雪"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p144_q1",
+      "topic": "cnc_p144",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《晓出净慈寺送林子方》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「毕竟西湖六月中」的下一句是哪一句？",
+      "explain": "先说六月的西湖风光和别的时节不同，后面才写莲叶和荷花。比西子是苏轼的句子。",
+      "answer_mode": "choice",
+      "options": [
+        "接天莲叶无穷碧",
+        "风光不与四时同",
+        "映日荷花别样红",
+        "欲把西湖比西子"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p144_q2",
+      "topic": "cnc_p144",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《晓出净慈寺送林子方》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「接天莲叶无穷碧」的下一句是哪一句？",
+      "explain": "莲叶一片碧绿，接到天边；阳光里的荷花格外红。不能把碧写成绿。",
+      "answer_mode": "choice",
+      "options": [
+        "风光不与四时同",
+        "接天莲叶无穷绿",
+        "映日荷花别样红",
+        "小荷才露尖尖角"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p144_q3",
+      "topic": "cnc_p144",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《晓出净慈寺送林子方》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "这首诗的作者是谁？",
+      "explain": "《晓出净慈寺送林子方》是杨万里的诗。苏轼写的是《饮湖上初晴后雨》。",
+      "answer_mode": "choice",
+      "options": [
+        "苏轼",
+        "杜甫",
+        "李白",
+        "杨万里"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p144_q4",
+      "topic": "cnc_p144",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "古诗《晓出净慈寺送林子方》",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "诗里的荷花是什么时候的西湖？",
+      "explain": "毕竟西湖六月中。正月是《元日》，清明是另一首诗。",
+      "answer_mode": "choice",
+      "options": [
+        "六月",
+        "正月初一",
+        "清明时节",
+        "中秋夜里"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p145_q1",
+      "topic": "cnc_p145",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《雷雨》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "雨下来之前，天色和风有什么变化？",
+      "explain": "满天乌云，黑沉沉的。风把树枝吹得乱摆。",
+      "answer_mode": "choice",
+      "options": [
+        "太阳更红了",
+        "天上出现了彩虹",
+        "乌云压下来，风越来越大",
+        "树叶一动也不动"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p145_q2",
+      "topic": "cnc_p145",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《雷雨》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "雨是怎样下的？",
+      "explain": "雨越下越大，往窗外望去，树哇，房子啊，都看不清了。",
+      "answer_mode": "choice",
+      "options": [
+        "只下了几滴就停",
+        "先下小雨，一直不变",
+        "只在很远的地方下",
+        "越下越大，后来像从天上倒下来"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p145_q3",
+      "topic": "cnc_p145",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《雷雨》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "雨停以后，课文写到了什么？",
+      "explain": "雨停了，太阳出来，一条彩虹挂在天空。蝉叫了，蜘蛛又坐在网上。",
+      "answer_mode": "choice",
+      "options": [
+        "彩虹挂在天上，蝉和蜘蛛又出来了",
+        "雪花飞舞",
+        "乌云变得更黑",
+        "青蛙都躲起来不再出声"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p145_q4",
+      "topic": "cnc_p145",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《雷雨》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "读这篇课文，要抓住什么顺序？",
+      "explain": "课文就是按下雨前、下雨时、雨停后的顺序写的。",
+      "answer_mode": "choice",
+      "options": [
+        "只看雨后",
+        "雷雨前、雷雨中、雷雨后",
+        "从雨后写到雨前",
+        "只记住蜘蛛"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p146_q1",
+      "topic": "cnc_p146",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《要是你在野外迷了路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "中午的时候，太阳在哪一边？",
+      "explain": "中午太阳在南边，地上的树影正指着北方。",
+      "answer_mode": "choice",
+      "options": [
+        "北边",
+        "东边的树根下",
+        "西边的沟渠里",
+        "南边"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p146_q2",
+      "topic": "cnc_p146",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《要是你在野外迷了路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "北极星帮助我们找到哪一个方向？",
+      "explain": "北极星是盏指路灯，它永远高挂在北方。",
+      "answer_mode": "choice",
+      "options": [
+        "北方",
+        "南方",
+        "太阳升起的地方",
+        "积雪化得快的地方"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p146_q3",
+      "topic": "cnc_p146",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《要是你在野外迷了路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "大树枝叶更稠密的一面是哪一边？",
+      "explain": "枝叶稠的一面是南方，枝叶稀的一面是北方。",
+      "answer_mode": "choice",
+      "options": [
+        "北方",
+        "南方",
+        "树根正下方",
+        "沟渠的水面"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p146_q4",
+      "topic": "cnc_p146",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《要是你在野外迷了路》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "阴雨天看不到太阳时，还可以靠什么分辨方向？",
+      "explain": "碰上阴雨天，大树会来帮忙；积雪哪边化得快、哪边化得慢，也能分辨南北。",
+      "answer_mode": "choice",
+      "options": [
+        "只靠手表的颜色",
+        "只靠鞋上的钩子",
+        "大树的枝叶，或沟渠里积雪化的快慢",
+        "只靠喜鹊的叫声"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p147_q1",
+      "topic": "cnc_p147",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《太空生活趣事多》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "在太空里睡觉，身体要怎样？",
+      "explain": "人会飘起来，所以睡觉要把自己绑住、固定住。",
+      "answer_mode": "choice",
+      "options": [
+        "钻进睡袋，把身体固定好",
+        "躺在地上就不会飘",
+        "必须站着睡",
+        "可以不固定，和在家里一样"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p147_q2",
+      "topic": "cnc_p147",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《太空生活趣事多》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "太空中喝水为什么常用吸管？",
+      "explain": "水不会自己留在杯子里，要用吸管把它吸住。",
+      "answer_mode": "choice",
+      "options": [
+        "杯子比地球上更大",
+        "不管住，水会飘走",
+        "太空里没有水",
+        "吸管是用来固定鞋子的"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p147_q3",
+      "topic": "cnc_p147",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《太空生活趣事多》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "在太空舱里走路，鞋子有什么特别？",
+      "explain": "脚不钩住，人就会飘起来，走不了路。",
+      "answer_mode": "choice",
+      "options": [
+        "鞋底是轮子",
+        "必须光着脚",
+        "鞋底有钩子，能钩住网格",
+        "鞋子要灌满水"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p147_q4",
+      "topic": "cnc_p147",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "阅读《太空生活趣事多》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这些趣事主要是因为什么？",
+      "explain": "睡觉、喝水、走路、洗澡都和失重有关，所以特别有趣。",
+      "answer_mode": "choice",
+      "options": [
+        "太空每天都下雨",
+        "太空的树特别高",
+        "太空没有太阳",
+        "人在太空中会飘起来"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p148_q1",
+      "topic": "cnc_p148",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·节气和问号",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「春雨惊春清谷天」的下一句是哪一句？",
+      "explain": "上一句是春季节气，下一句才接到夏天：立夏、小满、芒种、夏至、小暑、大暑。",
+      "answer_mode": "choice",
+      "options": [
+        "秋处露秋寒霜降",
+        "夏满芒夏暑相连",
+        "冬雪雪冬小大寒",
+        "春风吹又生"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p148_q2",
+      "topic": "cnc_p148",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·节气和问号",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 1,
+      "stem": "「秋处露秋寒霜降」的下一句是哪一句？",
+      "explain": "秋天后面是冬天：立冬、小雪、大雪、冬至、小寒、大寒。",
+      "answer_mode": "choice",
+      "options": [
+        "夏满芒夏暑相连",
+        "春雨惊春清谷天",
+        "冬雪雪冬小大寒",
+        "野火烧不尽"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p148_q3",
+      "topic": "cnc_p148",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·节气和问号",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "「处暑」的「处」读哪一个？",
+      "explain": "处暑、处理的处读 chǔ。到处、处所的处读 chù。芒种的芒读 máng。",
+      "answer_mode": "choice",
+      "options": [
+        "chù（到处的处）",
+        "chú（没有这个读音）",
+        "cù（促的读音）",
+        "chǔ"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p148_q4",
+      "topic": "cnc_p148",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u6",
+      "unit_name": "语文园地六·节气和问号",
+      "type": "knowledge",
+      "skill": "古诗文积累",
+      "difficulty": 2,
+      "stem": "园地里的写话，要写下什么样的句子？",
+      "explain": "写话题目是心中的问号。先写看到的现象，再提出为什么。",
+      "answer_mode": "choice",
+      "options": [
+        "对看到的自然现象问「为什么……」",
+        "把二十四节气全部改成一句口号",
+        "只写一个感叹号",
+        "抄一首已经背过的古诗交差"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p149_q1",
+      "topic": "cnc_p149",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《大象的耳朵》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "大象的耳朵本来是什么样的？",
+      "explain": "大象有一对大耳朵，像扇子似的耷拉着。",
+      "answer_mode": "choice",
+      "options": [
+        "像兔子一样竖得笔直",
+        "小得几乎看不见",
+        "像扇子似的耷拉着",
+        "一天到晚扇个不停"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p149_q2",
+      "topic": "cnc_p149",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《大象的耳朵》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小动物为什么说大象的耳朵有毛病？",
+      "explain": "小兔子、小羊他们的耳朵都是竖着的，就说大象的耳朵一定有毛病。",
+      "answer_mode": "choice",
+      "options": [
+        "大象的耳朵太大了",
+        "大象听不见声音",
+        "耳朵上没有毛",
+        "他们觉得耳朵应该竖着"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p149_q3",
+      "topic": "cnc_p149",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《大象的耳朵》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "大象把耳朵竖起来以后怎样了？",
+      "explain": "耳朵竖着，虫子很容易飞进去。大象又是摇头又是赶虫子。",
+      "answer_mode": "choice",
+      "options": [
+        "虫子直往耳朵里飞，它很烦恼",
+        "它听得更清楚，再也不耷拉",
+        "耳朵再也不会动",
+        "小动物不再来看它"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p149_q4",
+      "topic": "cnc_p149",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《大象的耳朵》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "后来大象明白了什么？",
+      "explain": "它又把耳朵放下来，觉得这样最舒服。别人的样子不一定适合自己。",
+      "answer_mode": "choice",
+      "options": [
+        "别人说竖着，就该永远竖着",
+        "人家是人家，自己是自己，耷拉着才舒服",
+        "耳朵应该割掉",
+        "扇子似的耳朵是毛病"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p150_q1",
+      "topic": "cnc_p150",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《蜘蛛开店》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "蜘蛛为什么想开店？",
+      "explain": "它每天等小飞虫，好寂寞，好无聊，于是决定开一家商店。",
+      "answer_mode": "choice",
+      "options": [
+        "它已经有很多顾客",
+        "河马请它开店",
+        "它想去太空走路",
+        "蹲在网上等飞虫，觉得寂寞、无聊"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p150_q2",
+      "topic": "cnc_p150",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《蜘蛛开店》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "卖口罩时来了谁？结果怎样？",
+      "explain": "招牌写着每位顾客只需付一元钱。河马的口罩又大又难织。",
+      "answer_mode": "choice",
+      "options": [
+        "河马。嘴巴大，蜘蛛织了一整天才织完",
+        "长颈鹿。脖子长，一会儿就织完了",
+        "蜈蚣。脚少，蜘蛛很轻松",
+        "河马没买，蜘蛛马上关门"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p150_q3",
+      "topic": "cnc_p150",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《蜘蛛开店》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "卖围巾时来了谁？蜘蛛忙了多久？",
+      "explain": "长颈鹿脖子像大树一样高，围巾要织得很长。",
+      "answer_mode": "choice",
+      "options": [
+        "河马，只忙了一分钟",
+        "长颈鹿，足足忙了一个星期",
+        "蜈蚣，忙了一个小时就织完",
+        "没有顾客，围巾自己长长了"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p150_q4",
+      "topic": "cnc_p150",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《蜘蛛开店》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "第三次来的顾客是谁？蜘蛛怎样了？",
+      "explain": "袜子看起来小，可蜈蚣脚太多。蜘蛛匆忙跑回网上。",
+      "answer_mode": "choice",
+      "options": [
+        "河马又来了，蜘蛛很高兴",
+        "长颈鹿买了袜子，蜘蛛发财了",
+        "四十二只脚的蜈蚣，蜘蛛吓得跑回网上",
+        "没有顾客，蜘蛛一直开着店"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p151_q1",
+      "topic": "cnc_p151",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《青蛙卖泥塘》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "青蛙一开始想怎样处理泥塘？",
+      "explain": "泥塘又荒又差，青蛙喊着要卖泥塘。",
+      "answer_mode": "choice",
+      "options": [
+        "把它卖掉",
+        "把它填成马路",
+        "请蜘蛛来开店",
+        "自己搬去天坛"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p151_q2",
+      "topic": "cnc_p151",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《青蛙卖泥塘》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "有动物说水太少、四周光秃秃，青蛙怎样做？",
+      "explain": "每听到一条意见，青蛙就动手补上缺的东西。",
+      "answer_mode": "choice",
+      "options": [
+        "立刻把泥塘送人，什么也不改",
+        "引水，种草，栽树，按意见一点点改",
+        "把提意见的动物赶走",
+        "把水放干，让它更干"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p151_q3",
+      "topic": "cnc_p151",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《青蛙卖泥塘》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "泥塘变好以后，青蛙怎么决定？",
+      "explain": "泥塘成了好看又好住的地方，青蛙不再卖了。",
+      "answer_mode": "choice",
+      "options": [
+        "便宜卖给第一个路过的人",
+        "继续喊卖，自己不住",
+        "这么好的泥塘，自己留下，不卖了",
+        "把草和树全部拔掉"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p151_q4",
+      "topic": "cnc_p151",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《青蛙卖泥塘》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这个故事主要想说什么？",
+      "explain": "青蛙一次次修改，泥塘才从卖不掉变成舍不得卖。",
+      "answer_mode": "choice",
+      "options": [
+        "听到意见就不要再干活",
+        "泥塘永远卖不出去",
+        "别人的意见都没有用",
+        "肯动手改进，不好的地方也能变好"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p152_q1",
+      "topic": "cnc_p152",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《小毛虫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "别的昆虫怎样看小毛虫？",
+      "explain": "别的昆虫在花间飞来飞去，小毛虫却爬得很慢，它们笑它。",
+      "answer_mode": "choice",
+      "options": [
+        "觉得它已经是蝴蝶",
+        "觉得它又慢又什么也不会",
+        "请它去卖泥塘",
+        "跟它一起结茧"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p152_q2",
+      "topic": "cnc_p152",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《小毛虫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "小毛虫自己怎样做？",
+      "explain": "它知道每一步都在为后面做准备，所以不慌。",
+      "answer_mode": "choice",
+      "options": [
+        "和别人比谁飞得高",
+        "停下来不再吃叶子",
+        "不着急，一天天认真做事",
+        "把茧剪破就回家"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p152_q3",
+      "topic": "cnc_p152",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《小毛虫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "小毛虫最后变成了什么？",
+      "explain": "它结了茧，再出来时已经是蝴蝶。",
+      "answer_mode": "choice",
+      "options": [
+        "蜘蛛",
+        "青蛙",
+        "喜鹊",
+        "蝴蝶"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p152_q4",
+      "topic": "cnc_p152",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "阅读《小毛虫》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "这个故事想告诉读者什么？",
+      "explain": "着急没有用。把它该做的事做完，变化自然会来。",
+      "answer_mode": "choice",
+      "options": [
+        "不要因为暂时慢就放弃，长大需要一步步来",
+        "越慢越好，什么都不用做",
+        "只有会飞的才算努力",
+        "变成蝴蝶以后就不用再学习"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p153_q1",
+      "topic": "cnc_p153",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·大扫除",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "扫地最常用哪一种工具？",
+      "explain": "扫帚用来扫地。抹布是用来擦的。",
+      "answer_mode": "choice",
+      "options": [
+        "抹布",
+        "雨衣",
+        "扫帚",
+        "柳条"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p153_q2",
+      "topic": "cnc_p153",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·大扫除",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 1,
+      "stem": "擦玻璃常用哪一种？",
+      "explain": "抹布可以擦玻璃、擦桌子。簸箕是撮垃圾的。",
+      "answer_mode": "choice",
+      "options": [
+        "簸箕",
+        "水桶盖",
+        "拨浪鼓",
+        "抹布"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p153_q3",
+      "topic": "cnc_p153",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·大扫除",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "把垃圾撮起来，常用哪一种？",
+      "explain": "簸箕和扫帚配合，才能把垃圾收走。",
+      "answer_mode": "choice",
+      "options": [
+        "簸箕",
+        "拖把的绳子",
+        "七巧板",
+        "不倒翁"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p153_q4",
+      "topic": "cnc_p153",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u7",
+      "unit_name": "语文园地七·大扫除",
+      "type": "knowledge",
+      "skill": "识字写字",
+      "difficulty": 2,
+      "stem": "哪一组都是做大扫除？",
+      "explain": "大扫除就是把地扫干净，把玻璃擦亮，把垃圾倒掉，再把桌椅摆好。",
+      "answer_mode": "choice",
+      "options": [
+        "卖口罩、织围巾、织袜子",
+        "扫地、擦玻璃、倒垃圾、摆桌椅",
+        "射太阳、造船、挖河道",
+        "赏月、赛龙舟、乞巧"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p154_q1",
+      "topic": "cnc_p154",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《羿射九日》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "故事开头，天上同时出现了几个太阳？",
+      "explain": "十个太阳一起烤着大地，庄稼枯了，人们受不了。",
+      "answer_mode": "choice",
+      "options": [
+        "一个",
+        "九个",
+        "两个",
+        "十个"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p154_q2",
+      "topic": "cnc_p154",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《羿射九日》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "羿射下了几个太阳？",
+      "explain": "他留下人们还需要的那一个，射下了另外九个。",
+      "answer_mode": "choice",
+      "options": [
+        "九个",
+        "十个",
+        "一个",
+        "一个也没射下"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p154_q3",
+      "topic": "cnc_p154",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《羿射九日》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "为什么不能把太阳全部射下来？",
+      "explain": "没有太阳，世界会又黑又冷。所以要留下一个。",
+      "answer_mode": "choice",
+      "options": [
+        "太阳太小，射不中",
+        "人们还要靠剩下的太阳得到光明和温暖",
+        "弓箭不够十支",
+        "九个太阳自己先落下去了"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p154_q4",
+      "topic": "cnc_p154",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《羿射九日》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "十个太阳造成的灾害是什么？",
+      "explain": "这篇是炎热和干旱。洪水是《大禹治水》里的灾害。",
+      "answer_mode": "choice",
+      "options": [
+        "洪水把房屋冲走",
+        "泥塘卖不出去",
+        "大地被烤焦，庄稼枯死",
+        "小毛虫不会飞"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p155_q1",
+      "topic": "cnc_p155",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《黄帝的传说》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "课文里的黄帝又被称作什么？",
+      "explain": "课文称他轩辕。大禹、羿是另外两篇传说里的人物。",
+      "answer_mode": "choice",
+      "options": [
+        "轩辕",
+        "大禹",
+        "羿",
+        "雷锋"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p155_q2",
+      "topic": "cnc_p155",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《黄帝的传说》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "他看见什么，想到要造车？",
+      "explain": "草帽骨碌碌地滚，让他想到轮子和车。",
+      "answer_mode": "choice",
+      "options": [
+        "蚂蚁在树叶上漂",
+        "风吹着草帽在地上滚",
+        "十个太阳一起出来",
+        "喜鹊在教弟弟唱歌"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p155_q3",
+      "topic": "cnc_p155",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《黄帝的传说》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "他看见什么，想到要造船？",
+      "explain": "树叶能浮在水面，人也可以坐在船上过河。",
+      "answer_mode": "choice",
+      "options": [
+        "草帽滚下山",
+        "柏树苗不直",
+        "枯叶漂在水上，蚂蚁趴在叶子上",
+        "羊圈破了个窟窿"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p155_q4",
+      "topic": "cnc_p155",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《黄帝的传说》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "车和船改善了什么？",
+      "explain": "有了车和船，走远路、过河都方便了。",
+      "answer_mode": "choice",
+      "options": [
+        "天上太阳的个数",
+        "泥塘的价钱",
+        "喜鹊的语言",
+        "路上和水上的来往"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p156_q1",
+      "topic": "cnc_p156",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《大禹治水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "洪水泛滥时，人们的生活怎样？",
+      "explain": "大水淹没田地，冲毁房屋，人们痛苦极了。",
+      "answer_mode": "choice",
+      "options": [
+        "到处都是十个太阳",
+        "田地被淹，房屋被冲毁",
+        "泥塘卖得很好",
+        "只要把窗关上就行"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cnc_p156_q2",
+      "topic": "cnc_p156",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《大禹治水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 1,
+      "stem": "只把水堵住，和禹的办法有什么不同？",
+      "explain": "堵住容易再决口。禹开山挖河，给洪水找出去的路。",
+      "answer_mode": "choice",
+      "options": [
+        "禹也是把所有出口都堵死",
+        "禹没有带领人们干活",
+        "禹是疏导，把河道挖通，不是只靠堵",
+        "禹把洪水引进家里"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p156_q3",
+      "topic": "cnc_p156",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《大禹治水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "挖通河道以后，洪水怎样了？",
+      "explain": "水有了去路，才不再到处泛滥。",
+      "answer_mode": "choice",
+      "options": [
+        "变成了十个太阳",
+        "留在羊圈里",
+        "被蜘蛛织成围巾",
+        "流进了大海"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p156_q4",
+      "topic": "cnc_p156",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "阅读《大禹治水》",
+      "type": "knowledge",
+      "skill": "阅读理解",
+      "difficulty": 2,
+      "stem": "人们后来怎样称呼他？",
+      "explain": "洪水退去，百姓安居，人们尊敬地称他大禹。",
+      "answer_mode": "choice",
+      "options": [
+        "大禹",
+        "轩辕",
+        "羿",
+        "雷锋叔叔"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p157_q1",
+      "topic": "cnc_p157",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·把句子写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "「江上往来人」的下一句是哪一句？",
+      "explain": "人们喜爱的是鲈鱼的鲜美，后面才写一叶小舟出没在风波里。荷花是杨万里的诗。",
+      "answer_mode": "choice",
+      "options": [
+        "君看一叶舟",
+        "出没风波里",
+        "但爱鲈鱼美",
+        "映日荷花别样红"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "cnc_p157_q2",
+      "topic": "cnc_p157",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·把句子写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 1,
+      "stem": "「出没风波里」的「没」读哪一个？",
+      "explain": "出没读 mò，是隐隐现现。没有的没才读 méi。作者是范仲淹。",
+      "answer_mode": "choice",
+      "options": [
+        "méi（没有的没）",
+        "mò 的第二声",
+        "méi 的第四声",
+        "mò（出没的没）"
+      ],
+      "answer": 4
+    },
+    {
+      "id": "cnc_p157_q3",
+      "topic": "cnc_p157",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·把句子写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "哪一句把「高兴极了」写具体了？",
+      "explain": "园地里把心情和行动配在一起。蹦蹦跳跳写出了高兴的样子。伤心则可以写成哭哭啼啼。",
+      "answer_mode": "choice",
+      "options": [
+        "他高兴极了，蹦蹦跳跳地跑过去。",
+        "他高兴极了。",
+        "他高兴高兴极了极了。",
+        "极了高兴他。"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cnc_p157_q4",
+      "topic": "cnc_p157",
+      "subject": "chinese",
+      "grade": 2,
+      "semester": "lower",
+      "edition": "tongbian",
+      "unit": "u8",
+      "unit_name": "语文园地八·把句子写具体",
+      "type": "knowledge",
+      "skill": "习作基础",
+      "difficulty": 2,
+      "stem": "写一件小事，哪一段顺序对？",
+      "explain": "先、接着、然后、最后，要符合事情真正发生的次序。",
+      "answer_mode": "choice",
+      "options": [
+        "我出门，然后才起床，接着已经到了学校。",
+        "我先起床，接着洗脸，然后吃早饭，最后背上书包出门。",
+        "最后吃饭，先到学校，接着起床。",
+        "书包早饭洗脸出门。"
+      ],
+      "answer": 2
+    }
+  ]
+}
