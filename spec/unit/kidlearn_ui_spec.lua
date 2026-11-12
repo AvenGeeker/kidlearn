@@ -430,6 +430,53 @@ describe("KidLearn title-bar back navigation", function()
         assert.are.equal("wrongbook", view.state)
     end)
 
+    it("builds daily report and card book pages", function()
+        -- Earlier tests may have answered questions today; start from a clean day.
+        view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress:flush()
+        view:open_daily_report()
+        assert.are.equal("home", view.state) -- no answers yet: nothing to summarize
+        view.progress:record_answer({
+            id = "ui-report-q1", subject = "math", semester = "upper", unit = "m2",
+            type = "math_number", skill = "add_sub", difficulty = 1,
+            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
+        }, { attempt = 1, correct = true })
+        view:open_daily_report()
+        assert.are.equal("daily_report", view.state)
+        local report = view.progress:daily_report()
+        assert.is_not_nil(report)
+        assert.are.equal(3, #report.cards)
+        assert.is_false(report.ai)
+        assert.is_false(report.revealed)
+        report.revealed = true
+        view.progress:save_daily_report(report)
+        view:render_daily_report()
+        assert.are.equal("daily_report", view.state)
+        view:render_cards(true)
+        assert.are.equal("cards", view.state)
+        view:leave_cards()
+        assert.are.equal("daily_report", view.state)
+        view:render_cards()
+        view:onBack()
+        assert.are.equal("home", view.state)
+        -- re-entering the same day shows the stored report, no redraw
+        view:open_daily_report()
+        assert.are.equal("daily_report", view.state)
+        assert.are.equal(report.created_at, view.progress:daily_report().created_at)
+        view:paintTo(Device.screen.bb, 0, 0)
+    end)
+
+    it("paginates the badge wall", function()
+        view:render_badges(2)
+        assert.are.equal("badges", view.state)
+        assert.are.equal(2, view.badge_page)
+        view:render_badges(99)
+        assert.are.equal(5, view.badge_page)
+        view:render_badges(0)
+        assert.are.equal(1, view.badge_page)
+        view:paintTo(Device.screen.bb, 0, 0)
+    end)
+
     it("paints correctly after the title bar is rebuilt", function()
         view:render_kp_select("math")
         view:paintTo(Device.screen.bb, 0, 0)

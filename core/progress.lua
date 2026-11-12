@@ -8,14 +8,18 @@ never removes a child's stars, streak, badges or wrong-question book.
 local AIConfig = require("core.ai_config")
 local DataStorage = require("datastorage")
 local LuaSettings = require("luasettings")
+local logger = require("logger")
 
 local Progress = {}
 Progress.__index = Progress
 
-local SCHEMA_VERSION = 4
+local SCHEMA_VERSION = 5
 local DAILY_KEEP_DAYS = 90
 local MAX_WRONG = 200
 local MAX_RECENT_IDS = 30
+local MAX_KP_TOPICS = 20
+-- One-time raw snapshot taken before the first v5 write; never overwritten.
+local PRE_UPGRADE_BACKUP_SUFFIX = ".pre-v5.bak"
 local SUBJECTS = { "chinese", "math" }
 
 local function number_or(value, default)
@@ -52,6 +56,38 @@ local function ensure_counter(tbl, key)
     tbl[key] = number_or(tbl[key], 0)
 end
 
+-- Additive v5 daily detail. Existing counters are never removed or renamed.
+local function ensure_daily_fields(entry)
+    ensure_counter(entry, "answered")
+    ensure_counter(entry, "correct")
+    ensure_counter(entry, "points")
+    ensure_counter(entry, "sessions")
+    local subjects = ensure_table(entry, "subjects")
+    for _, subject in ipairs(SUBJECTS) do
+        local s = ensure_table(subjects, subject)
+        ensure_counter(s, "answered")
+        ensure_counter(s, "correct")
+    end
+    ensure_table(entry, "modes")
+    local challenge = ensure_table(entry, "challenge")
+    ensure_counter(challenge, "sessions")
+    ensure_counter(challenge, "answered")
+    ensure_counter(challenge, "correct")
+    ensure_counter(entry, "kp_answered")
+    if type(entry.kp_topics) ~= "table" then entry.kp_topics = {} end
+    while #entry.kp_topics > MAX_KP_TOPICS do table.remove(entry.kp_topics, 1) end
+    if entry.report ~= nil and type(entry.report) ~= "table" then entry.report = nil end
+end
+
+local function remember_kp_topic(daily, subject, topic_id)
+    local key = tostring(subject) .. ":" .. tostring(topic_id)
+    for _, item in ipairs(daily.kp_topics) do
+        if item.key == key then return end
+    end
+    table.insert(daily.kp_topics, { key = key, subject = subject, topic = topic_id })
+    while #daily.kp_topics > MAX_KP_TOPICS do table.remove(daily.kp_topics, 1) end
+end
+
 function Progress.open(path, ai_config_path)
     local use_default_ai_config = path == nil and ai_config_path == nil
     path = path or (DataStorage:getSettingsDir() .. "/kidlearn.lua")
@@ -60,11 +96,45 @@ function Progress.open(path, ai_config_path)
         settings = LuaSettings:open(path),
     }, Progress)
     self.data = self.settings.data
+    self:backup_before_upgrade()
     self:normalize()
     if use_default_ai_config or ai_config_path then
         self:import_ai_config(ai_config_path)
     end
     return self
+end
+
+--[[--
+Copy the raw pre-upgrade save once, before the first v5 normalize/flush.
+
+Skipped for fresh installs (no file) and when a snapshot already exists; the
+snapshot is never overwritten or auto-deleted. Failures only log a warning:
+KOReader's own .old rolling backup and fsync still protect the write.
+--]]--
+function Progress:backup_before_upgrade()
+    local version = self.data.schema_version
+    if type(version) == "number" and version >= SCHEMA_VERSION then return end
+    local input = io.open(self.path, "rb")
+    if not input then return end
+    local content = input:read("*a")
+    input:close()
+    if not content or content == "" then return end
+    local backup_path = self.path .. PRE_UPGRADE_BACKUP_SUFFIX
+    local existing = io.open(backup_path, "rb")
+    if existing then
+        existing:close()
+        return
+    end
+    local output, err = io.open(backup_path, "wb")
+    if not output then
+        logger.warn("KidLearn: could not write pre-upgrade backup", backup_path, tostring(err))
+        return
+    end
+    local ok, write_err = output:write(content)
+    output:close()
+    if not ok then
+        logger.warn("KidLearn: pre-upgrade backup write failed", tostring(write_err))
+    end
 end
 
 function Progress:import_ai_config(path)
@@ -83,7 +153,7 @@ function Progress:normalize()
     d.schema_version = SCHEMA_VERSION
 
     local total = ensure_table(d, "total")
-    for _, key in ipairs({ "points", "answered", "correct", "sessions", "perfect_sessions", "best_combo", "wrong_cleared" }) do
+    for _, key in ipairs({ "points", "answered", "correct", "sessions", "perfect_sessions", "best_combo", "wrong_cleared", "challenge_sessions", "challenge_correct" }) do
         ensure_counter(total, key)
     end
 
@@ -101,6 +171,18 @@ function Progress:normalize()
     ensure_table(d, "daily")
     ensure_table(d, "wrong")
     ensure_table(d, "badges")
+    -- Card collection is permanent: keep every entry (including ids unknown to
+    -- the current pool) so future pool changes never erase collected cards.
+    local cards = ensure_table(d, "cards")
+    for id, entry in pairs(cards) do
+        if type(entry) ~= "table" then
+            cards[id] = nil
+        else
+            entry.count = number_or(entry.count, 0)
+            entry.first_at = number_or(entry.first_at, 0)
+            entry.last_at = number_or(entry.last_at, 0)
+        end
+    end
     local adaptive = ensure_table(d, "adaptive")
     for _, subject in ipairs(SUBJECTS) do
         local a = ensure_table(adaptive, subject)
@@ -185,10 +267,7 @@ function Progress:prune_daily()
         elseif type(entry) ~= "table" then
             self.data.daily[key] = nil
         else
-            ensure_counter(entry, "answered")
-            ensure_counter(entry, "correct")
-            ensure_counter(entry, "points")
-            ensure_counter(entry, "sessions")
+            ensure_daily_fields(entry)
         end
     end
 end
@@ -224,10 +303,7 @@ end
 function Progress:ensure_daily(now)
     local key = today_key(now)
     local entry = ensure_table(self.data.daily, key)
-    ensure_counter(entry, "answered")
-    ensure_counter(entry, "correct")
-    ensure_counter(entry, "points")
-    ensure_counter(entry, "sessions")
+    ensure_daily_fields(entry)
     return entry, key
 end
 
@@ -490,6 +566,27 @@ function Progress:record_answer(question, opts)
         end
         self:remember_question(question.id)
         self:update_streak(now)
+
+        local subject_daily = daily.subjects[subject]
+        if not subject_daily then
+            subject_daily = { answered = 0, correct = 0 }
+            daily.subjects[subject] = subject_daily
+        end
+        subject_daily.answered = subject_daily.answered + 1
+        if correct then subject_daily.correct = subject_daily.correct + 1 end
+        if question.challenge then
+            daily.challenge.answered = daily.challenge.answered + 1
+            if correct then
+                daily.challenge.correct = daily.challenge.correct + 1
+                self.data.total.challenge_correct = self.data.total.challenge_correct + 1
+            end
+        end
+        if mode == "kp" then
+            daily.kp_answered = daily.kp_answered + 1
+            if question.topic then
+                remember_kp_topic(daily, subject, question.topic)
+            end
+        end
     end
 
     if correct then
@@ -523,6 +620,12 @@ function Progress:record_session(summary, now)
         return { completion = 0, perfect = 0, first_of_day = 0, total = 0 }
     end
     local daily = self:ensure_daily(now)
+    local mode = summary.mode or "subject"
+    daily.modes[mode] = (daily.modes[mode] or 0) + 1
+    if mode == "challenge" then
+        self.data.total.challenge_sessions = self.data.total.challenge_sessions + 1
+        daily.challenge.sessions = daily.challenge.sessions + 1
+    end
     local breakdown = { completion = 10, perfect = 0, first_of_day = 0 }
     if summary.perfect then
         breakdown.perfect = 20
@@ -554,6 +657,41 @@ function Progress:today(now)
         goal = goal,
         done = daily.answered >= goal,
     }
+end
+
+--[[--
+Add drawn cards to the permanent collection.
+
+Entries keep a name/tier snapshot from the first acquisition so later pool
+changes never alter already-collected cards. Duplicates only bump the count.
+--]]--
+function Progress:add_cards(cards, now)
+    now = now or os.time()
+    local collection = ensure_table(self.data, "cards")
+    for _, card in ipairs(cards or {}) do
+        if card.id then
+            local entry = collection[card.id]
+            if type(entry) ~= "table" then
+                entry = { count = 0, first_at = now, name = card.name, tier = card.tier }
+                collection[card.id] = entry
+            end
+            entry.count = number_or(entry.count, 0) + 1
+            entry.last_at = now
+        end
+    end
+    self:flush()
+end
+
+function Progress:daily_report(now)
+    local daily = self:ensure_daily(now)
+    return daily.report
+end
+
+function Progress:save_daily_report(report, now)
+    local daily, key = self:ensure_daily(now)
+    daily.report = report
+    self:flush()
+    return key
 end
 
 function Progress:total()

@@ -92,7 +92,9 @@ core/knowledge.lua       课标知识点分册/先修图谱加载、缓存、分
 core/diagnose.lua        自适应诊断引擎（先修回溯、掌握/不稳/薄弱、学习路径）
 core/mathgen.lua         数学题与拓展题生成器（保留二年级人教老生成器 + 通用知识点引擎）
 core/progress.lua        存档、每日统计、连续天数、分年级自适应等级、错题本
-core/badges.lua          奖章定义与解锁判断
+core/badges.lua          奖章定义与解锁判断（50 枚）
+core/cards.lua           固定卡池（38 张）、每日抽卡权重、收藏统计
+core/report.lua          每日评分公式、总结提示词/严格校验、离线兜底
 core/ai_config.lua       AI 厂商预设、服务配置、Key 掩码与校验
 core/ai_http.lua         LuaSocket/LuaSec + Turbo 的 HTTPS POST
 core/ai_client.lua       OpenAI / Anthropic / Gemini 请求与响应
@@ -131,7 +133,7 @@ submit_answer(value)
 
 ### 状态机
 
-`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`、`kp_subject`、`kp_select`、`kp_learn`、`diagnose_quiz`、`diagnose_feedback`、`diagnose_result`。
+`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`daily_report`、`cards`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`、`kp_subject`、`kp_select`、`kp_learn`、`diagnose_quiz`、`diagnose_feedback`、`diagnose_result`。
 新增页面时：设置 `state` → 改标题 → 用 `set_body(widget)` 换内容，不要新开 `UIManager:show` 的全屏窗口。
 
 ---
@@ -148,7 +150,8 @@ submit_answer(value)
 | 新增数学知识点 | `tools/kidlearn/build_catalog.py` 的 `skills` + `core/mathgen.lua` 的 `skill_generators` | `validate_catalog.py`、`kidlearn_mathgen_spec`、README |
 | 新增拓展题 | `core/mathgen.lua`（生成函数 + `challenge_generators` + `challenge_units` 上下册） | `kidlearn_mathgen_spec`、README |
 | 改星星 / 连对 / 首轮奖励 | `core/progress.lua`（`record_answer` / `record_session`）+ `core/session.lua`（`combo_bonus`） | README 积分表、`kidlearn_progress_spec`、`kidlearn_session_spec` |
-| 新增奖章 | `core/badges.lua` | README 奖章表、`kidlearn_progress_spec`（注意「奖章墙 x/10」文案） |
+| 新增奖章 | `core/badges.lua` | README 奖章表、`kidlearn_progress_spec`（注意「奖章墙 x/50」文案与翻页） |
+| 改每日总结 / 抽卡 | `core/report.lua` / `core/cards.lua`、`ui/mainview.lua` | README 每日总结章节、`kidlearn_cards_spec`、`kidlearn_ui_spec` |
 | 改首页 / 设置 / 页面布局 | `ui/mainview.lua` | `kidlearn_ui_spec`、README 使用说明 |
 | 改存档字段 | `core/progress.lua`（`SCHEMA_VERSION` + `normalize`） | 迁移逻辑、README 字段表、`kidlearn_progress_spec` |
 | 改错题规则 | `core/progress.lua`（`record_wrong` / `record_mastery` / `trim_wrong`） | README 错题本说明、测试 |
@@ -219,7 +222,7 @@ submit_answer(value)
 
 ## 7. 测试要求
 
-改动以下任一文件后，**必须**跑完整插件测试（9 个 spec 全绿）：
+改动以下任一文件后，**必须**跑完整插件测试（10 个 spec 全绿）：
 
 ```bash
 tools/kidlearn/test_plugin.sh
@@ -234,6 +237,7 @@ tools/kidlearn/test_plugin.sh
 | `core/ai_*.lua` | `kidlearn_ai_spec.lua` |
 | `core/knowledge.lua` / `data/knowledge/` | `kidlearn_knowledge_spec.lua` |
 | `core/diagnose.lua` | `kidlearn_diagnose_spec.lua` |
+| `core/cards.lua` / `core/report.lua` | `kidlearn_cards_spec.lua` |
 | `ui/mainview.lua` | `kidlearn_ui_spec.lua` |
 
 测试规则：
@@ -247,9 +251,10 @@ tools/kidlearn/test_plugin.sh
 
 ## 8. 存档与兼容性
 
-- 存档结构版本在 `core/progress.lua` 的 `SCHEMA_VERSION`（当前 4；v4 新增 `knowledge` 知识点掌握度）。
-- 任何字段变更都必须在 `Progress:normalize()` 里补齐默认值，保证旧存档可读；破坏性变更要写迁移。
-- `Progress:reset_progress()` 只清空学习数据（含知识点掌握度），**保留 `settings`**（省份、年级、学期、教材、目标、重试开关）。
+- 存档结构版本在 `core/progress.lua` 的 `SCHEMA_VERSION`（当前 5；v4 新增 `knowledge` 知识点掌握度；v5 新增挑战计数、daily 学科/玩法/知识点细分、`cards` 永久收藏、daily `report`）。
+- 任何字段变更都必须在 `Progress:normalize()` 里补齐默认值，保证旧存档可读；破坏性变更要写迁移。**迁移只增不删**：不得删除、改名或改变既有字段含义，`badges` 已解锁条目（含未知 ID）原样保留。
+- **升级快照**：`Progress.open` 在读入版本 <5 且存档文件存在时，先把原始字节一次性复制到 `kidlearn.lua.pre-v5.bak`（已存在则跳过、永不覆盖），再 normalize；失败仅 `logger.warn`。
+- `Progress:reset_progress()` 只清空学习数据（含知识点掌握度、卡片收藏、挑战计数），**保留 `settings`**（省份、年级、学期、教材、目标、重试开关）。
 - `recent_ids` 最多 30 条；`daily` 保留 90 天；`wrong` 最多 200 条 —— 改这些上限要同步 README。
 - 错题存的是整题快照，改题库不会影响已有错题；这是有意设计，不要“顺手”改成只存 ID。
 
@@ -261,7 +266,7 @@ tools/kidlearn/test_plugin.sh
 
 - [ ] 行为符合任务描述，没有夹带无关重构。
 - [ ] 语法/风格符合 Lua 5.1 与现有代码。
-- [ ] 7 个插件测试全绿（贴出结果）。
+- [ ] 10 个插件测试全绿（贴出结果）。
 - [ ] `validate_bank.py --all` 通过（如果动了题库）。
 - [ ] `validate_catalog.py` 通过（如果动了目录/教材/知识点）。
 - [ ] 用户可见行为变化已同步到 `README.md`。
@@ -314,6 +319,10 @@ tools/kidlearn/test_plugin.sh
 18. **诊断是测评不是练习**：`core/diagnose.lua` 不给星星、不进错题本、不影响自适应与连续天数，只回写知识点掌握度；参数 confirm=2、题量上限 12、回溯深度 ≤3，改这些要同步 README 与 `kidlearn_diagnose_spec`。
 19. **kp 会话判题走 `Knowledge.judge`**：带 `topic` 的题（含错题快照）支持分数/小数答案；`MainView:start_session` 是白名单传参，新增会话字段记得同时加到 `Session.new` 调用里。
 20. **`MainView` 必须整屏绘制**：它是全屏页面而不是对话框；`paintTo` 先铺满白色背景，否则底层 ReaderUI 会透出来，看起来像浮层。
+21. **每日报告随 daily 清理，卡片永久**：`daily[date].report` 跟每日统计一起只保留 90 天；`cards` 收藏与 `badges` 永久保留，任何清理逻辑不得删除。卡片条目带 name/tier 快照，卡池未来调整不影响已集卡片。
+22. **抽卡先落盘再联网**：`Report.create` 先本地评分、抽卡并写入离线版报告，之后才可选请求 AI 润色；AI 失败只影响文案，不影响分数与卡片。同日重进不重抽。
+23. **挑战计数不追溯**：`total.challenge_sessions/challenge_correct` 从 v5 起累积，旧存档没有挑战历史；SSS 权重 = 已解锁挑战奖章数 × (1 + ⌊score/50⌋)，无挑战奖章时 SSS 不进卡池。
+24. **奖章墙翻页**：每页 10 枚共 5 页，`render_badges(page)` 会钳制页码；首页按钮文案是动态 `x/50`，新增奖章不用改 UI。
 
 ---
 
@@ -339,3 +348,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-10 | 增加可选 AI 错题变种、多厂商服务配置与独立 AI 题库 | 用变种题强化错题学习 |
 | 2026-11-10 | 支持 `kidlearn_ai_config.json` 自动导入 API 地址/Key/模型 | 家长可把配置推到 Kindle，免手填 |
 | 2026-11-11 | 同步 cn-math-taxonomy 小学数学/语文知识图谱与题库；新增知识点学习、练习、自适应诊断；存档 v4 增加知识点掌握度 | 按课标知识点先学后练，答错沿先修边找薄弱根因 |
+| 2026-11-12 | 新增每日 AI 总结与抽卡（38 张卡池、本地评分、SSS 挑战加成、离线兜底）、奖章墙扩至 50 枚并翻页、拓展挑战轮次/答对双线计数；存档 v5 纯增量迁移 + 升级前一次性快照 | 孩子收集了很多星星，需要更多玩法与更长线的荣誉目标，且升级不能丢已有荣誉 |

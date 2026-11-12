@@ -42,7 +42,7 @@ BASH_BIN="${BASH_BIN:-/usr/local/bin/bash}"
 [[ -x "$BASH_BIN" ]] || BASH_BIN="/bin/bash"
 
 if [[ $# -eq 0 ]]; then
-    set -- kidlearn_bank kidlearn_catalog kidlearn_mathgen kidlearn_progress kidlearn_session kidlearn_ui kidlearn_ai kidlearn_knowledge kidlearn_diagnose
+    set -- kidlearn_bank kidlearn_catalog kidlearn_mathgen kidlearn_progress kidlearn_session kidlearn_ui kidlearn_ai kidlearn_knowledge kidlearn_diagnose kidlearn_cards
 fi
 
 KODEV_FLAGS=()

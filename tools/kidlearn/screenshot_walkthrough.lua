@@ -1,10 +1,11 @@
 --[[--
 UI walkthrough + screenshot generator (run via tools/kidlearn/take_screenshots.sh).
 
-Renders every knowledge-learning page in the real KOReader rendering pipeline
+Renders every KidLearn page in the real KOReader rendering pipeline
 (600x800 dummy framebuffer, same as the emulator) and writes PNGs into
-docs/screenshots/.  Uses a fresh demo save: one perfect daily round, a few
-seeded mastery marks, then learns/practices/diagnoses 认识几分之一 (cnm_p079).
+docs/screenshots/.  Uses a fresh demo save: one perfect daily round, one
+perfect challenge round, a seeded card collection, the daily report draw,
+then learns/practices/diagnoses 认识几分之一 (cnm_p079).
 --]]--
 
 describe("KidLearn screenshot walkthrough", function()
@@ -12,6 +13,7 @@ describe("KidLearn screenshot walkthrough", function()
     local Device
     local MainView
     local Knowledge
+    local Cards
     local view
     local out_dir = "./plugins/kidlearn.koplugin/docs/screenshots/"
 
@@ -22,6 +24,7 @@ describe("KidLearn screenshot walkthrough", function()
         Device = require("device")
         MainView = require("ui/mainview")
         Knowledge = require("core.knowledge")
+        Cards = require("core.cards")
     end)
 
     local function shot(name)
@@ -44,11 +47,20 @@ describe("KidLearn screenshot walkthrough", function()
         view:submit_answer(value)
     end
 
-    it("walks through all knowledge pages and captures screenshots", function()
+    local function finish_round()
+        for _ = 1, view.session:total() do
+            answer_current(true)
+            view:next_question()
+        end
+        assert.are.equal("summary", view.state)
+    end
+
+    it("walks through all pages and captures screenshots", function()
         -- Fresh demo save.
         local save = DataStorage:getSettingsDir() .. "/kidlearn.lua"
         os.remove(save)
         os.remove(save .. ".old")
+        os.remove(save .. ".pre-v5.bak")
         view = MainView:new{
             plugin_path = "./plugins/kidlearn.koplugin",
             plugin = {},
@@ -58,15 +70,58 @@ describe("KidLearn screenshot walkthrough", function()
         settings.semester = "upper"
         view.progress:flush()
 
-        -- One perfect daily round so the home page shows real progress.
+        -- One perfect daily round; capture the quiz and feedback pages.
         view:start_session({ mode = "daily" })
-        for i = 1, view.session:total() do
+        shot("daily-quiz")
+        answer_current(true)
+        shot("answer-feedback")
+        view:next_question()
+        for _ = 2, view.session:total() do
             answer_current(true)
             view:next_question()
         end
         assert.are.equal("summary", view.state)
+
+        -- One perfect challenge round: unlocks the challenge badge line.
+        view:start_session({ mode = "challenge", subject = "math", unit = "all" })
+        finish_round()
+
+        -- Seed a demo collection so the card book shows lit and unlit cards.
+        local seed = {
+            Cards.get("r01"), Cards.get("r01"), Cards.get("r01"),
+            Cards.get("r02"), Cards.get("r04"), Cards.get("r09"),
+            Cards.get("rr01"), Cards.get("rr01"), Cards.get("rr03"), Cards.get("rr07"),
+            Cards.get("s02"), Cards.get("s05"),
+            Cards.get("ss01"),
+            Cards.get("sss01"),
+        }
+        view.progress:add_cards(seed)
+
+        -- Daily report: local score + offline summary, then reveal the cards.
+        view:open_daily_report()
+        assert.are.equal("daily_report", view.state)
+        shot("daily-report")
+        local report = view.progress:daily_report()
+        report.revealed = true
+        view.progress:save_daily_report(report)
+        view:render_daily_report()
+        shot("daily-report-cards")
+
+        view:render_cards(true)
+        assert.are.equal("cards", view.state)
+        shot("card-book")
+        view:leave_cards()
+
+        -- Home page with the new entry row and the "today drawn" marker.
         view:render_home()
         shot("home")
+
+        -- Badge wall: page 1 (original line) and page 4 (challenge line).
+        view:render_badges(1)
+        shot("badges")
+        view:render_badges(4)
+        shot("badges-challenge")
+        view:render_home()
 
         -- Seed a few mastery marks for the list view.
         view.progress:mark_kp_status("math", "cnm_p221", "mastered")

@@ -77,6 +77,40 @@ describe("KidLearn session", function()
         assert.is_true(summary.perfect)
     end)
 
+    it("counts challenge rounds and first-try correct answers", function()
+        local count_path = DataStorage:getDataDir() .. "/kidlearn_challenge_count_spec.lua"
+        os.remove(count_path)
+        os.remove(count_path .. ".old")
+        os.remove(count_path .. ".pre-v5.bak")
+        local progress = Progress.open(count_path)
+        progress.data.settings.semester = "upper"
+        local session = assert(Session.new({
+            mode = "challenge",
+            subject = "math",
+            semester = "upper",
+            plugin_path = "./plugins/kidlearn.koplugin",
+            progress = progress,
+            rng = math.random,
+            now_fn = function() return os.time({ year = 2026, month = 11, day = 10, hour = 12 }) end,
+        }))
+        for i = 1, 10 do
+            local q = session:current()
+            assert.is_true(session:submit(q.answer).correct)
+            if i < 10 then assert.is_true(session:advance()) end
+        end
+        session:finish()
+        assert.are.equal(1, progress.data.total.challenge_sessions)
+        assert.are.equal(10, progress.data.total.challenge_correct)
+        local daily = progress.data.daily["2026-11-10"]
+        assert.are.equal(1, daily.challenge.sessions)
+        assert.are.equal(10, daily.challenge.correct)
+        assert.are.equal(10, daily.challenge.answered)
+        assert.are.equal(1, daily.modes.challenge)
+        os.remove(count_path)
+        os.remove(count_path .. ".old")
+        os.remove(count_path .. ".pre-v5.bak")
+    end)
+
     it("uses the selected grade and Chinese textbook", function()
         local grade_path = DataStorage:getDataDir() .. "/kidlearn_grade_chinese_spec.lua"
         os.remove(grade_path)

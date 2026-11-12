@@ -16,6 +16,7 @@ describe("KidLearn progress", function()
         path = DataStorage:getDataDir() .. "/kidlearn_progress_spec.lua"
         os.remove(path)
         os.remove(path .. ".old")
+        os.remove(path .. ".pre-v5.bak")
     end)
 
     local function question(id, subject)
@@ -179,7 +180,7 @@ describe("KidLearn progress", function()
         assert.are.equal(false, p.data.settings.retry)
         assert.are.equal("table", type(p.data.settings.ai))
         assert.are.equal("table", type(p.data.settings.ai.profiles))
-        assert.are.equal(4, p.data.schema_version)
+        assert.are.equal(5, p.data.schema_version)
         assert.are.equal(3, p.data.adaptive_by_grade.chinese["2"].level)
         assert.are.equal(1, p.data.adaptive_by_grade.math["2"].level)
     end)
@@ -201,6 +202,7 @@ describe("KidLearn knowledge mastery", function()
         path = DataStorage:getDataDir() .. "/kidlearn_kp_progress_spec.lua"
         os.remove(path)
         os.remove(path .. ".old")
+        os.remove(path .. ".pre-v5.bak")
     end)
 
     local function kp_question(id, topic)
@@ -229,7 +231,7 @@ describe("KidLearn knowledge mastery", function()
         p.data.knowledge = nil
         p:flush()
         local reopened = Progress.open(path)
-        assert.are.equal(4, reopened.data.schema_version)
+        assert.are.equal(5, reopened.data.schema_version)
         assert.is_table(reopened.data.knowledge)
         assert.is_table(reopened.data.knowledge.math)
         assert.is_table(reopened.data.knowledge.chinese)
@@ -328,5 +330,239 @@ describe("KidLearn knowledge mastery", function()
         p:reset_progress()
         assert.is_nil(p:kp_status("math", "cnm_p001"))
         assert.are.equal(5, p.data.settings.grade)
+    end)
+end)
+
+describe("KidLearn v5 migration safety", function()
+    local DataStorage
+    local Progress
+    local Badges
+    local Cards
+    local dump
+    local path
+
+    setup(function()
+        require("commonrequire")
+        package.path = "plugins/kidlearn.koplugin/?.lua;" .. package.path
+        DataStorage = require("datastorage")
+        Progress = require("core.progress")
+        Badges = require("core.badges")
+        Cards = require("core.cards")
+        dump = require("dump")
+    end)
+
+    before_each(function()
+        path = DataStorage:getDataDir() .. "/kidlearn_v5_migration_spec.lua"
+        os.remove(path)
+        os.remove(path .. ".old")
+        os.remove(path .. ".pre-v5.bak")
+    end)
+
+    local function write_save(file_path, tbl)
+        local f = assert(io.open(file_path, "wb"))
+        f:write("-- fixture\nreturn " .. dump(tbl) .. "\n")
+        f:close()
+    end
+
+    local function read_bytes(file_path)
+        local f = io.open(file_path, "rb")
+        if not f then return nil end
+        local content = f:read("*a")
+        f:close()
+        return content
+    end
+
+    local function file_exists(file_path)
+        local f = io.open(file_path, "rb")
+        if f then f:close() return true end
+        return false
+    end
+
+    local function v4_fixture()
+        return {
+            schema_version = 4,
+            total = { points = 1234, answered = 200, correct = 150, sessions = 20,
+                perfect_sessions = 3, best_combo = 12, wrong_cleared = 6 },
+            by_subject = { chinese = { answered = 100, correct = 80 }, math = { answered = 100, correct = 70 } },
+            streak = { current = 5, best = 9, last_day = "2026-11-10" },
+            daily = { [os.date("%Y-%m-%d", os.time() - 86400)] = { answered = 12, correct = 10, points = 150, sessions = 2 } },
+            wrong = { w1 = { id = "w1", subject = "math", stem = "1+1=?", answer = 2,
+                added_at = 1, last_seen = 2, wrong_count = 1, mastery = 1 } },
+            badges = {
+                first_session = 1000, correct_20 = 1001, correct_100 = 1002,
+                perfect_session = 1003, streak_3 = 1004, streak_7 = 1005,
+                chinese_50 = 1006, math_50 = 1007, combo_10 = 1008, wrong_clear_5 = 1009,
+                legacy_unknown = 1010,
+            },
+            adaptive = { chinese = { level = 2, attempts = 0, correct = 0 }, math = { level = 2, attempts = 0, correct = 0 } },
+            adaptive_by_grade = {
+                chinese = { ["2"] = { level = 3, attempts = 5, correct = 4 } },
+                math = { ["2"] = { level = 2, attempts = 1, correct = 1 } },
+            },
+            settings = { province = "beijing", grade = 3, semester = "lower",
+                chinese_edition = "tongbian", math_edition = "beishida",
+                daily_goal = 15, retry = false, ai = { profiles = {} } },
+            recent_ids = { "q1", "q2" },
+            knowledge = {
+                math = { cnm_p001 = { status = "mastered", attempts = 4, correct = 4, last_seen = 5 } },
+                chinese = {},
+            },
+        }
+    end
+
+    it("migrates a v4 save without touching any existing data", function()
+        local fixture = v4_fixture()
+        write_save(path, fixture)
+        local original = read_bytes(path)
+        local p = Progress.open(path)
+        assert.are.equal(5, p.data.schema_version)
+        -- every pre-existing value survives byte-for-byte in meaning
+        assert.are.equal(1234, p.data.total.points)
+        assert.are.equal(200, p.data.total.answered)
+        assert.are.equal(150, p.data.total.correct)
+        assert.are.equal(20, p.data.total.sessions)
+        assert.are.equal(3, p.data.total.perfect_sessions)
+        assert.are.equal(12, p.data.total.best_combo)
+        assert.are.equal(6, p.data.total.wrong_cleared)
+        assert.are.equal(80, p.data.by_subject.chinese.correct)
+        assert.are.equal(5, p.data.streak.current)
+        assert.are.equal(9, p.data.streak.best)
+        assert.are.equal("2026-11-10", p.data.streak.last_day)
+        assert.are.equal(12, p.data.daily[os.date("%Y-%m-%d", os.time() - 86400)].answered)
+        assert.are.equal("1+1=?", p.data.wrong.w1.stem)
+        assert.are.equal(1000, p.data.badges.first_session)
+        assert.are.equal(1009, p.data.badges.wrong_clear_5)
+        assert.are.equal(1010, p.data.badges.legacy_unknown)
+        assert.are.equal("beijing", p.data.settings.province)
+        assert.are.equal(3, p.data.settings.grade)
+        assert.are.equal("lower", p.data.settings.semester)
+        assert.are.equal("beishida", p.data.settings.math_edition)
+        assert.are.equal(15, p.data.settings.daily_goal)
+        assert.are.equal(false, p.data.settings.retry)
+        assert.are.equal(3, p.data.adaptive_by_grade.chinese["2"].level)
+        assert.are.equal("mastered", p.data.knowledge.math.cnm_p001.status)
+        assert.are.same({ "q1", "q2" }, p.data.recent_ids)
+        -- new fields arrive as defaults only
+        assert.are.equal(0, p.data.total.challenge_sessions)
+        assert.are.equal(0, p.data.total.challenge_correct)
+        assert.is_table(p.data.cards)
+        assert.is_nil(next(p.data.cards))
+        local daily = p.data.daily[os.date("%Y-%m-%d", os.time() - 86400)]
+        assert.are.equal(0, daily.subjects.math.answered)
+        assert.are.equal(0, daily.challenge.sessions)
+        assert.are.equal(0, daily.kp_answered)
+        assert.is_table(daily.modes)
+        assert.is_table(daily.kp_topics)
+        -- one-time snapshot is byte-identical to the pre-upgrade file
+        assert.are.equal(original, read_bytes(path .. ".pre-v5.bak"))
+        -- evaluating badges never re-locks or rewrites old unlocks
+        Badges.evaluate(p)
+        assert.are.equal(1000, p.data.badges.first_session)
+        assert.are.equal(1010, p.data.badges.legacy_unknown)
+        for _, id in ipairs({ "first_session", "correct_20", "correct_100", "perfect_session",
+            "streak_3", "streak_7", "chinese_50", "math_50", "combo_10", "wrong_clear_5" }) do
+            assert.is_not_nil(p.data.badges[id])
+        end
+    end)
+
+    it("does not snapshot twice or drift on reopen", function()
+        write_save(path, v4_fixture())
+        local p = Progress.open(path)
+        p:flush()
+        local backup = read_bytes(path .. ".pre-v5.bak")
+        local reopened = Progress.open(path)
+        assert.are.equal(5, reopened.data.schema_version)
+        assert.are.equal(backup, read_bytes(path .. ".pre-v5.bak"))
+        assert.are.equal(1234, reopened.data.total.points)
+        assert.are.equal(1010, reopened.data.badges.legacy_unknown)
+        assert.are.equal("beijing", reopened.data.settings.province)
+    end)
+
+    it("skips the snapshot for a fresh install", function()
+        local p = Progress.open(path)
+        assert.is_false(file_exists(path .. ".pre-v5.bak"))
+        p:record_answer({ id = "fresh", subject = "math", answer_mode = "number", answer = 2, stem = "1+1" },
+            { attempt = 1, correct = true })
+        assert.is_true(file_exists(path))
+        assert.is_false(file_exists(path .. ".pre-v5.bak"))
+    end)
+
+    it("snapshots raw bytes when the main file is corrupted but .old is readable", function()
+        write_save(path .. ".old", v4_fixture())
+        local f = assert(io.open(path, "wb"))
+        f:write("corrupted {{{")
+        f:close()
+        local p = Progress.open(path)
+        assert.are.equal(5, p.data.schema_version)
+        assert.are.equal(1234, p.data.total.points)
+        assert.are.equal("corrupted {{{", read_bytes(path .. ".pre-v5.bak"))
+    end)
+
+    it("reset clears cards and challenge counters but keeps settings", function()
+        local p = Progress.open(path)
+        p:add_cards({ Cards.get("r01") }, 1000)
+        p.data.total.challenge_sessions = 4
+        p.data.settings.daily_goal = 15
+        p:reset_progress()
+        assert.is_nil(next(p.data.cards))
+        assert.are.equal(0, p.data.total.challenge_sessions)
+        assert.are.equal(0, p.data.total.challenge_correct)
+        assert.are.equal(15, p.data.settings.daily_goal)
+    end)
+
+    it("records daily subject, challenge and knowledge detail on first try only", function()
+        local p = Progress.open(path)
+        local now = os.time({ year = 2026, month = 11, day = 10, hour = 12 })
+        local cq = { id = "c1", subject = "math", challenge = true, answer_mode = "number", answer = 2, stem = "1+1" }
+        p:record_answer(cq, { attempt = 1, correct = true, mode = "challenge", now = now })
+        p:record_answer(cq, { attempt = 2, correct = true, mode = "challenge", now = now })
+        local daily = p.data.daily["2026-11-10"]
+        assert.are.equal(1, daily.subjects.math.answered)
+        assert.are.equal(1, daily.subjects.math.correct)
+        assert.are.equal(1, daily.challenge.answered)
+        assert.are.equal(1, daily.challenge.correct)
+        assert.are.equal(1, p.data.total.challenge_correct)
+        local kq = { id = "k1", subject = "math", topic = "cnm_p001", answer_mode = "number", answer = 2, stem = "1+1" }
+        p:record_answer(kq, { attempt = 1, correct = true, mode = "kp", now = now })
+        p:record_answer(kq, { attempt = 1, correct = false, mode = "kp", now = now })
+        assert.are.equal(2, daily.kp_answered)
+        assert.are.equal(1, #daily.kp_topics)
+        assert.are.equal("cnm_p001", daily.kp_topics[1].topic)
+    end)
+
+    it("caps the daily knowledge topic list at 20 unique entries", function()
+        local p = Progress.open(path)
+        local now = os.time({ year = 2026, month = 11, day = 10, hour = 12 })
+        for i = 1, 25 do
+            p:record_answer({ id = "t" .. i, subject = "math", topic = "topic_" .. i,
+                answer_mode = "number", answer = 2, stem = "1+1" },
+                { attempt = 1, correct = true, mode = "kp", now = now })
+        end
+        assert.are.equal(20, #p.data.daily["2026-11-10"].kp_topics)
+    end)
+
+    it("counts session modes but never counts review rounds", function()
+        local p = Progress.open(path)
+        local now = os.time({ year = 2026, month = 11, day = 10, hour = 12 })
+        p:record_session({ mode = "challenge", perfect = false }, now)
+        p:record_session({ mode = "daily", perfect = false }, now)
+        p:record_session({ mode = "review", perfect = true }, now)
+        local daily = p.data.daily["2026-11-10"]
+        assert.are.equal(1, daily.modes.challenge)
+        assert.are.equal(1, daily.modes.daily)
+        assert.is_nil(daily.modes.review)
+        assert.are.equal(1, p.data.total.challenge_sessions)
+        assert.are.equal(1, daily.challenge.sessions)
+    end)
+
+    it("stores and reloads the daily report inside the daily entry", function()
+        local p = Progress.open(path)
+        local now = os.time({ year = 2026, month = 11, day = 10, hour = 12 })
+        assert.is_nil(p:daily_report(now))
+        p:save_daily_report({ score = 66, revealed = false, cards = {} }, now)
+        local reopened = Progress.open(path)
+        local report = reopened:daily_report(now)
+        assert.are.equal(66, report.score)
+        assert.is_false(report.revealed)
     end)
 end)

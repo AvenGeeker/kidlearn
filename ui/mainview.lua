@@ -29,11 +29,13 @@ local AIConfig = require("core.ai_config")
 local AIVariant = require("core.ai_variant")
 local Badges = require("core.badges")
 local Bank = require("core.bank")
+local Cards = require("core.cards")
 local Catalog = require("core.catalog")
 local Diagnose = require("core.diagnose")
 local Knowledge = require("core.knowledge")
 local MathGen = require("core.mathgen")
 local Progress = require("core.progress")
+local Report = require("core.report")
 local Session = require("core.session")
 local Widgets = require("ui/widgets")
 
@@ -90,6 +92,7 @@ local BACK_PARENT = {
     wrongbook = "home",
     wrong_detail = "wrongbook",
     badges = "home",
+    daily_report = "home",
     settings = "home",
     ai_settings = "settings",
     ai_service_edit = "ai_settings",
@@ -133,6 +136,7 @@ function MainView:init()
     self.summary = nil
     self.new_badges = {}
     if self.ai_generating == nil then self.ai_generating = false end
+    if self.ai_polishing == nil then self.ai_polishing = false end
 
     if Device:hasKeys() then
         self.key_events.Close = { { Device.input.group.Back } }
@@ -232,6 +236,10 @@ function MainView:onBack()
         local back = self.choice_list_back
         self.choice_list_back = nil
         if back then back() else self:render_settings() end
+        return
+    end
+    if state == "cards" then
+        self:leave_cards()
         return
     end
     local parent = BACK_PARENT[state] or "home"
@@ -571,7 +579,7 @@ function MainView:render_home()
     }
     local tool_row_2 = HorizontalGroup:new{
         align = "center",
-        Widgets.button(string.format("奖章墙（%d/10）", badge_count), {
+        Widgets.button(string.format("奖章墙（%d/%d）", badge_count, #Badges.all()), {
             width = half,
             callback = function() self:render_badges() end,
         }),
@@ -579,6 +587,18 @@ function MainView:render_home()
         Widgets.button("设置", {
             width = half,
             callback = function() self:render_settings() end,
+        }),
+    }
+    local tool_row_3 = HorizontalGroup:new{
+        align = "center",
+        Widgets.button(self.progress:daily_report() and "今日总结 ✓" or "每日总结", {
+            width = half,
+            callback = function() self:open_daily_report() end,
+        }),
+        Widgets.hspace(Size.span.horizontal_default),
+        Widgets.button("集卡册", {
+            width = half,
+            callback = function() self:render_cards() end,
         }),
     }
 
@@ -605,8 +625,19 @@ function MainView:render_home()
         tool_row_1,
         Widgets.vspace(Size.span.vertical_default),
         tool_row_2,
+        Widgets.vspace(Size.span.vertical_default),
+        tool_row_3,
     }
-    self:set_body(content)
+    local available = Screen:getHeight() - self.title_bar:getSize().h - 2 * Size.padding.fullscreen
+    if content:getSize().h > available then
+        self:set_body(ScrollableContainer:new{
+            dimen = Geom:new{ w = cw, h = available },
+            show_parent = self,
+            content,
+        })
+    else
+        self:set_body(content)
+    end
 end
 
 function MainView:render_unit_select(subject)
@@ -1674,16 +1705,30 @@ function MainView:render_ai_preview(group_id)
     self:set_body(body)
 end
 
-function MainView:render_badges()
+function MainView:render_badges(page)
     self.state = "badges"
     self:set_title("奖章墙")
     local cw = Widgets.width()
     local gap = Size.span.horizontal_default
     local card_width = math.floor((cw - gap) / 2)
+    local half = math.floor((cw - gap) / 2)
+    local all = Badges.state(self.progress)
+    local per_page = 10
+    local total_pages = math.max(1, math.ceil(#all / per_page))
+    page = tonumber(page) or self.badge_page or 1
+    if page < 1 then page = 1 elseif page > total_pages then page = total_pages end
+    self.badge_page = page
     local content = VerticalGroup:new{ align = "center" }
-    local state = Badges.state(self.progress)
+    table.insert(content, Widgets.label(string.format("第 %d/%d 页 · 已解锁 %d/%d",
+        page, total_pages, Badges.count(self.progress), #all), {
+        size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    local first = (page - 1) * per_page + 1
+    local last = math.min(first + per_page - 1, #all)
     local row
-    for i, badge in ipairs(state) do
+    for i = first, last do
+        local badge = all[i]
         local symbol = badge.unlocked and "★" or "☆"
         local progress_text = badge.unlocked and "已获得" or string.format("%d/%d", badge.value, badge.target)
         local card = Widgets.card(VerticalGroup:new{
@@ -1693,7 +1738,7 @@ function MainView:render_badges()
             Widgets.textbox(badge.desc, card_width - 4 * Size.padding.default, { size = 14, alignment = "center" }),
             Widgets.label(progress_text, { size = 14, color = Blitbuffer.COLOR_DARK_GRAY }),
         }, { width = card_width, padding = Size.padding.default })
-        if i % 2 == 1 then
+        if (i - first) % 2 == 0 then
             row = HorizontalGroup:new{ align = "center", card }
             table.insert(content, row)
             table.insert(content, Widgets.vspace(gap))
@@ -1702,12 +1747,283 @@ function MainView:render_badges()
             table.insert(row, card)
         end
     end
+    local nav = HorizontalGroup:new{ align = "center" }
+    if page > 1 then
+        table.insert(nav, Widgets.button("上一页", {
+            width = half, size = 20,
+            callback = function() self:render_badges(page - 1) end,
+        }))
+    else
+        table.insert(nav, Widgets.hspace(half))
+    end
+    table.insert(nav, Widgets.hspace(gap))
+    if page < total_pages then
+        table.insert(nav, Widgets.button("下一页", {
+            width = half, size = 20,
+            callback = function() self:render_badges(page + 1) end,
+        }))
+    else
+        table.insert(nav, Widgets.hspace(half))
+    end
+    table.insert(content, nav)
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
     table.insert(content, Widgets.button("回首页", {
         width = cw,
         size = 20,
         callback = function() self:render_home() end,
     }))
-    self:set_body(content)
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+-- ---------------------------------------------------------------------------
+-- Daily report, card draw and card collection
+-- ---------------------------------------------------------------------------
+
+function MainView:report_parts_text(report)
+    local parts = report.parts or {}
+    return string.format("目标 %d/30 · 正确率 %d/30 · 轮次 %d/15 · 挑战 %d/10 · 知识点 %d/5 · 连续 %d/10",
+        parts.goal or 0, parts.accuracy or 0, parts.sessions or 0,
+        parts.challenge or 0, parts.kp or 0, parts.streak or 0)
+end
+
+function MainView:open_daily_report()
+    local report = self.progress:daily_report()
+    if report then
+        self:render_daily_report()
+        return
+    end
+    if self.progress:today().answered < 1 then
+        UIManager:show(InfoMessage:new{
+            text = "今天还没做题哦。先做几道题，再来领取今日总结和卡片奖励吧！",
+            timeout = 4,
+        })
+        return
+    end
+    Report.create(self.progress, { plugin_path = self.plugin_path })
+    local new_badges = Badges.evaluate(self.progress)
+    self:render_daily_report()
+    if #new_badges > 0 then
+        local names = {}
+        for _, badge in ipairs(new_badges) do table.insert(names, badge.name) end
+        UIManager:show(InfoMessage:new{ text = "新奖章：" .. table.concat(names, "、"), timeout = 4 })
+    end
+    if self:ai_ready() then
+        self:polish_daily_report()
+    end
+end
+
+function MainView:render_daily_report()
+    self.state = "daily_report"
+    self:set_title("每日总结")
+    local cw = Widgets.width()
+    local report = self.progress:daily_report()
+    if not report then
+        self:render_home()
+        return
+    end
+    local content = VerticalGroup:new{ align = "center" }
+    table.insert(content, Widgets.card(VerticalGroup:new{
+        align = "center",
+        Widgets.label(os.date("%Y年%m月%d日", report.created_at or os.time()), {
+            size = 16, color = Blitbuffer.COLOR_DARK_GRAY,
+        }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.label(string.format("%d 分", report.score or 0), { size = 40, bold = true }),
+        Widgets.label(Report.grade_label(report.score), { size = 22, bold = true }),
+        Widgets.vspace(Size.span.vertical_default),
+        Widgets.textbox(self:report_parts_text(report), cw - 4 * Size.padding.default, {
+            size = 14, alignment = "center",
+        }),
+    }, { width = cw, padding = Size.padding.large }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    local stats = Report.stats(self.progress, nil, self.plugin_path)
+    table.insert(content, Widgets.textbox(string.format("答题 %d · 答对 %d · 星星 %d · 轮次 %d",
+        stats.answered, stats.correct, stats.points, stats.sessions), cw, { size = 16, alignment = "center" }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.label(report.ai and "AI 总结" or "离线总结", {
+        size = 15, color = Blitbuffer.COLOR_DARK_GRAY,
+    }))
+    table.insert(content, Widgets.textbox(report.summary or "", cw, { size = 18 }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    if not report.revealed then
+        table.insert(content, Widgets.button(string.format("翻开今日卡片（%d 张）", #(report.cards or {})), {
+            width = cw,
+            height = Screen:scaleBySize(64),
+            size = 22,
+            callback = function()
+                report.revealed = true
+                self.progress:save_daily_report(report)
+                self:render_daily_report()
+            end,
+        }))
+    else
+        for index, card in ipairs(report.cards or {}) do
+            local word = (report.card_words or {})[index] or card.desc or ""
+            table.insert(content, Widgets.card(VerticalGroup:new{
+                align = "center",
+                Widgets.label(string.format("【%s】%s", card.tier or "?", card.name or ""), { size = 20, bold = true }),
+                Widgets.textbox(word, cw - 4 * Size.padding.default, { size = 15, alignment = "center" }),
+            }, { width = cw }))
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        end
+    end
+    if not report.ai and self:ai_ready() then
+        table.insert(content, Widgets.button("AI 润色总结", {
+            width = cw, size = 20,
+            callback = function() self:polish_daily_report() end,
+        }))
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    end
+    table.insert(content, Widgets.button("查看集卡册", {
+        width = cw, size = 20,
+        callback = function() self:render_cards(true) end,
+    }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("回首页", {
+        width = cw, size = 20,
+        callback = function() self:render_home() end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+function MainView:show_report_ai_error(message)
+    UIManager:show(ConfirmBox:new{
+        text = "AI 总结失败：" .. tostring(message) .. "\n\n离线总结和卡片不受影响。",
+        ok_text = "重试",
+        cancel_text = "看离线版",
+        ok_callback = function() self:polish_daily_report() end,
+    })
+end
+
+function MainView:polish_daily_report()
+    if self.ai_polishing then
+        UIManager:show(InfoMessage:new{ text = "AI 正在写上一份总结，请稍候。", timeout = 3 })
+        return
+    end
+    local report = self.progress:daily_report()
+    if not report then return end
+    local profile, err = self:ai_ready()
+    if not profile then
+        UIManager:show(InfoMessage:new{
+            text = "AI 还没配置好：" .. tostring(err) .. "\n\n可以先看离线总结，或到设置里配置 AI 服务。",
+            timeout = 5,
+        })
+        return
+    end
+    local stats = Report.stats(self.progress, nil, self.plugin_path)
+    local system, user = Report.build_prompt(stats, report.score, report.cards)
+    NetworkMgr:runWhenOnline(function()
+        if self.ai_polishing then return end
+        self.ai_polishing = true
+        local loading = InfoMessage:new{
+            text = "AI 正在写今日总结，请稍候…\n通常需要 10–60 秒，请不要退出。",
+        }
+        UIManager:show(loading)
+        UIManager:forceRePaint()
+        local function finish(text, request_err)
+            UIManager:close(loading)
+            self.ai_polishing = false
+            if self.closed then return end
+            if request_err then
+                self:show_report_ai_error(request_err)
+                return
+            end
+            local parsed, parse_err = Report.parse(text, #(report.cards or {}))
+            if not parsed then
+                self:show_report_ai_error(parse_err)
+                return
+            end
+            report.summary = parsed.summary
+            report.card_words = parsed.card_words
+            report.ai = true
+            self.progress:save_daily_report(report)
+            if self.state == "daily_report" then
+                self:render_daily_report()
+            end
+        end
+        AIClient.generate(profile, system, user, {
+            transport = self.ai_transport,
+            callback = finish,
+        })
+    end)
+end
+
+function MainView:render_cards(from_report)
+    self.state = "cards"
+    self.cards_back = from_report and "daily_report" or "home"
+    self:set_title("集卡册")
+    local cw = Widgets.width()
+    local gap = Size.span.horizontal_default
+    local card_width = math.floor((cw - gap) / 2)
+    local state, owned = Cards.collection_state(self.progress)
+    local content = VerticalGroup:new{ align = "center" }
+    table.insert(content, Widgets.label(string.format("已收集 %d/%d", owned, #state), { size = 18, bold = true }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    for _, tier in ipairs({ "SSS", "SS", "S", "RR", "R" }) do
+        local group = {}
+        for _, card in ipairs(state) do
+            if card.tier == tier then table.insert(group, card) end
+        end
+        if #group > 0 then
+            local owned_in_tier = 0
+            for _, card in ipairs(group) do
+                if card.owned then owned_in_tier = owned_in_tier + 1 end
+            end
+            table.insert(content, Widgets.label(string.format("%s 级（%d/%d）", tier, owned_in_tier, #group), {
+                size = 17, bold = true,
+            }))
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+            local row
+            for i, card in ipairs(group) do
+                local cell = Widgets.card(VerticalGroup:new{
+                    align = "center",
+                    Widgets.label(card.owned and card.name or "？？？", { size = 17, bold = card.owned }),
+                    Widgets.label(card.owned and string.format("×%d", card.count) or "未收集", {
+                        size = 13, color = Blitbuffer.COLOR_DARK_GRAY,
+                    }),
+                }, { width = card_width, padding = Size.padding.default })
+                if i % 2 == 1 then
+                    row = HorizontalGroup:new{ align = "center", cell }
+                    table.insert(content, row)
+                    table.insert(content, Widgets.vspace(gap))
+                else
+                    table.insert(row, Widgets.hspace(gap))
+                    table.insert(row, cell)
+                end
+            end
+            table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        end
+    end
+    table.insert(content, Widgets.button("返回", {
+        width = cw, size = 20,
+        callback = function() self:leave_cards() end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+function MainView:leave_cards()
+    local back = self.cards_back
+    self.cards_back = nil
+    if back == "daily_report" then
+        self:render_daily_report()
+    else
+        self:render_home()
+    end
 end
 
 function MainView:cycle_goal()
@@ -1921,7 +2237,7 @@ function MainView:render_settings()
                 tonumber(settings.grade) or 2, settings.semester, settings.chinese_edition)
             UIManager:show(InfoMessage:new{
                 text = string.format(
-                    "小小学习家 v1.2\n%s · %s · %s\n\n语文题库：%d 题\n数学题库：程序生成，无限题\n\n学习记录和 AI 题库只保存在本机；只有你主动使用 AI 出题时，所选错题会发送给对应服务商。",
+                    "小小学习家 v1.3\n%s · %s · %s\n\n语文题库：%d 题\n数学题库：程序生成，无限题\n\n学习记录和 AI 题库只保存在本机；只有你主动使用 AI 出题时，所选错题会发送给对应服务商。",
                     self:grade_label(), self:semester_label(), self:edition_name("math"),
                     chinese and #chinese.questions or 0
                 ),
