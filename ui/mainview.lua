@@ -455,7 +455,7 @@ function MainView:generate_ai(items, per_item)
         if self.ai_generating then return end
         self.ai_generating = true
         local loading = InfoMessage:new{
-            text = "AI 正在出变种题，请稍候…\n通常需要 10–60 秒，请不要退出。",
+            text = "AI 正在出变种题，请稍候…\n通常需要 10–120 秒，请不要退出。",
         }
         UIManager:show(loading)
         UIManager:forceRePaint()

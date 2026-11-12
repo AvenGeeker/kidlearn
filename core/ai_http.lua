@@ -16,12 +16,18 @@ local UIManager = require("ui/uimanager")
 local AIHTTP = {}
 
 local CONNECT_TIMEOUT = 20
-local TOTAL_TIMEOUT = 90
+-- Non-streaming LLM APIs stay silent while the model generates the answer,
+-- and a batch of wrong-question variants can take well over a minute.
+-- LuaSec reports an expired socket wait as "wantread"/"wantwrite" (see
+-- socketutil), so the blocking path must allow a long wait for response
+-- data; the old 20s block timeout aborted batch generation with "wantread".
+local BLOCK_TIMEOUT = 120
+local TOTAL_TIMEOUT = 180
 
 local function sync_request(request)
     local client = request.url:match("^https://") and https or http
     local chunks = {}
-    socketutil:set_timeout(CONNECT_TIMEOUT, TOTAL_TIMEOUT)
+    socketutil:set_timeout(BLOCK_TIMEOUT, TOTAL_TIMEOUT)
     local ok, one, code, _headers, status = pcall(client.request, {
         url = request.url,
         method = "POST",
@@ -38,12 +44,15 @@ end
 
 local function can_use_turbo()
     if not UIManager.initLooper then return false end
+    UIManager:initLooper()
+    -- initLooper is a no-op unless the device enables DUSE_TURBO_LIB
+    -- (off by default on Kindle); without a looper async cannot run.
+    if not UIManager.looper then return false end
     local ok = pcall(require, "turbo")
     return ok
 end
 
 local function async_request(request, callback)
-    UIManager:initLooper()
     local finished = false
     local watchdog
     local function finish(status, body, err)
@@ -57,8 +66,6 @@ local function async_request(request, callback)
         UIManager:resetInputTimeout()
         callback(status, body, err)
     end
-    watchdog = function() finish(nil, nil, "请求超时") end
-    UIManager:scheduleIn(TOTAL_TIMEOUT + 10, watchdog)
     UIManager.looper:add_callback(function()
         UIManager:setInputTimeout()
         local turbo = require("turbo")
@@ -92,6 +99,10 @@ local function async_request(request, callback)
             finish(res.code, res.body, nil)
         end
     end)
+    -- Schedule the watchdog only after the looper accepted the request, so
+    -- a failed setup cannot leave a stray timer firing a second callback.
+    watchdog = function() finish(nil, nil, "请求超时") end
+    UIManager:scheduleIn(TOTAL_TIMEOUT + 10, watchdog)
 end
 
 --- Send a POST request.

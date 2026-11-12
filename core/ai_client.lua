@@ -162,7 +162,10 @@ function AIClient.parse_response(profile, status, body, transport_error)
     if transport_error and #tostring(transport_error) > 0 then
         local detail = clean_error(transport_error)
         local lower = detail:lower()
-        if lower:find("timeout", 1, true) then
+        -- LuaSec reports an expired socket wait as "wantread"/"wantwrite".
+        if lower:find("timeout", 1, true)
+            or lower:find("wantread", 1, true)
+            or lower:find("wantwrite", 1, true) then
             return nil, "请求超时，请稍后重试"
         end
         if lower:find("connect", 1, true) or lower:find("network", 1, true) then

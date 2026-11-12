@@ -247,6 +247,64 @@ describe("KidLearn AI", function()
         assert.is_truthy(err:find("超时", 1, true))
     end)
 
+    it("maps LuaSec socket wait timeouts to a friendly retry message", function()
+        local _, item = profile("deepseek")
+        -- LuaSec reports an expired socket wait as "wantread"/"wantwrite";
+        -- slow batch generation used to surface that raw code to the user.
+        for _, code in ipairs({ "wantread", "wantwrite" }) do
+            local result, err = AIClient.parse_response(item, nil, nil, code)
+            assert.is_nil(result)
+            assert.is_truthy(err:find("超时", 1, true))
+        end
+    end)
+
+    it("gives the blocking transport enough time for batch generation", function()
+        local AIHTTP = require("core.ai_http")
+        local socketutil = require("socketutil")
+        local original = socketutil.set_timeout
+        local captured
+        socketutil.set_timeout = function(self, block, total)
+            captured = { block, total }
+            return original(self, block, total)
+        end
+        -- Loopback only: port 1 refuses immediately, no external network.
+        local ok, status, body, err = pcall(AIHTTP.request, {
+            url = "http://127.0.0.1:1/",
+            headers = {},
+            body = "{}",
+        })
+        socketutil.set_timeout = original
+        assert.is_true(ok)
+        assert.is_nil(status)
+        assert.is_nil(body)
+        assert.is_truthy(err)
+        assert.is_not_nil(captured)
+        -- The old 20s block timeout aborted slow batch answers with "wantread".
+        assert.is_true(captured[1] >= 60)
+        assert.is_true(captured[2] >= captured[1])
+    end)
+
+    it("falls back cleanly when no turbo looper is available", function()
+        local AIHTTP = require("core.ai_http")
+        local UIManager = require("ui/uimanager")
+        -- Kindle defaults keep DUSE_TURBO_LIB off, so no looper exists.
+        assert.is_nil(UIManager.looper)
+        local scheduled = #UIManager._task_queue
+        local calls, got_err = 0, nil
+        AIHTTP.request({
+            url = "http://127.0.0.1:1/",
+            headers = {},
+            body = "{}",
+        }, function(_status, _body, err)
+            calls = calls + 1
+            got_err = err
+        end)
+        assert.are.equal(1, calls)
+        assert.is_truthy(got_err)
+        -- A failed async setup must not leave a stray watchdog behind.
+        assert.are.equal(scheduled, #UIManager._task_queue)
+    end)
+
     it("supports callback transports without blocking tests", function()
         local _, item = profile("deepseek")
         local captured
