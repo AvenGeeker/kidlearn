@@ -4,7 +4,7 @@
 > **作用域**：本仓库根目录（KidLearn 插件本体）、`tools/kidlearn/`、`spec/unit/kidlearn_*.lua`。
 > KOReader 上游核心代码不属于本项目范围，除非任务明确要求，否则不要改。
 
-**只读一段的话：** 这是一个 Lua（LuaJIT / Lua 5.1）写的 KOReader 插件；题库 JSON 是脚本生成的，不要手改；改完必须跑 `tools/kidlearn/test_plugin.sh`；默认离线，只有 AI 子系统在用户配置后可联网；不要新增依赖；改用户可见行为时同步更新 `README.md`。
+**只读一段的话：** 这是一个 Lua（LuaJIT / Lua 5.1）写的 KOReader 插件；题库 JSON 是脚本生成的，不要手改；改完必须跑 `tools/kidlearn/test_plugin.sh`；默认离线，只有 AI 子系统与用户显式触发的在线更新器可联网；不要新增依赖；改用户可见行为时同步更新 `README.md`。
 
 ---
 
@@ -34,7 +34,7 @@
 | 形态 | KOReader 插件，目录必须以 `.koplugin` 结尾 |
 | 运行环境 | KOReader 的 LuaJIT（Lua 5.1 语义），Kindle 等墨水屏设备 |
 | 用户 | 小学 1–6 年级孩子 + 家长；界面为简体中文 |
-| 网络 | **默认离线**；只有可选的 AI 出题会联网，没有账号、同步、统计上报 |
+| 网络 | **默认离线**；只有可选的 AI 出题与用户显式触发的在线更新器会联网，没有账号、同步、统计上报 |
 | 入口 | `main.lua` → 主菜单「更多工具 → 小小学习家」；Dispatcher 动作 `kidlearn_open` / 事件 `KidLearnOpen` |
 | 核心依赖 | 仅 KOReader 自带模块（`ui/widget/*`、`luasettings`、`datastorage`、`dispatcher`、`json`、`logger`、`gettext`；AI 另用 `socket.http`/`ssl.https`/`turbo`） |
 | 存档 | `koreader/settings/kidlearn.lua`（`LuaSettings`） |
@@ -46,7 +46,7 @@
 
 1. **墨水屏优先**：不引入动画、不做逐帧刷新、避免每一题新建窗口；所有页面在同一个 `MainView` 里换 body。
 2. **零依赖**：不新增 LuaRocks / C 模块 / 外部二进制；能用 KOReader 自带模块就用自带的。
-3. **默认离线**：除 `core/ai_*` 的 AI 出题外，任何路径都不得发起网络请求；AI 必须由用户显式配置和触发，不做后台调用。
+3. **默认离线**：除 `core/ai_*` 的 AI 出题与 `core/update.lua` 的在线更新器外，任何路径都不得发起网络请求；两者都必须由用户显式配置/触发，不做后台调用（更新器默认手动检查）。
 4. **儿童内容**：题目和文案要适合对应年级，不能出现超纲、歧义、负面或吓唬孩子的内容。
 5. **存档兼容**：老版本 `kidlearn.lua` 必须能平滑升级，不能因为加字段导致孩子丢星星。
 
@@ -100,6 +100,7 @@ core/ai_http.lua         LuaSocket/LuaSec + Turbo 的 HTTPS POST
 core/ai_client.lua       OpenAI / Anthropic / Gemini 请求与响应
 core/ai_variant.lua      变种提示词、严格 JSON 校验、题目标准化
 core/ai_bank.lua         独立 AI 变种题库（kidlearn_ai_bank.json）
+core/update.lua          GitHub Release 在线自更新（可选联网，历史数据零影响）
 data/catalog.json        省份/年级/教材/单元目录（生成产物，勿手改）
 data/chinese/tongbian/   1–6 年级语文题库（生成产物，勿手改）
 data/knowledge/          课标知识点分册题库 + 先修图谱（sync_taxonomy.py 生成，勿手改）
@@ -156,6 +157,7 @@ submit_answer(value)
 | 改存档字段 | `core/progress.lua`（`SCHEMA_VERSION` + `normalize`） | 迁移逻辑、README 字段表、`kidlearn_progress_spec` |
 | 改错题规则 | `core/progress.lua`（`record_wrong` / `record_mastery` / `trim_wrong`） | README 错题本说明、测试 |
 | 改 AI 出题 | `core/ai_config.lua` / `ai_client.lua` / `ai_variant.lua` / `ai_bank.lua`、`ui/mainview.lua` | `kidlearn_ai_spec`、`kidlearn_ui_spec`、README AI 说明 |
+| 改在线更新 | `core/update.lua`、`ui/mainview.lua` | `kidlearn_update_spec`、`kidlearn_ui_spec`、README 在线更新说明 |
 | 同步知识点题库/图谱 | `tools/kidlearn/sync_taxonomy.py` → `data/knowledge/` | `validate_knowledge.py`、`sync_taxonomy.py --check`、`kidlearn_knowledge_spec`、README 统计 |
 | 改知识点加载/判分 | `core/knowledge.lua` | `kidlearn_knowledge_spec`、`kidlearn_session_spec` |
 | 改诊断规则 | `core/diagnose.lua` | `kidlearn_diagnose_spec`、README 诊断说明 |
@@ -222,7 +224,7 @@ submit_answer(value)
 
 ## 7. 测试要求
 
-改动以下任一文件后，**必须**跑完整插件测试（10 个 spec 全绿）：
+改动以下任一文件后，**必须**跑完整插件测试（11 个 spec 全绿）：
 
 ```bash
 tools/kidlearn/test_plugin.sh
@@ -235,6 +237,7 @@ tools/kidlearn/test_plugin.sh
 | `core/bank.lua` / 题库格式 | `kidlearn_bank_spec.lua` |
 | `core/mathgen.lua` | `kidlearn_mathgen_spec.lua` |
 | `core/ai_*.lua` | `kidlearn_ai_spec.lua` |
+| `core/update.lua` | `kidlearn_update_spec.lua` |
 | `core/knowledge.lua` / `data/knowledge/` | `kidlearn_knowledge_spec.lua` |
 | `core/diagnose.lua` | `kidlearn_diagnose_spec.lua` |
 | `core/cards.lua` / `core/report.lua` | `kidlearn_cards_spec.lua` |
@@ -266,7 +269,7 @@ tools/kidlearn/test_plugin.sh
 
 - [ ] 行为符合任务描述，没有夹带无关重构。
 - [ ] 语法/风格符合 Lua 5.1 与现有代码。
-- [ ] 10 个插件测试全绿（贴出结果）。
+- [ ] 11 个插件测试全绿（贴出结果）。
 - [ ] `validate_bank.py --all` 通过（如果动了题库）。
 - [ ] `validate_catalog.py` 通过（如果动了目录/教材/知识点）。
 - [ ] 用户可见行为变化已同步到 `README.md`。
@@ -282,7 +285,7 @@ tools/kidlearn/test_plugin.sh
 
 - 不要修改 KOReader 上游核心代码来“方便”插件；优先用插件 API。
 - 不要手改 `data/catalog.json` 和 `data/chinese/tongbian/*.json`（会被重新生成覆盖）。
-- 除 AI 出题子系统外，不要引入网络请求、账号、云同步、埋点。
+- 除 AI 出题与用户显式触发的在线更新器外，不要引入网络请求、账号、云同步、埋点。
 - 不要引入新的 Lua 依赖、C 扩展、字体包或二进制资源。
 - 不要提交 `install/` 下的打包产物、截图、抽查清单（已被 gitignore）。
 - 不要用中文写死新的调试日志后留在代码里；提交前清理 `print` / 临时开关。
@@ -293,7 +296,7 @@ tools/kidlearn/test_plugin.sh
 - 改变计分规则、奖章数量、每轮题量等孩子可感知的产品规则。
 - 改变存档结构中的既有字段含义。
 - 增加英语等新科目；改动六三/五四学制模型。
-- AI 子系统之外任何需要联网的功能。
+- AI 与在线更新器之外任何需要联网的功能。
 
 ---
 
@@ -323,6 +326,10 @@ tools/kidlearn/test_plugin.sh
 22. **抽卡先落盘再联网**：`Report.create` 先本地评分、抽卡并写入离线版报告，之后才可选请求 AI 润色；AI 失败只影响文案，不影响分数与卡片。同日重进不重抽。
 23. **挑战计数不追溯**：`total.challenge_sessions/challenge_correct` 从 v5 起累积，旧存档没有挑战历史；SSS 权重 = 已解锁挑战奖章数 × (1 + ⌊score/50⌋)，无挑战奖章时 SSS 不进卡池。
 24. **奖章墙翻页**：每页 10 枚共 5 页，`render_badges(page)` 会钳制页码；首页按钮文案是动态 `x/50`，新增奖章不用改 UI。
+25. **更新器是第二个联网子系统**：`core/update.lua` 默认手动检查；自动检查开关默认关，且仅在已联网时静默运行，不后台轮询、不埋点。改触发策略要同步 README 与 `kidlearn_update_spec`。
+26. **升级必须重启**：Lua 模块缓存在 `package.loaded`，替换插件目录后需 `UIManager:restartKOReader()`（quit 85）才生效，不做热重载。
+27. **更新器数据隔离**：用户数据全在 settings 目录（插件目录之外）；`core/update.lua` 写集合仅限插件目录 + `.kidlearn_update`/`.kidlearn_backup` 两个临时目录，绝不引用 `getSettingsDir`。解压用 `extractToMemory` + 自写文件（libarchive 磁盘写入会丢读权限），路径经 `sanitize_entry_path` 净化；失败回滚。`kidlearn_update_spec` 逐字节验证数据不变。
+28. **开发版/符号链接安装拒绝自更新**：`test_plugin.sh` 链接的安装会被 `lfs.symlinkattributes` 识别并拒绝。Release 附件必须名 `kidlearn.koplugin.zip`、顶层 `kidlearn.koplugin/`；国内直连 GitHub 可能不稳定，失败可重试。
 
 ---
 
@@ -331,7 +338,7 @@ tools/kidlearn/test_plugin.sh
 > 遇到以下需求，先与维护者确认，不要自行决定。
 
 - 是否需要支持英语等其它科目，或五四学制？
-- 是否要做多设备同步或家长端报告？（除可选 AI 外仍为单机离线）
+- 是否要做多设备同步或家长端报告？（除可选 AI 与在线更新器外仍为单机离线）
 - 拓展挑战是否要改成“每轮随机抽取 10 类”（会改变现有测试与体验）？
 - 是否需要把 UI 文案完整国际化（gettext）？
 - 是否需要为 Kindle 以外的设备（Kobo、Android）做适配与截图？
@@ -349,3 +356,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-10 | 支持 `kidlearn_ai_config.json` 自动导入 API 地址/Key/模型 | 家长可把配置推到 Kindle，免手填 |
 | 2026-11-11 | 同步 cn-math-taxonomy 小学数学/语文知识图谱与题库；新增知识点学习、练习、自适应诊断；存档 v4 增加知识点掌握度 | 按课标知识点先学后练，答错沿先修边找薄弱根因 |
 | 2026-11-12 | 新增每日 AI 总结与抽卡（38 张卡池、本地评分、SSS 挑战加成、离线兜底）、奖章墙扩至 50 枚并翻页、拓展挑战轮次/答对双线计数；存档 v5 纯增量迁移 + 升级前一次性快照 | 孩子收集了很多星星，需要更多玩法与更长线的荣誉目标，且升级不能丢已有荣誉 |
+| 2026-11-13 | 新增 GitHub Release 在线自更新（`core/update.lua`）：设置里手动检查/升级，可选启动自动检查（默认关）；设备端 libarchive 解压、原子替换+回滚、重启生效；历史数据零影响；存档新增 `update_auto_check`/`update_api_url` 设置项 | 免去每次 USB 推送插件，升级不丢学习记录 |

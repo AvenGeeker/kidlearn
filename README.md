@@ -104,6 +104,7 @@
 - [预览](#预览)
 - [功能](#功能)
 - [安装](#安装)
+- [在线更新](#在线更新可选联网)
 - [使用](#使用)
 - [出题与练习规则](#出题与练习规则)
 - [知识点学习（课标知识图谱）](#知识点学习课标知识图谱)
@@ -169,6 +170,8 @@
 
 覆盖 `kidlearn.koplugin` 文件夹不会影响学习记录：记录在 `koreader/settings/kidlearn.lua`；使用过 AI 出题时，变种题库在 `koreader/settings/kidlearn_ai_bank.json`。
 
+不想每次用 USB 拷贝？插件内置了[在线更新](#在线更新可选联网)，可在「设置 → 检查更新」里直接从 GitHub Release 升级，学习记录同样不受影响。
+
 ### 绑定快捷键（可选）
 
 插件注册了 Dispatcher 动作：
@@ -177,6 +180,37 @@
 - 事件：`KidLearnOpen`
 
 可以在 KOReader 的「手势管理 / 快捷键」里绑定它，一键打开。
+
+---
+
+## 在线更新（可选联网）
+
+插件内置了从 GitHub Release 自更新的能力，省去每次用 USB 把文件夹拷到 Kindle 的麻烦。这是继 AI 出题之后第二个**可选联网**功能：**默认手动触发，不后台轮询、不收集任何数据**。
+
+### 怎么用
+
+1. 打开「设置」，可以看到「当前版本：vX.Y.Z」。
+2. 点「检查更新」：插件请求 GitHub 最新 Release 并比对版本号。已是最新会提示「已是最新版本」；有新版本则弹确认框，点「升级」后自动下载 `kidlearn.koplugin.zip`、在设备上解压并替换插件程序。
+3. 升级完成后提示重启 KOReader 生效（Lua 模块有缓存，必须重启）。点「重启」即可；选「稍后」则下次启动生效。
+
+也可以在设置里打开「启动时自动检查更新」（**默认关闭**）。打开后，每次进入插件且设备已联网时静默检查一次，只有发现新版本才弹确认框；离线时不打扰、不会主动要求开 WiFi。
+
+### 历史数据零影响（重要）
+
+**升级只替换插件程序，绝不动你的学习记录。** 星星、连续打卡、每日统计、错题本、自适应等级、知识点掌握度、奖章和设置都在 `koreader/settings/kidlearn.lua`，AI 变种题库在 `koreader/settings/kidlearn_ai_bank.json`——这些都在插件目录**之外**。更新器的写入范围严格限定在插件目录和两个临时目录，从不读写 settings；升级失败会自动回滚到旧版本。无论成功、失败还是回滚，学习记录都逐字节不变（有专门的单元测试验证）。
+
+### 发布约定（给维护者）
+
+- 版本号唯一来源是 `_meta.lua` 的 `version`（如 `1.3.2`）。
+- 在 GitHub 发 Release：tag 用 `vX.Y.Z`，附件名严格为 `kidlearn.koplugin.zip`（用 `tools/kidlearn/package_plugin.sh` 生成，包内顶层是 `kidlearn.koplugin/`）。
+- 插件用 `https://api.github.com/repos/AvenGeeker/kidlearn/releases/latest` 检查，只认稳定版（不含 draft/prerelease）。
+- 想验证更新流程：发一个比当前更高的 tag（如当前 1.3.2，发 v1.3.3）。
+
+### 注意
+
+- **开发版安装会被拒绝**：用 `test_plugin.sh` 链接进 KOReader 的符号链接安装属于开发版，更新器会提示手动更新，避免覆盖你的工作区。
+- **网络**：直连 GitHub。国内访问可能较慢或不稳定，失败可重试；可在存档 `settings.update_api_url` 自定义检查接口地址（附件下载地址取自该接口返回，镜像需相应重写）。
+- 首次使用前仓库需至少有一个已发布的 Release。
 
 ---
 
@@ -322,7 +356,7 @@ python3 tools/kidlearn/sync_taxonomy.py --check
 | 集卡 | 稀有卡新手（首张 S 及以上）、集卡小行家（15 种）、传说收藏家（首张 SSS） |
 
 拓展挑战的两条线（轮次 + 答对）共 10 枚奖章，同时决定抽卡时 SSS 级的出现概率（见下节）。
-挑战计数从 v1.4 起累积，不追溯旧版本的历史轮次。
+挑战计数从 v1.3.2 起累积，不追溯旧版本的历史轮次。
 
 ### 错题本
 
@@ -651,7 +685,7 @@ KIDLEARN_AUTOSTART=1 ./kodev run -b -W 600 -H 800 -D 167
 测试源码在本仓库 `spec/unit/kidlearn_*.lua`。`test_plugin.sh` 会临时把本仓库和测试链接进 KOReader，再通过 `front` 套件运行：
 
 ```bash
-# 跑全部 10 个插件测试
+# 跑全部 11 个插件测试
 tools/kidlearn/test_plugin.sh
 
 # 只跑一个
@@ -673,6 +707,7 @@ KODEV_REUSE_BUILD=1 tools/kidlearn/test_plugin.sh kidlearn_session
 | `kidlearn_knowledge` | 知识点分册/图谱加载、3–4 选项与分数判分、排除规则、缓存 |
 | `kidlearn_diagnose` | 掌握/不稳/薄弱判定、先修回溯顺序、祖先推断、题量与深度上限、可复现性 |
 | `kidlearn_cards` | 卡池完整性、评分公式、等级权重与 SSS 加成、抽卡上限、报告 JSON 校验、离线兜底、卡片收藏与挑战奖章 |
+| `kidlearn_update` | 版本比较、Release 解析、路径净化、检查更新；升级成功/失败/回滚/开发版拒绝下用户数据逐字节不变 |
 
 ### 打包
 
@@ -682,6 +717,8 @@ tools/kidlearn/package_plugin.sh
 ```
 
 `install/` 被 `.gitignore` 忽略，打包产物和导出的抽查清单都不会进入仓库。
+
+发 GitHub Release 时：tag 用 `vX.Y.Z`（与 `_meta.lua` 的 `version` 对应），把 `kidlearn.koplugin.zip` 作为同名附件上传，插件的[在线更新](#在线更新可选联网)即可识别。
 
 ### 截图
 
@@ -698,7 +735,7 @@ tools/kidlearn/take_screenshots.sh
 
 ```text
 .
-├── _meta.lua              # 插件名与描述（KOReader 插件元信息）
+├── _meta.lua              # 插件名、描述与版本号（version 为更新比对唯一来源）
 ├── main.lua               # 入口：菜单注册、Dispatcher 动作、开发环境自动打开
 ├── core/
 │   ├── catalog.lua        # 省份/年级/教材/单元目录读取
@@ -715,7 +752,8 @@ tools/kidlearn/take_screenshots.sh
 │   ├── ai_http.lua        # LuaSocket/LuaSec + Turbo 的 HTTPS POST 传输
 │   ├── ai_client.lua      # OpenAI / Anthropic / Gemini 请求与响应
 │   ├── ai_variant.lua     # 变种提示词、严格 JSON 校验、题目标准化
-│   └── ai_bank.lua        # 独立 AI 变种题库 JSON 存储
+│   ├── ai_bank.lua        # 独立 AI 变种题库 JSON 存储
+│   └── update.lua         # GitHub Release 在线自更新（可选联网，历史数据零影响）
 ├── ui/
 │   ├── mainview.lua       # 单窗口状态机：首页/选单元/答题/反馈/总结/错题/AI/奖章/每日总结/集卡册/设置
 │   └── widgets.lua        # 按钮、卡片、标签、进度条等墨水屏小组件

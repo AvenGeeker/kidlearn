@@ -209,6 +209,10 @@ function Progress:normalize()
         settings.math_edition = "renjiao"
     end
     settings.ai = AIConfig.normalize(settings.ai)
+    -- Online updater preferences (additive; old saves get defaults). The
+    -- updater never writes user data; these only control check behaviour.
+    if settings.update_auto_check == nil then settings.update_auto_check = false end
+    if type(settings.update_api_url) ~= "string" then settings.update_api_url = "" end
 
     local adaptive_by_grade = ensure_table(d, "adaptive_by_grade")
     for _, subject in ipairs(SUBJECTS) do
