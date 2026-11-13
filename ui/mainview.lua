@@ -39,6 +39,7 @@ local Progress = require("core.progress")
 local Report = require("core.report")
 local Session = require("core.session")
 local Update = require("core.update")
+local UpdateDialog = require("ui/update_dialog")
 local Widgets = require("ui/widgets")
 
 local Screen = Device.screen
@@ -2312,18 +2313,33 @@ function MainView:install_update(release)
     NetworkMgr:runWhenOnline(function()
         if self.closed then return end
         self.update_busy = true
-        local loading = InfoMessage:new{ text = "正在下载并安装更新，请稍候…\n请不要退出。" }
-        UIManager:show(loading)
-        UIManager:forceRePaint()
-        Update.download_and_install({
+        -- Progress dialog with a cancel button. The download runs in short
+        -- non-blocking ticks with no timeout: however slow the network is,
+        -- the user stays in control and can cancel at any time.
+        local dialog = UpdateDialog:new{
+            total = release.asset_size or 0,
+        }
+        UIManager:show(dialog)
+        local handle
+        handle = Update.download_and_install({
             plugin_path = self.plugin_path,
             asset_url = release.asset_url,
             expect_version = release.version,
+            on_progress = function(received, total)
+                dialog:update_progress(received, total)
+            end,
+            on_install = function()
+                dialog:set_installing()
+            end,
         }, function(ok, err)
-            UIManager:close(loading)
+            dialog:dismiss()
             self.update_busy = false
             if self.closed then return end
             if not ok then
+                if err == Update.CANCELLED then
+                    UIManager:show(InfoMessage:new{ text = "已取消更新。", timeout = 3 })
+                    return
+                end
                 UIManager:show(InfoMessage:new{
                     text = "升级失败：" .. tostring(err) .. "\n\n你的学习记录不受影响。",
                     timeout = 8,
@@ -2343,6 +2359,9 @@ function MainView:install_update(release)
                 end,
             })
         end)
+        dialog.cancel_callback = function()
+            if handle then handle.cancel() end
+        end
     end)
 end
 

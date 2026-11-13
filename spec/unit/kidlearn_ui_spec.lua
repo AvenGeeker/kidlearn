@@ -581,4 +581,34 @@ describe("KidLearn title-bar back navigation", function()
         view:render_kp_learn("math", "cnm_p001")
         view:paintTo(Device.screen.bb, 0, 0)
     end)
+
+    it("shows update download progress and wires the cancel button", function()
+        local UIManager = require("ui/uimanager")
+        local UpdateDialog = require("ui/update_dialog")
+        local cancelled = 0
+        local dialog = UpdateDialog:new{
+            total = 2048,
+            cancel_callback = function() cancelled = cancelled + 1 end,
+        }
+        UIManager:show(dialog)
+        dialog:update_progress(0, 2048)
+        dialog:update_progress(1024, 2048)
+        dialog:update_progress(2048, 2048)
+        dialog:paintTo(Device.screen.bb, 0, 0)
+        dialog:set_installing()
+        dialog:paintTo(Device.screen.bb, 0, 0)
+        dialog:dismiss()
+        assert.are.equal(0, cancelled) -- completing never cancels
+
+        -- Unknown total (chunked): bytes-only status, cancel still works.
+        local dialog2 = UpdateDialog:new{
+            total = 0,
+            cancel_callback = function() cancelled = cancelled + 1 end,
+        }
+        UIManager:show(dialog2)
+        dialog2:update_progress(4096, 0)
+        dialog2.cancel_button.callback() -- simulate tapping "取消下载"
+        assert.are.equal(1, cancelled)
+        dialog2:dismiss()
+    end)
 end)

@@ -14,8 +14,11 @@ any data file for writing, so replacing the plugin folder cannot touch learning
 history. spec/unit/kidlearn_update_spec.lua proves this byte-for-byte.
 
 Only modules already bundled with KOReader are used: ssl.https / socket.http /
-ltn12 / socketutil (transport), json (release parsing), ffi/archiver (libarchive
-unzip, also used by the on-device dictionary), util / ffi/util (file ops).
+ltn12 / socketutil (release check transport), json (release parsing),
+ffi/archiver (libarchive unzip, also used by the on-device dictionary),
+util / ffi/util (file ops). The release zip itself downloads through
+core/update_http.lua: incremental non-blocking ticks with a progress bar,
+no timeout, and user cancellation.
 --]]--
 
 local ffiutil = require("ffi/util")
@@ -25,7 +28,12 @@ local logger = require("logger")
 local socketutil = require("socketutil")
 local util = require("util")
 
+local UpdateHttp = require("core.update_http")
+
 local Update = {}
+
+--- Sentinel error string reported when the user cancels a download.
+Update.CANCELLED = UpdateHttp.CANCELLED
 
 local DEFAULT_API_URL = "https://api.github.com/repos/AvenGeeker/kidlearn/releases/latest"
 local ASSET_NAME = "kidlearn.koplugin.zip"
@@ -235,35 +243,45 @@ function Update.check(opts, callback)
 end
 
 -- ---------------------------------------------------------------------------
--- Download + install. Synchronous; callback(ok, err, info). Every write is
+-- Download + install. The download runs incrementally in short non-blocking
+-- ticks (core/update_http.lua): real byte progress, NO timeout (a slow or
+-- stalled network just waits), and the user can cancel at any time through
+-- the returned handle. The install phase is fast local I/O. Every write is
 -- confined to the plugin dir and the two named temp dirs; the settings dir is
--- never touched. opts: { plugin_path, asset_url, expect_version?, transport? }.
+-- never touched.
+-- opts: { plugin_path, asset_url, expect_version?,
+--         on_progress?(received, total), on_install?(),
+--         transport? (legacy synchronous override, used by unit tests),
+--         schedule?/unschedule?/tcp?/ssl_wrap? (test injection) }.
+-- callback(ok, err, info); err == Update.CANCELLED when the user cancels.
+-- Returns a handle { cancel() }.
 -- ---------------------------------------------------------------------------
+
+local NOOP_HANDLE = { cancel = function() end }
 
 function Update.download_and_install(opts, callback)
     opts = opts or {}
-    local transport = opts.transport or default_transport
     local plugin_path = opts.plugin_path
     local asset_url = opts.asset_url
     if type(plugin_path) ~= "string" or plugin_path == "" then
         callback(false, "缺少插件目录")
-        return
+        return NOOP_HANDLE
     end
     if type(asset_url) ~= "string" or asset_url == "" then
         callback(false, "缺少下载地址")
-        return
+        return NOOP_HANDLE
     end
 
     -- Guard: refuse symlinked / development installs (e.g. test_plugin.sh link).
     local sym = lfs.symlinkattributes(plugin_path)
     if sym and sym.mode == "link" then
         callback(false, "当前是开发版（符号链接）安装，请手动更新插件目录。")
-        return
+        return NOOP_HANDLE
     end
     local real = ffiutil.realpath(plugin_path)
     if not real or lfs.attributes(real, "mode") ~= "directory" then
         callback(false, "无法定位插件目录")
-        return
+        return NOOP_HANDLE
     end
     local parent = ffiutil.dirname(real)
     local staging = parent .. "/" .. STAGING_NAME
@@ -273,112 +291,146 @@ function Update.download_and_install(opts, callback)
     if util.pathExists(staging) then ffiutil.purgeDir(staging) end
     if util.pathExists(backup) then ffiutil.purgeDir(backup) end
 
-    local ok, err = util.makePath(staging)
-    if not ok then
-        callback(false, "无法创建暂存目录（目录可能不可写）：" .. tostring(err))
-        return
-    end
-
-    local function fail(message)
-        if util.pathExists(staging) then ffiutil.purgeDir(staging) end
-        logger.warn("KidLearn update:", message)
-        callback(false, message)
-    end
-
-    -- Download (in-memory; the release zip is small).
-    local body, derr = transport.get(asset_url, { ["User-Agent"] = "KidLearn-Updater" }, 20, 180)
-    if not body then
-        fail("下载更新失败：" .. tostring(derr))
-        return
-    end
-    local zip_path = staging .. "/update.zip"
-    local fh, ferr = io.open(zip_path, "wb")
-    if not fh then
-        fail("无法写入暂存文件：" .. tostring(ferr))
-        return
-    end
-    fh:write(body)
-    fh:close()
-
-    -- Extract with libarchive. Read each file to memory and write it ourselves
-    -- to a sanitized destination: this keeps normal file permissions (the
-    -- libarchive disk writer would otherwise drop read bits) and means
-    -- libarchive never writes to disk paths directly.
-    local Archiver = require("ffi/archiver")
-    local arc = Archiver.Reader:new()
-    if not arc:open(zip_path) then
-        fail("无法打开更新包：" .. tostring(arc.err))
-        return
-    end
-    local extracted = staging .. "/" .. TOP_DIR
-    for entry in arc:iterate() do
-        local rel = Update.sanitize_entry_path(entry.path)
-        if not rel then
-            arc:close()
-            fail("更新包含不安全路径：" .. tostring(entry.path))
+    -- Install phase: runs only after the full body is in memory. Staging is
+    -- created here (not before the download) so a cancelled download leaves
+    -- no artifacts behind.
+    local function install_body(body)
+        local ok, err = util.makePath(staging)
+        if not ok then
+            callback(false, "无法创建暂存目录（目录可能不可写）：" .. tostring(err))
             return
         end
-        local dest = staging .. "/" .. rel
-        if entry.mode == "directory" then
-            local mok, merr = util.makePath(dest)
-            if not mok then arc:close(); fail("创建目录失败：" .. tostring(merr)); return end
-        elseif entry.mode == "file" then
-            local mok, merr = util.makePath(ffiutil.dirname(dest))
-            if not mok then arc:close(); fail("创建目录失败：" .. tostring(merr)); return end
-            local content = arc:extractToMemory(entry.path)
-            if not content then
+
+        local function fail(message)
+            if util.pathExists(staging) then ffiutil.purgeDir(staging) end
+            logger.warn("KidLearn update:", message)
+            callback(false, message)
+        end
+
+        local zip_path = staging .. "/update.zip"
+        local fh, ferr = io.open(zip_path, "wb")
+        if not fh then
+            fail("无法写入暂存文件：" .. tostring(ferr))
+            return
+        end
+        fh:write(body)
+        fh:close()
+
+        if opts.on_install then opts.on_install() end
+
+        -- Extract with libarchive. Read each file to memory and write it ourselves
+        -- to a sanitized destination: this keeps normal file permissions (the
+        -- libarchive disk writer would otherwise drop read bits) and means
+        -- libarchive never writes to disk paths directly.
+        local Archiver = require("ffi/archiver")
+        local arc = Archiver.Reader:new()
+        if not arc:open(zip_path) then
+            fail("无法打开更新包：" .. tostring(arc.err))
+            return
+        end
+        local extracted = staging .. "/" .. TOP_DIR
+        for entry in arc:iterate() do
+            local rel = Update.sanitize_entry_path(entry.path)
+            if not rel then
                 arc:close()
-                fail("解压失败：" .. tostring(arc.err))
+                fail("更新包含不安全路径：" .. tostring(entry.path))
                 return
             end
-            local fh, ferr = io.open(dest, "wb")
-            if not fh then
+            local dest = staging .. "/" .. rel
+            if entry.mode == "directory" then
+                local mok, merr = util.makePath(dest)
+                if not mok then arc:close(); fail("创建目录失败：" .. tostring(merr)); return end
+            elseif entry.mode == "file" then
+                local mok, merr = util.makePath(ffiutil.dirname(dest))
+                if not mok then arc:close(); fail("创建目录失败：" .. tostring(merr)); return end
+                local content = arc:extractToMemory(entry.path)
+                if not content then
+                    arc:close()
+                    fail("解压失败：" .. tostring(arc.err))
+                    return
+                end
+                local fh, ferr = io.open(dest, "wb")
+                if not fh then
+                    arc:close()
+                    fail("写入更新文件失败：" .. tostring(ferr))
+                    return
+                end
+                fh:write(content)
+                fh:close()
+            else
                 arc:close()
-                fail("写入更新文件失败：" .. tostring(ferr))
+                fail("更新包含不支持的条目类型：" .. tostring(entry.mode))
                 return
             end
-            fh:write(content)
-            fh:close()
+        end
+        arc:close()
+
+        -- Validate the extracted plugin before touching the installed one.
+        if lfs.attributes(extracted .. "/main.lua", "mode") ~= "file"
+            or lfs.attributes(extracted .. "/_meta.lua", "mode") ~= "file" then
+            fail("更新包结构不正确（缺少 main.lua / _meta.lua）")
+            return
+        end
+        if opts.expect_version then
+            local got = Update.local_version(extracted)
+            if got ~= Update.normalize_version(opts.expect_version) then
+                fail("更新包版本与 Release 不一致")
+                return
+            end
+        end
+
+        -- Swap with rollback. rename is atomic on the same filesystem; staging is a
+        -- sibling of the plugin dir, so both renames stay on one filesystem.
+        local rok, rerr = os.rename(real, backup)
+        if not rok then
+            fail("无法备份当前插件（目录可能不可写）：" .. tostring(rerr))
+            return
+        end
+        local mok, merr = os.rename(extracted, real)
+        if not mok then
+            os.rename(backup, real) -- roll back to the previous code
+            fail("无法安装新插件，已回滚：" .. tostring(merr))
+            return
+        end
+
+        -- Success: remove old-code backup and staging (named temp dirs only).
+        ffiutil.purgeDir(backup)
+        ffiutil.purgeDir(staging)
+        callback(true, nil, { plugin_path = real })
+    end
+
+    -- Engine callback contract: (ok, body_or_err).
+    local function after_download(ok, body_or_err)
+        if not ok then
+            if body_or_err ~= Update.CANCELLED then
+                logger.warn("KidLearn update: 下载更新失败：", body_or_err)
+            end
+            callback(false, body_or_err or "下载更新失败")
+            return
+        end
+        install_body(body_or_err)
+    end
+
+    if opts.transport then
+        -- Legacy synchronous transport (unit tests / fallback only).
+        local body, derr = opts.transport.get(asset_url, { ["User-Agent"] = "KidLearn-Updater" }, 20, 180)
+        if body then
+            after_download(true, body)
         else
-            arc:close()
-            fail("更新包含不支持的条目类型：" .. tostring(entry.mode))
-            return
+            after_download(false, derr)
         end
-    end
-    arc:close()
-
-    -- Validate the extracted plugin before touching the installed one.
-    if lfs.attributes(extracted .. "/main.lua", "mode") ~= "file"
-        or lfs.attributes(extracted .. "/_meta.lua", "mode") ~= "file" then
-        fail("更新包结构不正确（缺少 main.lua / _meta.lua）")
-        return
-    end
-    if opts.expect_version then
-        local got = Update.local_version(extracted)
-        if got ~= Update.normalize_version(opts.expect_version) then
-            fail("更新包版本与 Release 不一致")
-            return
-        end
+        return NOOP_HANDLE
     end
 
-    -- Swap with rollback. rename is atomic on the same filesystem; staging is a
-    -- sibling of the plugin dir, so both renames stay on one filesystem.
-    local rok, rerr = os.rename(real, backup)
-    if not rok then
-        fail("无法备份当前插件（目录可能不可写）：" .. tostring(rerr))
-        return
-    end
-    local mok, merr = os.rename(extracted, real)
-    if not mok then
-        os.rename(backup, real) -- roll back to the previous code
-        fail("无法安装新插件，已回滚：" .. tostring(merr))
-        return
-    end
-
-    -- Success: remove old-code backup and staging (named temp dirs only).
-    ffiutil.purgeDir(backup)
-    ffiutil.purgeDir(staging)
-    callback(true, nil, { plugin_path = real })
+    return UpdateHttp.get({
+        url = asset_url,
+        headers = { ["User-Agent"] = "KidLearn-Updater" },
+        on_progress = opts.on_progress,
+        schedule = opts.schedule,
+        unschedule = opts.unschedule,
+        tcp = opts.tcp,
+        ssl_wrap = opts.ssl_wrap,
+    }, after_download)
 end
 
 return Update

@@ -87,6 +87,7 @@
 main.lua                 插件生命周期：注册菜单与 Dispatcher、开发环境自动打开
 ui/mainview.lua          单窗口状态机 + 所有页面布局
 ui/widgets.lua           墨水屏小组件（label / textbox / button / card / stat / progress）
+ui/update_dialog.lua     更新下载进度对话框（进度条 + 取消按钮，瞬态模态窗）
 core/session.lua         组题、判题、连对、重试、轮次结算
 core/catalog.lua         省份/年级/教材/单元目录读取与缓存
 core/bank.lua            语文 JSON 的加载、规范化、缓存、抽题
@@ -103,6 +104,7 @@ core/ai_client.lua       OpenAI / Anthropic / Gemini 请求与响应
 core/ai_variant.lua      变种提示词、严格 JSON 校验、题目标准化
 core/ai_bank.lua         独立 AI 变种题库（kidlearn_ai_bank.json）
 core/update.lua          GitHub Release 在线自更新（可选联网，历史数据零影响）
+core/update_http.lua     更新下载引擎（非阻塞分片 GET：进度回调、无超时、可取消）
 data/catalog.json        省份/年级/教材/单元目录（生成产物，勿手改）
 data/chinese/tongbian/   1–6 年级语文题库（生成产物，勿手改）
 data/knowledge/          课标知识点分册题库 + 先修图谱（sync_taxonomy.py 生成，勿手改）
@@ -161,7 +163,7 @@ submit_answer(value)
 | 改存档字段 | `core/progress.lua`（`SCHEMA_VERSION` + `normalize`） | 迁移逻辑、README 字段表、`kidlearn_progress_spec` |
 | 改错题规则 | `core/progress.lua`（`record_wrong` / `record_mastery` / `trim_wrong`） | README 错题本说明、测试 |
 | 改 AI 出题 | `core/ai_config.lua` / `ai_client.lua` / `ai_variant.lua` / `ai_bank.lua`、`ui/mainview.lua` | `kidlearn_ai_spec`、`kidlearn_ui_spec`、README AI 说明 |
-| 改在线更新 | `core/update.lua`、`ui/mainview.lua` | `kidlearn_update_spec`、`kidlearn_ui_spec`、README 在线更新说明 |
+| 改在线更新 | `core/update.lua` / `core/update_http.lua`、`ui/mainview.lua` / `ui/update_dialog.lua` | `kidlearn_update_spec`、`kidlearn_ui_spec`、README 在线更新说明 |
 | 同步知识点题库/图谱 | `tools/kidlearn/sync_taxonomy.py` → `data/knowledge/` | `validate_knowledge.py`、`sync_taxonomy.py --check`、`kidlearn_knowledge_spec`、README 统计 |
 | 改知识点加载/判分 | `core/knowledge.lua` | `kidlearn_knowledge_spec`、`kidlearn_session_spec` |
 | 改诊断规则 | `core/diagnose.lua` | `kidlearn_diagnose_spec`、README 诊断说明 |
@@ -338,6 +340,7 @@ tools/kidlearn/test_plugin.sh
 29. **卡面插画是生成产物**：`data/cards/*.png` 由 AI 生图 + `tools/kidlearn/build_card_art.py` 后处理（灰度 480×480），禁止手改；缺图时 UI 自动降级为纯文字格。生图只在构建期用开发者凭证，插件运行时不联网生图。
 30. **总结确认门**：`Report.needs_time_confirm(now)` 按设备本地时间 <19 点判定；`open_daily_report(now)` 可注入时间戳，单测与走查脚本必须注入（早于 19 点会弹 ConfirmBox 阻塞流程）。
 31. **可点击卡片格**：`Widgets.tappable` 用 InputContainer + GestureRange（同 Button 写法），`ges_events` 在分发时动态读取；`paintTo` 会写入 dimen.x/y，整格可点。
+32. **更新下载无超时、可取消**：`core/update_http.lua` 用非阻塞 socket + `UIManager:scheduleIn` 短 tick 驱动（仿上游 `httpasync`，但上游没有字节进度与中途取消），**刻意不设任何超时**——网络卡住只停进度，由用户点「取消下载」终止；不要"顺手"加回 block/total 超时。调度器与 socket/TLS 工厂可注入，单测用假 socket + 手动调度器跑完整引擎。`download_and_install` 返回 `{ cancel() }` 句柄；staging 目录在下载完成后才创建，取消不留临时文件。`transport` 参数是旧同步路径，仅单测用。检查更新（`Update.check`）仍是带超时的同步小请求，与下载是两条路径。
 
 ---
 
@@ -366,3 +369,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-12 | 新增每日 AI 总结与抽卡（38 张卡池、本地评分、SSS 挑战加成、离线兜底）、奖章墙扩至 50 枚并翻页、拓展挑战轮次/答对双线计数；存档 v5 纯增量迁移 + 升级前一次性快照 | 孩子收集了很多星星，需要更多玩法与更长线的荣誉目标，且升级不能丢已有荣誉 |
 | 2026-11-13 | 新增 GitHub Release 在线自更新（`core/update.lua`）：设置里手动检查/升级，可选启动自动检查（默认关）；设备端 libarchive 解压、原子替换+回滚、重启生效；历史数据零影响；存档新增 `update_auto_check`/`update_api_url` 设置项 | 免去每次 USB 推送插件，升级不丢学习记录 |
 | 2026-11-13 | 今日总结 19:00 前每次点击二次确认；卡片新增攻击力/防守力/能力特点与 AI 生成灰度卡面；集卡册缩略图 + 卡片详情页；收藏力量为每日评分加成（每 200 点 +1，封顶 +10）；存档零改动 | 提醒孩子先练习再总结，提升集卡玩法的可见性与长线目标 |
+| 2026-11-13 | 更新下载改为非阻塞分片下载：实时进度条（已下载/总大小/百分比）、不设超时、随时可点「取消下载」；新增 `core/update_http.lua` 与 `ui/update_dialog.lua`；存档零改动 | 国内直连 GitHub 慢，旧版固定超时容易报错；下载节奏交给用户掌控 |
