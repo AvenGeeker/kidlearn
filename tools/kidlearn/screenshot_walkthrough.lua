@@ -5,7 +5,8 @@ Renders every KidLearn page in the real KOReader rendering pipeline
 (600x800 dummy framebuffer, same as the emulator) and writes PNGs into
 docs/screenshots/.  Uses a fresh demo save: one perfect daily round, one
 perfect challenge round, a seeded card collection, the daily report draw,
-then learns/practices/diagnoses 认识几分之一 (cnm_p079).
+the card book and card detail page, then learns/practices/diagnoses
+认识几分之一 (cnm_p079).
 --]]--
 
 describe("KidLearn screenshot walkthrough", function()
@@ -98,7 +99,11 @@ describe("KidLearn screenshot walkthrough", function()
         view.progress:add_cards(seed)
 
         -- Daily report: local score + offline summary, then reveal the cards.
-        view:open_daily_report()
+        -- Inject an evening timestamp so the pre-19:00 confirmation never
+        -- blocks the walkthrough regardless of the real clock.
+        local t = os.date("*t")
+        t.hour, t.min, t.sec = 20, 0, 0
+        view:open_daily_report(os.time(t))
         assert.are.equal("daily_report", view.state)
         shot("daily-report")
         local report = view.progress:daily_report()
@@ -110,6 +115,11 @@ describe("KidLearn screenshot walkthrough", function()
         view:render_cards(true)
         assert.are.equal("cards", view.state)
         shot("card-book")
+        view:render_card_detail("sss01", "cards")
+        assert.are.equal("card_detail", view.state)
+        shot("card-detail")
+        view:onBack()
+        assert.are.equal("cards", view.state)
         view:leave_cards()
 
         -- Home page with the new entry row and the "today drawn" marker.

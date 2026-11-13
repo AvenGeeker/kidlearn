@@ -4,6 +4,9 @@ Small widget helpers shared by KidLearn screens.
 
 local Blitbuffer = require("ffi/blitbuffer")
 local Button = require("ui/widget/button")
+local GestureRange = require("ui/gesturerange")
+local ImageWidget = require("ui/widget/imagewidget")
+local InputContainer = require("ui/widget/container/inputcontainer")
 local CenterContainer = require("ui/widget/container/centercontainer")
 local Font = require("ui/font")
 local FrameContainer = require("ui/widget/container/framecontainer")
@@ -16,6 +19,7 @@ local TextBoxWidget = require("ui/widget/textboxwidget")
 local TextWidget = require("ui/widget/textwidget")
 local VerticalGroup = require("ui/widget/verticalgroup")
 local VerticalSpan = require("ui/widget/verticalspan")
+local util = require("util")
 local Screen = require("device").screen
 
 local Widgets = {}
@@ -150,6 +154,38 @@ function Widgets.center(widget, width, height)
     return CenterContainer:new{
         dimen = Geom:new{ w = width or Screen:getWidth(), h = height or widget:getSize().h },
         widget,
+    }
+end
+
+-- Wrap a widget so a tap anywhere on it invokes callback. Uses the same
+-- GestureRange idiom as KOReader's Button; ges_events is read at dispatch
+-- time, so assigning it after construction is safe.
+function Widgets.tappable(child, callback)
+    local wrapper = InputContainer:new{ child }
+    local size = child:getSize()
+    wrapper.dimen = Geom:new{ w = size.w, h = size.h }
+    wrapper.ges_events = {
+        TapCell = {
+            GestureRange:new{ ges = "tap", range = wrapper.dimen },
+        },
+    }
+    wrapper.onTapCell = function()
+        callback()
+        return true
+    end
+    return wrapper
+end
+
+-- Render a card image at a square display size. Returns nil when the file is
+-- missing so callers can fall back to text-only cells (e.g. before the art
+-- assets are generated).
+function Widgets.image(path, size)
+    if not path or not util.fileExists(path) then return nil end
+    return ImageWidget:new{
+        file = path,
+        width = size,
+        height = size,
+        scale_factor = 0,
     }
 end
 

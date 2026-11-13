@@ -1,3 +1,13 @@
+-- Timestamp on the real current date at a fixed hour, so daily-key cleanup
+-- and record_answer (which use the real clock) stay aligned across describes.
+local function today_at(hour)
+    local t = os.date("*t")
+    t.hour = hour
+    t.min = 0
+    t.sec = 0
+    return os.time(t)
+end
+
 describe("KidLearn UI smoke", function()
     local DataStorage
     local Device
@@ -434,14 +444,14 @@ describe("KidLearn title-bar back navigation", function()
         -- Earlier tests may have answered questions today; start from a clean day.
         view.progress.data.daily[os.date("%Y-%m-%d")] = nil
         view.progress:flush()
-        view:open_daily_report()
+        view:open_daily_report(today_at(20))
         assert.are.equal("home", view.state) -- no answers yet: nothing to summarize
         view.progress:record_answer({
             id = "ui-report-q1", subject = "math", semester = "upper", unit = "m2",
             type = "math_number", skill = "add_sub", difficulty = 1,
             answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
         }, { attempt = 1, correct = true })
-        view:open_daily_report()
+        view:open_daily_report(today_at(20))
         assert.are.equal("daily_report", view.state)
         local report = view.progress:daily_report()
         assert.is_not_nil(report)
@@ -460,10 +470,95 @@ describe("KidLearn title-bar back navigation", function()
         view:onBack()
         assert.are.equal("home", view.state)
         -- re-entering the same day shows the stored report, no redraw
-        view:open_daily_report()
+        view:open_daily_report(today_at(20))
         assert.are.equal("daily_report", view.state)
         assert.are.equal(report.created_at, view.progress:daily_report().created_at)
         view:paintTo(Device.screen.bb, 0, 0)
+    end)
+
+    it("confirms before 19:00 on every daily report click", function()
+        view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress:flush()
+        local UIManager = require("ui/uimanager")
+        local shown = {}
+        local orig_show = UIManager.show
+        UIManager.show = function(_, widget) table.insert(shown, widget) end
+        finally(function() UIManager.show = orig_show end)
+        -- Morning, no answers: confirmation first; confirming hits the
+        -- no-answers notice, and nothing is generated.
+        view:open_daily_report(today_at(9))
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.progress:daily_report())
+        local box = shown[#shown]
+        assert.is_not_nil(box)
+        assert.are.equal("现在打开", box.ok_text)
+        assert.are.equal("再练一会", box.cancel_text)
+        box.ok_callback()
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.progress:daily_report())
+        -- Answer one question; cancel keeps the child on the home page.
+        view.progress:record_answer({
+            id = "ui-confirm-q1", subject = "math", semester = "upper", unit = "m2",
+            type = "math_number", skill = "add_sub", difficulty = 1,
+            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
+        }, { attempt = 1, correct = true })
+        view:open_daily_report(today_at(9))
+        assert.is_nil(view.progress:daily_report())
+        shown[#shown].cancel_callback()
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.progress:daily_report())
+        -- Confirming generates the report.
+        view:open_daily_report(today_at(9))
+        assert.is_nil(view.progress:daily_report())
+        shown[#shown].ok_callback()
+        assert.are.equal("daily_report", view.state)
+        local report = view.progress:daily_report()
+        assert.is_not_nil(report)
+        -- Re-entering the same morning still asks, and does not redraw.
+        view:open_daily_report(today_at(9))
+        shown[#shown].ok_callback()
+        assert.are.equal(report.created_at, view.progress:daily_report().created_at)
+        -- Evening: no confirmation at all, straight to the stored report.
+        local before = #shown
+        view:open_daily_report(today_at(20))
+        assert.are.equal(before, #shown)
+        assert.are.equal("daily_report", view.state)
+    end)
+
+    it("opens a card detail page from the book and the report", function()
+        local Cards = require("core.cards")
+        local card = Cards.get("r01")
+        view.progress:add_cards({ { id = card.id, tier = card.tier, name = card.name, desc = card.desc } })
+        view:render_cards()
+        assert.are.equal("cards", view.state)
+        view:render_card_detail(card.id, "cards")
+        assert.are.equal("card_detail", view.state)
+        view:paintTo(Device.screen.bb, 0, 0)
+        view:onBack()
+        assert.are.equal("cards", view.state)
+        view:onBack()
+        assert.are.equal("home", view.state)
+        -- Build a report so report-side navigation has a target.
+        view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress:flush()
+        view.progress:record_answer({
+            id = "ui-detail-q1", subject = "math", semester = "upper", unit = "m2",
+            type = "math_number", skill = "add_sub", difficulty = 1,
+            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
+        }, { attempt = 1, correct = true })
+        view:open_daily_report(today_at(20))
+        assert.are.equal("daily_report", view.state)
+        -- Book entered from the report keeps its back target through detail.
+        view:render_cards(true)
+        view:render_card_detail(card.id, "cards")
+        view:onBack()
+        assert.are.equal("cards", view.state)
+        view:onBack()
+        assert.are.equal("daily_report", view.state)
+        -- Directly from a revealed report card.
+        view:render_card_detail(card.id, "daily_report")
+        view:leave_card_detail()
+        assert.are.equal("daily_report", view.state)
     end)
 
     it("paginates the badge wall", function()

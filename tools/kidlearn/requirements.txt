@@ -1,3 +1,6 @@
 # Required when regenerating the grades 1-6 Chinese banks and when running
 # validate_bank.py with full pinyin checks. The plugin itself does not use it.
 pypinyin>=0.50
+# Required by build_card_art.py to post-process AI-generated card illustrations
+# into grayscale e-ink assets. The plugin itself does not use it.
+Pillow>=10.0

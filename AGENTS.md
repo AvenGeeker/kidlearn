@@ -36,7 +36,8 @@
 | 用户 | 小学 1–6 年级孩子 + 家长；界面为简体中文 |
 | 网络 | **默认离线**；只有可选的 AI 出题与用户显式触发的在线更新器会联网，没有账号、同步、统计上报 |
 | 入口 | `main.lua` → 主菜单「更多工具 → 小小学习家」；Dispatcher 动作 `kidlearn_open` / 事件 `KidLearnOpen` |
-| 核心依赖 | 仅 KOReader 自带模块（`ui/widget/*`、`luasettings`、`datastorage`、`dispatcher`、`json`、`logger`、`gettext`；AI 另用 `socket.http`/`ssl.https`/`turbo`） |
+| 核心依赖 | 仅 KOReader 自带模块（`ui/widget/*`、`luasettings`、`datastorage`、`dispatcher`、`json`、`logger`、`gettext`；AI 另用 `socket.http`/`ssl.https`/`turbo`）；构建期 Python 另用 pypinyin、Pillow |
+| 卡面 | `data/cards/` 39 张灰度 PNG（38 卡面 + 通用卡背；AI 生成，`build_card_art.py` 后处理，勿手改） |
 | 存档 | `koreader/settings/kidlearn.lua`（`LuaSettings`） |
 | 题目 | 语文读 12 册 JSON；数学按 5 个教材版本、1–6 年级由 `core/mathgen.lua` 实时生成；知识点模式读 `data/knowledge/`（cn-math-taxonomy 同步，CC BY-NC 4.0） |
 | 测试 | busted，`spec/unit/kidlearn_*.lua`；用 `tools/kidlearn/test_plugin.sh` 链接到 KOReader 后运行 |
@@ -45,10 +46,11 @@
 ### 关键设计约束
 
 1. **墨水屏优先**：不引入动画、不做逐帧刷新、避免每一题新建窗口；所有页面在同一个 `MainView` 里换 body。
-2. **零依赖**：不新增 LuaRocks / C 模块 / 外部二进制；能用 KOReader 自带模块就用自带的。
+2. **零依赖**：不新增 LuaRocks / C 模块 / 外部二进制；能用 KOReader 自带模块就用自带的。构建期 Python 依赖（pypinyin、Pillow）只用于生成产物，不进插件运行时。
 3. **默认离线**：除 `core/ai_*` 的 AI 出题与 `core/update.lua` 的在线更新器外，任何路径都不得发起网络请求；两者都必须由用户显式配置/触发，不做后台调用（更新器默认手动检查）。
 4. **儿童内容**：题目和文案要适合对应年级，不能出现超纲、歧义、负面或吓唬孩子的内容。
 5. **存档兼容**：老版本 `kidlearn.lua` 必须能平滑升级，不能因为加字段导致孩子丢星星。
+6. **卡面资源例外**：`data/cards/` 允许 AI 生成灰度 PNG（480×480，单张 ≤80KB、总量 ≤3MB），由 `build_card_art.py` 生成与校验；除此之外仍禁止新增二进制资源。
 
 ---
 
@@ -93,7 +95,7 @@ core/diagnose.lua        自适应诊断引擎（先修回溯、掌握/不稳/�
 core/mathgen.lua         数学题与拓展题生成器（保留二年级人教老生成器 + 通用知识点引擎）
 core/progress.lua        存档、每日统计、连续天数、分年级自适应等级、错题本
 core/badges.lua          奖章定义与解锁判断（50 枚）
-core/cards.lua           固定卡池（38 张）、每日抽卡权重、收藏统计
+core/cards.lua           固定卡池（38 张，含攻防/能力）、每日抽卡权重、收藏力量
 core/report.lua          每日评分公式、总结提示词/严格校验、离线兜底
 core/ai_config.lua       AI 厂商预设、服务配置、Key 掩码与校验
 core/ai_http.lua         LuaSocket/LuaSec + Turbo 的 HTTPS POST
@@ -104,6 +106,7 @@ core/update.lua          GitHub Release 在线自更新（可选联网，历史�
 data/catalog.json        省份/年级/教材/单元目录（生成产物，勿手改）
 data/chinese/tongbian/   1–6 年级语文题库（生成产物，勿手改）
 data/knowledge/          课标知识点分册题库 + 先修图谱（sync_taxonomy.py 生成，勿手改）
+data/cards/              卡面插画（AI 生成灰度 PNG，build_card_art.py 后处理，勿手改）
 ```
 
 ### 启动与答题链路
@@ -134,7 +137,7 @@ submit_answer(value)
 
 ### 状态机
 
-`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`daily_report`、`cards`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`、`kp_subject`、`kp_select`、`kp_learn`、`diagnose_quiz`、`diagnose_feedback`、`diagnose_result`。
+`MainView.state` 取值：`home`、`unit_select`、`quiz`、`feedback`、`summary`、`wrongbook`、`wrong_detail`、`badges`、`daily_report`、`cards`、`card_detail`、`settings`、`ai_settings`、`ai_service_edit`、`ai_bank`、`ai_preview`、`kp_subject`、`kp_select`、`kp_learn`、`diagnose_quiz`、`diagnose_feedback`、`diagnose_result`。
 新增页面时：设置 `state` → 改标题 → 用 `set_body(widget)` 换内容，不要新开 `UIManager:show` 的全屏窗口。
 
 ---
@@ -153,6 +156,7 @@ submit_answer(value)
 | 改星星 / 连对 / 首轮奖励 | `core/progress.lua`（`record_answer` / `record_session`）+ `core/session.lua`（`combo_bonus`） | README 积分表、`kidlearn_progress_spec`、`kidlearn_session_spec` |
 | 新增奖章 | `core/badges.lua` | README 奖章表、`kidlearn_progress_spec`（注意「奖章墙 x/50」文案与翻页） |
 | 改每日总结 / 抽卡 | `core/report.lua` / `core/cards.lua`、`ui/mainview.lua` | README 每日总结章节、`kidlearn_cards_spec`、`kidlearn_ui_spec` |
+| 改卡面插画 / 卡片属性 | `core/cards.lua`（属性）、`tools/kidlearn/build_card_art.py` → `data/cards/` | `build_card_art.py --check`、`kidlearn_cards_spec`、README 抽卡章节 |
 | 改首页 / 设置 / 页面布局 | `ui/mainview.lua` | `kidlearn_ui_spec`、README 使用说明 |
 | 改存档字段 | `core/progress.lua`（`SCHEMA_VERSION` + `normalize`） | 迁移逻辑、README 字段表、`kidlearn_progress_spec` |
 | 改错题规则 | `core/progress.lua`（`record_wrong` / `record_mastery` / `trim_wrong`） | README 错题本说明、测试 |
@@ -274,7 +278,8 @@ tools/kidlearn/test_plugin.sh
 - [ ] `validate_catalog.py` 通过（如果动了目录/教材/知识点）。
 - [ ] 用户可见行为变化已同步到 `README.md`。
 - [ ] 存档字段变化已考虑旧存档兼容。
-- [ ] 没有新增依赖、字体或大文件；AI 子系统之外没有网络请求。
+- [ ] 没有新增依赖、字体或大文件（`data/cards/` 卡面除外，总量 ≤3MB）；AI 子系统之外没有网络请求。
+- [ ] `build_card_art.py --check` 通过（如果动了卡面）。
 - [ ] 回复中说明：改了什么、为什么、怎么验证、还有什么没做。
 
 ---
@@ -330,6 +335,9 @@ tools/kidlearn/test_plugin.sh
 26. **升级必须重启**：Lua 模块缓存在 `package.loaded`，替换插件目录后需 `UIManager:restartKOReader()`（quit 85）才生效，不做热重载。
 27. **更新器数据隔离**：用户数据全在 settings 目录（插件目录之外）；`core/update.lua` 写集合仅限插件目录 + `.kidlearn_update`/`.kidlearn_backup` 两个临时目录，绝不引用 `getSettingsDir`。解压用 `extractToMemory` + 自写文件（libarchive 磁盘写入会丢读权限），路径经 `sanitize_entry_path` 净化；失败回滚。`kidlearn_update_spec` 逐字节验证数据不变。
 28. **开发版/符号链接安装拒绝自更新**：`test_plugin.sh` 链接的安装会被 `lfs.symlinkattributes` 识别并拒绝。Release 附件必须名 `kidlearn.koplugin.zip`、顶层 `kidlearn.koplugin/`；国内直连 GitHub 可能不稳定，失败可重试。
+29. **卡面插画是生成产物**：`data/cards/*.png` 由 AI 生图 + `tools/kidlearn/build_card_art.py` 后处理（灰度 480×480），禁止手改；缺图时 UI 自动降级为纯文字格。生图只在构建期用开发者凭证，插件运行时不联网生图。
+30. **总结确认门**：`Report.needs_time_confirm(now)` 按设备本地时间 <19 点判定；`open_daily_report(now)` 可注入时间戳，单测与走查脚本必须注入（早于 19 点会弹 ConfirmBox 阻塞流程）。
+31. **可点击卡片格**：`Widgets.tappable` 用 InputContainer + GestureRange（同 Button 写法），`ges_events` 在分发时动态读取；`paintTo` 会写入 dimen.x/y，整格可点。
 
 ---
 
@@ -357,3 +365,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-11 | 同步 cn-math-taxonomy 小学数学/语文知识图谱与题库；新增知识点学习、练习、自适应诊断；存档 v4 增加知识点掌握度 | 按课标知识点先学后练，答错沿先修边找薄弱根因 |
 | 2026-11-12 | 新增每日 AI 总结与抽卡（38 张卡池、本地评分、SSS 挑战加成、离线兜底）、奖章墙扩至 50 枚并翻页、拓展挑战轮次/答对双线计数；存档 v5 纯增量迁移 + 升级前一次性快照 | 孩子收集了很多星星，需要更多玩法与更长线的荣誉目标，且升级不能丢已有荣誉 |
 | 2026-11-13 | 新增 GitHub Release 在线自更新（`core/update.lua`）：设置里手动检查/升级，可选启动自动检查（默认关）；设备端 libarchive 解压、原子替换+回滚、重启生效；历史数据零影响；存档新增 `update_auto_check`/`update_api_url` 设置项 | 免去每次 USB 推送插件，升级不丢学习记录 |
+| 2026-11-13 | 今日总结 19:00 前每次点击二次确认；卡片新增攻击力/防守力/能力特点与 AI 生成灰度卡面；集卡册缩略图 + 卡片详情页；收藏力量为每日评分加成（每 200 点 +1，封顶 +10）；存档零改动 | 提醒孩子先练习再总结，提升集卡玩法的可见性与长线目标 |

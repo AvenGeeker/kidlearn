@@ -15,6 +15,18 @@ local Knowledge = require("core.knowledge")
 
 local Report = {}
 
+-- Before this local hour, opening the daily report asks for confirmation:
+-- more practice and challenge rounds raise the score and the draw rewards.
+Report.CONFIRM_HOUR = 19
+
+--[[--
+Whether opening the daily report at the given time needs the early-bird
+confirmation. Uses device local time; the timestamp is injectable for tests.
+--]]--
+function Report.needs_time_confirm(now)
+    return tonumber(os.date("%H", now or os.time())) < Report.CONFIRM_HOUR
+end
+
 local SUBJECT_LABEL = { chinese = "语文", math = "数学" }
 local MODE_LABEL = {
     daily = "今日挑战", subject = "单科练习", challenge = "拓展挑战",
@@ -47,7 +59,8 @@ Local daily score, 0..100.
 
 30 goal completion + 30 first-try accuracy + 15 rounds (max 3)
 + 10 challenge rounds (max 2) + 5 knowledge answers (max 5)
-+ 10 streak (max 7 days). The sum is rounded once.
++ 10 streak (max 7 days) + up to 10 collection power (1 point per 200
+attack+defense of owned card types). The sum is rounded once and capped.
 --]]--
 function Report.score(progress, now)
     local daily = progress:ensure_daily(now)
@@ -62,11 +75,14 @@ function Report.score(progress, now)
 
     local goal_part = goal > 0 and 30 * math.min(answered / goal, 1) or 0
     local accuracy_part = answered > 0 and 30 * correct / answered or 0
+    local collection_atk, collection_def = Cards.collection_power(progress)
+    local collection_part = math.min(10, math.floor((collection_atk + collection_def) / 200))
     local raw = goal_part + accuracy_part
         + 5 * math.min(sessions, 3)
         + 5 * math.min(challenge_sessions, 2)
         + math.min(kp_answered, 5)
         + 10 * math.min(streak, 7) / 7
+        + collection_part
     local score = math.floor(raw + 0.5)
     if score < 0 then score = 0 elseif score > 100 then score = 100 end
     return {
@@ -78,6 +94,7 @@ function Report.score(progress, now)
             challenge = 5 * math.min(challenge_sessions, 2),
             kp = math.min(kp_answered, 5),
             streak = math.floor(10 * math.min(streak, 7) / 7 + 0.5),
+            collection = collection_part,
         },
     }
 end
@@ -106,6 +123,7 @@ function Report.stats(progress, now, plugin_path)
         end
         table.insert(topics, { subject = item.subject, name = name })
     end
+    local collection_atk, collection_def = Cards.collection_power(progress)
     return {
         date = os.date("%Y-%m-%d", now or os.time()),
         grade = settings.grade,
@@ -124,6 +142,8 @@ function Report.stats(progress, now, plugin_path)
         kp_answered = daily.kp_answered or 0,
         topics = topics,
         streak = progress.data.streak.current or 0,
+        collection_power = collection_atk + collection_def,
+        collection_bonus = math.min(10, math.floor((collection_atk + collection_def) / 200)),
     }
 end
 
@@ -153,6 +173,10 @@ function Report.offline(stats, cards)
     if stats.streak > 0 then
         table.insert(lines, string.format("已经连续学习 %d 天，坚持就是进步！", stats.streak))
     end
+    if (stats.collection_bonus or 0) > 0 then
+        table.insert(lines, string.format("卡片收藏力量 %d，为今日评分加成 %d 分！",
+            stats.collection_power or 0, stats.collection_bonus))
+    end
     table.insert(lines, "明天继续加油，小卡片们都在等你！")
     local words = {}
     for _, card in ipairs(cards or {}) do table.insert(words, card.desc or "") end
@@ -171,6 +195,10 @@ function Report.build_prompt(stats, score, cards)
         string.format("答题：共 %d 道，首次答对 %d 道；完成 %d 轮练习；获得 %d 颗星星；每日目标 %s 题。",
             stats.answered, stats.correct, stats.sessions, stats.points, tostring(stats.goal)),
     }
+    if (stats.collection_bonus or 0) > 0 then
+        table.insert(lines, string.format("卡片收藏力量 %d，已为今日评分加成 %d 分。",
+            stats.collection_power or 0, stats.collection_bonus))
+    end
     for _, subject in ipairs({ "chinese", "math" }) do
         local s = stats.subjects[subject]
         if s.answered > 0 then

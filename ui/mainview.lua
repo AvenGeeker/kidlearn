@@ -2,7 +2,8 @@
 Full-screen KidLearn UI.
 
 The view keeps one widget on screen and swaps its body between home, unit
-selection, quiz, feedback, summary, wrong book, badges and settings. This is
+selection, quiz, feedback, summary, wrong book, badges, daily report, card
+book, card detail and settings. This is
 much lighter on e-ink than opening a new window for every question.
 --]]--
 
@@ -94,6 +95,7 @@ local BACK_PARENT = {
     wrong_detail = "wrongbook",
     badges = "home",
     daily_report = "home",
+    card_detail = "cards",
     settings = "home",
     ai_settings = "settings",
     ai_service_edit = "ai_settings",
@@ -242,6 +244,10 @@ function MainView:onBack()
     end
     if state == "cards" then
         self:leave_cards()
+        return
+    end
+    if state == "card_detail" then
+        self:leave_card_detail()
         return
     end
     local parent = BACK_PARENT[state] or "home"
@@ -1788,25 +1794,40 @@ end
 
 function MainView:report_parts_text(report)
     local parts = report.parts or {}
-    return string.format("目标 %d/30 · 正确率 %d/30 · 轮次 %d/15 · 挑战 %d/10 · 知识点 %d/5 · 连续 %d/10",
+    return string.format("目标 %d/30 · 正确率 %d/30 · 轮次 %d/15 · 挑战 %d/10 · 知识点 %d/5 · 连续 %d/10 · 收藏 %d/10",
         parts.goal or 0, parts.accuracy or 0, parts.sessions or 0,
-        parts.challenge or 0, parts.kp or 0, parts.streak or 0)
+        parts.challenge or 0, parts.kp or 0, parts.streak or 0, parts.collection or 0)
 end
 
-function MainView:open_daily_report()
-    local report = self.progress:daily_report()
+function MainView:open_daily_report(now)
+    now = now or os.time()
+    if Report.needs_time_confirm(now) then
+        UIManager:show(ConfirmBox:new{
+            text = "还没到晚上 7 点。做题做得越多，评分越高；完成拓展挑战任务，抽卡奖励更大（有机会抽到 SSS 卡）！现在打开今日总结吗？",
+            ok_text = "现在打开",
+            cancel_text = "再练一会",
+            ok_callback = function() self:proceed_daily_report(now) end,
+        })
+        return
+    end
+    self:proceed_daily_report(now)
+end
+
+function MainView:proceed_daily_report(now)
+    now = now or os.time()
+    local report = self.progress:daily_report(now)
     if report then
         self:render_daily_report()
         return
     end
-    if self.progress:today().answered < 1 then
+    if self.progress:today(now).answered < 1 then
         UIManager:show(InfoMessage:new{
             text = "今天还没做题哦。先做几道题，再来领取今日总结和卡片奖励吧！",
             timeout = 4,
         })
         return
     end
-    Report.create(self.progress, { plugin_path = self.plugin_path })
+    Report.create(self.progress, { now = now, plugin_path = self.plugin_path })
     local new_badges = Badges.evaluate(self.progress)
     self:render_daily_report()
     if #new_badges > 0 then
@@ -1866,11 +1887,19 @@ function MainView:render_daily_report()
     else
         for index, card in ipairs(report.cards or {}) do
             local word = (report.card_words or {})[index] or card.desc or ""
-            table.insert(content, Widgets.card(VerticalGroup:new{
-                align = "center",
-                Widgets.label(string.format("【%s】%s", card.tier or "?", card.name or ""), { size = 20, bold = true }),
-                Widgets.textbox(word, cw - 4 * Size.padding.default, { size = 15, alignment = "center" }),
-            }, { width = cw }))
+            local items = { align = "center" }
+            local img = Widgets.image(self:card_art_path(card.id), Screen:scaleBySize(96))
+            if img then
+                table.insert(items, img)
+                table.insert(items, Widgets.vspace(Size.span.vertical_default))
+            end
+            table.insert(items, Widgets.label(string.format("【%s】%s", card.tier or "?", card.name or ""), { size = 20, bold = true }))
+            table.insert(items, Widgets.textbox(word, cw - 4 * Size.padding.default, { size = 15, alignment = "center" }))
+            local cell = Widgets.card(VerticalGroup:new(items), { width = cw })
+            local captured = card
+            table.insert(content, Widgets.tappable(cell, function()
+                self:render_card_detail(captured.id, "daily_report")
+            end))
             table.insert(content, Widgets.vspace(Size.span.vertical_default))
         end
     end
@@ -1987,13 +2016,27 @@ function MainView:render_cards(from_report)
             table.insert(content, Widgets.vspace(Size.span.vertical_default))
             local row
             for i, card in ipairs(group) do
-                local cell = Widgets.card(VerticalGroup:new{
-                    align = "center",
-                    Widgets.label(card.owned and card.name or "？？？", { size = 17, bold = card.owned }),
-                    Widgets.label(card.owned and string.format("×%d", card.count) or "未收集", {
-                        size = 13, color = Blitbuffer.COLOR_DARK_GRAY,
-                    }),
-                }, { width = card_width, padding = Size.padding.default })
+                local thumb = math.min(card_width - 2 * Size.padding.default - 2 * Size.border.thin,
+                    Screen:scaleBySize(160))
+                local art = card.owned and self:card_art_path(card.id)
+                    or (self.plugin_path .. "/data/cards/back.png")
+                local items = { align = "center" }
+                local img = Widgets.image(art, thumb)
+                if img then
+                    table.insert(items, img)
+                    table.insert(items, Widgets.vspace(Size.span.vertical_default))
+                end
+                table.insert(items, Widgets.label(card.owned and card.name or "？？？", { size = 17, bold = card.owned }))
+                table.insert(items, Widgets.label(card.owned and string.format("×%d", card.count) or "未收集", {
+                    size = 13, color = Blitbuffer.COLOR_DARK_GRAY,
+                }))
+                local cell = Widgets.card(VerticalGroup:new(items), { width = card_width, padding = Size.padding.default })
+                if card.owned then
+                    local captured = card
+                    cell = Widgets.tappable(cell, function()
+                        self:render_card_detail(captured.id, "cards")
+                    end)
+                end
                 if i % 2 == 1 then
                     row = HorizontalGroup:new{ align = "center", cell }
                     table.insert(content, row)
@@ -2025,6 +2068,76 @@ function MainView:leave_cards()
         self:render_daily_report()
     else
         self:render_home()
+    end
+end
+
+function MainView:card_art_path(id)
+    return self.plugin_path .. "/data/cards/" .. tostring(id) .. ".png"
+end
+
+function MainView:render_card_detail(card_id, back)
+    self.state = "card_detail"
+    self.card_detail_back = back or "cards"
+    self:set_title("卡片详情")
+    local cw = Widgets.width()
+    local entry = (self.progress.data.cards or {})[card_id]
+    local owned = type(entry) == "table" and (entry.count or 0) > 0
+    local pool_card = Cards.get(card_id)
+    local name = (owned and entry.name) or (pool_card and pool_card.name) or card_id
+    local tier = (pool_card and pool_card.tier) or (owned and entry.tier) or "R"
+    local atk, def, ability = Cards.stats(card_id)
+    local desc = (pool_card and pool_card.desc) or ""
+    local content = VerticalGroup:new{ align = "center" }
+    local art = owned and self:card_art_path(card_id)
+        or (self.plugin_path .. "/data/cards/back.png")
+    local img = Widgets.image(art, math.min(cw, Screen:scaleBySize(300)))
+    if img then
+        table.insert(content, img)
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    end
+    table.insert(content, Widgets.label(string.format("【%s】%s", tier, name), { size = 24, bold = true }))
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, HorizontalGroup:new{
+        align = "center",
+        Widgets.stat(tostring(atk), "攻击力", math.floor(cw / 2)),
+        Widgets.stat(tostring(def), "防守力", math.floor(cw / 2)),
+    })
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.label("能力特点", { size = 17, bold = true }))
+    table.insert(content, Widgets.textbox(ability, cw, { size = 17, alignment = "center" }))
+    if desc ~= "" then
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        table.insert(content, Widgets.textbox(desc, cw, { size = 15, alignment = "center" }))
+    end
+    if owned then
+        local count_text = string.format("已收集 ×%d", entry.count or 0)
+        if (entry.first_at or 0) > 0 then
+            count_text = count_text .. " · 首次获得 " .. os.date("%Y-%m-%d", entry.first_at)
+        end
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        table.insert(content, Widgets.label(count_text, { size = 14, color = Blitbuffer.COLOR_DARK_GRAY }))
+    end
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.button("返回", {
+        width = cw, size = 20,
+        callback = function() self:leave_card_detail() end,
+    }))
+    local scroll = ScrollableContainer:new{
+        dimen = Geom:new{ w = cw, h = math.floor(Screen:getHeight() * 0.78) },
+        show_parent = self,
+        content,
+    }
+    self:set_body(scroll)
+end
+
+function MainView:leave_card_detail()
+    local back = self.card_detail_back
+    self.card_detail_back = nil
+    if back == "daily_report" then
+        self:render_daily_report()
+    else
+        -- Preserve the card book's own back target (home or daily report).
+        self:render_cards(self.cards_back == "daily_report")
     end
 end
 

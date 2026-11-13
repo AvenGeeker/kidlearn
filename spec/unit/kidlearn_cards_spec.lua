@@ -241,4 +241,112 @@ describe("KidLearn cards and daily report", function()
         assert.are.equal("旧卡片", found.name)
         assert.are.equal(1, Cards.owned_at_least(p, "S"))
     end)
+
+    it("gives every card tier-scaled stats and an ability line", function()
+        local ranges = { R = { 10, 30 }, RR = { 30, 50 }, S = { 50, 70 }, SS = { 70, 90 }, SSS = { 90, 100 } }
+        for _, card in ipairs(Cards.all()) do
+            local range = ranges[card.tier]
+            assert.is_not_nil(range)
+            assert.are.equal("number", type(card.atk))
+            assert.are.equal("number", type(card.def))
+            assert.is_true(card.atk >= range[1] and card.atk <= range[2])
+            assert.is_true(card.def >= range[1] and card.def <= range[2])
+            assert.are.equal("string", type(card.ability))
+            assert.is_true(#card.ability > 0)
+            local atk, def, ability = Cards.stats(card.id)
+            assert.are.equal(card.atk, atk)
+            assert.are.equal(card.def, def)
+            assert.are.equal(card.ability, ability)
+        end
+        local atk, def, ability = Cards.stats("no_such_card")
+        assert.are.equal(10, atk)
+        assert.are.equal(10, def)
+        assert.are.equal("神秘旧卡", ability)
+    end)
+
+    it("sums collection power once per owned type with legacy defaults", function()
+        local p = Progress.open(path)
+        local atk, def = Cards.collection_power(p)
+        assert.are.equal(0, atk)
+        assert.are.equal(0, def)
+        local sparrow, ant = Cards.get("r01"), Cards.get("r02")
+        p:add_cards({
+            { id = sparrow.id, tier = sparrow.tier, name = sparrow.name, desc = sparrow.desc },
+            { id = ant.id, tier = ant.tier, name = ant.name, desc = ant.desc },
+        }, day(10))
+        atk, def = Cards.collection_power(p)
+        assert.are.equal(sparrow.atk + ant.atk, atk)
+        assert.are.equal(sparrow.def + ant.def, def)
+        -- Duplicates only bump the count, never the power.
+        p:add_cards({ { id = sparrow.id, tier = sparrow.tier, name = sparrow.name, desc = sparrow.desc } }, day(10))
+        local atk2, def2 = Cards.collection_power(p)
+        assert.are.equal(atk, atk2)
+        assert.are.equal(def, def2)
+        -- Legacy ids outside the pool contribute the modest default.
+        p:add_cards({ { id = "legacy_x", tier = "R", name = "旧卡", desc = "" } }, day(10))
+        local atk3, def3 = Cards.collection_power(p)
+        assert.are.equal(atk + 10, atk3)
+        assert.are.equal(def + 10, def3)
+        -- collection_state exposes stats for the detail page.
+        for _, row in ipairs(Cards.collection_state(p)) do
+            if row.id == "r01" then
+                assert.are.equal(sparrow.atk, row.atk)
+                assert.are.equal(sparrow.ability, row.ability)
+            elseif row.id == "legacy_x" then
+                assert.are.equal(10, row.atk)
+                assert.are.equal("神秘旧卡", row.ability)
+            end
+        end
+    end)
+
+    it("keeps the collection bonus at zero for a tiny collection", function()
+        local p = Progress.open(path)
+        local card = Cards.get("r01")
+        p:add_cards({ { id = card.id, tier = card.tier, name = card.name, desc = card.desc } }, day(10))
+        assert.are.equal(0, Report.score(p, day(10)).parts.collection)
+    end)
+
+    it("adds a capped collection bonus to the daily score", function()
+        local p = Progress.open(path)
+        local drawn, power = {}, 0
+        for _, card in ipairs(Cards.all()) do
+            if card.tier == "SSS" or card.tier == "SS" or card.tier == "S" then
+                table.insert(drawn, { id = card.id, tier = card.tier, name = card.name, desc = card.desc })
+                power = power + card.atk + card.def
+            end
+        end
+        p:add_cards(drawn, day(10))
+        local expected = math.min(10, math.floor(power / 200))
+        assert.is_true(expected > 0)
+        local info = Report.score(p, day(10))
+        assert.are.equal(expected, info.parts.collection)
+        -- Empty day: the score is the collection bonus alone.
+        assert.are.equal(expected, info.score)
+        -- A full day stays capped at 100 even with the bonus.
+        local daily = p:ensure_daily(day(10))
+        daily.answered = 10
+        daily.correct = 10
+        daily.sessions = 3
+        daily.challenge.sessions = 2
+        daily.kp_answered = 5
+        p.data.streak.current = 7
+        assert.are.equal(100, Report.score(p, day(10)).score)
+        -- The offline template mentions the bonus.
+        local stats = Report.stats(p, day(10))
+        assert.are.equal(power, stats.collection_power)
+        assert.are.equal(expected, stats.collection_bonus)
+        local offline = Report.offline(stats, {})
+        assert.is_truthy(offline.summary:find("收藏力量", 1, true))
+    end)
+
+    it("asks for confirmation before 19:00 device time only", function()
+        local function at(hour, min)
+            return os.time({ year = 2026, month = 11, day = 13, hour = hour, min = min, sec = 0 })
+        end
+        assert.are.equal(19, Report.CONFIRM_HOUR)
+        assert.is_true(Report.needs_time_confirm(at(0, 0)))
+        assert.is_true(Report.needs_time_confirm(at(18, 59)))
+        assert.is_false(Report.needs_time_confirm(at(19, 0)))
+        assert.is_false(Report.needs_time_confirm(at(23, 59)))
+    end)
 end)
