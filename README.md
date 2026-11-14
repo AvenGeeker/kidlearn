@@ -538,7 +538,7 @@ Kindle 上通常对应 `/mnt/us/koreader/settings/`。`kidlearn.lua` 是 KOReade
 | `recent_ids` | 最近 30 道题 ID |
 | `knowledge` | 各学科知识点掌握度（learning/mastered/weak）、首答计数、最近学习时间 |
 | `cards` | 永久卡片收藏：每张卡的数量、首次/最近获得时间、名称与等级快照；不随 90 天清理删除。攻击力/防守力/能力特点按卡池派生，不占存档字段 |
-| `draw` | 抽卡进度 `progress`（距下次抽卡已积累的首答数）、可用机会 `credits`、累计抽卡次数 `draws`；每 20 题首答 +1 机会，抽一次 -1 |
+| `draw` | 抽卡进度 `progress`（距下次抽卡已积累的首答数）、可用机会 `credits`、累计抽卡次数 `draws`、一次性迁移标记 `seeded`；每 20 题首答 +1 机会，抽一次 -1。首次升级会按累计答题 `total.answered` 一次性折算成机会（107 题 → 5 次机会 + 7/20 进度），不会把老进度清零 |
 
 - **备份 / 换机**：复制 `kidlearn.lua`；如需保留 AI 变种题，再复制 `kidlearn_ai_bank.json`；用配置文件部署 AI 时，再带上 `kidlearn_ai_config.json`。
 - **升级快照（v5）**：从旧版本升级后第一次写入前，插件会把原始存档完整复制为 `kidlearn.lua.pre-v5.bak`（一次性、永不覆盖、不自动删除）。迁移只新增字段，不改动既有星星、奖章（含解锁时间）、错题、知识点等任何数据。如需回滚：关闭 KOReader，把 `kidlearn.lua.pre-v5.bak` 复制回 `kidlearn.lua`。快照与存档一样含 AI 配置，请同等保密。KOReader 自身还会滚动保留 `kidlearn.lua.old` 作为日常写入备份。

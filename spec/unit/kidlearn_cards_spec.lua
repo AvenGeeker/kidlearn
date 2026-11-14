@@ -381,4 +381,31 @@ describe("KidLearn cards and daily report", function()
         assert.are.equal(1, p:draw_status().draws)
         assert.is_false(p:spend_draw())
     end)
+
+    it("grants draw credits from existing answers when upgrading an old save", function()
+        local p = Progress.open(path)
+        p.data.total.answered = 107
+        p.data.draw = nil -- an old save had no draw ledger
+        p:flush()
+        local reopened = Progress.open(path)
+        assert.are.equal(5, reopened:draw_status().credits)
+        assert.are.equal(7, reopened:draw_status().progress)
+        assert.is_true(reopened.data.draw.seeded)
+        -- Reopening again must not double-count.
+        local again = Progress.open(path)
+        assert.are.equal(5, again:draw_status().credits)
+        assert.are.equal(7, again:draw_status().progress)
+    end)
+
+    it("never re-grants credits to a ledger that already recorded draws", function()
+        local p = Progress.open(path)
+        p.data.total.answered = 100
+        p.data.draw = { progress = 3, credits = 1, draws = 2 } -- no seeded flag
+        p:flush()
+        local reopened = Progress.open(path)
+        assert.are.equal(1, reopened:draw_status().credits)
+        assert.are.equal(3, reopened:draw_status().progress)
+        assert.are.equal(2, reopened:draw_status().draws)
+        assert.is_true(reopened.data.draw.seeded)
+    end)
 end)

@@ -178,6 +178,19 @@ function Progress:normalize()
     ensure_counter(draw, "progress")
     ensure_counter(draw, "credits")
     ensure_counter(draw, "draws")
+    -- One-time migration: an upgrade (or first install over an existing save)
+    -- must not reset a child's accumulated practice to zero. When the draw
+    -- ledger is still empty, convert lifetime first-try answers into credits.
+    -- The seeded flag makes this idempotent; a ledger that already recorded
+    -- draws/credits/progress is left untouched so nothing is double-counted.
+    if not draw.seeded then
+        if draw.draws == 0 and draw.credits == 0 and draw.progress == 0 then
+            local answered = total.answered
+            draw.credits = math.floor(answered / Cards.DRAW_ANSWERS)
+            draw.progress = answered % Cards.DRAW_ANSWERS
+        end
+        draw.seeded = true
+    end
     -- Card collection is permanent: keep every entry (including ids unknown to
     -- the current pool) so future pool changes never erase collected cards.
     local cards = ensure_table(d, "cards")
