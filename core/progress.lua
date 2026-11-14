@@ -6,6 +6,7 @@ never removes a child's stars, streak, badges or wrong-question book.
 --]]--
 
 local AIConfig = require("core.ai_config")
+local Cards = require("core.cards")
 local DataStorage = require("datastorage")
 local LuaSettings = require("luasettings")
 local logger = require("logger")
@@ -153,7 +154,7 @@ function Progress:normalize()
     d.schema_version = SCHEMA_VERSION
 
     local total = ensure_table(d, "total")
-    for _, key in ipairs({ "points", "answered", "correct", "sessions", "perfect_sessions", "best_combo", "wrong_cleared", "challenge_sessions", "challenge_correct" }) do
+    for _, key in ipairs({ "points", "answered", "correct", "sessions", "perfect_sessions", "best_combo", "wrong_cleared", "challenge_sessions", "challenge_answered", "challenge_correct" }) do
         ensure_counter(total, key)
     end
 
@@ -171,6 +172,12 @@ function Progress:normalize()
     ensure_table(d, "daily")
     ensure_table(d, "wrong")
     ensure_table(d, "badges")
+    -- Repeatable card draws: progress counts answers toward the next draw,
+    -- credits are earned draws not yet spent, draws is the lifetime count.
+    local draw = ensure_table(d, "draw")
+    ensure_counter(draw, "progress")
+    ensure_counter(draw, "credits")
+    ensure_counter(draw, "draws")
     -- Card collection is permanent: keep every entry (including ids unknown to
     -- the current pool) so future pool changes never erase collected cards.
     local cards = ensure_table(d, "cards")
@@ -554,6 +561,16 @@ function Progress:record_answer(question, opts)
         self.data.total.answered = self.data.total.answered + 1
         by_subject.answered = by_subject.answered + 1
         daily.answered = daily.answered + 1
+        -- Earn draw credits from real practice (not wrong-book review), so
+        -- repeated draws cannot be farmed by re-answering the same questions.
+        if mode ~= "review" then
+            local draw = self.data.draw
+            draw.progress = draw.progress + 1
+            if draw.progress >= Cards.DRAW_ANSWERS then
+                draw.progress = draw.progress - Cards.DRAW_ANSWERS
+                draw.credits = draw.credits + 1
+            end
+        end
         if correct then
             self.data.total.correct = self.data.total.correct + 1
             by_subject.correct = by_subject.correct + 1
@@ -579,6 +596,7 @@ function Progress:record_answer(question, opts)
         subject_daily.answered = subject_daily.answered + 1
         if correct then subject_daily.correct = subject_daily.correct + 1 end
         if question.challenge then
+            self.data.total.challenge_answered = self.data.total.challenge_answered + 1
             daily.challenge.answered = daily.challenge.answered + 1
             if correct then
                 daily.challenge.correct = daily.challenge.correct + 1
@@ -684,6 +702,33 @@ function Progress:add_cards(cards, now)
         end
     end
     self:flush()
+end
+
+--[[--
+Current draw state: answers accumulated toward the next draw, available draw
+credits and the lifetime draw count.
+--]]--
+function Progress:draw_status()
+    local draw = self.data.draw
+    return {
+        progress = draw.progress,
+        credits = draw.credits,
+        draws = draw.draws,
+        need = Cards.DRAW_ANSWERS,
+        remaining = Cards.DRAW_ANSWERS - draw.progress,
+    }
+end
+
+--[[--
+Spend one earned draw credit. Returns true when a credit was consumed.
+--]]--
+function Progress:spend_draw()
+    local draw = self.data.draw
+    if draw.credits <= 0 then return false end
+    draw.credits = draw.credits - 1
+    draw.draws = draw.draws + 1
+    self:flush()
+    return true
 end
 
 function Progress:daily_report(now)

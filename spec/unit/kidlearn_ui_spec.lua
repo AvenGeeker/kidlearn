@@ -8,6 +8,18 @@ local function today_at(hour)
     return os.time(t)
 end
 
+-- Record first-try correct math answers on the real current day.
+local function record_answers(progress, count, prefix)
+    for i = 1, count do
+        progress:record_answer({
+            id = string.format("%s-%d", prefix or "ui-gate", i),
+            subject = "math", semester = "upper", unit = "m2",
+            type = "math_number", skill = "add_sub", difficulty = 1,
+            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
+        }, { attempt = 1, correct = true })
+    end
+end
+
 describe("KidLearn UI smoke", function()
     local DataStorage
     local Device
@@ -441,16 +453,21 @@ describe("KidLearn title-bar back navigation", function()
     end)
 
     it("builds daily report and card book pages", function()
-        -- Earlier tests may have answered questions today; start from a clean day.
+        -- Earlier tests may have answered questions today; start from a clean
+        -- day and a clean draw ledger.
         view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress.data.draw = { progress = 0, credits = 0, draws = 0 }
         view.progress:flush()
+        local Cards = require("core.cards")
         view:open_daily_report(today_at(20))
-        assert.are.equal("home", view.state) -- no answers yet: nothing to summarize
-        view.progress:record_answer({
-            id = "ui-report-q1", subject = "math", semester = "upper", unit = "m2",
-            type = "math_number", skill = "add_sub", difficulty = 1,
-            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
-        }, { attempt = 1, correct = true })
+        assert.are.equal("home", view.state) -- no answers yet: only progress shown
+        -- One short of a draw: still no report and no cards.
+        record_answers(view.progress, Cards.DRAW_ANSWERS - 1, "ui-report")
+        view:open_daily_report(today_at(20))
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.progress:daily_report())
+        -- The 20th answer earns a draw; opening draws the first hand.
+        record_answers(view.progress, 1, "ui-report-last")
         view:open_daily_report(today_at(20))
         assert.are.equal("daily_report", view.state)
         local report = view.progress:daily_report()
@@ -476,53 +493,45 @@ describe("KidLearn title-bar back navigation", function()
         view:paintTo(Device.screen.bb, 0, 0)
     end)
 
-    it("confirms before 19:00 on every daily report click", function()
+    it("shows accumulated draw progress and allows repeated draws", function()
         view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress.data.draw = { progress = 0, credits = 0, draws = 0 }
         view.progress:flush()
+        local Cards = require("core.cards")
         local UIManager = require("ui/uimanager")
         local shown = {}
         local orig_show = UIManager.show
         UIManager.show = function(_, widget) table.insert(shown, widget) end
         finally(function() UIManager.show = orig_show end)
-        -- Morning, no answers: confirmation first; confirming hits the
-        -- no-answers notice, and nothing is generated.
-        view:open_daily_report(today_at(9))
-        assert.are.equal("home", view.state)
-        assert.is_nil(view.progress:daily_report())
-        local box = shown[#shown]
-        assert.is_not_nil(box)
-        assert.are.equal("现在打开", box.ok_text)
-        assert.are.equal("再练一会", box.cancel_text)
-        box.ok_callback()
-        assert.are.equal("home", view.state)
-        assert.is_nil(view.progress:daily_report())
-        -- Answer one question; cancel keeps the child on the home page.
-        view.progress:record_answer({
-            id = "ui-confirm-q1", subject = "math", semester = "upper", unit = "m2",
-            type = "math_number", skill = "add_sub", difficulty = 1,
-            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
-        }, { attempt = 1, correct = true })
-        view:open_daily_report(today_at(9))
-        assert.is_nil(view.progress:daily_report())
-        shown[#shown].cancel_callback()
-        assert.are.equal("home", view.state)
-        assert.is_nil(view.progress:daily_report())
-        -- Confirming generates the report.
-        view:open_daily_report(today_at(9))
-        assert.is_nil(view.progress:daily_report())
-        shown[#shown].ok_callback()
-        assert.are.equal("daily_report", view.state)
-        local report = view.progress:daily_report()
-        assert.is_not_nil(report)
-        -- Re-entering the same morning still asks, and does not redraw.
-        view:open_daily_report(today_at(9))
-        shown[#shown].ok_callback()
-        assert.are.equal(report.created_at, view.progress:daily_report().created_at)
-        -- Evening: no confirmation at all, straight to the stored report.
-        local before = #shown
+        -- No answers: opening shows the accumulated progress, no report.
         view:open_daily_report(today_at(20))
-        assert.are.equal(before, #shown)
+        assert.are.equal("home", view.state)
+        assert.is_nil(view.progress:daily_report())
+        assert.is_not_nil(shown[#shown])
+        -- 19 answers: still no draw credit.
+        record_answers(view.progress, Cards.DRAW_ANSWERS - 1, "ui-draw")
+        view:open_daily_report(today_at(20))
+        assert.is_nil(view.progress:daily_report())
+        -- The 20th answer earns a draw; opening draws 3 cards.
+        record_answers(view.progress, 1, "ui-draw-last")
+        view:open_daily_report(today_at(20))
         assert.are.equal("daily_report", view.state)
+        local first = view.progress:daily_report()
+        assert.are.equal(3, #first.cards)
+        assert.are.equal(0, view.progress:draw_status().credits)
+        -- Viewing again does not redraw or spend a credit.
+        view:open_daily_report(today_at(20))
+        assert.are.equal(first.created_at, view.progress:daily_report().created_at)
+        -- Earn another credit and draw again: a fresh hand, no daily limit.
+        local owned_before = Cards.owned_types(view.progress)
+        record_answers(view.progress, Cards.DRAW_ANSWERS, "ui-draw-2")
+        assert.are.equal(1, view.progress:draw_status().credits)
+        view:draw_cards(today_at(20))
+        assert.are.equal("daily_report", view.state)
+        local second = view.progress:daily_report()
+        assert.are.equal(3, #second.cards)
+        assert.are.equal(2, view.progress:draw_status().draws)
+        assert.is_true(Cards.owned_types(view.progress) >= owned_before)
     end)
 
     it("opens a card detail page from the book and the report", function()
@@ -540,12 +549,9 @@ describe("KidLearn title-bar back navigation", function()
         assert.are.equal("home", view.state)
         -- Build a report so report-side navigation has a target.
         view.progress.data.daily[os.date("%Y-%m-%d")] = nil
+        view.progress.data.draw = { progress = 0, credits = 0, draws = 0 }
         view.progress:flush()
-        view.progress:record_answer({
-            id = "ui-detail-q1", subject = "math", semester = "upper", unit = "m2",
-            type = "math_number", skill = "add_sub", difficulty = 1,
-            answer_mode = "number", stem = "1 + 1 = ?", answer = 2, explain = "1 + 1 = 2。",
-        }, { attempt = 1, correct = true })
+        record_answers(view.progress, require("core.cards").DRAW_ANSWERS, "ui-detail")
         view:open_daily_report(today_at(20))
         assert.are.equal("daily_report", view.state)
         -- Book entered from the report keeps its back target through detail.

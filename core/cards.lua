@@ -2,10 +2,11 @@
 Collectible card pool and daily draw logic for KidLearn.
 
 The pool is fixed in code: card ids are permanent and never reused. Rarity is
-rolled locally from the daily score plus unlocked challenge badges; the AI
-subsystem only writes flavor text, never decides rarity. Each card carries
-attack/defense stats and an ability line; the collection's total power adds a
-capped bonus to the daily score (see core/report.lua).
+rolled locally from the daily score, unlocked challenge badges and lifetime
+practice volume; the AI subsystem only writes flavor text, never decides
+rarity. Each card carries attack/defense stats and an ability line; the
+collection's total power adds a capped bonus to the daily score (see
+core/report.lua).
 --]]--
 
 local Cards = {}
@@ -13,9 +14,17 @@ local Cards = {}
 Cards.TIERS = { "R", "RR", "S", "SS", "SSS" }
 local TIER_RANK = { R = 1, RR = 2, S = 3, SS = 4, SSS = 5 }
 
-Cards.DAILY_COUNT = 3
--- S and above (including SSS) is capped per day; with 3 draws this always holds.
-Cards.HIGH_TIER_DAILY_CAP = 3
+-- Each draw yields this many cards; draws are repeatable, not once per day.
+Cards.DRAW_COUNT = 3
+-- S and above (including SSS) is capped per draw; with 3 cards this always holds.
+Cards.HIGH_TIER_DRAW_CAP = 3
+-- Accumulated first-try answers needed to earn one draw (each draw = 3 cards).
+Cards.DRAW_ANSWERS = 20
+-- Lifetime practice luck: +1 point per 100 total answers and per 25 challenge
+-- answers, capped so the long-term bonus stays readable.
+Cards.LUCK_ANSWER_STEP = 100
+Cards.LUCK_CHALLENGE_STEP = 25
+Cards.LUCK_MAX = 20
 
 local pool = {
     { id = "r01", tier = "R", name = "小麻雀", desc = "叽叽喳喳，每天早起陪你读书。", atk = 14, def = 12, ability = "早起鸟：每天清晨的第一声加油。" },
@@ -105,33 +114,60 @@ function Cards.sss_weight(score, challenge_badges)
     return challenge_badges * (1 + math.floor(score / 50))
 end
 
-local function pick_tier(weights, sss, roll)
+--[[--
+Lifetime practice luck, 0..Cards.LUCK_MAX. Every 100 answers and every 25
+challenge answers add one point, so a child who keeps practising steadily
+sees SS (and later SSS) cards more often.
+--]]--
+function Cards.luck_level(total_answered, challenge_answered)
+    local answers = math.max(0, math.floor((tonumber(total_answered) or 0) / Cards.LUCK_ANSWER_STEP))
+    local challenge = math.max(0, math.floor((tonumber(challenge_answered) or 0) / Cards.LUCK_CHALLENGE_STEP))
+    local luck = answers + challenge
+    if luck > Cards.LUCK_MAX then luck = Cards.LUCK_MAX end
+    return luck
+end
+
+--[[--
+Effective tier weights for one draw: the score band plus lifetime luck.
+Luck is added to SS; once challenge badges unlock SSS, every two luck points
+also add one SSS weight.
+--]]--
+function Cards.weights(score, challenge_badges, opts)
+    opts = opts or {}
+    local base = Cards.band_weights(score)
+    local luck = Cards.luck_level(opts.total_answered, opts.challenge_answered)
+    local sss = Cards.sss_weight(score, challenge_badges)
+    if sss > 0 then sss = sss + math.floor(luck / 2) end
+    return { R = base.R, RR = base.RR, S = base.S, SS = base.SS + luck, SSS = sss }
+end
+
+local function pick_tier(weights, roll)
     local acc = 0
     for _, tier in ipairs({ "R", "RR", "S", "SS" }) do
         acc = acc + weights[tier]
         if roll <= acc then return tier end
     end
-    if sss > 0 and roll <= acc + sss then return "SSS" end
+    if weights.SSS > 0 and roll <= acc + weights.SSS then return "SSS" end
     return "SS"
 end
 
 --[[--
-Draw the fixed daily hand. Each card rolls its tier independently, then picks
-uniformly inside the tier. rng(n) must return an integer in 1..n (injectable
-for tests). Duplicates are allowed and only bump the collection count.
+Draw one hand of Cards.DRAW_COUNT cards. Each card rolls its tier
+independently, then picks uniformly inside the tier. rng(n) must return an
+integer in 1..n (injectable for tests). opts carries lifetime totals for the
+luck bonus. Duplicates are allowed and only bump the collection count.
 --]]--
-function Cards.draw(score, challenge_badges, rng)
+function Cards.draw(score, challenge_badges, rng, opts)
     rng = rng or math.random
     score = tonumber(score) or 0
-    local weights = Cards.band_weights(score)
-    local sss = Cards.sss_weight(score, challenge_badges)
-    local total = weights.R + weights.RR + weights.S + weights.SS + sss
+    local weights = Cards.weights(score, challenge_badges, opts)
+    local total = weights.R + weights.RR + weights.S + weights.SS + weights.SSS
     local result = {}
     local high = 0
-    for _ = 1, Cards.DAILY_COUNT do
-        local tier = pick_tier(weights, sss, rng(total))
+    for _ = 1, Cards.DRAW_COUNT do
+        local tier = pick_tier(weights, rng(total))
         if Cards.tier_rank(tier) >= TIER_RANK.S then
-            if high >= Cards.HIGH_TIER_DAILY_CAP then
+            if high >= Cards.HIGH_TIER_DRAW_CAP then
                 tier = "RR"
             else
                 high = high + 1

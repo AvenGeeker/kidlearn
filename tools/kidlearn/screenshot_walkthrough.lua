@@ -98,12 +98,10 @@ describe("KidLearn screenshot walkthrough", function()
         }
         view.progress:add_cards(seed)
 
-        -- Daily report: local score + offline summary, then reveal the cards.
-        -- Inject an evening timestamp so the pre-19:00 confirmation never
-        -- blocks the walkthrough regardless of the real clock.
-        local t = os.date("*t")
-        t.hour, t.min, t.sec = 20, 0, 0
-        view:open_daily_report(os.time(t))
+        -- Daily report: the demo save has exactly 20 first-try answers
+        -- (daily 10 + challenge 10), which earns one draw. Opening draws the
+        -- first hand; there is no time-of-day gate any more.
+        view:open_daily_report()
         assert.are.equal("daily_report", view.state)
         shot("daily-report")
         local report = view.progress:daily_report()

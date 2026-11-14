@@ -15,18 +15,6 @@ local Knowledge = require("core.knowledge")
 
 local Report = {}
 
--- Before this local hour, opening the daily report asks for confirmation:
--- more practice and challenge rounds raise the score and the draw rewards.
-Report.CONFIRM_HOUR = 19
-
---[[--
-Whether opening the daily report at the given time needs the early-bird
-confirmation. Uses device local time; the timestamp is injectable for tests.
---]]--
-function Report.needs_time_confirm(now)
-    return tonumber(os.date("%H", now or os.time())) < Report.CONFIRM_HOUR
-end
-
 local SUBJECT_LABEL = { chinese = "语文", math = "数学" }
 local MODE_LABEL = {
     daily = "今日挑战", subject = "单科练习", challenge = "拓展挑战",
@@ -256,7 +244,7 @@ Validate the AI report payload. Returns nil, err on any violation so the
 caller can fall back to the offline template.
 --]]--
 function Report.parse(text, card_count)
-    card_count = tonumber(card_count) or Cards.DAILY_COUNT
+    card_count = tonumber(card_count) or Cards.DRAW_COUNT
     local payload = extract_json(text)
     if not payload then return nil, "AI 返回内容不是 JSON" end
     local ok, decoded = pcall(JSON.decode, payload)
@@ -286,7 +274,11 @@ function Report.create(progress, opts)
     local now = opts.now or os.time()
     local score_info = Report.score(progress, now)
     local challenge_badges = Badges.challenge_unlocked(progress)
-    local cards = Cards.draw(score_info.score, challenge_badges, opts.rng)
+    local total = progress.data.total
+    local cards = Cards.draw(score_info.score, challenge_badges, opts.rng, {
+        total_answered = total.answered,
+        challenge_answered = total.challenge_answered,
+    })
     progress:add_cards(cards, now)
     local stats = Report.stats(progress, now, opts.plugin_path)
     local offline = Report.offline(stats, cards)

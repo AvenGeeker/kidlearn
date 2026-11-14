@@ -598,9 +598,18 @@ function MainView:render_home()
             callback = function() self:render_settings() end,
         }),
     }
+    local draw_status = self.progress:draw_status()
+    local report_label
+    if draw_status.credits > 0 then
+        report_label = string.format("抽卡（可抽 %d 次）", draw_status.credits)
+    elseif self.progress:daily_report() then
+        report_label = "今日总结 ✓"
+    else
+        report_label = string.format("抽卡（%d/%d）", draw_status.progress, draw_status.need)
+    end
     local tool_row_3 = HorizontalGroup:new{
         align = "center",
-        Widgets.button(self.progress:daily_report() and "今日总结 ✓" or "每日总结", {
+        Widgets.button(report_label, {
             width = half,
             callback = function() self:open_daily_report() end,
         }),
@@ -1802,30 +1811,29 @@ end
 
 function MainView:open_daily_report(now)
     now = now or os.time()
-    if Report.needs_time_confirm(now) then
-        UIManager:show(ConfirmBox:new{
-            text = "还没到晚上 7 点。做题做得越多，评分越高；完成拓展挑战任务，抽卡奖励更大（有机会抽到 SSS 卡）！现在打开今日总结吗？",
-            ok_text = "现在打开",
-            cancel_text = "再练一会",
-            ok_callback = function() self:proceed_daily_report(now) end,
-        })
-        return
-    end
-    self:proceed_daily_report(now)
-end
-
-function MainView:proceed_daily_report(now)
-    now = now or os.time()
-    local report = self.progress:daily_report(now)
-    if report then
+    -- Viewing an existing report never spends a draw; drawing is explicit.
+    if self.progress:daily_report(now) then
         self:render_daily_report()
         return
     end
-    if self.progress:today(now).answered < 1 then
-        UIManager:show(InfoMessage:new{
-            text = "今天还没做题哦。先做几道题，再来领取今日总结和卡片奖励吧！",
-            timeout = 4,
-        })
+    self:draw_cards(now)
+end
+
+-- Show how many answers are accumulated toward the next draw.
+function MainView:show_draw_progress()
+    local status = self.progress:draw_status()
+    UIManager:show(InfoMessage:new{
+        text = string.format("已积累 %d/%d 题，再做 %d 题就能抽卡（每次 %d 张）！\n累计答题和拓展题越多，越容易抽到 SS、SSS 卡。",
+            status.progress, status.need, status.remaining, Cards.DRAW_COUNT),
+        timeout = 5,
+    })
+end
+
+-- Spend one earned credit and draw a fresh hand of cards plus today's report.
+function MainView:draw_cards(now)
+    now = now or os.time()
+    if not self.progress:spend_draw() then
+        self:show_draw_progress()
         return
     end
     Report.create(self.progress, { now = now, plugin_path = self.plugin_path })
@@ -1868,6 +1876,28 @@ function MainView:render_daily_report()
     local stats = Report.stats(self.progress, nil, self.plugin_path)
     table.insert(content, Widgets.textbox(string.format("答题 %d · 答对 %d · 星星 %d · 轮次 %d",
         stats.answered, stats.correct, stats.points, stats.sessions), cw, { size = 16, alignment = "center" }))
+    local total = self.progress.data.total
+    local luck = Cards.luck_level(total.answered, total.challenge_answered)
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.label(string.format("累计答题 %d 道 · 拓展题 %d 道 · 抽卡幸运 +%d",
+        total.answered, total.challenge_answered, luck), {
+        size = 14, color = Blitbuffer.COLOR_DARK_GRAY,
+    }))
+    local draw_status = self.progress:draw_status()
+    table.insert(content, Widgets.vspace(Size.span.vertical_default))
+    table.insert(content, Widgets.label(string.format("抽卡进度 %d/%d · 可抽 %d 次",
+        draw_status.progress, draw_status.need, draw_status.credits), {
+        size = 14, color = Blitbuffer.COLOR_DARK_GRAY,
+    }))
+    if draw_status.credits > 0 then
+        table.insert(content, Widgets.vspace(Size.span.vertical_default))
+        table.insert(content, Widgets.button(string.format("再抽 %d 张卡（可抽 %d 次）", Cards.DRAW_COUNT, draw_status.credits), {
+            width = cw,
+            height = Screen:scaleBySize(64),
+            size = 22,
+            callback = function() self:draw_cards() end,
+        }))
+    end
     table.insert(content, Widgets.vspace(Size.span.vertical_default))
     table.insert(content, Widgets.label(report.ai and "AI 总结" or "离线总结", {
         size = 15, color = Blitbuffer.COLOR_DARK_GRAY,
