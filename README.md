@@ -150,6 +150,11 @@
 
 ## 安装
 
+> 🤖 **不会越狱 / 没装过 KOReader？想让 AI 一步步帮你装？**
+> 见 [《用 AI 助手把小小学习家装进 Kindle（保姆级 · AI 可执行教程）》](docs/AI_INSTALL_GUIDE.md)：
+> 把整份文档发给你的 AI（ChatGPT / Claude / Kimi / DeepSeek 等），它会带你完成越狱、安装 KOReader、安装本插件，
+> 还能把你的 AI API 配置直接生成并推送到 Kindle，免去在墨水屏上手填 Key。
+
 ### Kindle
 
 > 本仓库根目录就是插件本体。克隆或下载后，把整个仓库目录重命名为 `kidlearn.koplugin` 再复制；也可以直接用打包脚本生成安装包。
