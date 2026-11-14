@@ -43,9 +43,9 @@ describe("KidLearn cards and daily report", function()
         }
     end
 
-    it("has a fixed pool of 38 unique cards with the planned tier counts", function()
+    it("has a fixed pool of 48 unique cards with the planned tier counts", function()
         local pool = Cards.all()
-        assert.are.equal(38, #pool)
+        assert.are.equal(48, #pool)
         local counts = { R = 0, RR = 0, S = 0, SS = 0, SSS = 0 }
         local seen = {}
         for _, card in ipairs(pool) do
@@ -58,8 +58,8 @@ describe("KidLearn cards and daily report", function()
         assert.are.equal(12, counts.R)
         assert.are.equal(10, counts.RR)
         assert.are.equal(8, counts.S)
-        assert.are.equal(5, counts.SS)
-        assert.are.equal(3, counts.SSS)
+        assert.are.equal(10, counts.SS)
+        assert.are.equal(8, counts.SSS)
     end)
 
     it("uses the planned score bands and SSS weight formula", function()
@@ -94,7 +94,7 @@ describe("KidLearn cards and daily report", function()
         for score = 0, 100, 10 do
             for _ = 1, 30 do
                 local cards = Cards.draw(score, 0, math.random)
-                assert.are.equal(3, #cards)
+                assert.are.equal(1, #cards)
                 for _, card in ipairs(cards) do
                     assert.are_not.equal("SSS", card.tier)
                     assert.is_not_nil(Cards.get(card.id))
@@ -103,19 +103,78 @@ describe("KidLearn cards and daily report", function()
         end
     end)
 
-    it("draws SSS with challenge badges and keeps at most 3 high-tier cards", function()
+    it("draws one card per draw and lands on SSS only with challenge badges", function()
         -- rng(n) = n always lands on the last weight bucket: SSS when enabled.
         local cards = Cards.draw(100, 10, function(n) return n end)
-        assert.are.equal(3, #cards)
-        local high = 0
-        for _, card in ipairs(cards) do
-            assert.are.equal("SSS", card.tier)
-            if Cards.tier_rank(card.tier) >= Cards.tier_rank("S") then high = high + 1 end
-        end
-        assert.is_true(high <= 3)
+        assert.are.equal(1, #cards)
+        assert.are.equal("SSS", cards[1].tier)
+        assert.are.equal("sss08", cards[1].id)
         -- Without badges the same roll lands on SS, never SSS.
         local no_sss = Cards.draw(100, 0, function(n) return n end)
-        for _, card in ipairs(no_sss) do assert.are.equal("SS", card.tier) end
+        assert.are.equal(1, #no_sss)
+        assert.are.equal("SS", no_sss[1].tier)
+        assert.are.equal("ss10", no_sss[1].id)
+    end)
+
+    it("smart draw prefers uncollected cards inside the rolled tier", function()
+        -- Own every R card except r12; rng = 1 rolls R and must pick r12.
+        local owned = {}
+        for _, card in ipairs(Cards.all()) do
+            if card.tier == "R" and card.id ~= "r12" then
+                owned[card.id] = { count = 1 }
+            end
+        end
+        local cards = Cards.draw(50, 0, function(n) return 1 end, { owned = owned })
+        assert.are.equal(1, #cards)
+        assert.are.equal("r12", cards[1].id)
+    end)
+
+    it("smart draw falls back to other tiers when the rolled tier is complete", function()
+        -- Own the whole R tier; rng = 1 rolls R, then the fallback rolls the
+        -- first incomplete tier (RR) and picks its first new card.
+        local owned = {}
+        for _, card in ipairs(Cards.all()) do
+            if card.tier == "R" then owned[card.id] = { count = 1 } end
+        end
+        local cards = Cards.draw(50, 0, function(n) return 1 end, { owned = owned })
+        assert.are.equal(1, #cards)
+        assert.are.equal("rr01", cards[1].id)
+        assert.is_nil(owned[cards[1].id])
+    end)
+
+    it("smart fallback never bypasses the SSS challenge gate", function()
+        -- Everything except SSS is collected and no challenge badges exist:
+        -- SSS weight is zero, so the draw must duplicate a non-SSS card.
+        local owned = {}
+        for _, card in ipairs(Cards.all()) do
+            if card.tier ~= "SSS" then owned[card.id] = { count = 1 } end
+        end
+        for _ = 1, 20 do
+            local cards = Cards.draw(100, 0, math.random, { owned = owned })
+            assert.are.equal(1, #cards)
+            assert.are_not.equal("SSS", cards[1].tier)
+        end
+    end)
+
+    it("smart fallback can reach SSS once challenge badges unlock it", function()
+        -- Own everything except the SSS tier; with badges the only new cards
+        -- are SSS, so the draw must land there.
+        local owned = {}
+        for _, card in ipairs(Cards.all()) do
+            if card.tier ~= "SSS" then owned[card.id] = { count = 1 } end
+        end
+        local cards = Cards.draw(100, 10, function(n) return 1 end, { owned = owned })
+        assert.are.equal(1, #cards)
+        assert.are.equal("SSS", cards[1].tier)
+        assert.are.equal("sss01", cards[1].id)
+    end)
+
+    it("smart draw allows duplicates only after the whole pool is collected", function()
+        local owned = {}
+        for _, card in ipairs(Cards.all()) do owned[card.id] = { count = 1 } end
+        local cards = Cards.draw(50, 0, function(n) return 1 end, { owned = owned })
+        assert.are.equal(1, #cards)
+        assert.are.equal("r01", cards[1].id)
     end)
 
     it("scores an empty day as zero and a full day as 100", function()
@@ -156,6 +215,11 @@ describe("KidLearn cards and daily report", function()
         assert.are.equal("好", fenced.summary)
     end)
 
+    it("defaults the AI word count to the single-card draw", function()
+        assert.is_not_nil(Report.parse('{"summary":"好","card_words":["一"]}', nil))
+        assert.is_nil(Report.parse('{"summary":"好","card_words":["一","二","三"]}', nil))
+    end)
+
     it("rejects bad JSON, wrong word counts and overlong text", function()
         assert.is_nil(Report.parse("not json", 3))
         assert.is_nil(Report.parse('{"summary":"","card_words":["a","b","c"]}', 3))
@@ -177,7 +241,7 @@ describe("KidLearn cards and daily report", function()
         local cards = Cards.draw(50, 0, function(n) return 1 end)
         local offline = Report.offline(stats, cards)
         assert.is_true(#offline.summary > 0)
-        assert.are.equal(3, #offline.card_words)
+        assert.are.equal(1, #offline.card_words)
         assert.are.equal(cards[1].desc, offline.card_words[1])
         assert.is_true(offline.summary:find("1 轮", 1, true) ~= nil)
     end)
@@ -205,13 +269,17 @@ describe("KidLearn cards and daily report", function()
         local p = Progress.open(path)
         p:record_answer(question("q1"), { attempt = 1, correct = true, now = day(10) })
         local report = Report.create(p, { now = day(10), rng = function(n) return 1 end })
-        assert.are.equal(3, #report.cards)
+        assert.are.equal(1, #report.cards)
         assert.is_false(report.ai)
         assert.is_false(report.revealed)
         assert.is_true(report.score > 0)
-        -- rng = 1 always picks tier R card r01: three duplicates, one type.
-        assert.are.equal(3, p.data.cards.r01.count)
+        -- rng = 1 always rolls tier R; the smart draw takes the first new R.
+        assert.are.equal(1, p.data.cards.r01.count)
         assert.are.equal(1, Cards.owned_types(p))
+        -- Drawing again the same day skips the owned r01 and takes r02.
+        local again = Report.create(p, { now = day(10), rng = function(n) return 1 end })
+        assert.are.equal("r02", again.cards[1].id)
+        assert.are.equal(2, Cards.owned_types(p))
         local stored = p:daily_report(day(10))
         assert.are.equal(report.score, stored.score)
         assert.are.equal(report.created_at, stored.created_at)
@@ -251,7 +319,7 @@ describe("KidLearn cards and daily report", function()
         local p = Progress.open(path)
         p.data.cards["retired01"] = { count = 2, first_at = 1, last_at = 2, name = "旧卡片", tier = "S" }
         local state, owned = Cards.collection_state(p)
-        assert.are.equal(39, #state)
+        assert.are.equal(49, #state)
         assert.are.equal(1, owned)
         local found
         for _, item in ipairs(state) do

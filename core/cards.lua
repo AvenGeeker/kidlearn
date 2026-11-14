@@ -1,9 +1,11 @@
 --[[--
-Collectible card pool and daily draw logic for KidLearn.
+Collectible card pool and smart draw logic for KidLearn.
 
-The pool is fixed in code: card ids are permanent and never reused. Rarity is
-rolled locally from the daily score, unlocked challenge badges and lifetime
-practice volume; the AI subsystem only writes flavor text, never decides
+The pool is fixed in code: card ids are permanent and never reused. Each draw
+yields one card: the tier is rolled locally from the daily score, unlocked
+challenge badges and lifetime practice volume, then the card is picked among
+the not-yet-collected cards of that tier so every draw advances the
+collection. The AI subsystem only writes flavor text, never decides
 rarity. Each card carries attack/defense stats and an ability line; the
 collection's total power adds a capped bonus to the daily score (see
 core/report.lua).
@@ -14,11 +16,10 @@ local Cards = {}
 Cards.TIERS = { "R", "RR", "S", "SS", "SSS" }
 local TIER_RANK = { R = 1, RR = 2, S = 3, SS = 4, SSS = 5 }
 
--- Each draw yields this many cards; draws are repeatable, not once per day.
-Cards.DRAW_COUNT = 3
--- S and above (including SSS) is capped per draw; with 3 cards this always holds.
-Cards.HIGH_TIER_DRAW_CAP = 3
--- Accumulated first-try answers needed to earn one draw (each draw = 3 cards).
+-- Each draw yields one card; draws are repeatable, not once per day. The
+-- draw is smart: it prefers cards the child has not collected yet.
+Cards.DRAW_COUNT = 1
+-- Accumulated first-try answers needed to earn one draw (each draw = 1 card).
 Cards.DRAW_ANSWERS = 20
 -- Lifetime practice luck: +1 point per 100 total answers and per 25 challenge
 -- answers, capped so the long-term bonus stays readable.
@@ -62,9 +63,19 @@ local pool = {
     { id = "ss03", tier = "SS", name = "小独角兽", desc = "角上闪着星光，梦想成真。", atk = 84, def = 78, ability = "星光愿望：角上闪着星光，梦想成真。" },
     { id = "ss04", tier = "SS", name = "小青龙", desc = "呼风唤雨，难题统统让路。", atk = 90, def = 80, ability = "呼风唤雨：难题统统让路。" },
     { id = "ss05", tier = "SS", name = "小玄武", desc = "稳稳当当，知识坚如磐石。", atk = 72, def = 90, ability = "磐石守护：稳稳当当，知识坚如磐石。" },
+    { id = "ss06", tier = "SS", name = "小白泽", desc = "上知天文，下知地理，什么都难不倒它。", atk = 78, def = 86, ability = "万物图鉴：见过的知识都收进小百科。" },
+    { id = "ss07", tier = "SS", name = "小鲲鹏", desc = "从大海飞上天空，志气比天还高。", atk = 86, def = 74, ability = "扶摇直上：一口气飞出九万里。" },
+    { id = "ss08", tier = "SS", name = "小玉兔", desc = "在月宫里认真捣药，细心又耐心。", atk = 74, def = 88, ability = "月宫细心：再小的细节也不放过。" },
+    { id = "ss09", tier = "SS", name = "小獬豸", desc = "眼睛亮亮的，对错一眼就分清。", atk = 88, def = 82, ability = "明辨是非：对错一眼就分清。" },
+    { id = "ss10", tier = "SS", name = "小天马", desc = "在云间张开翅膀奔跑，想象力满分。", atk = 84, def = 76, ability = "天马行空：想象力飞到云朵上面。" },
     { id = "sss01", tier = "SSS", name = "智慧星龙", desc = "从星星上飞来的龙，把智慧洒满人间。", atk = 100, def = 92, ability = "星辰智慧：从星星上飞来，把智慧洒满人间。" },
     { id = "sss02", tier = "SSS", name = "月光麒麟", desc = "踏着月光而来，守护爱学习的孩子。", atk = 94, def = 100, ability = "月光守护：踏着月光，守护爱学习的孩子。" },
     { id = "sss03", tier = "SSS", name = "彩虹独角兽", desc = "飞过彩虹桥，把最美的祝福送给你。", atk = 96, def = 96, ability = "彩虹祝福：飞过彩虹桥，送出最美的祝福。" },
+    { id = "sss04", tier = "SSS", name = "烈阳金乌", desc = "背着太阳飞过天空，把光和勇气送给孩子。", atk = 100, def = 90, ability = "烈阳勇气：把光和勇气洒满学习路。" },
+    { id = "sss05", tier = "SSS", name = "星河白泽", desc = "从银河深处走来，知识像星星一样多。", atk = 92, def = 100, ability = "星河智慧：知识像银河的星星一样多。" },
+    { id = "sss06", tier = "SSS", name = "九霄鲲鹏", desc = "翅膀一展遮住半边天，飞向最高的目标。", atk = 98, def = 94, ability = "九霄之志：飞向最高最远的目标。" },
+    { id = "sss07", tier = "SSS", name = "霞光天马", desc = "踏着朝霞奔跑，每一步都闪闪发光。", atk = 96, def = 92, ability = "朝霞步伐：每一步都闪着光。" },
+    { id = "sss08", tier = "SSS", name = "皓月玉兔", desc = "抱着月亮灯笼，照亮夜里读书的孩子。", atk = 90, def = 100, ability = "皓月陪伴：照亮夜里读书的孩子。" },
 }
 
 local by_id = {}
@@ -151,36 +162,68 @@ local function pick_tier(weights, roll)
     return "SS"
 end
 
+-- Cards of one tier; with only_new, skip ids already in the collection.
+local function tier_candidates(tier, owned, only_new)
+    local list = {}
+    for _, card in ipairs(pool) do
+        if card.tier == tier then
+            local entry = owned and owned[card.id]
+            local has = type(entry) == "table" and (entry.count or 0) > 0
+            if not only_new or not has then table.insert(list, card) end
+        end
+    end
+    return list
+end
+
 --[[--
-Draw one hand of Cards.DRAW_COUNT cards. Each card rolls its tier
-independently, then picks uniformly inside the tier. rng(n) must return an
-integer in 1..n (injectable for tests). opts carries lifetime totals for the
-luck bonus. Duplicates are allowed and only bump the collection count.
+Smart single draw: returns a list with exactly one card (the list shape is
+kept for the report/UI). The tier is rolled from the score band + lifetime
+luck, then the card is picked uniformly among the not-yet-collected cards of
+that tier. When the rolled tier is complete, the draw falls back to the tiers
+that still hold new cards, weighted the same way and with SSS still gated by
+challenge badges; only a fully collected pool allows duplicates (which just
+bump the collection count). rng(n) must return an integer in 1..n (injectable
+for tests). opts.owned is the save's card collection map; opts also carries
+lifetime totals for the luck bonus.
 --]]--
 function Cards.draw(score, challenge_badges, rng, opts)
     rng = rng or math.random
+    opts = opts or {}
     score = tonumber(score) or 0
     local weights = Cards.weights(score, challenge_badges, opts)
     local total = weights.R + weights.RR + weights.S + weights.SS + weights.SSS
-    local result = {}
-    local high = 0
-    for _ = 1, Cards.DRAW_COUNT do
-        local tier = pick_tier(weights, rng(total))
-        if Cards.tier_rank(tier) >= TIER_RANK.S then
-            if high >= Cards.HIGH_TIER_DRAW_CAP then
-                tier = "RR"
-            else
-                high = high + 1
+    local owned = opts.owned
+    local tier = pick_tier(weights, rng(total))
+    local candidates = tier_candidates(tier, owned, true)
+    if #candidates == 0 then
+        -- Rolled tier is complete: redirect to tiers that still have new
+        -- cards, keeping the same tier weights and the SSS challenge gate.
+        local fallback, ftotal = {}, 0
+        for _, t in ipairs(Cards.TIERS) do
+            if weights[t] > 0 then
+                local list = tier_candidates(t, owned, true)
+                if #list > 0 then
+                    fallback[#fallback + 1] = { weight = weights[t], cards = list }
+                    ftotal = ftotal + weights[t]
+                end
             end
         end
-        local candidates = {}
-        for _, card in ipairs(pool) do
-            if card.tier == tier then table.insert(candidates, card) end
+        if ftotal > 0 then
+            local roll, acc = rng(ftotal), 0
+            for _, group in ipairs(fallback) do
+                acc = acc + group.weight
+                if roll <= acc then
+                    candidates = group.cards
+                    break
+                end
+            end
+        else
+            -- Whole pool collected: duplicates are fine, they bump counts.
+            candidates = tier_candidates(tier, nil, false)
         end
-        local pick = candidates[rng(#candidates)]
-        table.insert(result, { id = pick.id, tier = pick.tier, name = pick.name, desc = pick.desc })
     end
-    return result
+    local pick = candidates[rng(#candidates)]
+    return { { id = pick.id, tier = pick.tier, name = pick.name, desc = pick.desc } }
 end
 
 --[[--

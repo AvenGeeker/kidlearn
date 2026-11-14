@@ -37,7 +37,7 @@
 | 网络 | **默认离线**；只有可选的 AI 出题与用户显式触发的在线更新器会联网，没有账号、同步、统计上报 |
 | 入口 | `main.lua` → 主菜单「更多工具 → 小小学习家」；Dispatcher 动作 `kidlearn_open` / 事件 `KidLearnOpen` |
 | 核心依赖 | 仅 KOReader 自带模块（`ui/widget/*`、`luasettings`、`datastorage`、`dispatcher`、`json`、`logger`、`gettext`；AI 另用 `socket.http`/`ssl.https`/`turbo`）；构建期 Python 另用 pypinyin、Pillow |
-| 卡面 | `data/cards/` 39 张灰度 PNG（38 卡面 + 通用卡背；AI 生成，`build_card_art.py` 后处理，勿手改） |
+| 卡面 | `data/cards/` 49 张灰度 PNG（48 卡面 + 通用卡背；AI 生成，`build_card_art.py` 后处理，勿手改） |
 | 存档 | `koreader/settings/kidlearn.lua`（`LuaSettings`） |
 | 题目 | 语文读 12 册 JSON；数学按 5 个教材版本、1–6 年级由 `core/mathgen.lua` 实时生成；知识点模式读 `data/knowledge/`（cn-math-taxonomy 同步，CC BY-NC 4.0） |
 | 测试 | busted，`spec/unit/kidlearn_*.lua`；用 `tools/kidlearn/test_plugin.sh` 链接到 KOReader 后运行 |
@@ -96,7 +96,7 @@ core/diagnose.lua        自适应诊断引擎（先修回溯、掌握/不稳/�
 core/mathgen.lua         数学题与拓展题生成器（保留二年级人教老生成器 + 通用知识点引擎）
 core/progress.lua        存档、每日统计、连续天数、分年级自适应等级、错题本
 core/badges.lua          奖章定义与解锁判断（50 枚）
-core/cards.lua           固定卡池（38 张，含攻防/能力）、每日抽卡权重、收藏力量
+core/cards.lua           固定卡池（48 张，含攻防/能力）、智能单抽权重、收藏力量
 core/report.lua          每日评分公式、总结提示词/严格校验、离线兜底
 core/ai_config.lua       AI 厂商预设、服务配置、Key 掩码与校验
 core/ai_http.lua         LuaSocket/LuaSec + Turbo 的 HTTPS POST
@@ -337,7 +337,7 @@ tools/kidlearn/test_plugin.sh
 26. **升级必须重启**：Lua 模块缓存在 `package.loaded`，替换插件目录后需 `UIManager:restartKOReader()`（quit 85）才生效，不做热重载。
 27. **更新器数据隔离**：用户数据全在 settings 目录（插件目录之外）；`core/update.lua` 写集合仅限插件目录 + `.kidlearn_update`/`.kidlearn_backup` 两个临时目录，绝不引用 `getSettingsDir`。解压用 `extractToMemory` + 自写文件（libarchive 磁盘写入会丢读权限），路径经 `sanitize_entry_path` 净化；失败回滚。`kidlearn_update_spec` 逐字节验证数据不变。
 28. **开发版/符号链接安装拒绝自更新**：`test_plugin.sh` 链接的安装会被 `lfs.symlinkattributes` 识别并拒绝。Release 附件必须名 `kidlearn.koplugin.zip`、顶层 `kidlearn.koplugin/`；国内直连 GitHub 可能不稳定，失败可重试。
-29. **卡面插画是生成产物**：`data/cards/*.png` 由 AI 生图 + `tools/kidlearn/build_card_art.py` 后处理（灰度 480×480），禁止手改；缺图时 UI 自动降级为纯文字格。生图只在构建期用开发者凭证，插件运行时不联网生图。
+29. **卡面插画是生成产物**：`data/cards/*.png` 由 AI 生图 + `tools/kidlearn/build_card_art.py` 后处理（灰度 480×480），禁止手改；缺图时 UI 自动降级为纯文字格。生图只在构建期用开发者凭证，插件运行时不联网生图。统一后处理标准为 `--colors 8 --smooth 3`（8 级灰度 + 3×3 中值滤波，全套约 1.1MB）；重生成时沿用同一标准，避免风格与体积漂移。
 30. **总结确认门**：`Report.needs_time_confirm(now)` 按设备本地时间 <19 点判定；`open_daily_report(now)` 可注入时间戳，单测与走查脚本必须注入（早于 19 点会弹 ConfirmBox 阻塞流程）。
 31. **可点击卡片格**：`Widgets.tappable` 用 InputContainer + GestureRange（同 Button 写法），`ges_events` 在分发时动态读取；`paintTo` 会写入 dimen.x/y，整格可点。
 32. **更新下载无超时、可取消**：`core/update_http.lua` 用非阻塞 socket + `UIManager:scheduleIn` 短 tick 驱动（仿上游 `httpasync`，但上游没有字节进度与中途取消），**刻意不设任何超时**——网络卡住只停进度，由用户点「取消下载」终止；不要"顺手"加回 block/total 超时。调度器与 socket/TLS 工厂可注入，单测用假 socket + 手动调度器跑完整引擎。`download_and_install` 返回 `{ cancel() }` 句柄；staging 目录在下载完成后才创建，取消不留临时文件。`transport` 参数是旧同步路径，仅单测用。检查更新（`Update.check`）仍是带超时的同步小请求，与下载是两条路径。
@@ -371,3 +371,4 @@ tools/kidlearn/test_plugin.sh
 | 2026-11-13 | 今日总结 19:00 前每次点击二次确认；卡片新增攻击力/防守力/能力特点与 AI 生成灰度卡面；集卡册缩略图 + 卡片详情页；收藏力量为每日评分加成（每 200 点 +1，封顶 +10）；存档零改动 | 提醒孩子先练习再总结，提升集卡玩法的可见性与长线目标 |
 | 2026-11-13 | 更新下载改为非阻塞分片下载：实时进度条（已下载/总大小/百分比）、不设超时、随时可点「取消下载」；新增 `core/update_http.lua` 与 `ui/update_dialog.lua`；存档零改动 | 国内直连 GitHub 慢，旧版固定超时容易报错；下载节奏交给用户掌控 |
 | 2026-11-14 | 新增 `docs/AI_INSTALL_GUIDE.md`：AI 可执行的 Kindle 安装教程（越狱 → KOReader → 插件 → 推送 AI 配置），README 安装节加链接 | 其他用户想把插件装进自己的 Kindle，把教程发给自己的 AI 即可逐步照做 |
+| 2026-11-14 | 卡池扩至 48 张（SS×10、SSS×8，新增白泽/鲲鹏/玉兔/獬豸/天马与星辰进阶形态）；抽卡改为每次智能抽 1 张：优先未收集卡，等级集齐后按权重转到有新卡的等级（SSS 门槛不变），全收集后才出重复；新增 10 张卡面已生成，且全部 49 张卡面按 8 级灰度 + 3×3 中值滤波统一重处理（总量 3.0MB → 1.1MB），`build_card_art.py` 支持 `--ids`/`--colors`/`--smooth`/`--allow-missing` | 一次 3 张消耗卡池太快，单抽 + 新卡优先延长收集目标 |

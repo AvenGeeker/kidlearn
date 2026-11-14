@@ -222,7 +222,11 @@ function Report.build_prompt(stats, score, cards)
     table.insert(lines, "请写一段 80 到 200 字的总结（summary）：夸夸孩子今天的努力和进步，再给一句明天的鼓励。")
     table.insert(lines, "再为每张卡片写一句不超过 40 字的祝福语（card_words），按卡片顺序，结合今天的表现。")
     table.insert(lines, "只输出这个 JSON 结构：")
-    table.insert(lines, '{"summary":"总结","card_words":["卡片1祝福","卡片2祝福","卡片3祝福"]}')
+    local example_words = {}
+    for i = 1, math.max(1, #cards) do
+        example_words[i] = string.format('"卡片%d祝福"', i)
+    end
+    table.insert(lines, '{"summary":"总结","card_words":[' .. table.concat(example_words, ",") .. ']}')
     return system, table.concat(lines, "\n")
 end
 
@@ -278,6 +282,7 @@ function Report.create(progress, opts)
     local cards = Cards.draw(score_info.score, challenge_badges, opts.rng, {
         total_answered = total.answered,
         challenge_answered = total.challenge_answered,
+        owned = progress.data.cards,
     })
     progress:add_cards(cards, now)
     local stats = Report.stats(progress, now, opts.plugin_path)

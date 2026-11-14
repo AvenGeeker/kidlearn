@@ -1823,7 +1823,7 @@ end
 function MainView:show_draw_progress()
     local status = self.progress:draw_status()
     UIManager:show(InfoMessage:new{
-        text = string.format("已积累 %d/%d 题，再做 %d 题就能抽卡（每次 %d 张）！\n累计答题和拓展题越多，越容易抽到 SS、SSS 卡。",
+        text = string.format("已积累 %d/%d 题，再做 %d 题就能抽卡！\n每次智能抽 %d 张，优先抽没收集过的卡。\n累计答题和拓展题越多，越容易抽到 SS、SSS 卡。",
             status.progress, status.need, status.remaining, Cards.DRAW_COUNT),
         timeout = 5,
     })
